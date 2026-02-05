@@ -39,6 +39,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     Digital Life After Death
   </a>
 </p>
+
+    <section id="subscribe" style="padding:64px 0; border-top:1px solid rgba(0,0,0,.08);">
+  <div style="max-width:720px; margin:0 auto; padding:0 24px;">
+    <h2 style="font-size:32px; line-height:1.15; margin:0 0 12px;">Join the waitlist</h2>
+    <p style="opacity:.8; margin:0 0 24px;">Early access to the demo and founding features.</p>
+
+    <form id="waitlistForm" novalidate style="display:flex; gap:12px; flex-wrap:wrap;">
+      <input
+        id="wl_email"
+        name="email"
+        type="email"
+        inputmode="email"
+        autocomplete="email"
+        placeholder="Enter your email"
+        required
+        style="flex:1; min-width:240px; padding:14px 16px; border:1px solid rgba(0,0,0,.18); border-radius:12px;"
+      />
+      <button
+        id="wl_submit"
+        type="submit"
+        style="padding:14px 18px; border:1px solid rgba(0,0,0,.18); border-radius:12px; background:#000; color:#fff; font-weight:600; cursor:pointer;"
+      >
+        Join
+      </button>
+      <p id="wl_status" role="status" aria-live="polite" style="width:100%; margin:8px 0 0; opacity:.85;"></p>
+    </form>
+
+    <p style="margin:14px 0 0; font-size:14px; opacity:.7;">No spam. Unsubscribe anytime.</p>
+  </div>
+</section>
+
     
   </main>
   <script type="application/ld+json">
@@ -64,6 +95,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
   ]
 }
+</script>
+
+  <script>
+  window.dataLayer = window.dataLayer || [];
+
+  (function () {
+    const form = document.getElementById("waitlistForm");
+    if (!form) return;
+
+    const emailInput = document.getElementById("wl_email");
+    const statusEl = document.getElementById("wl_status");
+    const submitBtn = document.getElementById("wl_submit");
+
+    function setStatus(msg) { statusEl.textContent = msg || ""; }
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email || "").trim());
+    }
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      setStatus("");
+
+      const email = String(emailInput.value || "").trim();
+      if (!isValidEmail(email)) { setStatus("Please enter a valid email."); emailInput.focus(); return; }
+
+      submitBtn.disabled = true;
+      setStatus("Submitting…");
+
+      try {
+        const ENDPOINT_URL = "/api/waitlist"; // on le crée après selon ton hébergeur
+
+        const res = await fetch(ENDPOINT_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, source: "solexi.ai" })
+        });
+
+        if (!res.ok) throw new Error("Request failed");
+
+        setStatus("You're on the list. Welcome.");
+        form.reset();
+
+        window.dataLayer.push({ event: "generate_lead", lead_type: "waitlist" });
+      } catch (err) {
+        setStatus("Something went wrong. Try again.");
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+  })();
 </script>
 
 
