@@ -14,13 +14,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>When you die, who can access your digital life? | Solexi</title>
-  <meta name="description" content="Your digital life is everywhere—photos, passwords, documents, accounts. Solexi helps you structure it now, so your loved ones don’t face chaos later." />
+ <title>When you die, who can access your digital life? | Solexi</title>
 
-<meta property="og:title" content="When you die, who can access your digital life? | Solexi" />
-<meta property="og:description" content="Your digital life is everywhere—photos, passwords, documents, accounts. Solexi helps you structure it now, so your loved ones don’t face chaos later." />
+<meta name="description"
+content="Your digital life is scattered across photos, passwords, documents, and accounts. Solexi helps you organize what matters now, so your loved ones aren’t left with chaos later." />
+
+<meta property="og:title"
+content="When you die, who can access your digital life?" />
+
+<meta property="og:description"
+content="Photos, passwords, documents, accounts — your digital life is everywhere. Solexi structures what matters so nothing is lost when it matters most." />
+
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://solexi.ai/" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="When you die, who can access your digital life? | Solexi" />
+<meta name="twitter:description" content="Your digital life is everywhere—photos, passwords, documents, accounts. Solexi helps you structure it now, so your loved ones don’t face chaos later." />
+
 
 
   <link rel="canonical" href="https://solexi.ai/" />
@@ -383,6 +394,207 @@
       text-decoration:none;
     }
   </style>
+
+  <style>
+/* === Interference Banner — Solexi === */
+
+.interference-title {
+  position: relative;
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0b0b0f;
+  max-width: 18ch;
+}
+
+.interference-title span {
+  position: absolute;
+  inset: 0;
+  color: rgba(11,11,15,0.85);
+  pointer-events: none;
+  filter: blur(0.4px);
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 45%,
+    transparent 60%,
+    black 80%
+  );
+}
+
+.interference-title span::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.0) 0%,
+    rgba(255,255,255,0.45) 40%,
+    rgba(255,255,255,0.0) 70%
+  );
+  mix-blend-mode: overlay;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .interference-title span {
+    animation: interferenceShift 12s infinite linear;
+  }
+}
+
+@keyframes interferenceShift {
+  0%   { transform: translateX(0); opacity: 0.85; }
+  25%  { transform: translateX(-0.4px); opacity: 0.75; }
+  50%  { transform: translateX(0.3px); opacity: 0.9; }
+  75%  { transform: translateX(-0.2px); opacity: 0.8; }
+  100% { transform: translateX(0); opacity: 0.85; }
+}
+    /* =====================================================
+   1) CINEMATIC INTERFERENCE (scroll fade + hover clear)
+===================================================== */
+.cine-title{
+  position: relative;
+  font-size: clamp(2.25rem, 4.6vw, 3.25rem);
+  line-height: 1.04;
+  font-weight: 780;
+  letter-spacing: -0.03em;
+  margin: 0 0 14px;
+  max-width: 20ch;
+  color: #0b0b0f;
+
+  /* Variable pilotée au scroll (1 = full interference, 0 = clean) */
+  --cineFade: 1;
+}
+
+.cine-title .cine-ghost{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  color: rgba(11,11,15,.62);
+  filter: blur(.35px);
+  opacity: calc(.95 * var(--cineFade));
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,1) 42%,
+    rgba(0,0,0,.25) 58%,
+    rgba(0,0,0,1) 78%,
+    rgba(0,0,0,1) 100%
+  );
+
+  transition: opacity .25s ease, filter .25s ease;
+}
+
+/* Hover = texte net (Option 2) */
+.cine-title:hover .cine-ghost{
+  opacity: 0;
+  filter: blur(0);
+}
+
+.cine-title .cine-ghost::before,
+.cine-title .cine-ghost::after{
+  content:"";
+  position:absolute;
+  inset:-20%;
+  pointer-events:none;
+}
+
+/* Voile lumineux */
+.cine-title .cine-ghost::before{
+  background: linear-gradient(
+    115deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,.55) 38%,
+    rgba(255,255,255,0) 65%
+  );
+  mix-blend-mode: overlay;
+  filter: blur(2px);
+  opacity: calc(.85 * var(--cineFade));
+}
+
+/* Scanlines */
+.cine-title .cine-ghost::after{
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,.07) 0px,
+      rgba(255,255,255,.07) 1px,
+      rgba(0,0,0,0) 3px,
+      rgba(0,0,0,0) 6px
+    );
+  mix-blend-mode: soft-light;
+  opacity: calc(.35 * var(--cineFade));
+}
+
+@media (prefers-reduced-motion: no-preference){
+  .cine-title .cine-ghost{
+    animation: cineDrift 10.5s linear infinite;
+  }
+  .cine-title .cine-ghost::before{
+    animation: veilSweep 6.8s ease-in-out infinite;
+  }
+}
+
+@keyframes cineDrift{
+  0%   { transform: translateX(0); }
+  20%  { transform: translateX(-.6px); }
+  45%  { transform: translateX(.4px); }
+  70%  { transform: translateX(-.3px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes veilSweep{
+  0%   { transform: translateX(-18%) translateY(0); }
+  50%  { transform: translateX(12%) translateY(-1.5%); }
+  100% { transform: translateX(-18%) translateY(0); }
+}
+
+.cine-lead{
+  margin: 0 0 16px;
+  color: rgba(11,11,15,.72);
+  max-width: 66ch;
+}
+
+/* =====================================================
+   3) FORM: remonter + enlever l'espace inutile
+===================================================== */
+.form-card{
+  margin-top: 10px;           /* remonte le bloc */
+  padding: 16px 18px;         /* plus compact */
+}
+.form-title {
+  margin-bottom: 4px;
+}
+
+.form-sub {
+  margin-bottom: 10px;
+}
+
+#sib-form-container .sib-input {
+  margin-top: 4px !important;
+}
+
+/* Resserre les blocs Brevo */
+#sib-form-container .sib-input,
+#sib-form-container .sib-select{
+  margin-bottom: 10px !important; /* avant 12 */
+}
+
+/* Réduit les paddings inline des wrappers Brevo */
+#sib-form > div[style*="padding: 8px 0"]{
+  padding: 6px 0 !important;
+}
+
+/* “We collect…” plus proche */
+#sib-container .entry__specification{
+  margin-top: 6px !important;
+}
+
+</style>
+
+
+
 </head>
 
 <body>
@@ -413,15 +625,22 @@
       <section aria-label="Solexi waitlist">
         <div class="kickerRow">
           <p class="kicker">DIGITAL AFTER YOU</p>
-          <span class="badge">Founding Cohort • 2026</span>
+          <span class="badge">Founding Cohort · 2026 · Limited access</span>
+
         </div>
 
-        <h1 class="title">When you die, who can access your digital life?</h1>
+        <h1 class="cine-title" id="cineTitle">
+  <span class="cine-ghost" aria-hidden="true">
+    When you die, who can access your digital life?
+  </span>
+  When you die, who can access your digital life?
+</h1>
 
-        <p class="lead">
-          Photos, passwords, important documents, and accounts are scattered across phones, laptops, and apps.
-          Solexi helps you structure what matters so your loved ones aren’t left with chaos.
-        </p>
+<p class="lead">
+  Your digital life is fragmented across photos, passwords, documents, and accounts.
+  Solexi brings structure to what matters — so when the time comes, nothing is lost and no one is left in the dark.
+</p>
+
 
         <div id="subscribe" class="form-card">
           <h2 class="form-title">Join the waitlist</h2>
@@ -667,6 +886,41 @@
   <script>
     (function(){
       // --- 2-step form ---
+            // --- Cinematic title: fade interference on scroll (Option 1) ---
+      const cine = document.getElementById('cineTitle');
+      if (cine) {
+        let ticking = false;
+
+        function clamp(n, a, b){ return Math.max(a, Math.min(b, n)); }
+
+        function updateCine(){
+          ticking = false;
+          const r = cine.getBoundingClientRect();
+          const vh = window.innerHeight || document.documentElement.clientHeight;
+
+          // Progress: quand le titre descend dans la page, l'interférence se dissipe
+          // Ajuste les constantes si tu veux plus/moins rapide.
+          const start = vh * 0.85;  // début de dissipation
+          const end   = vh * 0.25;  // titre plus haut = presque clean
+
+          const t = (r.top - end) / (start - end); // ~1 -> 0
+          const fade = clamp(t, 0, 1);
+
+          cine.style.setProperty('--cineFade', fade.toFixed(3));
+        }
+
+        function onScroll(){
+          if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(updateCine);
+          }
+        }
+
+        window.addEventListener('scroll', onScroll, { passive:true });
+        window.addEventListener('resize', onScroll);
+        updateCine();
+      }
+
       const email = document.getElementById('EMAIL');
       const role = document.getElementById('ROLE');
       const useCase = document.getElementById('PRIMARY_USE_CASE');
