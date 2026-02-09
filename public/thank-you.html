@@ -12,7 +12,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>You’re on the list | Solexi</title>
-  <meta name="description" content="You’re on the list. Share the news and help someone you care about think about digital legacy." />
+  <meta name="description" content="You’re on the list. Share the news on Facebook or Messenger." />
   <meta name="robots" content="noindex, nofollow" />
 
   <style>
@@ -21,7 +21,7 @@
       --text:#EAF0FF; --muted:#B8C2E3; --muted2:#8B96BD;
       --accent:#7C5CFF; --accent2:#2FE4C0;
       --shadow: 0 24px 80px rgba(0,0,0,.55);
-      --r1:22px; --r2:14px; --max:1080px;
+      --r1:22px; --r2:14px; --max:920px;
       --font: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
     }
     *{box-sizing:border-box}
@@ -38,76 +38,77 @@
     .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 64px;}
     .topbar{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:10px 4px 22px;}
     .brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text);}
-    .logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));
-      box-shadow:0 10px 30px rgba(124,92,255,.25); flex:0 0 auto;}
+    .logo{
+      width:38px;height:38px;border-radius:12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 10px 30px rgba(124,92,255,.25);
+      flex:0 0 auto;
+    }
     .brand span{font-weight:800; letter-spacing:.4px}
-    .pill{display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border:1px solid var(--stroke);
-      border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); font-size:13px; backdrop-filter:blur(10px); white-space:nowrap;}
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 14px; border:1px solid var(--stroke);
+      border-radius:999px; background:rgba(255,255,255,.04);
+      color:var(--muted); font-size:13px;
+      backdrop-filter: blur(10px);
+      white-space:nowrap;
+    }
 
-    .grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:18px; align-items:stretch;}
-    @media (max-width: 940px){ .grid{grid-template-columns:1fr;} }
-
-    .card{background:var(--card); border:1px solid var(--stroke); border-radius:var(--r1); box-shadow:var(--shadow); backdrop-filter:blur(14px);}
+    .card{
+      background: var(--card);
+      border:1px solid var(--stroke);
+      border-radius: var(--r1);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
     .pad{padding:26px}
 
     .kicker{display:flex; align-items:center; gap:10px; color:var(--muted); font-size:13px; letter-spacing:.35px; margin-bottom:10px;}
-    .dot{width:9px;height:9px;border-radius:50%;background:var(--accent2); box-shadow:0 0 0 6px rgba(47,228,192,.12);}
+    .dot{width:9px;height:9px;border-radius:50%;background: var(--accent2); box-shadow: 0 0 0 6px rgba(47,228,192,.12);}
 
     h1{font-size:44px; line-height:1.05; margin:0 0 12px; letter-spacing:-.8px;}
     @media (max-width: 520px){ h1{font-size:36px;} }
 
-    .lead{color:var(--muted); font-size:16px; line-height:1.55; margin:0 0 16px; max-width:70ch;}
+    .lead{color: var(--muted); font-size:16px; line-height:1.55; margin:0 0 16px; max-width:70ch;}
 
-    .quote{margin:18px 0 0; padding:16px; border-radius:var(--r2); border:1px solid var(--stroke); background:rgba(255,255,255,.03);}
+    .quote{
+      margin:18px 0 0;
+      padding:16px;
+      border-radius: var(--r2);
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.03);
+    }
     .quote strong{display:block; font-size:16px; margin-bottom:6px; letter-spacing:-.2px;}
-    .quote p{margin:0; color:var(--muted2); line-height:1.5; font-size:14px;}
+    .quote p{margin:0; color: var(--muted2); line-height:1.5; font-size:14px;}
 
     .actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px;}
     .btn{
-      appearance:none; border:none; cursor:pointer; border-radius:999px; padding:12px 16px;
-      font-weight:700; letter-spacing:.2px; display:inline-flex; align-items:center; gap:10px;
+      appearance:none; border:none; cursor:pointer;
+      border-radius: 999px;
+      padding: 12px 16px;
+      font-weight:800;
+      letter-spacing:.2px;
+      display:inline-flex; align-items:center; gap:10px;
       transition: transform .12s ease, background .12s ease, border-color .12s ease;
-      text-decoration:none; user-select:none; white-space:nowrap;
+      text-decoration:none;
+      user-select:none;
+      white-space:nowrap;
     }
     .btn:active{ transform: translateY(1px) scale(.99); }
-    .btn.primary{background:linear-gradient(135deg,var(--accent),#9D86FF); color:#0B0920; box-shadow:0 18px 40px rgba(124,92,255,.25);}
-    .btn.ghost{background:rgba(255,255,255,.04); color:var(--text); border:1px solid var(--stroke);}
-    .btn.ghost:hover{background:rgba(255,255,255,.06);}
-    .btn.good{background:rgba(47,228,192,.10); color:var(--text); border:1px solid rgba(47,228,192,.25);}
-
-    .refbox{
-      margin-top:18px; padding:16px; border-radius:var(--r1); border:1px solid var(--stroke); background:rgba(255,255,255,.03);
-      display:flex; gap:12px; align-items:center; flex-wrap:wrap;
+    .btn.primary{
+      background: linear-gradient(135deg, var(--accent), #9D86FF);
+      color: #0B0920;
+      box-shadow: 0 18px 40px rgba(124,92,255,.25);
     }
-    .refbox label{font-size:13px; color:var(--muted); font-weight:700}
-    .input{flex:1 1 320px; display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:14px;
-      border:1px solid var(--stroke); background:rgba(0,0,0,.18); color:var(--text);}
-    .input code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; font-size:12.5px; color:var(--text); overflow:auto; max-width:100%;}
-    .input input{flex:1; border:none; outline:none; background:transparent; color:var(--text); font:inherit;}
+    .btn.ghost{
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      border: 1px solid var(--stroke);
+    }
+    .btn.ghost:hover{ background: rgba(255,255,255,.06); }
 
-    .steps{margin-top:18px; display:grid; grid-template-columns:repeat(3,1fr); gap:12px;}
-    @media (max-width: 940px){ .steps{grid-template-columns:1fr;} }
-    .step{padding:16px; border-radius:var(--r1); border:1px solid var(--stroke); background:rgba(255,255,255,.03); min-height:108px;}
-    .step .n{display:inline-flex; align-items:center; justify-content:center; width:30px;height:30px;border-radius:10px;
-      background:rgba(124,92,255,.12); border:1px solid rgba(124,92,255,.25); color:var(--text); font-weight:800; margin-bottom:10px;}
-    .step b{display:block; margin-bottom:6px;}
-    .step span{color:var(--muted); font-size:13px; line-height:1.45; display:block;}
-
-    .mini{padding:18px; border-radius:var(--r1); border:1px solid var(--stroke); background:rgba(255,255,255,.03); margin-top:12px;}
-    .mini h3{margin:0 0 8px; font-size:14px; letter-spacing:.2px;}
-    .mini p{margin:0; color:var(--muted); font-size:13px; line-height:1.5;}
-
+    .fine{margin-top:14px; color: var(--muted2); font-size:12px; line-height:1.55;}
     .back{margin-top:18px; display:inline-block; color:rgba(184,194,227,.9); text-decoration:none; font-size:.95rem; border-bottom:1px dotted var(--stroke); padding-bottom:2px;}
-    .fine{margin-top:14px; color:var(--muted2); font-size:12px; line-height:1.55;}
-
-    .toast{
-      position:fixed; left:50%; bottom:18px; transform:translateX(-50%);
-      background:rgba(0,0,0,.70); border:1px solid var(--stroke); color:var(--text);
-      padding:10px 14px; border-radius:999px; font-size:13px; backdrop-filter:blur(10px);
-      box-shadow:0 16px 40px rgba(0,0,0,.45); opacity:0; pointer-events:none;
-      transition: opacity .18s ease, transform .18s ease;
-    }
-    .toast.show{opacity:1; transform:translateX(-50%) translateY(-4px);}
   </style>
 </head>
 
@@ -123,119 +124,43 @@
         <div class="logo" aria-hidden="true"></div>
         <span>Solexi</span>
       </a>
-      <div class="pill" title="Status">
+      <div class="pill">
         <span aria-hidden="true">✅</span>
         <span><b>Confirmed</b> • Founding Cohort 2026</span>
       </div>
     </header>
 
-    <main class="grid">
-      <!-- LEFT -->
-      <section class="card pad" aria-labelledby="title">
-        <div class="kicker"><span class="dot" aria-hidden="true"></span><span>Welcome — your spot is reserved</span></div>
-        <h1 id="title">You’re on the list.</h1>
-        <p class="lead">
-          You’ll be contacted when early access opens. In the meantime, help someone you care about
-          avoid confusion later by sharing this question.
-        </p>
+    <main class="card pad" aria-labelledby="title">
+      <div class="kicker"><span class="dot" aria-hidden="true"></span><span>Welcome — your spot is reserved</span></div>
+      <h1 id="title">You’re on the list.</h1>
+      <p class="lead">
+        You’ll be contacted when early access opens. If you want to help, share this with someone you care about.
+      </p>
 
-        <div class="quote" role="note" aria-label="Key message">
-          <strong>“When you die, who can access your digital life — and how?”</strong>
-          <p>Solexi is building a calm, secure way to organize and transmit digital life.</p>
-        </div>
+      <div class="quote" role="note" aria-label="Key message">
+        <strong>“When you die, who can access your digital life — and how?”</strong>
+        <p>Solexi is building a calm, secure way to organize and transmit digital life.</p>
+      </div>
 
-        <!-- IMPORTANT: links to the app / elements -->
-        <div class="actions" aria-label="Primary navigation">
-          <a class="btn primary" id="btnApp" href="/app">Open the app</a>
-          <a class="btn ghost" id="btnElements" href="/elements">Explore Elements</a>
-          <a class="btn ghost" href="/">Back to site</a>
-        </div>
+      <!-- CLEAN SHARE ONLY -->
+      <div class="actions" aria-label="Share actions">
+        <a class="btn primary" id="btnFacebook" href="#" rel="noopener">Share on Facebook</a>
+        <button class="btn ghost" id="btnMessenger" type="button">Share on Messenger</button>
+      </div>
 
-        <div class="actions" aria-label="Share actions">
-          <button class="btn good" id="btnShareNative" type="button">Share now</button>
-          <button class="btn ghost" id="btnCopyMessage" type="button">Copy message</button>
-          <button class="btn ghost" id="btnMessenger" type="button">Share on Messenger</button>
-          <a class="btn ghost" id="btnEmail" href="#">Send by email</a>
-          <a class="btn ghost" id="btnX" href="#" rel="noopener">Share on X</a>
-          <a class="btn ghost" id="btnFb" href="#" rel="noopener">Share on Facebook</a>
-        </div>
-
-        <div class="refbox" aria-label="Share link">
-          <label for="shareUrl">Share link</label>
-          <div class="input" role="group" aria-label="Share URL">
-            <code id="shareUrl">https://solexi.ai/</code>
-          </div>
-          <button class="btn ghost" id="btnCopyLink" type="button">Copy link</button>
-        </div>
-
-        <div class="steps" aria-label="What happens next">
-          <div class="step">
-            <div class="n">1</div>
-            <b>Early access invite</b>
-            <span>You’ll get an email when your invite is ready.</span>
-          </div>
-          <div class="step">
-            <div class="n">2</div>
-            <b>Set priorities</b>
-            <span>Decide what matters, for who, and when it unlocks.</span>
-          </div>
-          <div class="step">
-            <div class="n">3</div>
-            <b>Peace of mind</b>
-            <span>Clear guidance to reduce delays and uncertainty.</span>
-          </div>
-        </div>
-
-        <div class="fine">
-          Note: Solexi helps with digital legacy planning. It’s not legal advice.
-        </div>
-      </section>
-
-      <!-- RIGHT -->
-      <aside class="card pad">
-        <h2 style="margin:0 0 10px; font-size:18px; letter-spacing:-.2px;">Personalize your share</h2>
-        <p style="margin:0 0 12px; color:var(--muted); line-height:1.6; font-size:14px;">
-          Add a name (optional). It makes the message feel human.
-        </p>
-
-        <div class="input" style="width:100%">
-          <span aria-hidden="true">👤</span>
-          <input id="inviteName" type="text" inputmode="text" placeholder="e.g., Mom, Dad, Alex..." />
-        </div>
-
-        <div class="mini">
-          <h3>Brevo note</h3>
-          <p>
-            This page stays static (safe) after Brevo form submit. Tracking is handled via GTM event below.
-          </p>
-        </div>
-
-        <div class="actions" style="margin-top:12px">
-          <button class="btn primary" id="btnPersonalShare" type="button">Copy personalized message</button>
-          <button class="btn ghost" id="btnResetName" type="button">Reset</button>
-        </div>
-
-        <a class="back" href="/">← Back to home</a>
-      </aside>
+      <a class="back" href="/">← Back to home</a>
+      <div class="fine">Note: Solexi helps with digital legacy planning. It’s not legal advice.</div>
     </main>
   </div>
 
-  <div class="toast" id="toast" role="status" aria-live="polite">Copied.</div>
-
   <script>
     (function(){
-      // ====== CONFIG (adjust these) ======
-      const SITE_URL     = "https://solexi.ai/";
-      const APP_URL      = "https://solexi.ai/app";       // <-- change if different
-      const ELEMENTS_URL = "https://solexi.ai/elements";  // <-- change if different
-      const FB_APP_ID    = ""; // <-- REQUIRED for Messenger desktop share (Facebook App ID). Example: "1234567890"
-      // ==================================
+      // ===== CONFIG =====
+      const SHARE_URL = "https://solexi.ai/";
+      const FB_APP_ID = ""; // Optional: needed for Messenger share on desktop via Send Dialog
+      // ==================
 
-      // Ensure buttons point to correct pages
-      document.getElementById('btnApp').href = APP_URL;
-      document.getElementById('btnElements').href = ELEMENTS_URL;
-
-      // Push conversion event for GTM (you can trigger GA4/Brevo automations from it)
+      // Tracking hook for GTM (Brevo flow remains unchanged)
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         event: "waitlist_thank_you_view",
@@ -243,151 +168,51 @@
         page_type: "thank_you"
       });
 
-      const toast = document.getElementById('toast');
-      function showToast(msg){
-        toast.textContent = msg || 'OK';
-        toast.classList.add('show');
-        window.clearTimeout(showToast._t);
-        showToast._t = window.setTimeout(()=> toast.classList.remove('show'), 1800);
-      }
+      // Facebook share (simple + reliable)
+      const fb = document.getElementById('btnFacebook');
+      fb.href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(SHARE_URL);
 
-      const shareUrl = SITE_URL;
-      document.getElementById('shareUrl').textContent = shareUrl;
-
-      const inviteName = document.getElementById('inviteName');
-
-      function buildMessage(name){
-        const who = (name && name.trim()) ? name.trim() : "someone you care about";
-        return [
-          "I joined the Solexi waitlist.",
-          `Solexi helps organize and pass on your digital life — so ${who} knows what to do at the right time.`,
-          `👉 ${shareUrl}`
-        ].join("\n");
-      }
-
-      async function copyToClipboard(text){
-        try{
-          await navigator.clipboard.writeText(text);
-          showToast("Copied ✅");
-          return true;
-        }catch(e){
-          const ta = document.createElement('textarea');
-          ta.value = text;
-          ta.style.position = 'fixed';
-          ta.style.left = '-9999px';
-          document.body.appendChild(ta);
-          ta.select();
-          try{
-            document.execCommand('copy');
-            showToast("Copied ✅");
-            document.body.removeChild(ta);
-            return true;
-          }catch(err){
-            document.body.removeChild(ta);
-            showToast("Copy failed");
-            return false;
-          }
-        }
-      }
+      // Messenger share:
+      // - Mobile: opens Messenger app
+      // - Desktop: uses Facebook Send Dialog (requires FB_APP_ID)
+      const btnMessenger = document.getElementById('btnMessenger');
 
       function openPopup(url){
         window.open(url, '_blank', 'noopener,noreferrer,width=900,height=700');
       }
 
-      function refreshShareLinks(){
-        const msg = buildMessage(inviteName.value);
-        const encodedText = encodeURIComponent(msg);
-        const encodedUrl = encodeURIComponent(shareUrl);
-
-        const btnX = document.getElementById('btnX');
-        const btnFb = document.getElementById('btnFb');
-        const btnEmail = document.getElementById('btnEmail');
-
-        btnX.href = "https://twitter.com/intent/tweet?text=" + encodedText;
-        btnFb.href = "https://www.facebook.com/sharer/sharer.php?u=" + encodedUrl;
-
-        const subject = encodeURIComponent("Solexi — a calm way to plan your digital legacy");
-        const body = encodeURIComponent(msg);
-        btnEmail.href = "mailto:?subject=" + subject + "&body=" + body;
-      }
-
-      // Share now (native share if available)
-      document.getElementById('btnShareNative').addEventListener('click', async ()=>{
-        const text = buildMessage(inviteName.value);
-        if(navigator.share){
-          try{
-            await navigator.share({ title: "Solexi", text, url: shareUrl });
-            window.dataLayer.push({ event: "waitlist_shared", channel: "native_share" });
-          }catch(e){}
-        }else{
-          copyToClipboard(text);
-          window.dataLayer.push({ event: "waitlist_shared", channel: "copy_fallback" });
-        }
-      });
-
-      // Copy actions
-      document.getElementById('btnCopyLink').addEventListener('click', ()=>{
-        copyToClipboard(shareUrl);
-        window.dataLayer.push({ event: "waitlist_shared", channel: "copy_link" });
-      });
-
-      document.getElementById('btnCopyMessage').addEventListener('click', ()=>{
-        copyToClipboard(buildMessage(inviteName.value));
-        window.dataLayer.push({ event: "waitlist_shared", channel: "copy_message" });
-      });
-
-      document.getElementById('btnPersonalShare').addEventListener('click', ()=>{
-        copyToClipboard(buildMessage(inviteName.value));
-        window.dataLayer.push({ event: "waitlist_shared", channel: "copy_personalized" });
-      });
-
-      document.getElementById('btnResetName').addEventListener('click', ()=>{
-        inviteName.value="";
-        refreshShareLinks();
-        showToast("Reset ✅");
-      });
-
-      // Messenger share
-      // - Mobile: fb-messenger://share/?link=...
-      // - Desktop: Facebook "Send Dialog" requires FB_APP_ID
-      document.getElementById('btnMessenger').addEventListener('click', ()=>{
-        const link = encodeURIComponent(shareUrl);
-        const msg = encodeURIComponent(buildMessage(inviteName.value));
-
+      btnMessenger.addEventListener('click', ()=>{
         const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
         if(isMobile){
-          // Mobile scheme (opens Messenger app if installed)
-          const messengerUrl = "fb-messenger://share/?link=" + link;
-          window.location.href = messengerUrl;
+          // Try opening Messenger app
+          window.location.href = "fb-messenger://share/?link=" + encodeURIComponent(SHARE_URL);
           window.dataLayer.push({ event: "waitlist_shared", channel: "messenger_mobile" });
           return;
         }
 
         if(FB_APP_ID && FB_APP_ID.trim().length){
-          // Desktop send dialog (requires a Facebook App ID)
           const redirect = encodeURIComponent(window.location.href);
           const sendUrl =
             "https://www.facebook.com/dialog/send" +
             "?app_id=" + encodeURIComponent(FB_APP_ID.trim()) +
-            "&link=" + link +
+            "&link=" + encodeURIComponent(SHARE_URL) +
             "&redirect_uri=" + redirect;
           openPopup(sendUrl);
           window.dataLayer.push({ event: "waitlist_shared", channel: "messenger_desktop" });
         }else{
-          // Fallback: copy message
-          copyToClipboard(decodeURIComponent(msg));
-          showToast("Message copied — paste it in Messenger ✅");
-          window.dataLayer.push({ event: "waitlist_shared", channel: "messenger_fallback_copy" });
+          // Fallback: open Facebook share as a safe option
+          openPopup("https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(SHARE_URL));
+          window.dataLayer.push({ event: "waitlist_shared", channel: "messenger_fallback_fbshare" });
         }
       });
 
-      // Social popup behavior
-      document.getElementById('btnX').addEventListener('click', (e)=>{ e.preventDefault(); openPopup(e.currentTarget.href); window.dataLayer.push({event:"waitlist_shared", channel:"x"}); });
-      document.getElementById('btnFb').addEventListener('click', (e)=>{ e.preventDefault(); openPopup(e.currentTarget.href); window.dataLayer.push({event:"waitlist_shared", channel:"facebook"}); });
-
-      inviteName.addEventListener('input', refreshShareLinks);
-      refreshShareLinks();
+      // Optional popup for FB share (clean UX)
+      fb.addEventListener('click', (e)=>{
+        e.preventDefault();
+        openPopup(fb.href);
+        window.dataLayer.push({ event: "waitlist_shared", channel: "facebook" });
+      });
     })();
   </script>
 </body>
