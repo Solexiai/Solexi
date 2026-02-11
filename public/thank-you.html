@@ -1,33 +1,44 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-5DZLVZS9');</script>
-  <!-- End Google Tag Manager -->
-
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>You’re on the list | Solexi</title>
-  <meta name="description" content="You’re on the list. Share the news on Facebook or Messenger." />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Solexi — Vous êtes inscrit</title>
+  <meta name="description" content="Merci — vous êtes sur la liste. Partagez la bonne nouvelle et aidez vos proches à protéger leur vie numérique." />
   <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Je viens de rejoindre la liste d’attente Solexi" />
+  <meta property="og:description" content="Enfin une solution pour organiser et transmettre sa vie numérique, sereinement." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://solexi.ai/thank-you.html" />
+  <!-- Optionnel: ajoute une image OG -->
+  <!-- <meta property="og:image" content="https://solexi.ai/assets/og-solexi.jpg" /> -->
 
   <style>
     :root{
-      --bg0:#070A12; --bg1:#0B1224; --card:#0E1630cc; --stroke:#ffffff1f;
-      --text:#EAF0FF; --muted:#B8C2E3; --muted2:#8B96BD;
-      --accent:#d3d2d9; --accent2:#2FE4C0;
+      --bg0:#070A12;
+      --bg1:#0B1224;
+      --card:#0E1630cc;
+      --stroke:#ffffff1f;
+      --text:#EAF0FF;
+      --muted:#B8C2E3;
+      --muted2:#8B96BD;
+      --accent:#7C5CFF;
+      --accent2:#2FE4C0;
+      --danger:#FF5C7A;
       --shadow: 0 24px 80px rgba(0,0,0,.55);
-      --r1:22px; --r2:14px; --max:920px;
-      --font: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      --radius: 22px;
+      --radius2: 14px;
+      --max: 1080px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
-      margin:0; font-family:var(--font); color:var(--text);
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
       background:
         radial-gradient(1200px 700px at 20% 10%, rgba(124,92,255,.35), transparent 55%),
         radial-gradient(1000px 600px at 75% 30%, rgba(47,228,192,.22), transparent 55%),
@@ -36,13 +47,17 @@
       overflow-x:hidden;
     }
     .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 64px;}
-    .topbar{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:10px 4px 22px;}
-    .brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text);}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:10px 4px 22px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text);
+    }
     .logo{
       width:38px;height:38px;border-radius:12px;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       box-shadow: 0 10px 30px rgba(124,92,255,.25);
-      flex:0 0 auto;
     }
     .brand span{font-weight:800; letter-spacing:.4px}
     .pill{
@@ -51,42 +66,78 @@
       border-radius:999px; background:rgba(255,255,255,.04);
       color:var(--muted); font-size:13px;
       backdrop-filter: blur(10px);
-      white-space:nowrap;
     }
+
+    .hero{
+      margin-top:6px;
+      display:grid; grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 940px){ .hero{grid-template-columns:1fr;} }
 
     .card{
       background: var(--card);
       border:1px solid var(--stroke);
-      border-radius: var(--r1);
+      border-radius: var(--radius);
       box-shadow: var(--shadow);
       backdrop-filter: blur(14px);
     }
-    .pad{padding:26px}
-
-    .kicker{display:flex; align-items:center; gap:10px; color:var(--muted); font-size:13px; letter-spacing:.35px; margin-bottom:10px;}
-    .dot{width:9px;height:9px;border-radius:50%;background: var(--accent2); box-shadow: 0 0 0 6px rgba(47,228,192,.12);}
-
-    h1{font-size:44px; line-height:1.05; margin:0 0 12px; letter-spacing:-.8px;}
+    .card.pad{padding:26px}
+    .kicker{
+      display:flex; align-items:center; gap:10px;
+      color:var(--muted);
+      font-size:13px;
+      letter-spacing:.35px;
+      margin-bottom:10px;
+    }
+    .dot{
+      width:9px;height:9px;border-radius:50%;
+      background: var(--accent2);
+      box-shadow: 0 0 0 6px rgba(47,228,192,.12);
+    }
+    h1{
+      font-size:44px; line-height:1.05; margin:0 0 12px;
+      letter-spacing:-.8px;
+    }
     @media (max-width: 520px){ h1{font-size:36px;} }
-
-    .lead{color: var(--muted); font-size:16px; line-height:1.55; margin:0 0 16px; max-width:70ch;}
-
+    .lead{
+      color: var(--muted);
+      font-size:16px;
+      line-height:1.55;
+      margin: 0 0 16px;
+      max-width: 65ch;
+    }
     .quote{
       margin:18px 0 0;
-      padding:16px;
-      border-radius: var(--r2);
+      padding:16px 16px;
+      border-radius: var(--radius2);
       border:1px solid var(--stroke);
       background: rgba(255,255,255,.03);
+      color: var(--text);
     }
-    .quote strong{display:block; font-size:16px; margin-bottom:6px; letter-spacing:-.2px;}
-    .quote p{margin:0; color: var(--muted2); line-height:1.5; font-size:14px;}
+    .quote strong{
+      display:block;
+      font-size:16px;
+      margin-bottom:6px;
+      letter-spacing:-.2px;
+    }
+    .quote p{
+      margin:0;
+      color: var(--muted2);
+      line-height:1.5;
+      font-size:14px;
+    }
 
-    .actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px;}
+    .actions{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top:18px;
+    }
     .btn{
       appearance:none; border:none; cursor:pointer;
       border-radius: 999px;
       padding: 12px 16px;
-      font-weight:800;
+      font-weight:700;
       letter-spacing:.2px;
       display:inline-flex; align-items:center; gap:10px;
       transition: transform .12s ease, background .12s ease, border-color .12s ease;
@@ -106,113 +157,360 @@
       border: 1px solid var(--stroke);
     }
     .btn.ghost:hover{ background: rgba(255,255,255,.06); }
+    .btn.good{
+      background: rgba(47,228,192,.10);
+      color: var(--text);
+      border: 1px solid rgba(47,228,192,.25);
+    }
 
-    .fine{margin-top:14px; color: var(--muted2); font-size:12px; line-height:1.55;}
-    .back{margin-top:18px; display:inline-block; color:rgba(184,194,227,.9); text-decoration:none; font-size:.95rem; border-bottom:1px dotted var(--stroke); padding-bottom:2px;}
+    .side{
+      display:flex; flex-direction:column; gap:12px;
+    }
+    .mini{
+      padding:18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.03);
+    }
+    .mini h3{
+      margin:0 0 8px;
+      font-size:14px;
+      letter-spacing:.2px;
+      color: var(--text);
+    }
+    .mini p{
+      margin:0;
+      color: var(--muted);
+      font-size:13px;
+      line-height:1.5;
+    }
+
+    .steps{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    @media (max-width: 940px){ .steps{grid-template-columns:1fr;} }
+    .step{
+      padding:16px;
+      border-radius: var(--radius);
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.03);
+      min-height: 108px;
+    }
+    .step .n{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:30px;height:30px;border-radius:10px;
+      background: rgba(124,92,255,.12);
+      border: 1px solid rgba(124,92,255,.25);
+      color: var(--text);
+      font-weight:800;
+      margin-bottom:10px;
+    }
+    .step b{display:block; margin-bottom:6px;}
+    .step span{color:var(--muted); font-size:13px; line-height:1.45; display:block;}
+
+    .refbox{
+      margin-top:18px;
+      padding:16px;
+      border-radius: var(--radius);
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.03);
+      display:flex; gap:12px; align-items:center; flex-wrap:wrap;
+    }
+    .refbox label{font-size:13px; color:var(--muted); font-weight:700}
+    .input{
+      flex:1 1 320px;
+      display:flex; align-items:center; gap:10px;
+      padding:10px 12px;
+      border-radius: 14px;
+      border:1px solid var(--stroke);
+      background: rgba(0,0,0,.18);
+      color: var(--text);
+    }
+    .input code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      font-size: 12.5px;
+      color: var(--text);
+      overflow:auto;
+      max-width:100%;
+    }
+    .toast{
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,.70);
+      border: 1px solid var(--stroke);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.45);
+      opacity:0;
+      pointer-events:none;
+      transition: opacity .18s ease, transform .18s ease;
+    }
+    .toast.show{
+      opacity:1;
+      transform: translateX(-50%) translateY(-4px);
+    }
+    .foot{
+      margin-top:18px;
+      color: var(--muted2);
+      font-size: 12px;
+      line-height:1.55;
+      padding: 0 4px;
+    }
+    .foot a{color:var(--muted); text-decoration:none; border-bottom:1px dotted var(--stroke)}
   </style>
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DZLVZS9"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
   <div class="wrap">
     <header class="topbar">
-      <a class="brand" href="/" aria-label="Back to home">
+      <a class="brand" href="/" aria-label="Retour à l'accueil">
         <div class="logo" aria-hidden="true"></div>
         <span>Solexi</span>
       </a>
-      <div class="pill">
+      <div class="pill" title="Statut d'inscription">
         <span aria-hidden="true">✅</span>
-        <span><b>Confirmed</b> • Founding Cohort 2026</span>
+        <span><b>Inscription confirmée</b> • Founding Cohort 2026</span>
       </div>
     </header>
 
-    <main class="card pad" aria-labelledby="title">
-      <div class="kicker"><span class="dot" aria-hidden="true"></span><span>Welcome your spot is reserved</span></div>
-      <h1 id="title">You’re on the list.</h1>
-      <p class="lead">
-        You’ll be contacted when early access opens. If you want to help, share this with someone you care about.
-      </p>
+    <main class="hero">
+      <!-- LEFT -->
+      <section class="card pad" aria-labelledby="title">
+        <div class="kicker"><span class="dot" aria-hidden="true"></span><span>Bienvenue — votre place est réservée</span></div>
+        <h1 id="title">Vous êtes sur la liste.</h1>
+        <p class="lead">
+          Solexi aide à <b>organiser</b>, <b>protéger</b> et <b>transmettre</b> votre vie numérique — pour que vos proches sachent quoi faire,
+          au bon moment, sans stress inutile.
+        </p>
 
-      <div class="quote" role="note" aria-label="Key message">
-        <strong>“When you die, who can access your digital life and how?”</strong>
-        <p>Solexi is building a calm, secure way to organize and transmit digital life.</p>
-      </div>
+        <div class="quote" role="note" aria-label="Message clé">
+          <strong>« Si demain vous n’êtes plus là, qui peut accéder à votre vie numérique — et comment ? »</strong>
+          <p>
+            Solexi clarifie ça, proprement: accès, directives, priorités, et transmission, dans un cadre sécurisé.
+          </p>
+        </div>
 
-      <!-- CLEAN SHARE ONLY -->
-      <div class="actions" aria-label="Share actions">
-        <a class="btn primary" id="btnFacebook" href="#" rel="noopener">Share on Facebook</a>
-        <button class="btn ghost" id="btnMessenger" type="button">Share on Messenger</button>
-      </div>
+        <div class="actions" aria-label="Actions de partage">
+          <button class="btn primary" id="btnShareNative" type="button">Partager maintenant</button>
+          <button class="btn ghost" id="btnCopyMessage" type="button">Copier le message</button>
+          <a class="btn good" id="btnEmail" href="#">Envoyer par email</a>
+          <a class="btn ghost" id="btnX" href="#" rel="noopener">Partager sur X</a>
+          <a class="btn ghost" id="btnFb" href="#" rel="noopener">Partager sur Facebook</a>
+        </div>
 
-      <a class="back" href="/">← Back to home</a>
-      <div class="fine">Note: Solexi helps with digital legacy planning. It’s not legal advice.</div>
+        <div class="refbox" aria-label="Lien de partage">
+          <label for="refLink">Lien à partager</label>
+          <div class="input" id="refLink" role="group" aria-label="Lien de partage">
+            <code id="shareUrl">https://solexi.ai/</code>
+          </div>
+          <button class="btn ghost" id="btnCopyLink" type="button">Copier le lien</button>
+        </div>
+
+        <div class="steps" aria-label="Ce qui arrive ensuite">
+          <div class="step">
+            <div class="n">1</div>
+            <b>Confirmation & priorisation</b>
+            <span>Vous recevrez les prochaines étapes quand l’accès anticipé ouvre.</span>
+          </div>
+          <div class="step">
+            <div class="n">2</div>
+            <b>Onboarding simple</b>
+            <span>Vous définissez vos priorités (ce qui compte, pour qui, et quand).</span>
+          </div>
+          <div class="step">
+            <div class="n">3</div>
+            <b>Sérénité pour vos proches</b>
+            <span>Une guidance claire pour éviter les pertes, délais, et complications.</span>
+          </div>
+        </div>
+
+        <p class="foot">
+          Note: Solexi vise à accompagner la transmission numérique. Ce n’est pas un avis juridique.
+          Pour les cas complexes, on recommande toujours un professionnel (notaire/avocat).
+          <a href="/">Retour à l’accueil</a>
+        </p>
+      </section>
+
+      <!-- RIGHT -->
+      <aside class="side">
+        <div class="card pad">
+          <h2 style="margin:0 0 10px; font-size:18px; letter-spacing:-.2px;">Pourquoi partager ?</h2>
+          <p style="margin:0; color:var(--muted); line-height:1.6; font-size:14px;">
+            Parce que ce sujet est souvent évité — et pourtant, il touche tout le monde.
+            Un simple partage peut déclencher une discussion utile dans une famille.
+          </p>
+
+          <div style="margin-top:14px; display:grid; gap:10px;">
+            <div class="mini">
+              <h3>🧭 Clarté</h3>
+              <p>Des directives lisibles, sans jargon, pour que vos proches sachent quoi faire.</p>
+            </div>
+            <div class="mini">
+              <h3>🛡️ Sécurité</h3>
+              <p>Approche “privacy-first” : minimiser, compartimenter, protéger.</p>
+            </div>
+            <div class="mini">
+              <h3>⏱️ Simplicité</h3>
+              <p>Moins d’incertitudes, moins d’allers-retours, moins de pertes de temps.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card pad">
+          <h2 style="margin:0 0 10px; font-size:18px; letter-spacing:-.2px;">Inviter un proche</h2>
+          <p style="margin:0 0 12px; color:var(--muted); line-height:1.6; font-size:14px;">
+            Ajoute un prénom ici (optionnel) — ça personnalise le message de partage.
+          </p>
+
+          <div class="input" style="width:100%">
+            <span aria-hidden="true">👤</span>
+            <input id="inviteName" type="text" inputmode="text" placeholder="Ex: Maman, Papa, Alex..."
+              style="flex:1; border:none; outline:none; background:transparent; color:var(--text); font:inherit;" />
+          </div>
+
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn primary" id="btnPersonalShare" type="button">Partager un message personnalisé</button>
+            <button class="btn ghost" id="btnResetName" type="button">Réinitialiser</button>
+          </div>
+        </div>
+      </aside>
     </main>
   </div>
 
+  <div class="toast" id="toast" role="status" aria-live="polite">Copié.</div>
+
   <script>
     (function(){
-      // ===== CONFIG =====
-      const SHARE_URL = "https://solexi.ai/";
-      const FB_APP_ID = ""; // Optional: needed for Messenger share on desktop via Send Dialog
-      // ==================
+      const toast = document.getElementById('toast');
 
-      // Tracking hook for GTM (Brevo flow remains unchanged)
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: "waitlist_thank_you_view",
-        source: "brevo_form",
-        page_type: "thank_you"
-      });
+      function showToast(msg){
+        toast.textContent = msg || 'OK';
+        toast.classList.add('show');
+        window.clearTimeout(showToast._t);
+        showToast._t = window.setTimeout(()=> toast.classList.remove('show'), 1800);
+      }
 
-      // Facebook share (simple + reliable)
-      const fb = document.getElementById('btnFacebook');
-      fb.href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(SHARE_URL);
+      const baseUrl = (function(){
+        // Si tu veux forcer une URL, remplace par "https://solexi.ai/"
+        try { return (new URL('/', window.location.href)).toString(); }
+        catch(e){ return 'https://solexi.ai/'; }
+      })();
 
-      // Messenger share:
-      // - Mobile: opens Messenger app
-      // - Desktop: uses Facebook Send Dialog (requires FB_APP_ID)
-      const btnMessenger = document.getElementById('btnMessenger');
+      const shareUrlEl = document.getElementById('shareUrl');
+      shareUrlEl.textContent = baseUrl;
+
+      // Message "viral" propre, premium, sans exagération
+      function buildMessage(name){
+        const who = (name && name.trim()) ? name.trim() : 'quelqu’un que tu aimes';
+        return [
+          `Je viens de rejoindre la liste d’attente Solexi.`,
+          `C’est une solution pour organiser et transmettre sa vie numérique, afin que ${who} sache quoi faire au bon moment.`,
+          `👉 ${baseUrl}`
+        ].join('\n');
+      }
 
       function openPopup(url){
         window.open(url, '_blank', 'noopener,noreferrer,width=900,height=700');
       }
 
-      btnMessenger.addEventListener('click', ()=>{
-        const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-        if(isMobile){
-          // Try opening Messenger app
-          window.location.href = "fb-messenger://share/?link=" + encodeURIComponent(SHARE_URL);
-          window.dataLayer.push({ event: "waitlist_shared", channel: "messenger_mobile" });
-          return;
+      async function copyToClipboard(text){
+        try{
+          await navigator.clipboard.writeText(text);
+          showToast('Copié ✅');
+          return true;
+        }catch(e){
+          // fallback
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.style.position = 'fixed';
+          ta.style.left = '-9999px';
+          document.body.appendChild(ta);
+          ta.select();
+          try{
+            document.execCommand('copy');
+            showToast('Copié ✅');
+            document.body.removeChild(ta);
+            return true;
+          }catch(err){
+            document.body.removeChild(ta);
+            showToast('Impossible de copier');
+            return false;
+          }
         }
+      }
 
-        if(FB_APP_ID && FB_APP_ID.trim().length){
-          const redirect = encodeURIComponent(window.location.href);
-          const sendUrl =
-            "https://www.facebook.com/dialog/send" +
-            "?app_id=" + encodeURIComponent(FB_APP_ID.trim()) +
-            "&link=" + encodeURIComponent(SHARE_URL) +
-            "&redirect_uri=" + redirect;
-          openPopup(sendUrl);
-          window.dataLayer.push({ event: "waitlist_shared", channel: "messenger_desktop" });
+      // Buttons
+      const inviteName = document.getElementById('inviteName');
+
+      const btnCopyLink = document.getElementById('btnCopyLink');
+      btnCopyLink.addEventListener('click', ()=> copyToClipboard(baseUrl));
+
+      const btnCopyMessage = document.getElementById('btnCopyMessage');
+      btnCopyMessage.addEventListener('click', ()=> copyToClipboard(buildMessage(inviteName.value)));
+
+      // Native share (mobile + certains navigateurs desktop)
+      const btnShareNative = document.getElementById('btnShareNative');
+      btnShareNative.addEventListener('click', async ()=>{
+        const text = buildMessage(inviteName.value);
+        if(navigator.share){
+          try{
+            await navigator.share({ title: 'Solexi', text, url: baseUrl });
+          }catch(e){
+            // user cancelled or not available
+          }
         }else{
-          // Fallback: open Facebook share as a safe option
-          openPopup("https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(SHARE_URL));
-          window.dataLayer.push({ event: "waitlist_shared", channel: "messenger_fallback_fbshare" });
+          // fallback: copy message
+          copyToClipboard(text);
         }
       });
 
-      // Optional popup for FB share (clean UX)
-      fb.addEventListener('click', (e)=>{
-        e.preventDefault();
-        openPopup(fb.href);
-        window.dataLayer.push({ event: "waitlist_shared", channel: "facebook" });
+      const btnPersonalShare = document.getElementById('btnPersonalShare');
+      btnPersonalShare.addEventListener('click', ()=> {
+        const text = buildMessage(inviteName.value);
+        // Best fallback: copy + toast
+        copyToClipboard(text);
       });
+
+      const btnResetName = document.getElementById('btnResetName');
+      btnResetName.addEventListener('click', ()=> { inviteName.value=''; showToast('Réinitialisé'); });
+
+      // Social share links
+      const btnX = document.getElementById('btnX');
+      const btnFb = document.getElementById('btnFb');
+      const btnEmail = document.getElementById('btnEmail');
+
+      function refreshShareLinks(){
+        const msg = buildMessage(inviteName.value);
+        const encodedText = encodeURIComponent(msg);
+        const encodedUrl = encodeURIComponent(baseUrl);
+
+        // X (Twitter)
+        btnX.href = `https://twitter.com/intent/tweet?text=${encodedText}`;
+
+        // Facebook share (URL seulement)
+        btnFb.href = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+
+        // Email
+        const subject = encodeURIComponent('Solexi — une façon simple de protéger sa vie numérique');
+        const body = encodeURIComponent(msg);
+        btnEmail.href = `mailto:?subject=${subject}&body=${body}`;
+      }
+
+      inviteName.addEventListener('input', refreshShareLinks);
+      refreshShareLinks();
+
+      // Optional: open X/FB in a popup
+      btnX.addEventListener('click', (e)=>{ e.preventDefault(); openPopup(btnX.href); });
+      btnFb.addEventListener('click', (e)=>{ e.preventDefault(); openPopup(btnFb.href); });
+
     })();
   </script>
 </body>
