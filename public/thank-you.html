@@ -12,11 +12,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>You’re on the list | Solexi</title>
-  <meta name="description" content="You’re on the list. Share on Facebook or Messenger." />
   <meta name="robots" content="noindex, nofollow" />
 
   <style>
     :root{
+      --scale: 1.35; /* FROZEN SIZE */
+
       --primary:#4F46E5;
       --primarySoft:#EDEBFF;
       --text:#0B0F19;
@@ -28,9 +29,6 @@
       --shadow: 0 14px 45px rgba(0,0,0,0.08);
       --radius: 22px;
       --font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-
-      /* Accessibility scaler (default 1.00 = normal). Controlled by A-/A+ */
-      --scale: 1.00;
     }
 
     *{box-sizing:border-box}
@@ -45,10 +43,9 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:24px;
+      padding:28px;
     }
 
-    /* Extra pale wash at bottom */
     body::after{
       content:"";
       position:fixed;
@@ -61,7 +58,7 @@
 
     .wrap{
       width:100%;
-      max-width:720px;
+      max-width:820px;
       position:relative;
       z-index:1;
     }
@@ -70,149 +67,113 @@
       display:flex;
       align-items:flex-start;
       justify-content:space-between;
-      gap:12px;
-      margin-bottom:14px;
-      padding:0 2px;
+      gap:16px;
+      margin-bottom:18px;
       flex-wrap:wrap;
     }
 
     .brand{
       display:flex;
       align-items:center;
-      gap:10px;
+      gap:12px;
       text-decoration:none;
       color:var(--text);
-      font-weight:800;
+      font-weight:900;
       font-size:calc(18px * var(--scale));
-      line-height:1.2;
     }
 
     .logo{
-      width:34px;height:34px;border-radius:10px;
+      width:40px;
+      height:40px;
+      border-radius:12px;
       background: linear-gradient(135deg, #6D5EF7, #4F46E5);
-      box-shadow: 0 10px 25px rgba(79,70,229,.18);
-      flex:0 0 auto;
-    }
-
-    .statusRow{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
+      box-shadow: 0 12px 30px rgba(79,70,229,.18);
     }
 
     .status{
       display:inline-flex;
       align-items:center;
-      gap:8px;
-      padding:10px 14px;
+      gap:10px;
+      padding:12px 18px;
       border-radius:999px;
       background:#FFFFFF;
       border:1px solid var(--border);
-      color:#111827;
-      font-weight:800;
+      font-weight:900;
       font-size:calc(14px * var(--scale));
-      white-space:nowrap;
     }
 
     .status .dot{
-      width:10px;height:10px;border-radius:50%;
+      width:12px;
+      height:12px;
+      border-radius:50%;
       background:#22C55E;
-      box-shadow:0 0 0 5px rgba(34,197,94,.18);
+      box-shadow:0 0 0 6px rgba(34,197,94,.18);
     }
-
-    /* A-/A+ controls */
-    .a11y{
-      display:flex;
-      gap:8px;
-      background:#FFFFFF;
-      border:1px solid var(--border);
-      border-radius:999px;
-      padding:6px;
-      box-shadow: 0 6px 18px rgba(0,0,0,.05);
-    }
-    .a11y button{
-      border:1px solid var(--border);
-      background:#F9FAFB;
-      color:#111827;
-      border-radius:999px;
-      padding:8px 12px;
-      font-weight:900;
-      font-size:calc(13px * var(--scale));
-      cursor:pointer;
-      line-height:1;
-    }
-    .a11y button:active{ transform:scale(.98); }
 
     .card{
       background:var(--card);
       border:1px solid var(--border);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
-      padding:34px 28px;
+      padding:48px 40px;
       text-align:left;
     }
 
     h1{
-      margin:0 0 14px;
+      margin:0 0 18px;
       font-size:calc(34px * var(--scale));
-      letter-spacing:-0.6px;
       line-height:1.15;
+      letter-spacing:-0.5px;
+      font-weight:900;
     }
 
     .sub{
-      margin:0 0 22px;
+      margin:0 0 28px;
       font-size:calc(19px * var(--scale));
-      line-height:1.75;
+      line-height:1.8;
       color:var(--muted);
     }
 
     .callout{
       background:#F3F4F6;
       border:1px solid var(--border);
-      border-radius:16px;
-      padding:18px 18px;
-      margin:0 0 26px;
+      border-radius:18px;
+      padding:24px;
+      margin-bottom:34px;
     }
 
     .callout strong{
       display:block;
       font-size:calc(18px * var(--scale));
-      line-height:1.55;
-      margin-bottom:8px;
-      color:#111827;
+      margin-bottom:12px;
     }
 
     .callout span{
-      display:block;
       font-size:calc(16px * var(--scale));
-      line-height:1.7;
+      line-height:1.8;
       color:var(--muted);
     }
 
     .buttons{
       display:flex;
       flex-direction:column;
-      gap:14px;
-      margin-top:8px;
+      gap:20px;
     }
 
     .btn{
       display:flex;
       align-items:center;
       justify-content:center;
-      gap:10px;
+      gap:14px;
       width:100%;
-      padding:18px 18px;
+      padding:24px;
       border-radius:999px;
-      border:1px solid transparent;
       font-weight:900;
       font-size:calc(18px * var(--scale));
       cursor:pointer;
       text-decoration:none;
-      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
-      user-select:none;
+      border:none;
+      transition: transform .12s ease;
     }
 
     .btn:active{ transform: scale(.99); }
@@ -220,34 +181,29 @@
     .btn-primary{
       background:var(--primary);
       color:#FFFFFF;
-      box-shadow: 0 12px 26px rgba(79,70,229,.20);
+      box-shadow: 0 16px 36px rgba(79,70,229,.25);
     }
 
     .btn-secondary{
       background:var(--primarySoft);
       color:var(--primary);
-      border-color:#D7D3FF;
+      border:2px solid #D7D3FF;
     }
-
-    .btn svg{width:18px;height:18px}
 
     .footerRow{
       display:flex;
       flex-wrap:wrap;
-      gap:12px;
+      gap:16px;
       justify-content:space-between;
       align-items:center;
-      margin-top:22px;
-      padding-top:18px;
+      margin-top:40px;
+      padding-top:28px;
       border-top:1px solid var(--border);
     }
 
     .note{
       font-size:calc(14px * var(--scale));
-      line-height:1.6;
       color:#6B7280;
-      margin:0;
-      flex:1 1 280px;
     }
 
     .back{
@@ -255,152 +211,82 @@
       font-weight:900;
       color:var(--primary);
       text-decoration:none;
-      border-bottom:2px solid rgba(79,70,229,.20);
-      padding-bottom:2px;
-      white-space:nowrap;
     }
 
-    /* Ultra comfort on small screens */
-    @media (max-width: 520px){
-      body{ padding:18px; }
-      .top{ flex-direction:column; align-items:flex-start; }
-      .statusRow{ justify-content:flex-start; }
-      .card{ padding:26px 18px; }
+    @media (max-width: 640px){
+      .card{ padding:36px 22px; }
+      body{ padding:22px; }
     }
   </style>
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
+
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DZLVZS9"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
   <div class="wrap">
     <div class="top">
-      <a class="brand" href="/" aria-label="Back to home">
-        <span class="logo" aria-hidden="true"></span>
-        <span>Solexi</span>
+      <a class="brand" href="/">
+        <span class="logo"></span>
+        Solexi
       </a>
 
-      <div class="statusRow">
-        <div class="status" aria-label="Status">
-          <span class="dot" aria-hidden="true"></span>
-          <span>Confirmed • Founding Cohort 2026</span>
-        </div>
-
-        <div class="a11y" aria-label="Text size controls">
-          <button id="btnDec" type="button" aria-label="Decrease text size">A-</button>
-          <button id="btnReset" type="button" aria-label="Reset text size">Reset</button>
-          <button id="btnInc" type="button" aria-label="Increase text size">A+</button>
-        </div>
+      <div class="status">
+        <span class="dot"></span>
+        Confirmed • Founding Cohort 2026
       </div>
     </div>
 
-    <main class="card" aria-labelledby="title">
-      <h1 id="title">You’re on the list.</h1>
+    <main class="card">
+      <h1>You’re on the list.</h1>
 
       <p class="sub">
         We’ll notify you when early access opens.
         If you’d like to help, share this with someone you care about.
       </p>
 
-      <div class="callout" role="note" aria-label="Key message">
-        <strong>“When you die, who can access your digital life — and how?”</strong>
-        <span>Solexi is building a calm, secure way to organize and transmit digital life.</span>
+      <div class="callout">
+        <strong>“When you die, who can access your digital life and how?”</strong>
+      
       </div>
 
-      <div class="buttons" aria-label="Share actions">
-        <a id="facebookBtn" class="btn btn-primary" href="#" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.87v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.88h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
+      <div class="buttons">
+        <a id="facebookBtn" class="btn btn-primary" href="#">
           Share on Facebook
         </a>
 
-        <button id="messengerBtn" class="btn btn-secondary" type="button">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.14 2 11.25c0 2.9 1.45 5.5 3.76 7.23V22l3.42-1.88c.9.25 1.85.38 2.82.38 5.52 0 10-4.14 10-9.25S17.52 2 12 2zm1.03 12.46-2.55-2.72-4.98 2.72 5.47-5.78 2.5 2.72 5.03-2.72-5.47 5.78z"/></svg>
+        <button id="messengerBtn" class="btn btn-secondary">
           Share on Messenger
         </button>
       </div>
 
-      <div class="footerRow">
-        <p class="note">Note: Solexi helps with digital legacy planning. It’s not legal advice.</p>
-        <a class="back" href="/">Back to home</a>
-      </div>
-    </main>
-  </div>
-
+      
   <script>
-    (function(){
-      const SHARE_URL = "https://solexi.ai/";
-      const FB_APP_ID = ""; // Optional for Messenger desktop send dialog
+    const SHARE_URL = "https://solexi.ai/";
 
-      // ===== GTM tracking (Brevo flow unchanged) =====
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: "waitlist_thank_you_view", source: "brevo_form" });
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: "waitlist_thank_you_view" });
 
-      // ===== Share links =====
-      const fb = document.getElementById("facebookBtn");
-      fb.href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(SHARE_URL);
+    document.getElementById("facebookBtn").href =
+      "https://www.facebook.com/sharer/sharer.php?u=" +
+      encodeURIComponent(SHARE_URL);
 
-      function openPopup(url){
-        window.open(url, "_blank", "noopener,noreferrer,width=900,height=700");
+    document.getElementById("messengerBtn").addEventListener("click", () => {
+      const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      if (isMobile) {
+        window.location.href =
+          "fb-messenger://share/?link=" +
+          encodeURIComponent(SHARE_URL);
+      } else {
+        window.open(
+          "https://www.facebook.com/sharer/sharer.php?u=" +
+          encodeURIComponent(SHARE_URL),
+          "_blank"
+        );
       }
-
-      document.getElementById("messengerBtn").addEventListener("click", ()=>{
-        const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-        if(isMobile){
-          window.location.href = "fb-messenger://share/?link=" + encodeURIComponent(SHARE_URL);
-          window.dataLayer.push({ event: "waitlist_shared", channel: "messenger_mobile" });
-          return;
-        }
-
-        if(FB_APP_ID && FB_APP_ID.trim().length){
-          const redirect = encodeURIComponent(window.location.href);
-          const sendUrl =
-            "https://www.facebook.com/dialog/send" +
-            "?app_id=" + encodeURIComponent(FB_APP_ID.trim()) +
-            "&link=" + encodeURIComponent(SHARE_URL) +
-            "&redirect_uri=" + redirect;
-          openPopup(sendUrl);
-          window.dataLayer.push({ event: "waitlist_shared", channel: "messenger_desktop" });
-        } else {
-          openPopup("https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(SHARE_URL));
-          window.dataLayer.push({ event: "waitlist_shared", channel: "messenger_fallback_fbshare" });
-        }
-      });
-
-      fb.addEventListener("click", (e)=>{
-        e.preventDefault();
-        openPopup(fb.href);
-        window.dataLayer.push({ event: "waitlist_shared", channel: "facebook" });
-      });
-
-      // ===== A-/A+ text scaling (persisted) =====
-      const root = document.documentElement;
-      const KEY = "solexi_text_scale";
-
-      function clamp(n, min, max){ return Math.max(min, Math.min(max, n)); }
-
-      function getScale(){
-        const v = parseFloat(localStorage.getItem(KEY));
-        return Number.isFinite(v) ? v : 1.00;
-      }
-
-      function setScale(v){
-        const val = clamp(v, 0.90, 1.35); // comfort range
-        root.style.setProperty("--scale", val.toFixed(2));
-        localStorage.setItem(KEY, val.toFixed(2));
-        window.dataLayer.push({ event: "ui_text_scale", scale: val.toFixed(2) });
-      }
-
-      // init
-      setScale(getScale());
-
-      document.getElementById("btnInc").addEventListener("click", ()=> setScale(getScale() + 0.05));
-      document.getElementById("btnDec").addEventListener("click", ()=> setScale(getScale() - 0.05));
-      document.getElementById("btnReset").addEventListener("click", ()=> setScale(1.00));
-    })();
+    });
   </script>
+
 </body>
 </html>
