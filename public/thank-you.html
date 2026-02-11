@@ -16,105 +16,232 @@
   <meta name="robots" content="noindex, nofollow" />
 
   <style>
-:root{
-  --primary:#5E4AE3;
-  --text:#111827;
-  --muted:#4B5563;
-  --card:#FFFFFF;
-  --border:#E5E7EB;
-}
+    :root{
+      --primary:#4F46E5;     /* Indigo */
+      --primarySoft:#EDEBFF; /* Soft indigo */
+      --text:#0B0F19;        /* Very dark for contrast */
+      --muted:#374151;       /* Dark gray (still readable) */
+      --border:#E5E7EB;
+      --card:#FFFFFF;
+      --bgTop:#FAFBFF;
+      --bgBottom:#F2F5FF;
+      --shadow: 0 14px 45px rgba(0,0,0,0.08);
+      --radius: 22px;
+      --font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    }
 
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  background:linear-gradient(180deg,#F8F9FD 0%, #F1F3F8 100%);
-  color:var(--text);
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:24px;
-}
+    *{box-sizing:border-box}
 
-.card{
-  width:100%;
-  max-width:560px;
-  background:var(--card);
-  border-radius:20px;
-  padding:40px 28px;
-  box-shadow:0 12px 40px rgba(0,0,0,0.06);
-  border:1px solid var(--border);
-  text-align:center;
-}
+    html,body{height:100%}
 
-/* Bigger heading */
-h1{
-  font-size:32px;
-  margin-bottom:16px;
-  letter-spacing:-0.5px;
-}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
+      background: linear-gradient(180deg, var(--bgTop) 0%, var(--bgBottom) 100%);
+      min-height:100svh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
 
-/* Bigger readable paragraph */
-p{
-  font-size:17px;
-  line-height:1.7;
-  color:var(--muted);
-  margin-bottom:22px;
-}
+    /* Makes the “bottom” even paler on mobile */
+    body::after{
+      content:"";
+      position:fixed;
+      left:0; right:0; bottom:0;
+      height:40vh;
+      pointer-events:none;
+      background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.55) 100%);
+      opacity:.75;
+    }
 
-/* Quote more readable */
-.quote{
-  background:#F3F4F6;
-  padding:18px;
-  border-radius:16px;
-  margin-bottom:28px;
-  font-weight:600;
-  font-size:16px;
-}
+    .wrap{
+      width:100%;
+      max-width:680px;
+      position:relative;
+      z-index:1;
+    }
 
-/* Bigger buttons */
-.buttons{
-  display:flex;
-  flex-direction:column;
-  gap:16px;
-}
+    /* Simple header */
+    .top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:14px;
+      padding:0 2px;
+    }
 
-.btn{
-  padding:18px;
-  font-size:17px;
-  font-weight:600;
-  border-radius:999px;
-  cursor:pointer;
-  text-decoration:none;
-  border:none;
-}
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      color:var(--text);
+      font-weight:800;
+      font-size:18px;
+    }
 
-.btn-primary{
-  background:var(--primary);
-  color:white;
-}
+    .logo{
+      width:34px;
+      height:34px;
+      border-radius:10px;
+      background: linear-gradient(135deg, #6D5EF7, #4F46E5);
+      box-shadow: 0 10px 25px rgba(79,70,229,.18);
+      flex:0 0 auto;
+    }
 
-.btn-secondary{
-  background:#EDEBFF;
-  color:var(--primary);
-}
+    .status{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:#FFFFFF;
+      border:1px solid var(--border);
+      color:#111827;
+      font-weight:700;
+      font-size:14px;
+      white-space:nowrap;
+    }
 
-.back{
-  margin-top:24px;
-  display:inline-block;
-  font-size:15px;
-  color:#6B7280;
-}
+    .status .dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:#22C55E;
+      box-shadow:0 0 0 5px rgba(34,197,94,.18);
+    }
 
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:34px 28px;
+      text-align:left;
+    }
 
-    /* Mobile: stack buttons full width + tighter spacing */
+    h1{
+      margin:0 0 14px;
+      font-size:34px;
+      letter-spacing:-0.6px;
+      line-height:1.15;
+    }
+
+    .sub{
+      margin:0 0 22px;
+      font-size:19px;
+      line-height:1.75;
+      color:var(--muted);
+    }
+
+    .callout{
+      background:#F3F4F6;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:18px 18px;
+      margin:0 0 26px;
+    }
+
+    .callout strong{
+      display:block;
+      font-size:18px;
+      line-height:1.55;
+      margin-bottom:8px;
+      color:#111827;
+    }
+
+    .callout span{
+      display:block;
+      font-size:16px;
+      line-height:1.7;
+      color:var(--muted);
+    }
+
+    .buttons{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      margin-top:8px;
+    }
+
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      width:100%;
+      padding:18px 18px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:800;
+      font-size:18px;
+      cursor:pointer;
+      text-decoration:none;
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+      user-select:none;
+    }
+
+    .btn:active{ transform: scale(.99); }
+
+    .btn-primary{
+      background:var(--primary);
+      color:#FFFFFF;
+      box-shadow: 0 12px 26px rgba(79,70,229,.20);
+    }
+
+    .btn-secondary{
+      background:var(--primarySoft);
+      color:var(--primary);
+      border-color:#D7D3FF;
+    }
+
+    .btn svg{width:18px;height:18px}
+
+    .footerRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      justify-content:space-between;
+      align-items:center;
+      margin-top:22px;
+      padding-top:18px;
+      border-top:1px solid var(--border);
+    }
+
+    .note{
+      font-size:14px;
+      line-height:1.6;
+      color:#6B7280;
+      margin:0;
+      flex:1 1 280px;
+    }
+
+    .back{
+      font-size:16px;
+      font-weight:700;
+      color:var(--primary);
+      text-decoration:none;
+      border-bottom:2px solid rgba(79,70,229,.20);
+      padding-bottom:2px;
+      white-space:nowrap;
+    }
+
+    /* ULTRA COMFORT on small screens */
     @media (max-width: 520px){
-      .pad{padding: 24px 18px 18px;}
-      h1{font-size: 26px;}
-      .lead{font-size: 15px;}
-      .actions{flex-direction:column}
-      .btn{width:100%}
-      .footer{flex-direction:column; align-items:flex-start}
+      body{ padding:18px; }
+      .top{ flex-direction:column; align-items:flex-start; }
+      .status{ font-size:13px; padding:9px 12px; }
+      .card{ padding:26px 18px; }
+      h1{ font-size:30px; }
+      .sub{ font-size:18px; }
+      .callout strong{ font-size:17px; }
+      .callout span{ font-size:16px; }
+      .btn{ font-size:18px; padding:18px 16px; }
+      .back{ font-size:16px; }
     }
   </style>
 </head>
@@ -125,55 +252,49 @@ p{
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <div class="shell">
+  <div class="wrap">
     <div class="top">
       <a class="brand" href="/" aria-label="Back to home">
-        <div class="mark" aria-hidden="true"></div>
+        <span class="logo" aria-hidden="true"></span>
         <span>Solexi</span>
       </a>
 
-      <div class="status" title="Confirmed">
+      <div class="status" aria-label="Status">
         <span class="dot" aria-hidden="true"></span>
-        <span><b>Confirmed</b> · Founding Cohort 2026</span>
+        <span>Confirmed • Founding Cohort 2026</span>
       </div>
     </div>
 
     <main class="card" aria-labelledby="title">
-      <div class="pad">
-        <h1 id="title">You’re on the list.</h1>
+      <h1 id="title">You’re on the list.</h1>
 
-        <p class="lead">
-          We’ll notify you when early access opens. If you’d like to help,
-          share this with someone you care about.
-        </p>
+      <p class="sub">
+        We’ll notify you when early access opens.  
+        If you’d like to help, share this with someone you care about.
+      </p>
 
-        <div class="quote">
-          “When you die, who can access your digital life and how?”
-        </div>
+      <div class="callout" role="note" aria-label="Key message">
+        <strong>“When you die, who can access your digital life — and how?”</strong>
+        <span>Solexi is building a calm, secure way to organize and transmit digital life.</span>
+      </div>
 
-        <!-- Only two share actions -->
-        <div class="actions" aria-label="Share actions">
-          <a class="btn btn-primary" id="facebookBtn" href="#" rel="noopener">
-            <!-- Facebook icon -->
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M14 8.5V7.2c0-.9.6-1.2 1-1.2h1.5V3h-2.1C12.2 3 11 4.3 11 6.7v1.8H9v3h2v9h3v-9h2.3l.7-3H14z" fill="currentColor"/>
-            </svg>
-            Share on Facebook
-          </a>
+      <div class="buttons" aria-label="Share actions">
+        <a id="facebookBtn" class="btn btn-primary" href="#" rel="noopener">
+          <!-- Facebook icon -->
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.87v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.88h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
+          Share on Facebook
+        </a>
 
-          <button class="btn btn-ghost" id="messengerBtn" type="button">
-            <!-- Messenger icon -->
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 3C6.9 3 3 6.7 3 11.3c0 2.6 1.3 4.9 3.4 6.4V21l3.1-1.7c.8.2 1.6.3 2.5.3 5.1 0 9-3.7 9-8.3S17.1 3 12 3zm1.1 11.2-2.3-2.4-4.5 2.4 5-5.3 2.3 2.4 4.5-2.4-5 5.3z" fill="currentColor" opacity=".92"/>
-            </svg>
-            Share on Messenger
-          </button>
-        </div>
+        <button id="messengerBtn" class="btn btn-secondary" type="button">
+          <!-- Messenger icon (simple) -->
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.14 2 11.25c0 2.9 1.45 5.5 3.76 7.23V22l3.42-1.88c.9.25 1.85.38 2.82.38 5.52 0 10-4.14 10-9.25S17.52 2 12 2zm1.03 12.46-2.55-2.72-4.98 2.72 5.47-5.78 2.5 2.72 5.03-2.72-5.47 5.78z"/></svg>
+          Share on Messenger
+        </button>
+      </div>
 
-        <div class="footer">
-          <span>Note: Solexi helps with digital legacy planning. It’s not legal advice.</span>
-          <a class="back" href="/">Back to home</a>
-        </div>
+      <div class="footerRow">
+        <p class="note">Note: Solexi helps with digital legacy planning. It’s not legal advice.</p>
+        <a class="back" href="/">Back to home</a>
       </div>
     </main>
   </div>
@@ -181,33 +302,35 @@ p{
   <script>
     (function(){
       const SHARE_URL = "https://solexi.ai/";
-      const FB_APP_ID = ""; // Optional (Desktop Messenger send dialog requires App ID)
+      const FB_APP_ID = ""; // Optional: if you want true Messenger share on desktop via Send Dialog
 
       // GTM event (Brevo flow unchanged)
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: "waitlist_thank_you_view", source: "brevo_form" });
 
-      // Facebook share link
-      const facebookBtn = document.getElementById("facebookBtn");
-      facebookBtn.href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(SHARE_URL);
-
-      function openPopup(url){
-        window.open(url, "_blank", "noopener,noreferrer,width=920,height=700");
-      }
+      // Facebook share
+      const fb = document.getElementById("facebookBtn");
+      fb.href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(SHARE_URL);
 
       // Messenger share
-      document.getElementById("messengerBtn").addEventListener("click", () => {
+      const btnMessenger = document.getElementById("messengerBtn");
+
+      function openPopup(url){
+        window.open(url, "_blank", "noopener,noreferrer,width=900,height=700");
+      }
+
+      btnMessenger.addEventListener("click", ()=>{
         const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-        if (isMobile) {
-          // Opens Messenger app if installed
+        if(isMobile){
+          // Mobile: try to open Messenger app
           window.location.href = "fb-messenger://share/?link=" + encodeURIComponent(SHARE_URL);
           window.dataLayer.push({ event: "waitlist_shared", channel: "messenger_mobile" });
           return;
         }
 
-        if (FB_APP_ID && FB_APP_ID.trim().length) {
-          // Desktop send dialog (requires FB App ID)
+        // Desktop: true Messenger send dialog requires FB App ID
+        if(FB_APP_ID && FB_APP_ID.trim().length){
           const redirect = encodeURIComponent(window.location.href);
           const sendUrl =
             "https://www.facebook.com/dialog/send" +
@@ -217,20 +340,19 @@ p{
           openPopup(sendUrl);
           window.dataLayer.push({ event: "waitlist_shared", channel: "messenger_desktop" });
         } else {
-          // Clean fallback: open FB share
+          // Fallback: open Facebook share (still easy for users)
           openPopup("https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(SHARE_URL));
           window.dataLayer.push({ event: "waitlist_shared", channel: "messenger_fallback_fbshare" });
         }
       });
 
-      // Optional: open FB share in popup for a premium feel
-      facebookBtn.addEventListener("click", (e) => {
+      // Nice popup for FB share
+      fb.addEventListener("click", (e)=>{
         e.preventDefault();
-        openPopup(facebookBtn.href);
+        openPopup(fb.href);
         window.dataLayer.push({ event: "waitlist_shared", channel: "facebook" });
       });
     })();
   </script>
 </body>
 </html>
-
