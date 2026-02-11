@@ -395,6 +395,115 @@ content="Photos, passwords, documents, accounts - your digital life is everywher
     }
   </style>
 
+  /* ===========================
+   SOLEXI SPHERE (VISIONARY)
+   - slow rotate
+   - pause on hover
+   - soft pulse glow
+   - energy beam crossing
+   SAFE: only transform/opacity/filter
+=========================== */
+
+.sx-sphere{
+  position: relative;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  isolation: isolate;
+  flex: 0 0 auto;
+}
+
+/* the sphere image rotates */
+.sx-sphere img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+
+  transform-style: preserve-3d;
+  will-change: transform, filter;
+  animation: sxSpin 22s linear infinite;
+  filter: drop-shadow(0 8px 18px rgba(120,180,255,.18));
+}
+
+/* soft glow pulse */
+.sx-sphere::before{
+  content:"";
+  position:absolute;
+  inset:-60%;
+  border-radius: 999px;
+  background: radial-gradient(circle at 45% 45%,
+    rgba(120,180,255,.35),
+    rgba(120,180,255,.12) 42%,
+    rgba(255,255,255,0) 70%);
+  filter: blur(6px);
+  opacity: .80;
+  will-change: transform, opacity;
+  animation: sxGlow 3.6s ease-in-out infinite;
+  pointer-events:none;
+  z-index:0;
+}
+
+/* energy beam crossing */
+.sx-sphere::after{
+  content:"";
+  position:absolute;
+  inset:-140%;
+  border-radius: 999px;
+  pointer-events:none;
+  z-index:2;
+
+  background: linear-gradient(115deg,
+    rgba(255,255,255,0) 34%,
+    rgba(170,230,255,.12) 44%,
+    rgba(255,255,255,.85) 50%,
+    rgba(170,230,255,.10) 56%,
+    rgba(255,255,255,0) 66%);
+  filter: blur(0.6px);
+  opacity: 0;
+
+  transform: translateX(-22%) translateY(18%) rotate(0deg);
+  will-change: transform, opacity;
+  animation: sxBeam 5.4s ease-in-out infinite;
+}
+
+@keyframes sxSpin{
+  from { transform: rotateZ(-2deg) rotateY(0deg); }
+  to   { transform: rotateZ(-2deg) rotateY(360deg); }
+}
+
+@keyframes sxGlow{
+  0%,100% { transform: scale(0.98); opacity: .65; }
+  50%     { transform: scale(1.04); opacity: .92; }
+}
+
+@keyframes sxBeam{
+  0%   { opacity: 0; transform: translateX(-26%) translateY(20%) rotate(0deg); }
+  22%  { opacity: 0; }
+  36%  { opacity: .72; }
+  52%  { opacity: 0; }
+  100% { opacity: 0; transform: translateX(22%) translateY(-12%) rotate(0deg); }
+}
+
+/* pause on hover (desktop) */
+.demo-card:hover .sx-sphere img,
+.demo-card:hover .sx-sphere::before,
+.demo-card:hover .sx-sphere::after{
+  animation-play-state: paused;
+}
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce){
+  .sx-sphere img,
+  .sx-sphere::before,
+  .sx-sphere::after{
+    animation: none !important;
+  }
+}
+
+
   <style>
 /* === Interference Banner — Solexi === */
 
@@ -783,7 +892,7 @@ content="Photos, passwords, documents, accounts - your digital life is everywher
           <div class="demo-card" id="demoCard">
             <div class="demo-header">
               <div class="demo-logo">
-                <span style="width:18px;height:18px;border-radius:6px;background:rgba(255,255,255,.18);display:inline-block"></span>
+                <span class="sx-sphere" aria-hidden="true"><img src="/solexi-sphere.png" alt="" /></span>
                 Solexi
               </div>
               <div class="demo-dots" aria-hidden="true">
