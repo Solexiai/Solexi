@@ -17,10 +17,10 @@
 
   <style>
     :root{
-      --primary:#4F46E5;     /* Indigo */
-      --primarySoft:#EDEBFF; /* Soft indigo */
-      --text:#0B0F19;        /* Very dark for contrast */
-      --muted:#374151;       /* Dark gray (still readable) */
+      --primary:#4F46E5;
+      --primarySoft:#EDEBFF;
+      --text:#0B0F19;
+      --muted:#374151;
       --border:#E5E7EB;
       --card:#FFFFFF;
       --bgTop:#FAFBFF;
@@ -28,10 +28,12 @@
       --shadow: 0 14px 45px rgba(0,0,0,0.08);
       --radius: 22px;
       --font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+
+      /* Accessibility scaler (default 1.00 = normal). Controlled by A-/A+ */
+      --scale: 1.00;
     }
 
     *{box-sizing:border-box}
-
     html,body{height:100%}
 
     body{
@@ -46,7 +48,7 @@
       padding:24px;
     }
 
-    /* Makes the “bottom” even paler on mobile */
+    /* Extra pale wash at bottom */
     body::after{
       content:"";
       position:fixed;
@@ -59,19 +61,19 @@
 
     .wrap{
       width:100%;
-      max-width:680px;
+      max-width:720px;
       position:relative;
       z-index:1;
     }
 
-    /* Simple header */
     .top{
       display:flex;
-      align-items:center;
+      align-items:flex-start;
       justify-content:space-between;
       gap:12px;
       margin-bottom:14px;
       padding:0 2px;
+      flex-wrap:wrap;
     }
 
     .brand{
@@ -81,16 +83,23 @@
       text-decoration:none;
       color:var(--text);
       font-weight:800;
-      font-size:18px;
+      font-size:calc(18px * var(--scale));
+      line-height:1.2;
     }
 
     .logo{
-      width:34px;
-      height:34px;
-      border-radius:10px;
+      width:34px;height:34px;border-radius:10px;
       background: linear-gradient(135deg, #6D5EF7, #4F46E5);
       box-shadow: 0 10px 25px rgba(79,70,229,.18);
       flex:0 0 auto;
+    }
+
+    .statusRow{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
 
     .status{
@@ -102,18 +111,39 @@
       background:#FFFFFF;
       border:1px solid var(--border);
       color:#111827;
-      font-weight:700;
-      font-size:14px;
+      font-weight:800;
+      font-size:calc(14px * var(--scale));
       white-space:nowrap;
     }
 
     .status .dot{
-      width:10px;
-      height:10px;
-      border-radius:50%;
+      width:10px;height:10px;border-radius:50%;
       background:#22C55E;
       box-shadow:0 0 0 5px rgba(34,197,94,.18);
     }
+
+    /* A-/A+ controls */
+    .a11y{
+      display:flex;
+      gap:8px;
+      background:#FFFFFF;
+      border:1px solid var(--border);
+      border-radius:999px;
+      padding:6px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.05);
+    }
+    .a11y button{
+      border:1px solid var(--border);
+      background:#F9FAFB;
+      color:#111827;
+      border-radius:999px;
+      padding:8px 12px;
+      font-weight:900;
+      font-size:calc(13px * var(--scale));
+      cursor:pointer;
+      line-height:1;
+    }
+    .a11y button:active{ transform:scale(.98); }
 
     .card{
       background:var(--card);
@@ -126,14 +156,14 @@
 
     h1{
       margin:0 0 14px;
-      font-size:34px;
+      font-size:calc(34px * var(--scale));
       letter-spacing:-0.6px;
       line-height:1.15;
     }
 
     .sub{
       margin:0 0 22px;
-      font-size:19px;
+      font-size:calc(19px * var(--scale));
       line-height:1.75;
       color:var(--muted);
     }
@@ -148,7 +178,7 @@
 
     .callout strong{
       display:block;
-      font-size:18px;
+      font-size:calc(18px * var(--scale));
       line-height:1.55;
       margin-bottom:8px;
       color:#111827;
@@ -156,7 +186,7 @@
 
     .callout span{
       display:block;
-      font-size:16px;
+      font-size:calc(16px * var(--scale));
       line-height:1.7;
       color:var(--muted);
     }
@@ -177,8 +207,8 @@
       padding:18px 18px;
       border-radius:999px;
       border:1px solid transparent;
-      font-weight:800;
-      font-size:18px;
+      font-weight:900;
+      font-size:calc(18px * var(--scale));
       cursor:pointer;
       text-decoration:none;
       transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
@@ -213,7 +243,7 @@
     }
 
     .note{
-      font-size:14px;
+      font-size:calc(14px * var(--scale));
       line-height:1.6;
       color:#6B7280;
       margin:0;
@@ -221,8 +251,8 @@
     }
 
     .back{
-      font-size:16px;
-      font-weight:700;
+      font-size:calc(16px * var(--scale));
+      font-weight:900;
       color:var(--primary);
       text-decoration:none;
       border-bottom:2px solid rgba(79,70,229,.20);
@@ -230,18 +260,12 @@
       white-space:nowrap;
     }
 
-    /* ULTRA COMFORT on small screens */
+    /* Ultra comfort on small screens */
     @media (max-width: 520px){
       body{ padding:18px; }
       .top{ flex-direction:column; align-items:flex-start; }
-      .status{ font-size:13px; padding:9px 12px; }
+      .statusRow{ justify-content:flex-start; }
       .card{ padding:26px 18px; }
-      h1{ font-size:30px; }
-      .sub{ font-size:18px; }
-      .callout strong{ font-size:17px; }
-      .callout span{ font-size:16px; }
-      .btn{ font-size:18px; padding:18px 16px; }
-      .back{ font-size:16px; }
     }
   </style>
 </head>
@@ -259,9 +283,17 @@
         <span>Solexi</span>
       </a>
 
-      <div class="status" aria-label="Status">
-        <span class="dot" aria-hidden="true"></span>
-        <span>Confirmed • Founding Cohort 2026</span>
+      <div class="statusRow">
+        <div class="status" aria-label="Status">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Confirmed • Founding Cohort 2026</span>
+        </div>
+
+        <div class="a11y" aria-label="Text size controls">
+          <button id="btnDec" type="button" aria-label="Decrease text size">A-</button>
+          <button id="btnReset" type="button" aria-label="Reset text size">Reset</button>
+          <button id="btnInc" type="button" aria-label="Increase text size">A+</button>
+        </div>
       </div>
     </div>
 
@@ -269,7 +301,7 @@
       <h1 id="title">You’re on the list.</h1>
 
       <p class="sub">
-        We’ll notify you when early access opens.  
+        We’ll notify you when early access opens.
         If you’d like to help, share this with someone you care about.
       </p>
 
@@ -280,13 +312,11 @@
 
       <div class="buttons" aria-label="Share actions">
         <a id="facebookBtn" class="btn btn-primary" href="#" rel="noopener">
-          <!-- Facebook icon -->
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.87v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.88h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
           Share on Facebook
         </a>
 
         <button id="messengerBtn" class="btn btn-secondary" type="button">
-          <!-- Messenger icon (simple) -->
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.14 2 11.25c0 2.9 1.45 5.5 3.76 7.23V22l3.42-1.88c.9.25 1.85.38 2.82.38 5.52 0 10-4.14 10-9.25S17.52 2 12 2zm1.03 12.46-2.55-2.72-4.98 2.72 5.47-5.78 2.5 2.72 5.03-2.72-5.47 5.78z"/></svg>
           Share on Messenger
         </button>
@@ -302,34 +332,29 @@
   <script>
     (function(){
       const SHARE_URL = "https://solexi.ai/";
-      const FB_APP_ID = ""; // Optional: if you want true Messenger share on desktop via Send Dialog
+      const FB_APP_ID = ""; // Optional for Messenger desktop send dialog
 
-      // GTM event (Brevo flow unchanged)
+      // ===== GTM tracking (Brevo flow unchanged) =====
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: "waitlist_thank_you_view", source: "brevo_form" });
 
-      // Facebook share
+      // ===== Share links =====
       const fb = document.getElementById("facebookBtn");
       fb.href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(SHARE_URL);
-
-      // Messenger share
-      const btnMessenger = document.getElementById("messengerBtn");
 
       function openPopup(url){
         window.open(url, "_blank", "noopener,noreferrer,width=900,height=700");
       }
 
-      btnMessenger.addEventListener("click", ()=>{
+      document.getElementById("messengerBtn").addEventListener("click", ()=>{
         const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
         if(isMobile){
-          // Mobile: try to open Messenger app
           window.location.href = "fb-messenger://share/?link=" + encodeURIComponent(SHARE_URL);
           window.dataLayer.push({ event: "waitlist_shared", channel: "messenger_mobile" });
           return;
         }
 
-        // Desktop: true Messenger send dialog requires FB App ID
         if(FB_APP_ID && FB_APP_ID.trim().length){
           const redirect = encodeURIComponent(window.location.href);
           const sendUrl =
@@ -340,18 +365,41 @@
           openPopup(sendUrl);
           window.dataLayer.push({ event: "waitlist_shared", channel: "messenger_desktop" });
         } else {
-          // Fallback: open Facebook share (still easy for users)
           openPopup("https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(SHARE_URL));
           window.dataLayer.push({ event: "waitlist_shared", channel: "messenger_fallback_fbshare" });
         }
       });
 
-      // Nice popup for FB share
       fb.addEventListener("click", (e)=>{
         e.preventDefault();
         openPopup(fb.href);
         window.dataLayer.push({ event: "waitlist_shared", channel: "facebook" });
       });
+
+      // ===== A-/A+ text scaling (persisted) =====
+      const root = document.documentElement;
+      const KEY = "solexi_text_scale";
+
+      function clamp(n, min, max){ return Math.max(min, Math.min(max, n)); }
+
+      function getScale(){
+        const v = parseFloat(localStorage.getItem(KEY));
+        return Number.isFinite(v) ? v : 1.00;
+      }
+
+      function setScale(v){
+        const val = clamp(v, 0.90, 1.35); // comfort range
+        root.style.setProperty("--scale", val.toFixed(2));
+        localStorage.setItem(KEY, val.toFixed(2));
+        window.dataLayer.push({ event: "ui_text_scale", scale: val.toFixed(2) });
+      }
+
+      // init
+      setScale(getScale());
+
+      document.getElementById("btnInc").addEventListener("click", ()=> setScale(getScale() + 0.05));
+      document.getElementById("btnDec").addEventListener("click", ()=> setScale(getScale() - 0.05));
+      document.getElementById("btnReset").addEventListener("click", ()=> setScale(1.00));
     })();
   </script>
 </body>
