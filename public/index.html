@@ -11,6 +11,11 @@
   </script>
   <!-- End Google Tag Manager -->
 
+  <link rel="preload" as="image" href="/assets/brand/solexi_light.webp" fetchpriority="high">
+  
+  <meta property="og:image" content="https://solexi.ai/assets/brand/solexi_og_image.jpg" />
+  <meta name="twitter:image" content="https://solexi.ai/assets/brand/solexi_og_image.jpg" />
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -31,6 +36,12 @@
   content="Your digital life is everywhere photos, passwords, documents, accounts. Solexi helps you structure it now, so your loved ones don’t face chaos later." />
 
   <link rel="canonical" href="https://solexi.ai/" />
+  <link rel="icon" href="/assets/brand/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon_32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/favicon_16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/favicon_180x180.png">
+
+  
 
   <!-- Brevo base stylesheet (required) -->
   <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
@@ -561,14 +572,18 @@
 
   <header>
     <div class="container header-inner">
-      <a class="brand" href="/">SOLEXI</a>
-      <nav class="nav" aria-label="Main navigation">
-        <a href="/comprendre/">Understand</a>
-        <a href="/problemes/">Problem</a>
-        <a href="/solutions/">Solution</a>
-        <a href="/use-cases/">Use cases</a>
-        <a href="/research/">Research</a>
-        <a class="cta" href="#subscribe">Join</a>
+     <a class="brand" href="/" aria-label="Solexi.ai">
+  <img
+    class="brand-logo"
+    src="/assets/brand/solexi_light.webp"
+    alt="Solexi.ai"
+    width="220"
+    height="60"
+    decoding="async"
+    fetchpriority="high"
+  />
+</a>
+
       </nav>
     </div>
   </header>
@@ -784,28 +799,39 @@
   </div>
 
   <!-- Schema.org structured data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://solexi.ai/#organization",
-        "name": "Solexi",
-        "url": "https://solexi.ai",
-        "sameAs": [],
-        "description": "Human infrastructure for organizing and transmitting digital life, memory, and intent so loved ones aren’t left with chaos."
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://solexi.ai/#website",
-        "url": "https://solexi.ai",
-        "name": "Solexi",
-        "publisher": { "@id": "https://solexi.ai/#organization" }
-      }
-    ]
-  }
-  </script>
+  
+ <script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Organization",
+      "@id":"https://solexi.ai/#organization",
+      "name":"Solexi.ai",
+      "url":"https://solexi.ai/",
+      "logo":"https://solexi.ai/assets/brand/favicon_512x512.png",
+      "description":"Digital responsibility infrastructure for structured digital continuity and controlled transmission."
+    },
+    {
+      "@type":"WebSite",
+      "@id":"https://solexi.ai/#website",
+      "url":"https://solexi.ai/",
+      "name":"Solexi.ai",
+      "publisher":{"@id":"https://solexi.ai/#organization"}
+    },
+    {
+      "@type":"WebPage",
+      "@id":"https://solexi.ai/#webpage",
+      "url":"https://solexi.ai/",
+      "name":"When you die, who can access your digital life?",
+      "isPartOf":{"@id":"https://solexi.ai/#website"},
+      "about":{"@id":"https://solexi.ai/#organization"}
+    }
+  ]
+}
+ </script>
+
+
 
   <!-- Brevo scripts -->
   <script>
