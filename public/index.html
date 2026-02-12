@@ -14,25 +14,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
- <title>When you die, who can access your digital life? | Solexi</title>
+  <title>When you die, who can access your digital life? | Solexi</title>
 
-<meta name="description"
-content="Your digital life is scattered across photos, passwords, documents, and accounts. Solexi helps you organize what matters now, so your loved ones aren’t left with chaos later." />
+  <meta name="description"
+  content="Your digital life is scattered across photos, passwords, documents, and accounts. Solexi helps you organize what matters now, so your loved ones aren’t left with chaos later." />
 
-<meta property="og:title"
-content="When you die, who can access your digital life?" />
+  <meta property="og:title" content="When you die, who can access your digital life?" />
+  <meta property="og:description"
+  content="Photos, passwords, documents, accounts - your digital life is everywhere. Solexi structures what matters so nothing is lost when it matters most." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://solexi.ai/" />
 
-<meta property="og:description"
-content="Photos, passwords, documents, accounts - your digital life is everywhere. Solexi structures what matters so nothing is lost when it matters most." />
-
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://solexi.ai/" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="When you die, who can access your digital life? | Solexi" />
-<meta name="twitter:description" content="Your digital life is everywhere photos, passwords, documents, accounts. Solexi helps you structure it now, so your loved ones don’t face chaos later." />
-
-
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="When you die, who can access your digital life? | Solexi" />
+  <meta name="twitter:description"
+  content="Your digital life is everywhere photos, passwords, documents, accounts. Solexi helps you structure it now, so your loved ones don’t face chaos later." />
 
   <link rel="canonical" href="https://solexi.ai/" />
 
@@ -114,12 +110,86 @@ content="Photos, passwords, documents, accounts - your digital life is everywher
       color: rgba(11,11,15,.70);
       letter-spacing:.01em;
     }
-    .title{
-      font-size: clamp(2.05rem, 4.2vw, 3.1rem);
-      line-height: 1.06;
-      letter-spacing: -0.02em;
-      margin: 0 0 16px;
+
+    /* CINEMATIC TITLE */
+    .cine-title{
+      position: relative;
+      font-size: clamp(2.25rem, 4.6vw, 3.25rem);
+      line-height: 1.04;
+      font-weight: 780;
+      letter-spacing: -0.03em;
+      margin: 0 0 14px;
+      max-width: 20ch;
+      color: #0b0b0f;
+      --cineFade: 1;
     }
+    .cine-title .cine-ghost{
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      color: rgba(11,11,15,.62);
+      filter: blur(.35px);
+      opacity: calc(.95 * var(--cineFade));
+      mask-image: linear-gradient(
+        to bottom,
+        rgba(0,0,0,1) 0%,
+        rgba(0,0,0,1) 42%,
+        rgba(0,0,0,.25) 58%,
+        rgba(0,0,0,1) 78%,
+        rgba(0,0,0,1) 100%
+      );
+      transition: opacity .25s ease, filter .25s ease;
+    }
+    .cine-title:hover .cine-ghost{ opacity: 0; filter: blur(0); }
+
+    .cine-title .cine-ghost::before,
+    .cine-title .cine-ghost::after{
+      content:"";
+      position:absolute;
+      inset:-20%;
+      pointer-events:none;
+    }
+    .cine-title .cine-ghost::before{
+      background: linear-gradient(
+        115deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,.55) 38%,
+        rgba(255,255,255,0) 65%
+      );
+      mix-blend-mode: overlay;
+      filter: blur(2px);
+      opacity: calc(.85 * var(--cineFade));
+    }
+    .cine-title .cine-ghost::after{
+      background:
+        repeating-linear-gradient(
+          to bottom,
+          rgba(255,255,255,.07) 0px,
+          rgba(255,255,255,.07) 1px,
+          rgba(0,0,0,0) 3px,
+          rgba(0,0,0,0) 6px
+        );
+      mix-blend-mode: soft-light;
+      opacity: calc(.35 * var(--cineFade));
+    }
+
+    @media (prefers-reduced-motion: no-preference){
+      .cine-title .cine-ghost{ animation: cineDrift 10.5s linear infinite; }
+      .cine-title .cine-ghost::before{ animation: veilSweep 6.8s ease-in-out infinite; }
+    }
+    @keyframes cineDrift{
+      0%{ transform: translateX(0); }
+      20%{ transform: translateX(-.6px); }
+      45%{ transform: translateX(.4px); }
+      70%{ transform: translateX(-.3px); }
+      100%{ transform: translateX(0); }
+    }
+    @keyframes veilSweep{
+      0%{ transform: translateX(-18%) translateY(0); }
+      50%{ transform: translateX(12%) translateY(-1.5%); }
+      100%{ transform: translateX(-18%) translateY(0); }
+    }
+
     .lead{
       font-size: clamp(1.03rem, 1.2vw, 1.12rem);
       line-height: 1.65;
@@ -130,24 +200,18 @@ content="Photos, passwords, documents, accounts - your digital life is everywher
 
     /* Form card */
     .form-card{
-      margin-top: 18px;
+      margin-top: 10px;
       border:1px solid var(--border);
       border-radius: var(--radius);
       background: rgba(255,255,255,.72);
       backdrop-filter: blur(10px);
       box-shadow: var(--shadow2);
-      padding: 18px;
+      padding: 16px 18px;
       max-width: 640px;
     }
-    .form-title{ margin: 0 0 6px; font-size: 1.65rem; letter-spacing: -0.015em; }
-    .form-sub{ margin: 0 0 14px; color: var(--muted); line-height: 1.5; }
-
-    .microTrust{
-      margin: 10px 0 0;
-      color: var(--muted2);
-      font-size: .90rem;
-      line-height: 1.45;
-    }
+    .form-title{ margin: 0 0 4px; font-size: 1.65rem; letter-spacing: -0.015em; }
+    .form-sub{ margin: 0 0 10px; color: var(--muted); line-height: 1.5; }
+    .microTrust{ margin: 10px 0 0; color: var(--muted2); font-size: .90rem; line-height: 1.45; }
 
     /* Right demo card */
     .demo-wrap{
@@ -334,9 +398,8 @@ content="Photos, passwords, documents, accounts - your digital life is everywher
     }
     #sib-container input::placeholder{ color: rgba(11,11,15,.35) !important; }
     #sib-container .sib-form-block{ margin: 0 !important; }
-    #sib-form-container .sib-input, #sib-form-container .sib-select{ margin-bottom: 12px !important; }
+    #sib-form-container .sib-input, #sib-form-container .sib-select{ margin-bottom: 10px !important; }
 
-    /* One verb CTA: JOIN */
     #sib-container button.sib-form-block__button,
     .sx-joinBtn{
       height: 48px !important;
@@ -365,7 +428,7 @@ content="Photos, passwords, documents, accounts - your digital life is everywher
       font-size: .86rem !important;
       line-height: 1.45 !important;
       color: rgba(11,11,15,.55) !important;
-      margin-top: 8px !important;
+      margin-top: 6px !important;
       text-align: left !important;
     }
 
@@ -393,317 +456,98 @@ content="Photos, passwords, documents, accounts - your digital life is everywher
       color:#0b0b0f;
       text-decoration:none;
     }
+
+    /* ===========================
+       SOLEXI SPHERE (VISIONARY)
+       - slow rotate
+       - pause on hover
+       - soft pulse glow
+       - energy beam crossing
+       SAFE: only transform/opacity/filter
+    =========================== */
+    .sx-sphere{
+      position: relative;
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      display: inline-grid;
+      place-items: center;
+      isolation: isolate;
+      flex: 0 0 auto;
+    }
+    .sx-sphere img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      transform-style: preserve-3d;
+      will-change: transform, filter;
+      animation: sxSpin 22s linear infinite;
+      filter: drop-shadow(0 8px 18px rgba(120,180,255,.18));
+    }
+    .sx-sphere::before{
+      content:"";
+      position:absolute;
+      inset:-60%;
+      border-radius: 999px;
+      background: radial-gradient(circle at 45% 45%,
+        rgba(120,180,255,.35),
+        rgba(120,180,255,.12) 42%,
+        rgba(255,255,255,0) 70%);
+      filter: blur(6px);
+      opacity: .80;
+      will-change: transform, opacity;
+      animation: sxGlow 3.6s ease-in-out infinite;
+      pointer-events:none;
+      z-index:0;
+    }
+    .sx-sphere::after{
+      content:"";
+      position:absolute;
+      inset:-140%;
+      border-radius: 999px;
+      pointer-events:none;
+      z-index:2;
+      background: linear-gradient(115deg,
+        rgba(255,255,255,0) 34%,
+        rgba(170,230,255,.12) 44%,
+        rgba(255,255,255,.85) 50%,
+        rgba(170,230,255,.10) 56%,
+        rgba(255,255,255,0) 66%);
+      filter: blur(0.6px);
+      opacity: 0;
+      transform: translateX(-22%) translateY(18%) rotate(0deg);
+      will-change: transform, opacity;
+      animation: sxBeam 5.4s ease-in-out infinite;
+    }
+    @keyframes sxSpin{
+      from { transform: rotateZ(-2deg) rotateY(0deg); }
+      to   { transform: rotateZ(-2deg) rotateY(360deg); }
+    }
+    @keyframes sxGlow{
+      0%,100% { transform: scale(0.98); opacity: .65; }
+      50%     { transform: scale(1.04); opacity: .92; }
+    }
+    @keyframes sxBeam{
+      0%   { opacity: 0; transform: translateX(-26%) translateY(20%) rotate(0deg); }
+      22%  { opacity: 0; }
+      36%  { opacity: .72; }
+      52%  { opacity: 0; }
+      100% { opacity: 0; transform: translateX(22%) translateY(-12%) rotate(0deg); }
+    }
+    .demo-card:hover .sx-sphere img,
+    .demo-card:hover .sx-sphere::before,
+    .demo-card:hover .sx-sphere::after{
+      animation-play-state: paused;
+    }
+    @media (prefers-reduced-motion: reduce){
+      .sx-sphere img,
+      .sx-sphere::before,
+      .sx-sphere::after{
+        animation: none !important;
+      }
+    }
   </style>
-
- 
-
-  <style>
-/* === Interference Banner — Solexi === */
-
-.interference-title {
-  position: relative;
-  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
-  line-height: 1.05;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: #0b0b0f;
-  max-width: 18ch;
-}
-
-.interference-title span {
-  position: absolute;
-  inset: 0;
-  color: rgba(11,11,15,0.85);
-  pointer-events: none;
-  filter: blur(0.4px);
-  mask-image: linear-gradient(
-    to bottom,
-    black 0%,
-    black 45%,
-    transparent 60%,
-    black 80%
-  );
-}
-
-.interference-title span::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    rgba(255,255,255,0.0) 0%,
-    rgba(255,255,255,0.45) 40%,
-    rgba(255,255,255,0.0) 70%
-  );
-  mix-blend-mode: overlay;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .interference-title span {
-    animation: interferenceShift 12s infinite linear;
-  }
-}
-
-@keyframes interferenceShift {
-  0%   { transform: translateX(0); opacity: 0.85; }
-  25%  { transform: translateX(-0.4px); opacity: 0.75; }
-  50%  { transform: translateX(0.3px); opacity: 0.9; }
-  75%  { transform: translateX(-0.2px); opacity: 0.8; }
-  100% { transform: translateX(0); opacity: 0.85; }
-}
-    /* =====================================================
-   1) CINEMATIC INTERFERENCE (scroll fade + hover clear)
-===================================================== */
-.cine-title{
-  position: relative;
-  font-size: clamp(2.25rem, 4.6vw, 3.25rem);
-  line-height: 1.04;
-  font-weight: 780;
-  letter-spacing: -0.03em;
-  margin: 0 0 14px;
-  max-width: 20ch;
-  color: #0b0b0f;
-
-  /* Variable pilotée au scroll (1 = full interference, 0 = clean) */
-  --cineFade: 1;
-}
-
-.cine-title .cine-ghost{
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  color: rgba(11,11,15,.62);
-  filter: blur(.35px);
-  opacity: calc(.95 * var(--cineFade));
-
-  mask-image: linear-gradient(
-    to bottom,
-    rgba(0,0,0,1) 0%,
-    rgba(0,0,0,1) 42%,
-    rgba(0,0,0,.25) 58%,
-    rgba(0,0,0,1) 78%,
-    rgba(0,0,0,1) 100%
-  );
-
-  transition: opacity .25s ease, filter .25s ease;
-}
-
-/* Hover = texte net (Option 2) */
-.cine-title:hover .cine-ghost{
-  opacity: 0;
-  filter: blur(0);
-}
-
-.cine-title .cine-ghost::before,
-.cine-title .cine-ghost::after{
-  content:"";
-  position:absolute;
-  inset:-20%;
-  pointer-events:none;
-}
-
-/* Voile lumineux */
-.cine-title .cine-ghost::before{
-  background: linear-gradient(
-    115deg,
-    rgba(255,255,255,0) 0%,
-    rgba(255,255,255,.55) 38%,
-    rgba(255,255,255,0) 65%
-  );
-  mix-blend-mode: overlay;
-  filter: blur(2px);
-  opacity: calc(.85 * var(--cineFade));
-}
-
-/* Scanlines */
-.cine-title .cine-ghost::after{
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      rgba(255,255,255,.07) 0px,
-      rgba(255,255,255,.07) 1px,
-      rgba(0,0,0,0) 3px,
-      rgba(0,0,0,0) 6px
-    );
-  mix-blend-mode: soft-light;
-  opacity: calc(.35 * var(--cineFade));
-}
-
-@media (prefers-reduced-motion: no-preference){
-  .cine-title .cine-ghost{
-    animation: cineDrift 10.5s linear infinite;
-  }
-  .cine-title .cine-ghost::before{
-    animation: veilSweep 6.8s ease-in-out infinite;
-  }
-}
-
-@keyframes cineDrift{
-  0%   { transform: translateX(0); }
-  20%  { transform: translateX(-.6px); }
-  45%  { transform: translateX(.4px); }
-  70%  { transform: translateX(-.3px); }
-  100% { transform: translateX(0); }
-}
-
-@keyframes veilSweep{
-  0%   { transform: translateX(-18%) translateY(0); }
-  50%  { transform: translateX(12%) translateY(-1.5%); }
-  100% { transform: translateX(-18%) translateY(0); }
-}
-
-.cine-lead{
-  margin: 0 0 16px;
-  color: rgba(11,11,15,.72);
-  max-width: 66ch;
-}
-
-/* =====================================================
-   3) FORM: remonter + enlever l'espace inutile
-===================================================== */
-.form-card{
-  margin-top: 10px;           /* remonte le bloc */
-  padding: 16px 18px;         /* plus compact */
-}
-.form-title {
-  margin-bottom: 4px;
-}
-
-.form-sub {
-  margin-bottom: 10px;
-}
-
-#sib-form-container .sib-input {
-  margin-top: 4px !important;
-}
-
-/* Resserre les blocs Brevo */
-#sib-form-container .sib-input,
-#sib-form-container .sib-select{
-  margin-bottom: 10px !important; /* avant 12 */
-}
-
-/* Réduit les paddings inline des wrappers Brevo */
-#sib-form > div[style*="padding: 8px 0"]{
-  padding: 6px 0 !important;
-}
-
-/* “We collect…” plus proche */
-#sib-container .entry__specification{
-  margin-top: 6px !important;
-}
- /* ===========================
-   SOLEXI SPHERE (VISIONARY)
-   - slow rotate
-   - pause on hover
-   - soft pulse glow
-   - energy beam crossing
-   SAFE: only transform/opacity/filter
-=========================== */
-
-.sx-sphere{
-  position: relative;
-  width: 28px;
-  height: 28px;
-  border-radius: 999px;
-  display: inline-grid;
-  place-items: center;
-  isolation: isolate;
-  flex: 0 0 auto;
-}
-
-/* the sphere image rotates */
-.sx-sphere img{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-
-  transform-style: preserve-3d;
-  will-change: transform, filter;
-  animation: sxSpin 22s linear infinite;
-  filter: drop-shadow(0 8px 18px rgba(120,180,255,.18));
-}
-
-/* soft glow pulse */
-.sx-sphere::before{
-  content:"";
-  position:absolute;
-  inset:-60%;
-  border-radius: 999px;
-  background: radial-gradient(circle at 45% 45%,
-    rgba(120,180,255,.35),
-    rgba(120,180,255,.12) 42%,
-    rgba(255,255,255,0) 70%);
-  filter: blur(6px);
-  opacity: .80;
-  will-change: transform, opacity;
-  animation: sxGlow 3.6s ease-in-out infinite;
-  pointer-events:none;
-  z-index:0;
-}
-
-/* energy beam crossing */
-.sx-sphere::after{
-  content:"";
-  position:absolute;
-  inset:-140%;
-  border-radius: 999px;
-  pointer-events:none;
-  z-index:2;
-
-  background: linear-gradient(115deg,
-    rgba(255,255,255,0) 34%,
-    rgba(170,230,255,.12) 44%,
-    rgba(255,255,255,.85) 50%,
-    rgba(170,230,255,.10) 56%,
-    rgba(255,255,255,0) 66%);
-  filter: blur(0.6px);
-  opacity: 0;
-
-  transform: translateX(-22%) translateY(18%) rotate(0deg);
-  will-change: transform, opacity;
-  animation: sxBeam 5.4s ease-in-out infinite;
-}
-
-@keyframes sxSpin{
-  from { transform: rotateZ(-2deg) rotateY(0deg); }
-  to   { transform: rotateZ(-2deg) rotateY(360deg); }
-}
-
-@keyframes sxGlow{
-  0%,100% { transform: scale(0.98); opacity: .65; }
-  50%     { transform: scale(1.04); opacity: .92; }
-}
-
-@keyframes sxBeam{
-  0%   { opacity: 0; transform: translateX(-26%) translateY(20%) rotate(0deg); }
-  22%  { opacity: 0; }
-  36%  { opacity: .72; }
-  52%  { opacity: 0; }
-  100% { opacity: 0; transform: translateX(22%) translateY(-12%) rotate(0deg); }
-}
-
-/* pause on hover (desktop) */
-.demo-card:hover .sx-sphere img,
-.demo-card:hover .sx-sphere::before,
-.demo-card:hover .sx-sphere::after{
-  animation-play-state: paused;
-}
-
-/* accessibility */
-@media (prefers-reduced-motion: reduce){
-  .sx-sphere img,
-  .sx-sphere::before,
-  .sx-sphere::after{
-    animation: none !important;
-  }
-}
-
-</style>
-
-
-
 </head>
 
 <body>
@@ -735,21 +579,19 @@ content="Photos, passwords, documents, accounts - your digital life is everywher
         <div class="kickerRow">
           <p class="kicker">DIGITAL AFTER YOU</p>
           <span class="badge">Founding Cohort · 2026 · Limited access</span>
-
         </div>
 
         <h1 class="cine-title" id="cineTitle">
-  <span class="cine-ghost" aria-hidden="true">
-    When you die, who can access your digital life?
-  </span>
-  When you die, who can access your digital life?
-</h1>
+          <span class="cine-ghost" aria-hidden="true">
+            When you die, who can access your digital life?
+          </span>
+          When you die, who can access your digital life?
+        </h1>
 
-<p class="lead">
-  Your digital life is fragmented across photos, passwords, documents, and accounts.
-  Solexi brings structure to what matters so when the time comes, nothing is lost and no one is left in the dark.
-</p>
-
+        <p class="lead">
+          Your digital life is fragmented across photos, passwords, documents, and accounts.
+          Solexi brings structure to what matters so when the time comes, nothing is lost and no one is left in the dark.
+        </p>
 
         <div id="subscribe" class="form-card">
           <h2 class="form-title">Join the waitlist</h2>
@@ -774,7 +616,6 @@ content="Photos, passwords, documents, accounts - your digital life is everywher
                     <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
                   </svg>
 
-                  <!-- Success message + share phrase -->
                   <div class="sib-form-message-panel__inner-text" style="text-align:center;">
                     <div style="font-weight:800;">You're in.</div>
                     <div style="margin-top:6px; color:rgba(8,82,41,.90);">
@@ -795,7 +636,6 @@ content="Photos, passwords, documents, accounts - your digital life is everywher
                   action="https://554acfe2.sibforms.com/serve/MUIFAKUyT12nwH08eTh35QoG_GPnm3dV6D72NKJScZtvKQcufQhgXzjYB1yKh58NBGq7x24N_6EsvxgVMbtT_tBkornn6rfitZuXFNueBG1f_fPQ0x19--OMKHe2TpbF6NB3UG1fwVw15Qv0kKypOOWf5n6Bd9YMe8UL1QHx1gD3LfqsBE02mu7z_ORcbxxrxH-xG8ALY1vJGlcPyQ=="
                   data-type="subscription">
 
-                  <!-- STEP 1: Email only -->
                   <div style="padding: 8px 0;">
                     <div class="sib-input sib-form-block">
                       <div class="form__entry entry_block">
@@ -813,12 +653,10 @@ content="Photos, passwords, documents, accounts - your digital life is everywher
                     </div>
                   </div>
 
-                  <!-- STEP 1 button (not submit) -->
                   <div style="padding: 8px 0;" id="sxStep1BtnWrap">
                     <button class="sx-joinBtn" type="button" id="sxContinueBtn">JOIN</button>
                   </div>
 
-                  <!-- STEP 2: Role + Use-case (revealed after step 1) -->
                   <div class="sx-step2" id="sxStep2">
                     <div style="padding: 8px 0;">
                       <div class="sib-select sib-form-block">
@@ -859,7 +697,6 @@ content="Photos, passwords, documents, accounts - your digital life is everywher
                       </div>
                     </div>
 
-                    <!-- STEP 2 submit button (real submit, still "JOIN") -->
                     <div style="padding: 8px 0;">
                       <div class="sib-form-block" style="text-align:center">
                         <button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
@@ -879,7 +716,6 @@ content="Photos, passwords, documents, accounts - your digital life is everywher
 
             </div>
           </div>
-          <!-- /Brevo form -->
           <p class="microTrust">
             Founding Cohort: early access, feedback loop, and roadmap influence.
           </p>
@@ -892,7 +728,9 @@ content="Photos, passwords, documents, accounts - your digital life is everywher
           <div class="demo-card" id="demoCard">
             <div class="demo-header">
               <div class="demo-logo">
-                <span class="sx-sphere" aria-hidden="true"><img src="/solexi-logo.webp" alt="" /></span>
+                <span class="sx-sphere" aria-hidden="true">
+                  <img src="/public/solexi-logo.webp" alt="" />
+                </span>
                 Solexi
               </div>
               <div class="demo-dots" aria-hidden="true">
@@ -900,7 +738,6 @@ content="Photos, passwords, documents, accounts - your digital life is everywher
               </div>
             </div>
 
-            <!-- Poster (fast). Add: /public/demo-poster.webp -->
             <img class="demo-poster" src="/demo-poster.webp" alt="Solexi demo preview" loading="lazy" />
 
             <button class="play-btn" type="button" id="openDemo" aria-label="Play demo video">
@@ -918,7 +755,6 @@ content="Photos, passwords, documents, accounts - your digital life is everywher
           </div>
         </div>
 
-        <!-- Feature cards -->
         <div class="features" aria-label="Key capabilities">
           <div class="featureCard">
             <p class="featureTitle">Structured narratives</p>
@@ -937,7 +773,7 @@ content="Photos, passwords, documents, accounts - your digital life is everywher
     </div>
   </main>
 
-  <!-- Video modal (lazy video injection) -->
+  <!-- Video modal -->
   <div class="modal" id="demoModal" aria-hidden="true">
     <div class="modal-inner" role="dialog" aria-modal="true" aria-label="Solexi demo video">
       <button class="modal-close" id="closeDemo" type="button" aria-label="Close">✕</button>
@@ -991,45 +827,32 @@ content="Photos, passwords, documents, accounts - your digital life is everywher
   </script>
   <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
-  <!-- Rocket UX logic: 2-step form + share links + demo modal (true lazy-load) -->
   <script>
     (function(){
-      // --- 2-step form ---
-            // --- Cinematic title: fade interference on scroll (Option 1) ---
+      // --- Cinematic title fade on scroll ---
       const cine = document.getElementById('cineTitle');
       if (cine) {
         let ticking = false;
-
         function clamp(n, a, b){ return Math.max(a, Math.min(b, n)); }
-
         function updateCine(){
           ticking = false;
           const r = cine.getBoundingClientRect();
           const vh = window.innerHeight || document.documentElement.clientHeight;
-
-          // Progress: quand le titre descend dans la page, l'interférence se dissipe
-          // Ajuste les constantes si tu veux plus/moins rapide.
-          const start = vh * 0.85;  // début de dissipation
-          const end   = vh * 0.25;  // titre plus haut = presque clean
-
-          const t = (r.top - end) / (start - end); // ~1 -> 0
+          const start = vh * 0.85;
+          const end   = vh * 0.25;
+          const t = (r.top - end) / (start - end);
           const fade = clamp(t, 0, 1);
-
           cine.style.setProperty('--cineFade', fade.toFixed(3));
         }
-
         function onScroll(){
-          if (!ticking) {
-            ticking = true;
-            requestAnimationFrame(updateCine);
-          }
+          if (!ticking) { ticking = true; requestAnimationFrame(updateCine); }
         }
-
         window.addEventListener('scroll', onScroll, { passive:true });
         window.addEventListener('resize', onScroll);
         updateCine();
       }
 
+      // --- 2-step form ---
       const email = document.getElementById('EMAIL');
       const role = document.getElementById('ROLE');
       const useCase = document.getElementById('PRIMARY_USE_CASE');
@@ -1037,7 +860,6 @@ content="Photos, passwords, documents, accounts - your digital life is everywher
       const btn1 = document.getElementById('sxContinueBtn');
       const btn1Wrap = document.getElementById('sxStep1BtnWrap');
 
-      // Keep step2 fields NOT required until revealed
       role.required = false;
       useCase.required = false;
 
@@ -1053,7 +875,6 @@ content="Photos, passwords, documents, accounts - your digital life is everywher
         }
         step2.classList.add('show');
         btn1Wrap.style.display = 'none';
-        // now require step2
         role.required = true;
         useCase.required = true;
         role.focus();
@@ -1077,7 +898,6 @@ content="Photos, passwords, documents, accounts - your digital life is everywher
             cp.textContent = 'Copied';
             setTimeout(()=> cp.textContent = 'Copy text', 1200);
           } catch(e){
-            // fallback
             const ta = document.createElement('textarea');
             ta.value = toCopy;
             document.body.appendChild(ta);
