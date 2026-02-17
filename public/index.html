@@ -573,6 +573,91 @@
         animation: none !important;
       }
     }
+
+    /* ============ MOBILE FIX (Solexi.ai) ============ */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-x: hidden; }
+
+@media (max-width: 980px){
+  /* header / nav */
+  .header-inner{
+    padding: 12px 14px;
+    gap: 10px;
+  }
+  .nav{
+    gap: 10px;
+    justify-content: flex-end;
+  }
+  .nav a{ font-size: .92rem; }
+  .nav a.cta{ padding: 7px 10px; }
+
+  /* layout */
+  main{ padding: 22px 0; }
+  .container{ width: min(94vw, var(--max)); }
+  .hero-grid{ gap: 16px; }
+
+  /* title + text: make it readable and never cut */
+  .cine-title{
+    max-width: 100%;
+    font-size: clamp(1.75rem, 8.2vw, 2.35rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    overflow-wrap: anywhere;     /* prevents cut */
+    word-break: break-word;
+    hyphens: auto;
+  }
+  .cine-title .cine-ghost{
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  .lead{
+    font-size: 1.02rem;
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  /* badges: stack nicely */
+  .kickerRow{
+    gap: 8px;
+  }
+  .badge{
+    white-space: normal;
+    line-height: 1.25;
+  }
+
+  /* form card: comfortable on phone */
+  .form-card{
+    padding: 14px 14px;
+    border-radius: 18px;
+  }
+  .form-title{
+    font-size: 1.55rem;
+  }
+
+  /* Brevo input: bigger tap targets */
+  #sib-container .input,
+  #sib-container select.input{
+    height: 50px !important;
+    font-size: 1.05rem !important;
+  }
+
+  /* demo section: reduce visual weight */
+  .demo-card{
+    min-height: 240px;
+    border-radius: 18px;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 420px){
+  .nav a{ font-size: .88rem; }
+  .cine-title{ font-size: 1.65rem; }
+}
+
+
+    
   </style>
 </head>
 
