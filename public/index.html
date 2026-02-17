@@ -11,66 +11,63 @@
   </script>
   <!-- End Google Tag Manager -->
 
-  <link rel="preload" as="image" href="/assets/brand/solexi_light.webp" fetchpriority="high">
-  
-  <meta property="og:image" content="https://solexi.ai/assets/brand/solexi_og_image.jpg" />
-  <meta name="twitter:image" content="https://solexi.ai/assets/brand/solexi_og_image.jpg" />
-
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>When you die, who can access your digital life? | Solexi</title>
 
   <meta name="description"
-  content="Your digital life is scattered across photos, passwords, documents, and accounts. Solexi helps you organize what matters now, so your loved ones aren’t left with chaos later." />
+    content="Your digital life is scattered across photos, passwords, documents, and accounts. Solexi helps you organize what matters now, so your loved ones aren’t left with chaos later." />
 
   <meta property="og:title" content="When you die, who can access your digital life?" />
   <meta property="og:description"
-  content="Photos, passwords, documents, accounts - your digital life is everywhere. Solexi structures what matters so nothing is lost when it matters most." />
+    content="Photos, passwords, documents, accounts — your digital life is everywhere. Solexi structures what matters so nothing is lost when it matters most." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://solexi.ai/" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="When you die, who can access your digital life? | Solexi" />
   <meta name="twitter:description"
-  content="Your digital life is everywhere photos, passwords, documents, accounts. Solexi helps you structure it now, so your loved ones don’t face chaos later." />
+    content="Your digital life is everywhere — photos, passwords, documents, accounts. Solexi helps you structure it now, so your loved ones don’t face chaos later." />
 
   <link rel="canonical" href="https://solexi.ai/" />
-  <link rel="icon" href="/assets/brand/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon_32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/favicon_16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/favicon_180x180.png">
-
-  
 
   <!-- Brevo base stylesheet (required) -->
   <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 
   <style>
-
     :root{
       --text:#0b0b0f;
-      --muted:rgba(11,11,15,.70);
-      --muted2:rgba(11,11,15,.55);
+      --muted:rgba(11,11,15,.72);
+      --muted2:rgba(11,11,15,.56);
       --border:rgba(11,11,15,.12);
       --border2:rgba(11,11,15,.18);
-      --shadow:0 18px 55px rgba(0,0,0,.10);
-      --shadow2:0 12px 35px rgba(0,0,0,.10);
+      --shadow:0 18px 60px rgba(0,0,0,.10);
+      --shadow2:0 14px 44px rgba(0,0,0,.10);
       --radius:22px;
       --radius2:16px;
       --max:1180px;
+
+      --ink:#0b0b0f;
+      --glow1: rgba(120,180,255,.22);
+      --glow2: rgba(167,139,250,.18);
     }
+
     *{box-sizing:border-box}
+    html{ -webkit-text-size-adjust:100%; }
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color: var(--text);
+      overflow-x:hidden;
+
+      /* Apple-clean light field */
       background:
-        radial-gradient(1200px 600px at 80% 20%, rgba(125,211,252,.35), rgba(255,255,255,0) 55%),
-        radial-gradient(1000px 600px at 20% 75%, rgba(167,139,250,.30), rgba(255,255,255,0) 60%),
-        radial-gradient(800px 500px at 85% 85%, rgba(244,114,182,.18), rgba(255,255,255,0) 55%),
+        radial-gradient(1100px 560px at 80% 18%, rgba(125,211,252,.36), rgba(255,255,255,0) 58%),
+        radial-gradient(980px 560px at 18% 72%, rgba(167,139,250,.26), rgba(255,255,255,0) 62%),
+        radial-gradient(860px 520px at 82% 88%, rgba(244,114,182,.16), rgba(255,255,255,0) 60%),
         linear-gradient(#ffffff, #ffffff);
     }
+
     .container{ width:min(92vw, var(--max)); margin-inline:auto; }
 
     header{
@@ -83,19 +80,29 @@
       padding: 14px 18px;
       display:flex; align-items:center; justify-content:space-between; gap:18px;
     }
-    .brand{
-  display:inline-flex;
-  align-items:center;
-  text-decoration:none;
-  line-height:0;
-}
 
-.brand-logo{
-  height:86px;
-  width:auto;
-  max-width:240px;
-  display:block;
-}
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      text-decoration:none; color:#0b0b0f; font-weight:750;
+      letter-spacing:.06em; font-size:.92rem;
+    }
+
+    .brand .logoMark{
+      width:34px; height:34px;
+      border-radius: 10px;
+      display:grid; place-items:center;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(0,0,0,.10);
+      box-shadow: 0 10px 28px rgba(0,0,0,.06);
+      overflow:hidden;
+    }
+    .brand .logoMark img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display:block;
+      filter: brightness(1.2) contrast(1.05) drop-shadow(0 8px 18px rgba(120,180,255,.22));
+    }
 
     .nav{ display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
     .nav a{ text-decoration:none; color:inherit; opacity:.85; font-size:.98rem; }
@@ -108,7 +115,8 @@
       background:rgba(255,255,255,.55);
     }
 
-    main{ padding: clamp(34px, 5vw, 74px) 0; }
+    main{ padding: clamp(30px, 5vw, 70px) 0; }
+
     .hero-grid{
       display:grid;
       grid-template-columns: 1.05fr .95fr;
@@ -117,12 +125,12 @@
     }
     @media (max-width: 980px){ .hero-grid{grid-template-columns:1fr} }
 
-    /* Left copy */
+    /* Left */
     .kickerRow{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:0 0 14px; }
     .kicker{
-      letter-spacing:.14em;
+      letter-spacing:.16em;
       text-transform:uppercase;
-      color:rgba(11,11,15,.58);
+      color:rgba(11,11,15,.55);
       font-size:.78rem;
       margin:0;
     }
@@ -131,114 +139,120 @@
       padding:6px 10px;
       border-radius:999px;
       border:1px solid rgba(0,0,0,.12);
-      background: rgba(255,255,255,.60);
+      background: rgba(255,255,255,.65);
       color: rgba(11,11,15,.70);
       letter-spacing:.01em;
+      white-space:nowrap;
     }
 
-    /* CINEMATIC TITLE */
+    /* Title with gradient highlight + micro underline */
     .cine-title{
       position: relative;
-      font-size: clamp(2.25rem, 4.6vw, 3.25rem);
-      line-height: 1.04;
-      font-weight: 780;
+      font-size: clamp(2.05rem, 4.2vw, 3.1rem);
+      line-height: 1.06;
       letter-spacing: -0.03em;
       margin: 0 0 14px;
-      max-width: 20ch;
+      max-width: 22ch;
       color: #0b0b0f;
-      --cineFade: 1;
+      --cineFade: 1; /* controlled by scroll */
     }
+
+    .cine-title .hl{
+      background: linear-gradient(90deg, rgba(60,150,255,1), rgba(140,110,255,1));
+      -webkit-background-clip: text;
+      background-clip:text;
+      color: transparent;
+      font-weight: 850;
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    /* Micro underline animated under the highlight */
+    .cine-title .hl::after{
+      content:"";
+      position:absolute;
+      left:0; right:0;
+      height: 6px;
+      bottom: -6px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(60,150,255,.0), rgba(60,150,255,.55), rgba(140,110,255,.55), rgba(140,110,255,.0));
+      transform-origin: left center;
+      transform: scaleX(.35);
+      opacity: .9;
+      filter: blur(.1px);
+    }
+
+    @media (prefers-reduced-motion: no-preference){
+      .cine-title .hl::after{
+        animation: sxUnderline 2.8s ease-in-out infinite;
+      }
+    }
+    @keyframes sxUnderline{
+      0%,100%{ transform: scaleX(.32); opacity: .65; }
+      50%{ transform: scaleX(.95); opacity: 1; }
+    }
+
+    /* Cinematic “ghost” interference (subtle, fades on scroll) */
     .cine-title .cine-ghost{
       position:absolute;
       inset:0;
       pointer-events:none;
-      color: rgba(11,11,15,.62);
+      color: rgba(11,11,15,.55);
       filter: blur(.35px);
-      opacity: calc(.95 * var(--cineFade));
-      mask-image: linear-gradient(
-        to bottom,
-        rgba(0,0,0,1) 0%,
-        rgba(0,0,0,1) 42%,
-        rgba(0,0,0,.25) 58%,
-        rgba(0,0,0,1) 78%,
-        rgba(0,0,0,1) 100%
-      );
-      transition: opacity .25s ease, filter .25s ease;
+      opacity: calc(.85 * var(--cineFade));
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 42%, rgba(0,0,0,.25) 58%, rgba(0,0,0,1) 78%, rgba(0,0,0,1) 100%);
+      transition: opacity .25s ease;
     }
-    .cine-title:hover .cine-ghost{ opacity: 0; filter: blur(0); }
-
-    .cine-title .cine-ghost::before,
-    .cine-title .cine-ghost::after{
+    .cine-title:hover .cine-ghost{ opacity:0; }
+    .cine-title .cine-ghost::before{
       content:"";
       position:absolute;
       inset:-20%;
-      pointer-events:none;
-    }
-    .cine-title .cine-ghost::before{
-      background: linear-gradient(
-        115deg,
-        rgba(255,255,255,0) 0%,
-        rgba(255,255,255,.55) 38%,
-        rgba(255,255,255,0) 65%
-      );
+      background: linear-gradient(115deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.55) 38%, rgba(255,255,255,0) 65%);
       mix-blend-mode: overlay;
       filter: blur(2px);
-      opacity: calc(.85 * var(--cineFade));
+      opacity: calc(.70 * var(--cineFade));
     }
-    .cine-title .cine-ghost::after{
-      background:
-        repeating-linear-gradient(
-          to bottom,
-          rgba(255,255,255,.07) 0px,
-          rgba(255,255,255,.07) 1px,
-          rgba(0,0,0,0) 3px,
-          rgba(0,0,0,0) 6px
-        );
-      mix-blend-mode: soft-light;
-      opacity: calc(.35 * var(--cineFade));
-    }
-
     @media (prefers-reduced-motion: no-preference){
       .cine-title .cine-ghost{ animation: cineDrift 10.5s linear infinite; }
       .cine-title .cine-ghost::before{ animation: veilSweep 6.8s ease-in-out infinite; }
     }
-    @keyframes cineDrift{
-      0%{ transform: translateX(0); }
-      20%{ transform: translateX(-.6px); }
-      45%{ transform: translateX(.4px); }
-      70%{ transform: translateX(-.3px); }
-      100%{ transform: translateX(0); }
-    }
-    @keyframes veilSweep{
-      0%{ transform: translateX(-18%) translateY(0); }
-      50%{ transform: translateX(12%) translateY(-1.5%); }
-      100%{ transform: translateX(-18%) translateY(0); }
-    }
+    @keyframes cineDrift{ 0%{transform:translateX(0)} 45%{transform:translateX(.4px)} 70%{transform:translateX(-.3px)} 100%{transform:translateX(0)} }
+    @keyframes veilSweep{ 0%{transform:translateX(-18%) translateY(0)} 50%{transform:translateX(12%) translateY(-1.5%)} 100%{transform:translateX(-18%) translateY(0)} }
 
     .lead{
       font-size: clamp(1.03rem, 1.2vw, 1.12rem);
       line-height: 1.65;
       color: var(--muted);
-      margin: 0 0 22px;
+      margin: 0 0 18px;
       max-width: 62ch;
     }
+
+    /* Mobile form slot (form-first) */
+    .sx-mobileFormSlot{ display:none; }
 
     /* Form card */
     .form-card{
       margin-top: 10px;
       border:1px solid var(--border);
       border-radius: var(--radius);
-      background: rgba(255,255,255,.72);
+      background: rgba(255,255,255,.78);
       backdrop-filter: blur(10px);
       box-shadow: var(--shadow2);
-      padding: 16px 18px;
+      padding: 18px;
       max-width: 640px;
     }
-    .form-title{ margin: 0 0 4px; font-size: 1.65rem; letter-spacing: -0.015em; }
-    .form-sub{ margin: 0 0 10px; color: var(--muted); line-height: 1.5; }
-    .microTrust{ margin: 10px 0 0; color: var(--muted2); font-size: .90rem; line-height: 1.45; }
+    .form-title{ margin: 0 0 6px; font-size: 1.65rem; letter-spacing: -0.015em; }
+    .form-sub{ margin: 0 0 14px; color: var(--muted); line-height: 1.5; }
 
-    /* Right demo card */
+    .microTrust{
+      margin: 10px 0 0;
+      color: var(--muted2);
+      font-size: .90rem;
+      line-height: 1.45;
+    }
+
+    /* Right demo */
     .demo-wrap{
       border-radius: 26px;
       padding: 14px;
@@ -270,6 +284,18 @@
       color: rgba(255,255,255,.92);
       font-weight: 650; letter-spacing:.01em; font-size:.98rem;
     }
+    .demo-logo .sx-sphere{
+      width:22px;height:22px;border-radius:7px;
+      background: rgba(255,255,255,.18);
+      border:1px solid rgba(255,255,255,.20);
+      overflow:hidden;
+      display:grid; place-items:center;
+    }
+    .demo-logo .sx-sphere img{
+      width:100%;height:100%;object-fit:contain;display:block;
+      filter: brightness(1.22) contrast(1.06) drop-shadow(0 8px 18px rgba(120,180,255,.18));
+    }
+
     .demo-dots{ display:flex; gap:6px; opacity:.65; }
     .demo-dots span{ width:8px;height:8px;border-radius:999px;background: rgba(255,255,255,.32);display:inline-block; }
 
@@ -296,7 +322,7 @@
       background: rgba(255,255,255,.12);
       border: 1px solid rgba(255,255,255,.18);
       color: rgba(255,255,255,.92);
-      font-weight: 650; letter-spacing:.01em;
+      font-weight: 700; letter-spacing:.01em;
       box-shadow: 0 18px 44px rgba(0,0,0,.35);
       transition: transform .12s ease, background .12s ease;
     }
@@ -330,14 +356,14 @@
     .featureCard{
       border-radius: 16px;
       border: 1px solid rgba(0,0,0,.08);
-      background: rgba(255,255,255,.72);
+      background: rgba(255,255,255,.78);
       backdrop-filter: blur(10px);
       box-shadow: 0 10px 24px rgba(0,0,0,.06);
       padding: 14px 14px;
     }
     .featureTitle{
       margin:0 0 6px;
-      font-weight: 700;
+      font-weight: 760;
       letter-spacing: -0.01em;
       font-size: 1.02rem;
     }
@@ -379,7 +405,7 @@
     .modal video{ width:100%; height:auto; display:block; background:#000; }
 
     /* -------------------------
-       Brevo overrides (premium)
+       Brevo overrides (Apple clean)
     --------------------------*/
     .sib-form{ background: transparent !important; text-align:left !important; }
     #sib-form-container{ background: transparent !important; }
@@ -396,7 +422,7 @@
     #sib-container .entry__label{
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial !important;
       font-size: .92rem !important;
-      font-weight: 650 !important;
+      font-weight: 720 !important;
       color: rgba(11,11,15,.70) !important;
       margin-bottom: 8px !important;
       letter-spacing: .01em;
@@ -411,7 +437,7 @@
       padding: 0 14px !important;
       font-size: 1rem !important;
       color: var(--text) !important;
-      background: rgba(255,255,255,.95) !important;
+      background: rgba(255,255,255,.97) !important;
       outline: none !important;
       box-shadow: none !important;
       text-align: left !important;
@@ -419,12 +445,13 @@
     #sib-container .input:focus,
     #sib-container select.input:focus{
       border-color: rgba(11,11,15,.28) !important;
-      box-shadow: 0 0 0 4px rgba(11,11,15,.06) !important;
+      box-shadow: 0 0 0 4px rgba(60,150,255,.10) !important;
     }
     #sib-container input::placeholder{ color: rgba(11,11,15,.35) !important; }
     #sib-container .sib-form-block{ margin: 0 !important; }
-    #sib-form-container .sib-input, #sib-form-container .sib-select{ margin-bottom: 10px !important; }
+    #sib-form-container .sib-input, #sib-form-container .sib-select{ margin-bottom: 12px !important; }
 
+    /* JOIN: subtle glow (clean) */
     #sib-container button.sib-form-block__button,
     .sx-joinBtn{
       height: 48px !important;
@@ -433,17 +460,23 @@
       background: #0b0b0f !important;
       color: #fff !important;
       border: 1px solid rgba(0,0,0,.10) !important;
-      font-weight: 800 !important;
-      letter-spacing: .08em !important;
+      font-weight: 900 !important;
+      letter-spacing: .12em !important;
       text-transform: uppercase !important;
       cursor: pointer !important;
       width: 100% !important;
-      transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+      transition: transform .12s ease, box-shadow .18s ease, opacity .12s ease, filter .18s ease;
+      box-shadow:
+        0 16px 40px rgba(0,0,0,.14),
+        0 0 0 0 rgba(60,150,255,0);
     }
     #sib-container button.sib-form-block__button:hover,
     .sx-joinBtn:hover{
       transform: translateY(-1px);
-      box-shadow: 0 12px 28px rgba(0,0,0,.14);
+      box-shadow:
+        0 18px 48px rgba(0,0,0,.16),
+        0 0 0 6px rgba(60,150,255,.08);
+      filter: saturate(1.05);
     }
     #sib-container button.sib-form-block__button:active,
     .sx-joinBtn:active{ transform: translateY(0); opacity: .92; }
@@ -453,7 +486,7 @@
       font-size: .86rem !important;
       line-height: 1.45 !important;
       color: rgba(11,11,15,.55) !important;
-      margin-top: 6px !important;
+      margin-top: 8px !important;
       text-align: left !important;
     }
 
@@ -476,188 +509,93 @@
       border: 1px solid rgba(0,0,0,.14);
       background: #fff;
       padding: 8px 12px;
-      font-weight: 650;
+      font-weight: 700;
       cursor:pointer;
       color:#0b0b0f;
       text-decoration:none;
     }
+    .sx-share a:hover, .sx-share button:hover{
+      background:#0b0b0f; color:#fff;
+    }
 
     /* ===========================
-       SOLEXI SPHERE (VISIONARY)
-       - slow rotate
-       - pause on hover
-       - soft pulse glow
-       - energy beam crossing
-       SAFE: only transform/opacity/filter
+       MOBILE: Bold + form first + 2-line copy
     =========================== */
-    .sx-sphere{
-      position: relative;
-      width: 26px;
-      height: 26px;
-      border-radius: 999px;
-      display: inline-grid;
-      place-items: center;
-      isolation: isolate;
-      flex: 0 0 auto;
-    }
-    .sx-sphere img{
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-      transform-style: preserve-3d;
-      will-change: transform, filter;
-      animation: sxSpin 22s linear infinite;
-      filter: brightness(1.25) contrast(1.1) drop-shadow(0 8px 18px rgba(120,180,255,.28));
+    @media (max-width: 768px){
+      .container{ width: 92vw; }
+      main{ padding: 18px 0 26px; }
+      .hero-grid{ gap: 16px; }
 
-    }
-    .sx-sphere::before{
-      content:"";
-      position:absolute;
-      inset:-60%;
-      border-radius: 999px;
-      background: radial-gradient(circle at 45% 45%,
-        rgba(120,180,255,.35),
-        rgba(120,180,255,.12) 42%,
-        rgba(255,255,255,0) 70%);
-      filter: blur(6px);
-      opacity: .80;
-      will-change: transform, opacity;
-      animation: sxGlow 3.6s ease-in-out infinite;
-      pointer-events:none;
-      z-index:0;
-    }
-    .sx-sphere::after{
-      content:"";
-      position:absolute;
-      inset:-140%;
-      border-radius: 999px;
-      pointer-events:none;
-      z-index:2;
-      background: linear-gradient(115deg,
-        rgba(255,255,255,0) 34%,
-        rgba(170,230,255,.12) 44%,
-        rgba(255,255,255,.85) 50%,
-        rgba(170,230,255,.10) 56%,
-        rgba(255,255,255,0) 66%);
-      filter: blur(0.6px);
-      opacity: 0;
-      transform: translateX(-22%) translateY(18%) rotate(0deg);
-      will-change: transform, opacity;
-      animation: sxBeam 5.4s ease-in-out infinite;
-    }
-    @keyframes sxSpin{
-      from { transform: rotateZ(-2deg) rotateY(0deg); }
-      to   { transform: rotateZ(-2deg) rotateY(360deg); }
-    }
-    @keyframes sxGlow{
-      0%,100% { transform: scale(0.98); opacity: .65; }
-      50%     { transform: scale(1.04); opacity: .92; }
-    }
-    @keyframes sxBeam{
-      0%   { opacity: 0; transform: translateX(-26%) translateY(20%) rotate(0deg); }
-      22%  { opacity: 0; }
-      36%  { opacity: .72; }
-      52%  { opacity: 0; }
-      100% { opacity: 0; transform: translateX(22%) translateY(-12%) rotate(0deg); }
-    }
-    .demo-card:hover .sx-sphere img,
-    .demo-card:hover .sx-sphere::before,
-    .demo-card:hover .sx-sphere::after{
-      animation-play-state: paused;
-    }
-    @media (prefers-reduced-motion: reduce){
-      .sx-sphere img,
-      .sx-sphere::before,
-      .sx-sphere::after{
-        animation: none !important;
+      .header-inner{ padding: 12px 14px; gap: 10px; }
+      .brand{ letter-spacing:.08em; }
+      .nav a{ font-size:.92rem; }
+      .nav a.cta{ padding:7px 10px; }
+
+      .kicker{ font-size:.72rem; }
+      .badge{ font-size:.74rem; white-space:normal; line-height:1.25; }
+
+      .cine-title{
+        max-width: 100%;
+        font-size: clamp(1.85rem, 8.2vw, 2.35rem);
+        line-height: 1.03;
+        margin-bottom: 10px;
+        overflow-wrap:anywhere;
+        word-break:break-word;
+        hyphens:auto;
       }
+      .cine-title .cine-ghost{
+        overflow-wrap:anywhere;
+        word-break:break-word;
+        hyphens:auto;
+      }
+
+      .sx-mobileFormSlot{ display:block; }
+
+      /* Text becomes 2 lines max on mobile */
+      #sxLead{
+        margin-top: 10px;
+        margin-bottom: 14px;
+        font-size: 0.98rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .form-card{
+        margin-top: 0;
+        padding: 14px;
+        border-radius: 18px;
+        background: rgba(255,255,255,.88);
+        box-shadow: 0 18px 55px rgba(0,0,0,.10);
+      }
+
+      #sib-container .input,
+      #sib-container select.input{
+        height: 50px !important;
+        font-size: 1.05rem !important;
+      }
+      #sib-container button.sib-form-block__button,
+      .sx-joinBtn{
+        height: 54px !important;
+        font-size: .98rem !important;
+        letter-spacing: .14em !important;
+      }
+
+      .demo-wrap{ padding: 10px; }
+      .demo-card{ min-height: 220px; border-radius: 18px; }
+
+      .featureCard{ padding: 12px; border-radius: 14px; }
+      .featureTitle{ font-size: .98rem; }
+      .featureDesc{ font-size: .88rem; }
     }
 
-    /* ============ MOBILE FIX (Solexi.ai) ============ */
-html { -webkit-text-size-adjust: 100%; }
-body { overflow-x: hidden; }
-
-@media (max-width: 980px){
-  /* header / nav */
-  .header-inner{
-    padding: 12px 14px;
-    gap: 10px;
-  }
-  .nav{
-    gap: 10px;
-    justify-content: flex-end;
-  }
-  .nav a{ font-size: .92rem; }
-  .nav a.cta{ padding: 7px 10px; }
-
-  /* layout */
-  main{ padding: 22px 0; }
-  .container{ width: min(94vw, var(--max)); }
-  .hero-grid{ gap: 16px; }
-
-  /* title + text: make it readable and never cut */
-  .cine-title{
-    max-width: 100%;
-    font-size: clamp(1.75rem, 8.2vw, 2.35rem);
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    overflow-wrap: anywhere;     /* prevents cut */
-    word-break: break-word;
-    hyphens: auto;
-  }
-  .cine-title .cine-ghost{
-    overflow-wrap: anywhere;
-    word-break: break-word;
-    hyphens: auto;
-  }
-
-  .lead{
-    font-size: 1.02rem;
-    line-height: 1.6;
-    margin-bottom: 14px;
-  }
-
-  /* badges: stack nicely */
-  .kickerRow{
-    gap: 8px;
-  }
-  .badge{
-    white-space: normal;
-    line-height: 1.25;
-  }
-
-  /* form card: comfortable on phone */
-  .form-card{
-    padding: 14px 14px;
-    border-radius: 18px;
-  }
-  .form-title{
-    font-size: 1.55rem;
-  }
-
-  /* Brevo input: bigger tap targets */
-  #sib-container .input,
-  #sib-container select.input{
-    height: 50px !important;
-    font-size: 1.05rem !important;
-  }
-
-  /* demo section: reduce visual weight */
-  .demo-card{
-    min-height: 240px;
-    border-radius: 18px;
-  }
-}
-
-/* Extra small phones */
-@media (max-width: 420px){
-  .nav a{ font-size: .88rem; }
-  .cine-title{ font-size: 1.65rem; }
-}
-
-
-    
+    /* Accessibility */
+    @media (prefers-reduced-motion: reduce){
+      .cine-title .cine-ghost,
+      .cine-title .cine-ghost::before,
+      .cine-title .hl::after{ animation: none !important; }
+    }
   </style>
 </head>
 
@@ -667,22 +605,23 @@ body { overflow-x: hidden; }
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DZLVZS9"
       height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
   <header>
     <div class="container header-inner">
-     <a class="brand" href="/" aria-label="Solexi.ai">
-  <img
-    class="brand-logo"
-    src="/assets/brand/solexi_light.webp"
-    alt="Solexi.ai"
-    width="220"
-    height="60"
-    decoding="async"
-    fetchpriority="high"
-  />
-</a>
+      <a class="brand" href="/" aria-label="Solexi Home">
+        <span class="logoMark" aria-hidden="true">
+          <img src="/solexi-logo.webp" alt="">
+        </span>
+        SOLEXI
+      </a>
 
+      <nav class="nav" aria-label="Main navigation">
+        <a href="/comprendre/">Understand</a>
+        <a href="/problemes/">Problem</a>
+        <a href="/solutions/">Solution</a>
+        <a href="/use-cases/">Use cases</a>
+        <a href="/research/">Research</a>
+        <a class="cta" href="#subscribe">Join</a>
       </nav>
     </div>
   </header>
@@ -698,16 +637,20 @@ body { overflow-x: hidden; }
 
         <h1 class="cine-title" id="cineTitle">
           <span class="cine-ghost" aria-hidden="true">
-            When you die, who can access your digital life?
+            When you die, <span class="hl">who can access</span> your digital life?
           </span>
-          When you die, who can access your digital life?
+          When you die, <span class="hl">who can access</span> your digital life?
         </h1>
 
-        <p class="lead">
+        <!-- MOBILE: Form first slot -->
+        <div class="sx-mobileFormSlot" id="sxMobileFormSlot"></div>
+
+        <p class="lead" id="sxLead">
           Your digital life is fragmented across photos, passwords, documents, and accounts.
           Solexi brings structure to what matters so when the time comes, nothing is lost and no one is left in the dark.
         </p>
 
+        <!-- REAL FORM CARD (gets moved into sxMobileFormSlot on mobile by JS) -->
         <div id="subscribe" class="form-card">
           <h2 class="form-title">Join the waitlist</h2>
           <p class="form-sub">Early access to the demo and founding features.</p>
@@ -716,7 +659,7 @@ body { overflow-x: hidden; }
           <div class="sib-form">
             <div id="sib-form-container" class="sib-form-container">
 
-              <div id="error-message" class="sib-form-message-panel" style="font-size:16px;text-align:left;font-family:Helvetica,sans-serif;color:#661d1d;background-color:#ffeded;border-radius:3px;border-color:#ff4949;max-width:540px;">
+              <div id="error-message" class="sib-form-message-panel" style="font-size:16px;text-align:left;font-family:Helvetica,sans-serif;color:#661d1d;background-color:#ffeded;border-radius:10px;border-color:#ff4949;max-width:640px;">
                 <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
                   <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
                     <path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
@@ -725,24 +668,25 @@ body { overflow-x: hidden; }
                 </div>
               </div>
 
-              <div id="success-message" class="sib-form-message-panel" style="font-size:16px;text-align:left;font-family:Helvetica,sans-serif;color:#085229;background-color:#e7faf0;border-radius:3px;border-color:#13ce66;max-width:540px;">
+              <div id="success-message" class="sib-form-message-panel" style="font-size:16px;text-align:left;font-family:Helvetica,sans-serif;color:#085229;background-color:#e7faf0;border-radius:10px;border-color:#13ce66;max-width:640px;">
                 <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
                   <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
                     <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
                   </svg>
 
                   <div class="sib-form-message-panel__inner-text" style="text-align:center;">
-                    <div style="font-weight:800;">You're in.</div>
-                    <div style="margin-top:6px; color:rgba(8,82,41,.90);">
+                    <div style="font-weight:900;">You're in.</div>
+                    <div style="margin-top:6px; color:rgba(8,82,41,.92);">
                       Share: “When you die, who can access your digital life?”
                     </div>
 
                     <div class="sx-share">
-                      <a id="sxShareX" href="#" rel="noopener">Share on X</a>
                       <a id="sxShareFb" href="#" rel="noopener">Share on Facebook</a>
+                      <a id="sxShareMsgr" href="#" rel="noopener">Share on Messenger</a>
                       <button type="button" id="sxCopyShare">Copy text</button>
                     </div>
                   </div>
+
                 </div>
               </div>
 
@@ -751,13 +695,15 @@ body { overflow-x: hidden; }
                   action="https://554acfe2.sibforms.com/serve/MUIFAKUyT12nwH08eTh35QoG_GPnm3dV6D72NKJScZtvKQcufQhgXzjYB1yKh58NBGq7x24N_6EsvxgVMbtT_tBkornn6rfitZuXFNueBG1f_fPQ0x19--OMKHe2TpbF6NB3UG1fwVw15Qv0kKypOOWf5n6Bd9YMe8UL1QHx1gD3LfqsBE02mu7z_ORcbxxrxH-xG8ALY1vJGlcPyQ=="
                   data-type="subscription">
 
+                  <!-- STEP 1 -->
                   <div style="padding: 8px 0;">
                     <div class="sib-input sib-form-block">
                       <div class="form__entry entry_block">
                         <div class="form__label-row">
                           <label class="entry__label" for="EMAIL" data-required="*">Email</label>
                           <div class="entry__field">
-                            <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="email" placeholder="you@domain.com" data-required="true" required />
+                            <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="email"
+                              placeholder="you@domain.com" data-required="true" required />
                           </div>
                         </div>
                         <label class="entry__error entry__error--primary"></label>
@@ -768,10 +714,12 @@ body { overflow-x: hidden; }
                     </div>
                   </div>
 
+                  <!-- STEP 1 button -->
                   <div style="padding: 8px 0;" id="sxStep1BtnWrap">
                     <button class="sx-joinBtn" type="button" id="sxContinueBtn">JOIN</button>
                   </div>
 
+                  <!-- STEP 2 -->
                   <div class="sx-step2" id="sxStep2">
                     <div style="padding: 8px 0;">
                       <div class="sib-select sib-form-block">
@@ -812,6 +760,7 @@ body { overflow-x: hidden; }
                       </div>
                     </div>
 
+                    <!-- Real submit -->
                     <div style="padding: 8px 0;">
                       <div class="sib-form-block" style="text-align:center">
                         <button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
@@ -831,6 +780,8 @@ body { overflow-x: hidden; }
 
             </div>
           </div>
+          <!-- /Brevo form -->
+
           <p class="microTrust">
             Founding Cohort: early access, feedback loop, and roadmap influence.
           </p>
@@ -845,7 +796,6 @@ body { overflow-x: hidden; }
               <div class="demo-logo">
                 <span class="sx-sphere" aria-hidden="true">
                   <img src="/solexi-logo.webp" alt="">
-
                 </span>
                 Solexi
               </div>
@@ -898,39 +848,28 @@ body { overflow-x: hidden; }
   </div>
 
   <!-- Schema.org structured data -->
-  
- <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@graph":[
-    {
-      "@type":"Organization",
-      "@id":"https://solexi.ai/#organization",
-      "name":"Solexi.ai",
-      "url":"https://solexi.ai/",
-      "logo":"https://solexi.ai/assets/brand/favicon_512x512.png",
-      "description":"Digital responsibility infrastructure for structured digital continuity and controlled transmission."
-    },
-    {
-      "@type":"WebSite",
-      "@id":"https://solexi.ai/#website",
-      "url":"https://solexi.ai/",
-      "name":"Solexi.ai",
-      "publisher":{"@id":"https://solexi.ai/#organization"}
-    },
-    {
-      "@type":"WebPage",
-      "@id":"https://solexi.ai/#webpage",
-      "url":"https://solexi.ai/",
-      "name":"When you die, who can access your digital life?",
-      "isPartOf":{"@id":"https://solexi.ai/#website"},
-      "about":{"@id":"https://solexi.ai/#organization"}
-    }
-  ]
-}
- </script>
-
-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://solexi.ai/#organization",
+        "name": "Solexi",
+        "url": "https://solexi.ai",
+        "sameAs": [],
+        "description": "Human infrastructure for organizing and transmitting digital life, memory, and intent so loved ones aren’t left with chaos."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://solexi.ai/#website",
+        "url": "https://solexi.ai",
+        "name": "Solexi",
+        "publisher": { "@id": "https://solexi.ai/#organization" }
+      }
+    ]
+  }
+  </script>
 
   <!-- Brevo scripts -->
   <script>
@@ -954,9 +893,10 @@ body { overflow-x: hidden; }
   </script>
   <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
+  <!-- UX logic: cinematic title fade + 2-step + share + modal + mobile form-first -->
   <script>
     (function(){
-      // --- Cinematic title fade on scroll ---
+      // --- Cinematic title: fade interference on scroll ---
       const cine = document.getElementById('cineTitle');
       if (cine) {
         let ticking = false;
@@ -972,12 +912,46 @@ body { overflow-x: hidden; }
           cine.style.setProperty('--cineFade', fade.toFixed(3));
         }
         function onScroll(){
-          if (!ticking) { ticking = true; requestAnimationFrame(updateCine); }
+          if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(updateCine);
+          }
         }
         window.addEventListener('scroll', onScroll, { passive:true });
         window.addEventListener('resize', onScroll);
         updateCine();
       }
+
+      // --- MOBILE: move the real form-card before the lead (form-first) ---
+      (function(){
+        const slot = document.getElementById('sxMobileFormSlot');
+        const formCard = document.getElementById('subscribe');
+        const lead = document.getElementById('sxLead');
+        if (!slot || !formCard || !lead) return;
+
+        // Save original position anchor
+        const originalParent = formCard.parentNode;
+        const originalNext = lead.nextSibling; // insert after lead on desktop
+
+        function apply(){
+          const isMobile = window.matchMedia('(max-width: 768px)').matches;
+          if (isMobile) {
+            if (!slot.contains(formCard)) slot.appendChild(formCard);
+          } else {
+            if (originalParent && originalParent.contains(formCard) === false) {
+              // return near original flow: after the lead paragraph
+              originalParent.insertBefore(formCard, originalNext);
+            } else {
+              // ensure it's after lead even if DOM changed
+              if (lead.parentNode && lead.nextSibling !== formCard) {
+                lead.parentNode.insertBefore(formCard, lead.nextSibling);
+              }
+            }
+          }
+        }
+        window.addEventListener('resize', apply);
+        apply();
+      })();
 
       // --- 2-step form ---
       const email = document.getElementById('EMAIL');
@@ -987,39 +961,43 @@ body { overflow-x: hidden; }
       const btn1 = document.getElementById('sxContinueBtn');
       const btn1Wrap = document.getElementById('sxStep1BtnWrap');
 
-      role.required = false;
-      useCase.required = false;
+      if (role) role.required = false;
+      if (useCase) useCase.required = false;
 
       function looksLikeEmail(v){
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v||'').trim());
       }
 
-      btn1.addEventListener('click', () => {
-        if (!looksLikeEmail(email.value)) {
-          email.focus();
-          email.reportValidity?.();
-          return;
-        }
-        step2.classList.add('show');
-        btn1Wrap.style.display = 'none';
-        role.required = true;
-        useCase.required = true;
-        role.focus();
-      });
+      if (btn1) {
+        btn1.addEventListener('click', () => {
+          if (!email || !looksLikeEmail(email.value)) {
+            email?.focus();
+            email?.reportValidity?.();
+            return;
+          }
+          step2?.classList.add('show');
+          if (btn1Wrap) btn1Wrap.style.display = 'none';
+          if (role) role.required = true;
+          if (useCase) useCase.required = true;
+          role?.focus();
+        });
+      }
 
       // --- Share links (success panel) ---
-      const shareText = '“When you die, who can access your digital life?”';
+      const shareText = 'When you die, who can access your digital life?';
       const shareUrl = 'https://solexi.ai/';
-      const x = document.getElementById('sxShareX');
       const fb = document.getElementById('sxShareFb');
+      const ms = document.getElementById('sxShareMsgr');
       const cp = document.getElementById('sxCopyShare');
 
-      if (x) x.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText + ' ' + shareUrl);
       if (fb) fb.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl);
+
+      // Messenger: best-effort share endpoint (works when FB app/session allows)
+      if (ms) ms.href = 'https://www.facebook.com/dialog/send?link=' + encodeURIComponent(shareUrl) + '&app_id=0&redirect_uri=' + encodeURIComponent(shareUrl);
 
       if (cp) {
         cp.addEventListener('click', async () => {
-          const toCopy = 'Share ' + shareText + ' ' + shareUrl;
+          const toCopy = shareText + ' ' + shareUrl;
           try {
             await navigator.clipboard.writeText(toCopy);
             cp.textContent = 'Copied';
@@ -1073,9 +1051,9 @@ body { overflow-x: hidden; }
         if (v) v.pause();
       }
 
-      openBtn.addEventListener('click', open);
-      closeBtn.addEventListener('click', close);
-      modal.addEventListener('click', (e)=>{ if(e.target === modal) close(); });
+      openBtn?.addEventListener('click', open);
+      closeBtn?.addEventListener('click', close);
+      modal?.addEventListener('click', (e)=>{ if(e.target === modal) close(); });
       document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') close(); });
     })();
   </script>
