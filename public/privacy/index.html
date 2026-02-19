@@ -1,11 +1,491 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Politique de confidentialité - Solexi</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy | Solexi</title>
+  <meta name="description" content="Solexi Privacy Policy: what we collect, why we collect it, retention, sharing, security, and your rights." />
+  <style>
+    :root{
+      --bg:#0b0f17; --card:#121a26; --text:#e8eef7; --muted:#b8c4d6;
+      --line:#223047; --accent:#7dd3fc; --accent2:#a7f3d0;
+      --radius:16px; --max:960px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 700px at 20% 0%, rgba(125,211,252,.12), transparent 60%),
+                  radial-gradient(900px 600px at 90% 10%, rgba(167,243,208,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text); line-height:1.6;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max); margin:0 auto; padding:32px 18px 80px}
+    header{
+      padding:22px 0 14px;
+      border-bottom:1px solid var(--line);
+      margin-bottom:18px;
+    }
+    .kicker{color:var(--muted); font-size:14px; margin:0 0 6px}
+    h1{font-size:32px; margin:0 0 8px; letter-spacing:-.02em}
+    .meta{
+      display:flex; flex-wrap:wrap; gap:10px 16px; color:var(--muted); font-size:14px;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      border:1px solid var(--line); background:rgba(255,255,255,.03);
+      padding:6px 10px; border-radius:999px;
+    }
+    main{margin-top:18px}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:18px 18px;
+      margin:14px 0;
+    }
+    h2{font-size:20px; margin:0 0 10px}
+    h3{font-size:16px; margin:16px 0 8px; color:var(--accent2)}
+    p{margin:10px 0}
+    ul{margin:10px 0 10px 18px}
+    li{margin:6px 0}
+    blockquote{
+      margin:12px 0; padding:10px 12px;
+      border-left:3px solid var(--accent);
+      background:rgba(125,211,252,.06);
+      color:var(--muted);
+      border-radius:10px;
+    }
+    .grid{
+      display:grid; gap:12px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 820px){
+      .grid{grid-template-columns: 1fr 1fr}
+    }
+    .note{
+      font-size:14px; color:var(--muted);
+      border:1px dashed rgba(125,211,252,.35);
+      background:rgba(125,211,252,.05);
+      padding:12px; border-radius:12px;
+    }
+    .placeholder{
+      display:inline-block;
+      padding:1px 8px;
+      border-radius:8px;
+      border:1px solid rgba(125,211,252,.35);
+      background:rgba(125,211,252,.08);
+      color:var(--text);
+      font-size:13px;
+      vertical-align:baseline;
+      white-space:nowrap;
+    }
+    footer{
+      margin-top:26px;
+      padding-top:14px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:14px;
+    }
+    .toc a{display:block; padding:6px 0}
+    .toc a span{color:var(--muted); margin-left:6px; font-size:13px}
+    .small{font-size:13px; color:var(--muted)}
+    .pillrow{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+  </style>
 </head>
+
 <body>
-  <h1>Politique de confidentialité</h1>
-  <p>Solexi.ai ne collecte aucune donnée via Facebook Share.</p>
+  <div class="wrap">
+    <header>
+      <p class="kicker">Solexi Trust Center</p>
+      <h1>Privacy Policy (Solexi)</h1>
+      <div class="meta">
+        <div class="badge">Last updated: <strong class="placeholder">YYYY-MM-DD</strong></div>
+        <div class="badge">Legal entity: <strong class="placeholder">Full legal name</strong></div>
+        <div class="badge">Jurisdiction: <strong class="placeholder">Canada / Québec (and others if applicable)</strong></div>
+      </div>
+      <div class="pillrow small">
+        <span class="badge">RPRP (Privacy Officer): <span class="placeholder">Title</span>, <span class="placeholder">Name</span></span>
+        <span class="badge">Email: <span class="placeholder">privacy@solexi.ai</span></span>
+        <span class="badge">Mailing address: <span class="placeholder">Postal address</span></span>
+        <span class="badge">Phone (optional): <span class="placeholder">+1 (000) 000-0000</span></span>
+      </div>
+    </header>
+
+    <main>
+      <section class="card toc" aria-label="Table of contents">
+        <h2>Contents</h2>
+        <a href="#plain">Plain-language summary <span>What to know quickly</span></a>
+        <a href="#scope">Scope <span>Where this policy applies</span></a>
+        <a href="#collection">Personal information we collect <span>What we handle</span></a>
+        <a href="#purposes">Why we use it <span>Purposes</span></a>
+        <a href="#ai">AI: use, consent, and choices <span>How AI features work</span></a>
+        <a href="#legal-basis">Legal basis <span>Depending on jurisdiction</span></a>
+        <a href="#retention">Retention and destruction <span>How long we keep it</span></a>
+        <a href="#third-parties">Sharing with third parties <span>Vendors/processors</span></a>
+        <a href="#security">Security <span>Protecting your data</span></a>
+        <a href="#rights">Your rights and choices <span>Access, deletion, export</span></a>
+        <a href="#incidents">Privacy incidents / breaches <span>Notification & records</span></a>
+        <a href="#contact">Contact <span>How to reach us</span></a>
+      </section>
+
+      <section id="plain" class="card">
+        <h2>Plain-language summary</h2>
+        <p>
+          Solexi helps you organize and transmit your digital legacy. To provide the service, we must process certain
+          personal information (e.g., account details, content you upload, transmission settings). This policy explains:
+        </p>
+        <ul>
+          <li>what we collect;</li>
+          <li>why we collect it;</li>
+          <li>how long we keep it;</li>
+          <li>who we share it with;</li>
+          <li>your choices and rights.</li>
+        </ul>
+      </section>
+
+      <section id="scope" class="card">
+        <h2>Scope</h2>
+        <p>
+          This policy applies to our website, applications, and services (collectively, the “Services”),
+          including requests related to transmission to heirs/mandataries.
+        </p>
+      </section>
+
+      <section id="collection" class="card">
+        <h2>Personal information we collect</h2>
+
+        <div class="grid">
+          <div class="card" style="margin:0">
+            <h3>1) Information you provide</h3>
+            <ul>
+              <li><strong>Account:</strong> email, username, password (or authentication tokens if you use SSO), preferences.</li>
+              <li><strong>Content:</strong> files and information you upload (e.g., photos, videos, documents, audio recordings), and metadata you add (titles, tags, relationships).</li>
+              <li><strong>Transmission:</strong> designation of heirs/mandataries, access rules, triggers (e.g., inactivity), scheduled messages.</li>
+              <li><strong>Support:</strong> customer support messages, attachments, call recordings <span class="placeholder">[if applicable]</span>.</li>
+            </ul>
+          </div>
+
+          <div class="card" style="margin:0">
+            <h3>2) Information collected automatically</h3>
+            <ul>
+              <li><strong>Technical data:</strong> IP address, login logs, device/browser type, session identifiers, pages viewed.</li>
+              <li><strong>Cookies:</strong> <span class="placeholder">[essential / analytics / marketing]</span> and tools used <span class="placeholder">[to be completed]</span>.</li>
+            </ul>
+            <blockquote>
+              We provide a preference center to manage non-essential cookies.
+            </blockquote>
+          </div>
+        </div>
+
+        <h3>3) Sensitive information</h3>
+        <p>
+          Some content may be <strong>highly sensitive</strong> (e.g., financial documents, personal messages, voice biometrics).
+          We apply enhanced safeguards proportionate to sensitivity.
+        </p>
+      </section>
+
+      <section id="purposes" class="card">
+        <h2>Why we use this information (purposes)</h2>
+        <p>We use your personal information to:</p>
+        <ul>
+          <li>provide and secure the Services (account creation, authentication, access control);</li>
+          <li>store and organize your content according to your instructions;</li>
+          <li>execute your transmission rules to heirs/mandataries;</li>
+          <li>process requests, complaints, and rights requests;</li>
+          <li>prevent fraud and investigate incidents;</li>
+          <li>comply with legal obligations.</li>
+        </ul>
+      </section>
+
+      <section id="ai" class="card">
+        <h2>AI: use, consent, and choices</h2>
+
+        <div class="note">
+          Choose the option that accurately reflects how Solexi works in production. Avoid absolute statements that are not
+          contractually and technically true.
+        </div>
+
+        <h3>Option A — AI enabled only with explicit consent (recommended)</h3>
+        <ul>
+          <li>Some features (e.g., avatar, structuring assistance) require your <strong>explicit consent</strong>.</li>
+          <li>You may withdraw consent at any time in your settings.</li>
+        </ul>
+
+        <h3>Option B — AI integrated by default</h3>
+        <ul>
+          <li>We will inform you at the relevant time and provide a simple opt-out mechanism.</li>
+        </ul>
+
+        <h3>Model training</h3>
+        <p>
+          <strong>Training of models:</strong> <span class="placeholder">[Describe precisely if yes/no and under what conditions]</span>.
+        </p>
+      </section>
+
+      <section id="legal-basis" class="card">
+        <h2>Legal basis / grounds (by jurisdiction)</h2>
+        <ul>
+          <li><strong>Canada/Québec:</strong> consent, necessity to provide the service, legal obligations.</li>
+          <li><strong>EU (if applicable):</strong> consent, performance of a contract, legal obligations, legitimate interests <span class="placeholder">[to be documented]</span>.</li>
+        </ul>
+      </section>
+
+      <section id="retention" class="card">
+        <h2>Retention and destruction</h2>
+        <p>We retain personal information:</p>
+        <ul>
+          <li>as long as necessary to provide the Services;</li>
+          <li>as required by law and our security obligations;</li>
+          <li>according to your choices (deletion, export).</li>
+        </ul>
+        <p><strong>Target durations:</strong> <span class="placeholder">[Retention table to be completed by category]</span>.</p>
+      </section>
+
+      <section id="third-parties" class="card">
+        <h2>Sharing with third parties (processors)</h2>
+        <p>
+          We may share information with vendors (hosting, email, support, payments, security) that process information on our behalf.
+        </p>
+        <ul>
+          <li><strong>List of processors:</strong> <span class="placeholder">[Link to “Sub-processors” page in Trust Center]</span></li>
+          <li><strong>Transfers outside Québec/Canada:</strong> <span class="placeholder">[yes/no; countries; safeguards; privacy impact assessment if required]</span></li>
+        </ul>
+      </section>
+
+      <section id="security" class="card">
+        <h2>Security</h2>
+        <p>
+          We implement technical and organizational measures appropriate to the sensitivity of the information.
+          For details, see our Security page: <span class="placeholder">[link]</span>.
+        </p>
+      </section>
+
+      <section id="rights" class="card">
+        <h2>Your rights and choices</h2>
+        <p>You may, subject to applicable law:</p>
+        <ul>
+          <li>access your personal information;</li>
+          <li>request correction;</li>
+          <li>request deletion (subject to legal obligations);</li>
+          <li>export your data (structured format).</li>
+        </ul>
+        <p>
+          To exercise a right: <span class="placeholder">[form link or email]</span> — target response time:
+          <span class="placeholder">[X days]</span>.
+        </p>
+      </section>
+
+      <section id="incidents" class="card">
+        <h2>Privacy incidents / breaches</h2>
+        <p>
+          If an incident presents a real risk of significant harm (or a serious risk / serious prejudice, depending on the applicable law),
+          we will notify you as required and maintain an incident register.
+        </p>
+      </section>
+
+      <section id="contact" class="card">
+        <h2>Contact</h2>
+        <ul>
+          <li><strong>Privacy Officer (RPRP):</strong> <span class="placeholder">[same contact info as above]</span></li>
+          <li><strong>Support:</strong> <span class="placeholder">support@solexi.ai</span></li>
+          <li><strong>Security (vulnerability reporting):</strong> <span class="placeholder">[security.txt link or email]</span></li>
+        </ul>
+      </section>
+
+      <footer>
+        <p class="small">
+          This document is a template. Replace placeholders before publishing and ensure alignment with your actual data flows,
+          contracts (processors), and applicable laws.
+        </p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy | Solexi</title>
+  <meta name="description" content="Solexi Privacy Policy: data handling, legal compliance (including USPTO-related intellectual property considerations), security roadmap, and user rights." />
+  <style>
+    :root{
+      --bg:#0b0f17; --card:#121a26; --text:#e8eef7; --muted:#b8c4d6;
+      --line:#223047; --accent:#7dd3fc; --accent2:#a7f3d0;
+      --radius:16px; --max:1000px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max); margin:0 auto; padding:32px 18px 80px}
+    header{
+      padding:22px 0 14px;
+      border-bottom:1px solid var(--line);
+      margin-bottom:18px;
+    }
+    h1{font-size:32px; margin:0 0 8px}
+    .meta{color:var(--muted); font-size:14px}
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:20px;
+      margin:16px 0;
+    }
+    h2{font-size:20px; margin:0 0 12px}
+    h3{font-size:16px; margin:14px 0 8px; color:var(--accent2)}
+    ul{margin:10px 0 10px 18px}
+    li{margin:6px 0}
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:10px;
+      font-size:14px;
+    }
+    th, td{
+      border:1px solid var(--line);
+      padding:10px;
+      text-align:left;
+      vertical-align:top;
+    }
+    th{background:#162133}
+    .small{font-size:13px; color:var(--muted)}
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Privacy Policy (Solexi)</h1>
+  <div class="meta">
+    Last updated: YYYY-MM-DD <br>
+    Legal entity: [Full Legal Name] <br>
+    Privacy Officer (RPRP): [Name] — privacy@solexi.ai
+  </div>
+</header>
+
+<section class="card">
+  <h2>Compliance With Applicable Laws</h2>
+
+  <h3>1. Privacy & Data Protection Laws</h3>
+  <ul>
+    <li><strong>Canada (Federal):</strong> Personal Information Protection and Electronic Documents Act (PIPEDA).</li>
+    <li><strong>Québec:</strong> Act respecting the protection of personal information in the private sector (as amended by Law 25).</li>
+    <li><strong>European Union (if applicable):</strong> General Data Protection Regulation (GDPR).</li>
+    <li><strong>United States (as applicable):</strong> State-level privacy laws (e.g., CCPA/CPRA).</li>
+  </ul>
+
+  <h3>2. Intellectual Property & USPTO Patent Law</h3>
+  <p>
+    Solexi respects all applicable intellectual property laws and regulations administered by the
+    United States Patent and Trademark Office (USPTO).
+  </p>
+
+  <ul>
+    <li><strong>35 U.S.C. §101–103:</strong> Patent eligibility, novelty, and non-obviousness requirements.</li>
+    <li><strong>35 U.S.C. §112:</strong> Specification and enablement requirements.</li>
+    <li><strong>35 U.S.C. §271:</strong> Patent infringement provisions.</li>
+    <li><strong>USPTO Rules of Practice:</strong> 37 CFR Part 1.</li>
+  </ul>
+
+  <p>
+    If Solexi holds or files patent applications with the USPTO, we ensure compliance with disclosure obligations,
+    inventorship requirements, and confidentiality safeguards related to unpublished patent applications.
+  </p>
+
+  <p class="small">
+    Note: Patent law governs intellectual property protection and does not replace data protection law obligations.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Security Roadmap</h2>
+  <p>
+    Solexi maintains a structured security roadmap aligned with industry best practices (e.g., ISO 27001, SOC 2 principles,
+    NIST Cybersecurity Framework). Below is a realistic implementation timeline.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Phase</th>
+        <th>Timeline</th>
+        <th>Security Objectives</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Phase 1 – Foundation</strong></td>
+        <td>0–3 Months</td>
+        <td>
+          - Enforce HTTPS/TLS 1.2+ <br>
+          - Encrypt data at rest (AES-256) <br>
+          - Implement role-based access control (RBAC) <br>
+          - Enable MFA for admin accounts <br>
+          - Centralized logging & monitoring
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Phase 2 – Hardening</strong></td>
+        <td>3–6 Months</td>
+        <td>
+          - Annual penetration testing <br>
+          - Vulnerability scanning (automated) <br>
+          - Incident response plan documentation <br>
+          - Backup redundancy & disaster recovery testing <br>
+          - Security awareness training
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Phase 3 – Compliance & Certification</strong></td>
+        <td>6–12 Months</td>
+        <td>
+          - SOC 2 Type I audit <br>
+          - Formal risk assessment <br>
+          - Data classification framework <br>
+          - Vendor risk management process <br>
+          - Privacy Impact Assessments (PIA)
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Phase 4 – Maturity</strong></td>
+        <td>12–24 Months</td>
+        <td>
+          - SOC 2 Type II certification <br>
+          - ISO 27001 readiness <br>
+          - Continuous security monitoring (SIEM) <br>
+          - Zero-trust architecture enhancements <br>
+          - Annual third-party audit cycle
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="small">
+    Timelines may adjust based on operational scale, funding, and regulatory requirements.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Contact</h2>
+  Privacy Officer (RPRP): privacy@solexi.ai <br>
+  Security Reporting: security@solexi.ai
+</section>
+
+</div>
 </body>
 </html>
