@@ -545,6 +545,188 @@
     0 0 10px rgba(0,255,255,0.6),
     0 0 20px rgba(0,255,255,0.4);
 }
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding: clamp(72px, 10vw, 120px) 20px;
+  text-align:center;
+  background: radial-gradient(1200px 500px at 50% 0%, rgba(0,255,255,0.10), transparent 60%),
+              radial-gradient(900px 450px at 20% 30%, rgba(255,215,0,0.08), transparent 65%),
+              #05070d;
+}
+
+.cine-title{
+  position:relative;
+  display:inline-block;
+  z-index:3;
+  font-weight:900;
+  letter-spacing:0.3px;
+  line-height:1.05;
+  font-size: clamp(2.0rem, 4.2vw, 3.4rem);
+  color:#fff;
+  margin: 0 auto 16px;
+}
+
+/* Subheadline + CTA (conversion) */
+.hero-sub{
+  z-index:3;
+  position:relative;
+  margin: 0 auto 26px;
+  max-width: 880px;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  opacity: 0.88;
+  color: #dfe7ff;
+}
+
+.hero-cta{
+  z-index:3;
+  position:relative;
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.btn-primary, .btn-secondary{
+  text-decoration:none;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.98rem;
+  transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+}
+.btn-primary{
+  color:#071019;
+  background: linear-gradient(135deg, rgba(0,255,255,0.95), rgba(255,215,0,0.85));
+  box-shadow: 0 10px 30px rgba(0,255,255,0.14), 0 10px 30px rgba(255,215,0,0.10);
+}
+.btn-secondary{
+  color:#eaf3ff;
+  border:1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.03);
+}
+.btn-primary:hover, .btn-secondary:hover{ transform: translateY(-1px); }
+.btn-primary:active, .btn-secondary:active{ transform: translateY(0px); }
+
+/* highlight doré */
+.hl{
+  color:#ffd700;
+  text-shadow: 0 0 10px rgba(255,215,0,0.55), 0 0 22px rgba(255,215,0,0.35);
+}
+
+/* Glow électrique global (sobre) */
+.electric{
+  text-shadow:
+    0 0 10px rgba(0,255,255,0.55),
+    0 0 22px rgba(0,255,255,0.35),
+    0 0 40px rgba(255,215,0,0.18);
+}
+
+/* Courant lumineux (désactivé par défaut, activé au scroll via .is-live) */
+.electric::after{
+  content:"";
+  position:absolute;
+  inset:-4px -10px;
+  left:-180%;
+  width: 360%;
+  height: calc(100% + 8px);
+  background: linear-gradient(120deg,
+    transparent 0%,
+    rgba(255,215,0,0.10) 24%,
+    rgba(0,255,255,0.95) 45%,
+    rgba(255,255,255,1) 50%,
+    rgba(0,255,255,0.95) 55%,
+    rgba(255,215,0,0.10) 76%,
+    transparent 100%);
+  mix-blend-mode: screen;
+  opacity: 0;
+  pointer-events:none;
+  filter: blur(0.2px);
+}
+
+/* Quand on déclenche l’animation */
+.electric.is-live::after{
+  opacity: 0.95;
+  animation: electricFlow 1.25s cubic-bezier(.2,.7,.2,1) 1;
+}
+
+@keyframes electricFlow{
+  0%   { left:-180%; }
+  100% { left: 180%; }
+}
+
+/* Micro-particules (très léger) */
+.spark-field{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  opacity:0.55;
+  background-image:
+    radial-gradient(circle at 20% 40%, rgba(0,255,255,0.14) 0 2px, transparent 3px),
+    radial-gradient(circle at 70% 30%, rgba(255,215,0,0.12) 0 2px, transparent 3px),
+    radial-gradient(circle at 55% 70%, rgba(255,255,255,0.10) 0 1.5px, transparent 3px);
+  background-size: 280px 200px, 320px 240px, 260px 220px;
+  animation: drift 10s linear infinite;
+}
+@keyframes drift{
+  0%{ transform: translate3d(0,0,0); }
+  100%{ transform: translate3d(-40px, 20px, 0); }
+}
+
+/* Lueur de fond (pro) */
+.energy-bg{
+  position:absolute;
+  inset:-40%;
+  z-index:0;
+  background:
+    radial-gradient(closest-side at 50% 30%, rgba(0,255,255,0.12), transparent 70%),
+    radial-gradient(closest-side at 60% 45%, rgba(255,215,0,0.10), transparent 68%);
+  filter: blur(18px);
+  transform: translateZ(0);
+}
+
+/* Lightning SVG (subtil, rare) */
+.lightning{
+  position:absolute;
+  top: 52%;
+  left:0;
+  width:100%;
+  height:140px;
+  z-index:2;
+  opacity:0.0; /* on l’active au scroll avec .zap */
+  pointer-events:none;
+}
+.lightning polyline{
+  fill:none;
+  stroke: rgba(0,255,255,0.85);
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 8px rgba(0,255,255,0.9));
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+}
+
+/* Déclenchement flash lightning */
+.hero.zap .lightning{
+  opacity: 0.55;
+}
+.hero.zap .lightning polyline{
+  animation: lightningDraw 0.55s ease-out 1;
+}
+@keyframes lightningDraw{
+  0%{ stroke-dashoffset: 900; opacity: 0.15; }
+  40%{ opacity: 0.9; }
+  100%{ stroke-dashoffset: 0; opacity: 0.35; }
+}
+
+/* Accessibilité: réduit les animations */
+@media (prefers-reduced-motion: reduce){
+  .spark-field{ animation: none; }
+  .electric.is-live::after{ animation: none; opacity: 0.35; }
+  .hero.zap .lightning polyline{ animation: none; }
+  .btn-primary, .btn-secondary{ transition: none; }
+}
+
     
   </style>
 </head>
@@ -621,10 +803,28 @@
           <span class="badge">Founding Cohort · 2026 · Limited access</span>
         </div>
 
-        <h1 class="cine-title electric" id="cineTitle">
-  When you die, <span class="hl">who can access</span> your digital life?
-</h1>
+        <section class="hero">
+  <div class="energy-bg" aria-hidden="true"></div>
+  <div class="spark-field" aria-hidden="true"></div>
 
+  <h1 class="cine-title electric" id="cineTitle">
+    When you die, <span class="hl">who can access</span> your digital life?
+  </h1>
+
+  <p class="hero-sub">
+    Solexi structures and protects what matters so nothing is lost and no one is left navigating uncertainty.
+  </p>
+
+  <div class="hero-cta">
+    <a class="btn-primary" href="#waitlist">Start My Secure Digital Plan</a>
+    <a class="btn-secondary" href="#how">See how it works</a>
+  </div>
+
+  <!-- Lightning SVG (subtil) -->
+  <svg class="lightning" viewBox="0 0 900 140" preserveAspectRatio="none" aria-hidden="true">
+    <polyline points="0,85 90,60 160,98 230,40 320,110 410,55 520,105 640,45 740,95 900,70" />
+  </svg>
+</section>
         <p class="lead" id="sxLead">
          Your digital life tells your story but today, it’s fragmented and vulnerable.
          Solexi structures it so nothing is lost and no one is left navigating uncertainty.
@@ -857,6 +1057,44 @@
       }
     ]
   }
+
+    <script>
+  (function () {
+    const hero = document.querySelector(".hero");
+    const title = document.getElementById("cineTitle");
+    if (!hero || !title) return;
+
+    let fired = false;
+
+    const fire = () => {
+      if (fired) return;
+      fired = true;
+
+      // courant dans le texte
+      title.classList.add("is-live");
+
+      // éclair subtil
+      hero.classList.add("zap");
+
+      // retire les classes après l’effet (propre)
+      setTimeout(() => title.classList.remove("is-live"), 1400);
+      setTimeout(() => hero.classList.remove("zap"), 900);
+    };
+
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          fire();
+          io.disconnect();
+          break;
+        }
+      }
+    }, { threshold: 0.45 });
+
+    io.observe(hero);
+  })();
+</script>
+  
   </script>
 
   <!-- Brevo scripts -->
