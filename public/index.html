@@ -121,29 +121,6 @@
       background:rgba(255,255,255,.55);
     }
 
-    .sx-counter{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  flex-wrap:wrap;
-  margin: 8px 0 14px;
-  padding: 10px 12px;
-  border-radius: 14px;
-  border: 1px solid rgba(0,0,0,.10);
-  background: rgba(255,255,255,.72);
-  color: rgba(11,11,15,.78);
-  font-size: .95rem;
-}
-
-
-@media (max-width: 768px){
-  .sx-counter{
-    justify-content:flex-start;
-    font-size: .92rem;
-    gap:8px;
-  }
-}
-
     /* Hamburger (mobile) */
     .menuBtn{
       display:none;
@@ -261,35 +238,13 @@
       white-space:nowrap;
     }
 
-    .cine-title{
-      position: relative;
-      font-size: clamp(2.05rem, 4.2vw, 3.1rem);
-      line-height: 1.06;
-      letter-spacing: -0.03em;
-      margin: 0 0 14px;
-      max-width: 28ch;
-      color: #0b0b0f;
-      --cineFade: 1;
-    }
-    .cine-title .hl{
-      background: linear-gradient(90deg, rgba(60,150,255,1), rgba(140,110,255,1));
-      -webkit-background-clip: text;
-      background-clip:text;
-      color: transparent;
-      font-weight: 900;
-      position: relative;
-      padding-bottom: 2px;
-    }
-
     .lead{
       font-size: clamp(1.03rem, 1.2vw, 1.12rem);
       line-height: 1.65;
       color: var(--muted);
-      margin: 0 0 18px;
+      margin: 14px 0 18px;
       max-width: 70ch;
     }
-
-    .sx-mobileFormSlot{ display:none; }
 
     .form-card{
       margin-top: 10px;
@@ -304,7 +259,7 @@
     .form-title{ margin: 0 0 6px; font-size: 1.55rem; letter-spacing: -0.015em; }
     .form-sub{ margin: 0 0 10px; color: var(--muted); line-height: 1.5; }
 
-    /* Counter (manual value) */
+    /* Counter */
     .sx-counter{
       display:inline-flex;
       align-items:center;
@@ -314,14 +269,10 @@
       border: 1px solid rgba(0,0,0,.10);
       background: rgba(255,255,255,.75);
       color: rgba(11,11,15,.75);
-      font-weight: 800;
-      font-size: .88rem;
+      font-weight: 900;
+      font-size: .95rem;
       margin: 0 0 14px;
-    }
-    .sx-dot{
-      width:8px; height:8px; border-radius:999px;
-      background: rgba(60,150,255,.75);
-      box-shadow: 0 0 0 5px rgba(60,150,255,.10);
+      letter-spacing: .05em;
     }
 
     .microTrust{
@@ -474,260 +425,184 @@
       .menuBtn{ display:flex; }
 
       .kickerRow{ justify-content:center; text-align:center; }
-      .cine-title{ max-width: 100%; text-align:center; font-size: clamp(1.85rem, 8.2vw, 2.35rem); line-height: 1.03; }
       .lead{ text-align:center; margin-bottom: 14px; }
       .form-card{ padding: 14px; border-radius: 18px; }
       .form-title, .form-sub{ text-align:center; }
       .sx-counter{ justify-content:center; width: fit-content; margin-left:auto; margin-right:auto; }
     }
 
-    .sx-counter{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin: 8px 0 14px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(0,0,0,.10);
-  background: rgba(255,255,255,.75);
-  font-weight: 900;
-  font-size: 1rem;
-  letter-spacing: .05em;
-}
+    /* ============ HERO ELECTRIC (SCOPED, CLEAN) ============ */
+    .hero{
+      position:relative;
+      overflow:hidden;
+      padding: clamp(72px, 10vw, 120px) 20px;
+      text-align:center;
+      background:
+        radial-gradient(1200px 500px at 50% 0%, rgba(0,255,255,0.10), transparent 60%),
+        radial-gradient(900px 450px at 20% 30%, rgba(255,215,0,0.08), transparent 65%),
+        #05070d;
+      border-radius: 18px;
+    }
 
-.cine-title {
-  font-size: 3rem;
-  font-weight: 700;
-  position: relative;
-  display: inline-block;
-  color: white;
-}
+    .hero .energy-bg{
+      position:absolute;
+      inset:-40%;
+      z-index:0;
+      background:
+        radial-gradient(closest-side at 50% 30%, rgba(0,255,255,0.12), transparent 70%),
+        radial-gradient(closest-side at 60% 45%, rgba(255,215,0,0.10), transparent 68%);
+      filter: blur(18px);
+      transform: translateZ(0);
+    }
 
-.hl {
-  position: relative;
-  color: #ffffff;
-}
+    .hero .spark-field{
+      position:absolute;
+      inset:0;
+      z-index:1;
+      opacity:0.55;
+      background-image:
+        radial-gradient(circle at 20% 40%, rgba(0,255,255,0.14) 0 2px, transparent 3px),
+        radial-gradient(circle at 70% 30%, rgba(255,215,0,0.12) 0 2px, transparent 3px),
+        radial-gradient(circle at 55% 70%, rgba(255,255,255,0.10) 0 1.5px, transparent 3px);
+      background-size: 280px 200px, 320px 240px, 260px 220px;
+      animation: sxDrift 10s linear infinite;
+    }
+    @keyframes sxDrift{
+      0%{ transform: translate3d(0,0,0); }
+      100%{ transform: translate3d(-40px, 20px, 0); }
+    }
 
-.electric::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 200%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    rgba(0,255,255,0.2) 20%,
-    rgba(0,255,255,0.9) 40%,
-    rgba(255,255,255,1) 50%,
-    rgba(0,255,255,0.9) 60%,
-    rgba(0,255,255,0.2) 80%,
-    transparent 100%
-  );
-  animation: electricFlow 3s linear infinite;
-  pointer-events: none;
-  mix-blend-mode: screen;
-}
+    .hero .cine-title{
+      position:relative;
+      display:inline-block;
+      z-index:3;
+      font-weight:900;
+      letter-spacing:0.3px;
+      line-height:1.05;
+      font-size: clamp(2.0rem, 4.2vw, 3.4rem);
+      color:#fff;
+      margin: 0 auto 16px;
+      text-shadow:
+        0 0 10px rgba(0,255,255,0.55),
+        0 0 22px rgba(0,255,255,0.35),
+        0 0 40px rgba(255,215,0,0.18);
+    }
 
-@keyframes electricFlow {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 100%;
-  }
-}
+    .hero .cine-title .hl{
+      color:#ffd700;
+      text-shadow: 0 0 10px rgba(255,215,0,0.55), 0 0 22px rgba(255,215,0,0.35);
+    }
 
-.electric {
-  text-shadow:
-    0 0 5px rgba(0,255,255,0.8),
-    0 0 10px rgba(0,255,255,0.6),
-    0 0 20px rgba(0,255,255,0.4);
-}
+    /* courant: OFF by default, ON once via .is-live */
+    .hero .electric::after{
+      content:"";
+      position:absolute;
+      inset:-4px -10px;
+      left:-180%;
+      width: 360%;
+      height: calc(100% + 8px);
+      background: linear-gradient(120deg,
+        transparent 0%,
+        rgba(255,215,0,0.10) 24%,
+        rgba(0,255,255,0.95) 45%,
+        rgba(255,255,255,1) 50%,
+        rgba(0,255,255,0.95) 55%,
+        rgba(255,215,0,0.10) 76%,
+        transparent 100%);
+      mix-blend-mode: screen;
+      opacity: 0;
+      pointer-events:none;
+      filter: blur(0.2px);
+    }
 
-.hero{
-  position:relative;
-  overflow:hidden;
-  padding: clamp(72px, 10vw, 120px) 20px;
-  text-align:center;
-  background: radial-gradient(1200px 500px at 50% 0%, rgba(0,255,255,0.10), transparent 60%),
-              radial-gradient(900px 450px at 20% 30%, rgba(255,215,0,0.08), transparent 65%),
-              #05070d;
-}
+    .hero .electric.is-live::after{
+      opacity: 0.95;
+      animation: sxElectricFlow 1.25s cubic-bezier(.2,.7,.2,1) 1;
+    }
 
-.cine-title{
-  position:relative;
-  display:inline-block;
-  z-index:3;
-  font-weight:900;
-  letter-spacing:0.3px;
-  line-height:1.05;
-  font-size: clamp(2.0rem, 4.2vw, 3.4rem);
-  color:#fff;
-  margin: 0 auto 16px;
-}
+    @keyframes sxElectricFlow{
+      0%   { left:-180%; }
+      100% { left: 180%; }
+    }
 
-/* Subheadline + CTA (conversion) */
-.hero-sub{
-  z-index:3;
-  position:relative;
-  margin: 0 auto 26px;
-  max-width: 880px;
-  font-size: clamp(1rem, 1.4vw, 1.15rem);
-  opacity: 0.88;
-  color: #dfe7ff;
-}
+    .hero-sub{
+      z-index:3;
+      position:relative;
+      margin: 0 auto 26px;
+      max-width: 880px;
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      opacity: 0.88;
+      color: #dfe7ff;
+    }
 
-.hero-cta{
-  z-index:3;
-  position:relative;
-  display:flex;
-  gap:12px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
+    .hero-cta{
+      z-index:3;
+      position:relative;
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
 
-.btn-primary, .btn-secondary{
-  text-decoration:none;
-  padding: 12px 18px;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 0.98rem;
-  transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
-}
-.btn-primary{
-  color:#071019;
-  background: linear-gradient(135deg, rgba(0,255,255,0.95), rgba(255,215,0,0.85));
-  box-shadow: 0 10px 30px rgba(0,255,255,0.14), 0 10px 30px rgba(255,215,0,0.10);
-}
-.btn-secondary{
-  color:#eaf3ff;
-  border:1px solid rgba(255,255,255,0.18);
-  background: rgba(255,255,255,0.03);
-}
-.btn-primary:hover, .btn-secondary:hover{ transform: translateY(-1px); }
-.btn-primary:active, .btn-secondary:active{ transform: translateY(0px); }
+    .btn-primary, .btn-secondary{
+      text-decoration:none;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.98rem;
+      transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+    }
+    .btn-primary{
+      color:#071019;
+      background: linear-gradient(135deg, rgba(0,255,255,0.95), rgba(255,215,0,0.85));
+      box-shadow: 0 10px 30px rgba(0,255,255,0.14), 0 10px 30px rgba(255,215,0,0.10);
+    }
+    .btn-secondary{
+      color:#eaf3ff;
+      border:1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.03);
+    }
+    .btn-primary:hover, .btn-secondary:hover{ transform: translateY(-1px); }
+    .btn-primary:active, .btn-secondary:active{ transform: translateY(0px); }
 
-/* highlight doré */
-.hl{
-  color:#ffd700;
-  text-shadow: 0 0 10px rgba(255,215,0,0.55), 0 0 22px rgba(255,215,0,0.35);
-}
+    /* Lightning SVG (rare, subtle) */
+    .hero .lightning{
+      position:absolute;
+      top: 52%;
+      left:0;
+      width:100%;
+      height:140px;
+      z-index:2;
+      opacity:0;
+      pointer-events:none;
+    }
+    .hero .lightning polyline{
+      fill:none;
+      stroke: rgba(0,255,255,0.85);
+      stroke-width: 2.5;
+      filter: drop-shadow(0 0 8px rgba(0,255,255,0.9));
+      stroke-dasharray: 900;
+      stroke-dashoffset: 900;
+    }
 
-/* Glow électrique global (sobre) */
-.electric{
-  text-shadow:
-    0 0 10px rgba(0,255,255,0.55),
-    0 0 22px rgba(0,255,255,0.35),
-    0 0 40px rgba(255,215,0,0.18);
-}
+    .hero.zap .lightning{
+      opacity: 0.55;
+    }
+    .hero.zap .lightning polyline{
+      animation: sxLightningDraw 0.55s ease-out 1;
+    }
+    @keyframes sxLightningDraw{
+      0%{ stroke-dashoffset: 900; opacity: 0.15; }
+      40%{ opacity: 0.9; }
+      100%{ stroke-dashoffset: 0; opacity: 0.35; }
+    }
 
-/* Courant lumineux (désactivé par défaut, activé au scroll via .is-live) */
-.electric::after{
-  content:"";
-  position:absolute;
-  inset:-4px -10px;
-  left:-180%;
-  width: 360%;
-  height: calc(100% + 8px);
-  background: linear-gradient(120deg,
-    transparent 0%,
-    rgba(255,215,0,0.10) 24%,
-    rgba(0,255,255,0.95) 45%,
-    rgba(255,255,255,1) 50%,
-    rgba(0,255,255,0.95) 55%,
-    rgba(255,215,0,0.10) 76%,
-    transparent 100%);
-  mix-blend-mode: screen;
-  opacity: 0;
-  pointer-events:none;
-  filter: blur(0.2px);
-}
-
-/* Quand on déclenche l’animation */
-.electric.is-live::after{
-  opacity: 0.95;
-  animation: electricFlow 1.25s cubic-bezier(.2,.7,.2,1) 1;
-}
-
-@keyframes electricFlow{
-  0%   { left:-180%; }
-  100% { left: 180%; }
-}
-
-/* Micro-particules (très léger) */
-.spark-field{
-  position:absolute;
-  inset:0;
-  z-index:1;
-  opacity:0.55;
-  background-image:
-    radial-gradient(circle at 20% 40%, rgba(0,255,255,0.14) 0 2px, transparent 3px),
-    radial-gradient(circle at 70% 30%, rgba(255,215,0,0.12) 0 2px, transparent 3px),
-    radial-gradient(circle at 55% 70%, rgba(255,255,255,0.10) 0 1.5px, transparent 3px);
-  background-size: 280px 200px, 320px 240px, 260px 220px;
-  animation: drift 10s linear infinite;
-}
-@keyframes drift{
-  0%{ transform: translate3d(0,0,0); }
-  100%{ transform: translate3d(-40px, 20px, 0); }
-}
-
-/* Lueur de fond (pro) */
-.energy-bg{
-  position:absolute;
-  inset:-40%;
-  z-index:0;
-  background:
-    radial-gradient(closest-side at 50% 30%, rgba(0,255,255,0.12), transparent 70%),
-    radial-gradient(closest-side at 60% 45%, rgba(255,215,0,0.10), transparent 68%);
-  filter: blur(18px);
-  transform: translateZ(0);
-}
-
-/* Lightning SVG (subtil, rare) */
-.lightning{
-  position:absolute;
-  top: 52%;
-  left:0;
-  width:100%;
-  height:140px;
-  z-index:2;
-  opacity:0.0; /* on l’active au scroll avec .zap */
-  pointer-events:none;
-}
-.lightning polyline{
-  fill:none;
-  stroke: rgba(0,255,255,0.85);
-  stroke-width: 2.5;
-  filter: drop-shadow(0 0 8px rgba(0,255,255,0.9));
-  stroke-dasharray: 900;
-  stroke-dashoffset: 900;
-}
-
-/* Déclenchement flash lightning */
-.hero.zap .lightning{
-  opacity: 0.55;
-}
-.hero.zap .lightning polyline{
-  animation: lightningDraw 0.55s ease-out 1;
-}
-@keyframes lightningDraw{
-  0%{ stroke-dashoffset: 900; opacity: 0.15; }
-  40%{ opacity: 0.9; }
-  100%{ stroke-dashoffset: 0; opacity: 0.35; }
-}
-
-/* Accessibilité: réduit les animations */
-@media (prefers-reduced-motion: reduce){
-  .spark-field{ animation: none; }
-  .electric.is-live::after{ animation: none; opacity: 0.35; }
-  .hero.zap .lightning polyline{ animation: none; }
-  .btn-primary, .btn-secondary{ transition: none; }
-}
-
-    
+    @media (prefers-reduced-motion: reduce){
+      .hero .spark-field{ animation: none; }
+      .hero .electric.is-live::after{ animation: none; opacity: 0.35; }
+      .hero.zap .lightning polyline{ animation: none; }
+      .btn-primary, .btn-secondary{ transition: none; }
+    }
   </style>
 </head>
 
@@ -803,42 +678,40 @@
           <span class="badge">Founding Cohort · 2026 · Limited access</span>
         </div>
 
-        <section class="hero">
-  <div class="energy-bg" aria-hidden="true"></div>
-  <div class="spark-field" aria-hidden="true"></div>
+        <section class="hero" aria-label="Hero">
+          <div class="energy-bg" aria-hidden="true"></div>
+          <div class="spark-field" aria-hidden="true"></div>
 
-  <h1 class="cine-title electric" id="cineTitle">
-    When you die, <span class="hl">who can access</span> your digital life?
-  </h1>
+          <h1 class="cine-title electric" id="cineTitle">
+            When you die, <span class="hl">who can access</span> your digital life?
+          </h1>
 
-  <p class="hero-sub">
-    Solexi structures and protects what matters so nothing is lost and no one is left navigating uncertainty.
-  </p>
+          <p class="hero-sub">
+            Solexi structures and protects what matters so nothing is lost and no one is left navigating uncertainty.
+          </p>
 
-  <div class="hero-cta">
-    <a class="btn-primary" href="#waitlist">Start My Secure Digital Plan</a>
-    <a class="btn-secondary" href="#how">See how it works</a>
-  </div>
+          <div class="hero-cta">
+            <a class="btn-primary" href="#waitlist">Start My Secure Digital Plan</a>
+            <a class="btn-secondary" href="#how">See how it works</a>
+          </div>
 
-  <!-- Lightning SVG (subtil) -->
-  <svg class="lightning" viewBox="0 0 900 140" preserveAspectRatio="none" aria-hidden="true">
-    <polyline points="0,85 90,60 160,98 230,40 320,110 410,55 520,105 640,45 740,95 900,70" />
-  </svg>
-</section>
+          <svg class="lightning" viewBox="0 0 900 140" preserveAspectRatio="none" aria-hidden="true">
+            <polyline points="0,85 90,60 160,98 230,40 320,110 410,55 520,105 640,45 740,95 900,70" />
+          </svg>
+        </section>
+
         <p class="lead" id="sxLead">
-         Your digital life tells your story but today, it’s fragmented and vulnerable.
-         Solexi structures it so nothing is lost and no one is left navigating uncertainty.
+          Your digital life tells your story but today, it’s fragmented and vulnerable.
+          Solexi structures it so nothing is lost and no one is left navigating uncertainty.
         </p>
 
         <div id="subscribe" class="form-card">
-          <!-- requested text -->
           <h2 class="form-title">Join the waitlist</h2>
           <p class="form-sub">Early access to the demo and core features across our entire AI ecosystem.</p>
 
-<div class="sx-counter" aria-label="Waitlist counter">
-  <strong id="sxWaitCount">12</strong>
-</div>
-
+          <div class="sx-counter" aria-label="Waitlist counter">
+            <strong id="sxWaitCount">12</strong>
+          </div>
 
           <!-- Brevo form -->
           <div class="sib-form">
@@ -958,7 +831,6 @@
           </p>
         </div>
 
-        <!-- SEO CONTENT (indexable, natural) -->
         <div class="seo-sections" aria-label="Solexi details">
           <div class="seoCard">
             <h2>How Solexi works</h2>
@@ -994,7 +866,7 @@
             <details>
               <summary>Where can I learn what Solexi collects?</summary>
               <p style="margin-top:8px;">
-                The full details are in the <a href="/privacy/">Privacy Policy</a>.
+                The full details are in the <a href="/privacy/">Privacy Policy</a>
               </p>
             </details>
           </div>
@@ -1007,7 +879,7 @@
     </div>
   </main>
 
-  <!-- Schema.org structured data -->
+  <!-- Schema.org structured data (FIXED: no nested scripts) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1057,44 +929,37 @@
       }
     ]
   }
+  </script>
 
-    <script>
-  (function () {
-    const hero = document.querySelector(".hero");
-    const title = document.getElementById("cineTitle");
-    if (!hero || !title) return;
+  <!-- Hero electric trigger (ONCE on scroll) -->
+  <script>
+    (function () {
+      const hero = document.querySelector(".hero");
+      const title = document.getElementById("cineTitle");
+      if (!hero || !title) return;
 
-    let fired = false;
+      let fired = false;
+      const fire = () => {
+        if (fired) return;
+        fired = true;
+        title.classList.add("is-live");
+        hero.classList.add("zap");
+        setTimeout(() => title.classList.remove("is-live"), 1400);
+        setTimeout(() => hero.classList.remove("zap"), 900);
+      };
 
-    const fire = () => {
-      if (fired) return;
-      fired = true;
-
-      // courant dans le texte
-      title.classList.add("is-live");
-
-      // éclair subtil
-      hero.classList.add("zap");
-
-      // retire les classes après l’effet (propre)
-      setTimeout(() => title.classList.remove("is-live"), 1400);
-      setTimeout(() => hero.classList.remove("zap"), 900);
-    };
-
-    const io = new IntersectionObserver((entries) => {
-      for (const e of entries) {
-        if (e.isIntersecting) {
-          fire();
-          io.disconnect();
-          break;
+      const io = new IntersectionObserver((entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            fire();
+            io.disconnect();
+            break;
+          }
         }
-      }
-    }, { threshold: 0.45 });
+      }, { threshold: 0.45 });
 
-    io.observe(hero);
-  })();
-</script>
-  
+      io.observe(hero);
+    })();
   </script>
 
   <!-- Brevo scripts -->
@@ -1111,19 +976,16 @@
   </script>
   <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
-
-
   <script>
     (function(){
       // Year
       const y = document.getElementById('sxYear');
       if (y) y.textContent = String(new Date().getFullYear());
 
-    
-     const WAITLIST_COUNT = 62;
-
-const wc = document.getElementById('sxWaitCount');
-if (wc) wc.textContent = String(WAITLIST_COUNT);
+      // Waitlist count (manual)
+      const WAITLIST_COUNT = 62;
+      const wc = document.getElementById('sxWaitCount');
+      if (wc) wc.textContent = String(WAITLIST_COUNT);
 
       // Mobile drawer
       const btn = document.getElementById('menuBtn');
