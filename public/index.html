@@ -494,6 +494,58 @@
   font-size: 1rem;
   letter-spacing: .05em;
 }
+
+.cine-title {
+  font-size: 3rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  color: white;
+}
+
+.hl {
+  position: relative;
+  color: #ffffff;
+}
+
+.electric::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(0,255,255,0.2) 20%,
+    rgba(0,255,255,0.9) 40%,
+    rgba(255,255,255,1) 50%,
+    rgba(0,255,255,0.9) 60%,
+    rgba(0,255,255,0.2) 80%,
+    transparent 100%
+  );
+  animation: electricFlow 3s linear infinite;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+@keyframes electricFlow {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.electric {
+  text-shadow:
+    0 0 5px rgba(0,255,255,0.8),
+    0 0 10px rgba(0,255,255,0.6),
+    0 0 20px rgba(0,255,255,0.4);
+}
+    
   </style>
 </head>
 
@@ -569,13 +621,13 @@
           <span class="badge">Founding Cohort · 2026 · Limited access</span>
         </div>
 
-        <h1 class="cine-title" id="cineTitle">
-          When you die, <span class="hl">who can access</span> your digital life?
-        </h1>
+        <h1 class="cine-title electric" id="cineTitle">
+  When you die, <span class="hl">who can access</span> your digital life?
+</h1>
 
         <p class="lead" id="sxLead">
-          Your digital life is fragmented across photos, passwords, documents, and accounts.
-          Solexi brings structure to what matters so when the time comes, nothing is lost and no one is left in the dark.
+         Your digital life tells your story but today, it’s fragmented and vulnerable.
+         Solexi structures it so nothing is lost and no one is left navigating uncertainty.
         </p>
 
         <div id="subscribe" class="form-card">
