@@ -134,13 +134,7 @@
   color: rgba(11,11,15,.78);
   font-size: .95rem;
 }
-.sx-counter__dot{
-  width:10px;height:10px;border-radius:999px;
-  background: rgba(60,150,255,.9);
-  box-shadow: 0 0 0 5px rgba(60,150,255,.12);
-}
-.sx-counter__sep{ opacity:.55; }
-.sx-counter__note{ opacity:.7; }
+
 
 @media (max-width: 768px){
   .sx-counter{
@@ -576,18 +570,22 @@
           <p class="form-sub">Early access to the demo and core features across our entire AI ecosystem.</p>
 
 <div class="sx-counter" aria-label="Waitlist counter">
-  <span class="sx-counter__dot" aria-hidden="true"></span>
-  <span><strong id="sxWaitCount">12</strong> early members</span>
-  <span class="sx-counter__sep" aria-hidden="true">·</span>
-  <span class="sx-counter__note">my close circle</span>
+  <strong id="sxWaitCount">12</strong>
 </div>
 
-          <!-- Counter (set your real number below in JS) -->
-          <div class="sx-counter" aria-label="Waitlist counter">
-            <span class="sx-dot" aria-hidden="true"></span>
-            <span><span id="sxWaitlistCount">—</span> joined</span>
-          </div>
-
+         .sx-counter{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin: 8px 0 14px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(255,255,255,.75);
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: .05em;
+}
           <!-- Brevo form -->
           <div class="sib-form">
             <div id="sib-form-container" class="sib-form-container">
@@ -830,7 +828,7 @@
       if (y) y.textContent = String(new Date().getFullYear());
 
     
-     const WAITLIST_COUNT = 12;
+     const WAITLIST_COUNT = 62;
 
 const wc = document.getElementById('sxWaitCount');
 if (wc) wc.textContent = String(WAITLIST_COUNT);
