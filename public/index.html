@@ -421,9 +421,6 @@
       .container{ width: 92vw; }
       main{ padding: 18px 0 26px; }
 
-      .nav{ display:none; }
-      .menuBtn{ display:flex; }
-
       .kickerRow{ justify-content:center; text-align:center; }
       .lead{ text-align:center; margin-bottom: 14px; }
       .form-card{ padding: 14px; border-radius: 18px; }
@@ -651,30 +648,101 @@
 .sx-footer a:hover{
   text-decoration: underline;
 }
-/* DEBUG: force visibility of hamburger */
-.menuBtn{
-  display:flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.header-inner{
-  justify-content: space-between !important;
-}
+/* ===== Vercel-style popover menu ===== */
 
 .menuBtn{
+  display:flex;
+  width:44px; height:44px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.12);
+  background:rgba(255,255,255,.65);
+  cursor:pointer;
+  padding:0;
+  align-items:center;
+  justify-content:center;
   position: relative;
-  z-index: 99999;
+  z-index: 10000;
 }
-
-    .menuBtn span,
+.menuBtn span{
+  width:18px;
+  height:2px;
+  background:#0b0b0f;
+  border-radius:999px;
+  position:relative;
+  display:block;
+}
 .menuBtn span::before,
 .menuBtn span::after{
-  background: #000 !important;
+  content:"";
+  position:absolute;
+  left:0;
+  width:18px;
+  height:2px;
+  background:#0b0b0f;
+  border-radius:999px;
 }
-    
+.menuBtn span::before{ top:-6px; }
+.menuBtn span::after{ top: 6px; }
 
+/* Popover wrapper anchored to header */
+.sx-pop{
+  position: fixed;
+  top: 64px;                 /* below sticky header */
+  right: 14px;
+  z-index: 9999;
+  display:none;
+}
+.sx-pop.open{ display:block; }
 
+.sx-pop-panel{
+  width: min(360px, calc(100vw - 28px));
+  border-radius: 18px;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0,0,0,.10);
+  box-shadow: 0 30px 90px rgba(0,0,0,.18);
+  padding: 12px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.sx-pop-cta{
+  display:block;
+  text-decoration:none;
+  text-align:center;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  background:#0b0b0f;
+  color:#fff;
+  border: 1px solid rgba(0,0,0,.12);
+}
+
+.sx-pop-link{
+  display:block;
+  text-decoration:none;
+  padding: 10px 12px;
+  border-radius: 14px;
+  font-weight: 700;
+  color:#0b0b0f;
+  border: 1px solid rgba(0,0,0,.10);
+  background: #fff;
+  opacity: .78;
+}
+.sx-pop-link:hover{ opacity:1; }
+
+/* Small click-away overlay (invisible but catches clicks) */
+.sx-pop-backdrop{
+  position: fixed;
+  inset:0;
+  background: transparent;
+  z-index: 9998;
+  display:none;
+}
+.sx-pop-backdrop.open{ display:block; }
     
 </style>
 
@@ -712,15 +780,14 @@
     </div>
   </header>
 
-  <!-- Mobile drawer -->
-<div class="drawer" id="drawer" aria-hidden="true">
-  <div class="drawerPanel" role="dialog" aria-modal="true" aria-label="Menu">
-    <div class="drawerTop">
-      <div class="brand" style="gap:10px;">
-        <span class="logoMark" aria-hidden="true">
-          <img src="/assets/brand/solexi-logo-128.webp" alt="Solexi" width="34" height="34" decoding="async">
-        </span>
-        SOLEXI
+<!-- Menu popover (Vercel-style) -->
+<div class="sx-pop" id="sxPop" aria-hidden="true">
+  <div class="sx-pop-panel" role="dialog" aria-modal="false" aria-label="Menu">
+    <a class="sx-pop-cta" href="#subscribe" id="sxPopJoin">Join</a>
+    <a class="sx-pop-link" href="/privacy/">Privacy</a>
+  </div>
+</div>
+  
       </div>
       <button class="drawerClose" id="drawerClose" type="button" aria-label="Close">✕</button>
     </div>
@@ -1118,39 +1185,42 @@
         }
       });
     })();
-  </script>
 <script>
 (function(){
   const btn = document.getElementById('menuBtn');
-  const drawer = document.getElementById('drawer');
-  const close = document.getElementById('drawerClose');
-  const join = document.getElementById('drawerJoin');
+  const pop = document.getElementById('sxPop');
+  const join = document.getElementById('sxPopJoin');
 
-  if(!btn || !drawer || !close) return;
+  if(!btn || !pop) return;
 
-  function openDrawer(){
-    drawer.classList.add('open');
-    drawer.setAttribute('aria-hidden','false');
+  // backdrop to close when clicking outside
+  const backdrop = document.createElement('div');
+  backdrop.className = 'sx-pop-backdrop';
+  document.body.appendChild(backdrop);
+
+  function openPop(){
+    pop.classList.add('open');
+    backdrop.classList.add('open');
+    pop.setAttribute('aria-hidden','false');
     btn.setAttribute('aria-expanded','true');
-    document.body.style.overflow = 'hidden';
   }
-  function closeDrawer(){
-    drawer.classList.remove('open');
-    drawer.setAttribute('aria-hidden','true');
+  function closePop(){
+    pop.classList.remove('open');
+    backdrop.classList.remove('open');
+    pop.setAttribute('aria-hidden','true');
     btn.setAttribute('aria-expanded','false');
-    document.body.style.overflow = '';
+  }
+  function toggle(){
+    if(pop.classList.contains('open')) closePop();
+    else openPop();
   }
 
-  btn.addEventListener('click', openDrawer);
-  close.addEventListener('click', closeDrawer);
-  join?.addEventListener('click', closeDrawer);
-
-  drawer.addEventListener('click', (e)=>{
-    if(e.target === drawer) closeDrawer();
-  });
+  btn.addEventListener('click', (e)=>{ e.stopPropagation(); toggle(); });
+  backdrop.addEventListener('click', closePop);
+  join?.addEventListener('click', closePop);
 
   document.addEventListener('keydown', (e)=>{
-    if(e.key === 'Escape') closeDrawer();
+    if(e.key === 'Escape') closePop();
   });
 })();
 </script>
