@@ -603,7 +603,57 @@
       .hero.zap .lightning polyline{ animation: none; }
       .btn-primary, .btn-secondary{ transition: none; }
     }
-  </style>
+
+/* ===== UNIFORM WIDTH FIX ===== */
+
+.sx-stack{
+  display:flex;
+  flex-direction:column;
+  gap: 18px;
+}
+
+.form-card,
+.seo-sections,
+.sx-footer{
+  width: min(100%, 760px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* make sure Brevo doesn't re-limit width */
+#sib-form-container,
+#sib-container{
+  max-width: 100% !important;
+}
+
+.hero{
+  width: min(100%, 980px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-card,
+.seoCard{
+  border-radius: 18px;
+}
+
+.sx-footer{
+  margin-top: 10px;
+  padding: 20px 0 30px;
+  text-align: center;
+  color: rgba(11,11,15,.60);
+  font-size: .92rem;
+}
+.sx-footer a{
+  color: rgba(11,11,15,.70);
+  text-decoration:none;
+}
+.sx-footer a:hover{
+  text-decoration: underline;
+}
+    
+</style>
+
 </head>
 
 <body>
@@ -672,13 +722,13 @@
 
   <main class="container">
     <div class="hero-grid">
-      <section aria-label="Solexi waitlist">
+      <section class="sx-stack" aria-label="Solexi waitlist">
         <div class="kickerRow">
           <p class="kicker">DIGITAL AFTER YOU</p>
           <span class="badge">Founding Cohort · 2026 · Limited access</span>
         </div>
 
-        <section class="hero" aria-label="Hero">
+        <div class="hero">
           <div class="energy-bg" aria-hidden="true"></div>
           <div class="spark-field" aria-hidden="true"></div>
 
@@ -694,7 +744,7 @@
           <svg class="lightning" viewBox="0 0 900 140" preserveAspectRatio="none" aria-hidden="true">
             <polyline points="0,85 90,60 160,98 230,40 320,110 410,55 520,105 640,45 740,95 900,70" />
           </svg>
-        </section>
+        </div>
 
         <div id="subscribe" class="form-card">
           <h2 class="form-title">Join the waitlist</h2>
@@ -857,10 +907,13 @@
             </details>
           </div>
 
-          <footer>
-            © <span id="sxYear"></span> Solexi · <a href="/privacy/">Privacy</a>
-          </footer>
+        
         </div>
+        <footer class="sx-footer">
+         © <span id="sxYear"></span> Solexi · <a href="/privacy/">Privacy</a>
+          </footer>
+
+        
       </section>
     </div>
   </main>
