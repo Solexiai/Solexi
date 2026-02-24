@@ -651,6 +651,30 @@
 .sx-footer a:hover{
   text-decoration: underline;
 }
+/* DEBUG: force visibility of hamburger */
+.menuBtn{
+  display:flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.header-inner{
+  justify-content: space-between !important;
+}
+
+.menuBtn{
+  position: relative;
+  z-index: 99999;
+}
+
+    .menuBtn span,
+.menuBtn span::before,
+.menuBtn span::after{
+  background: #000 !important;
+}
+    
+
+
     
 </style>
 
