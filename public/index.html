@@ -41,10 +41,10 @@
     content="Your digital life tells your story but today, it’s fragmented and vulnerable. Solexi structures it so nothing is lost and no one is left navigating uncertainty." />
   <meta name="twitter:image" content="https://solexi.ai/assets/og/solexi-og.jpg" />
 
-  <!-- Preload logo (ultra light) -->
+  <!-- Preload logo -->
   <link rel="preload" as="image" href="/assets/brand/solexi-logo-128.webp" fetchpriority="high" />
 
-  <!-- Brevo base stylesheet (required) -->
+  <!-- Brevo base stylesheet -->
   <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 
   <style>
@@ -78,7 +78,7 @@
 
     /* Header */
     header{
-      position:sticky; top:0; z-index:50;
+      position:sticky; top:0; z-index:5000;
       background: rgba(255,255,255,.82);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(0,0,0,.08);
@@ -109,21 +109,9 @@
       display:block;
     }
 
-    /* Desktop nav */
-    .nav{ display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
-    .nav a{ text-decoration:none; color:inherit; opacity:.85; font-size:.98rem; }
-    .nav a:hover{opacity:1}
-    .nav a.cta{
-      opacity:1;
-      padding:8px 12px;
-      border:1px solid rgba(0,0,0,.18);
-      border-radius:999px;
-      background:rgba(255,255,255,.55);
-    }
-
-    /* Hamburger (mobile) */
+    /* ===== Vercel-style hamburger ===== */
     .menuBtn{
-      display:none;
+      display:flex;
       width:44px; height:44px;
       border-radius:12px;
       border:1px solid rgba(0,0,0,.12);
@@ -132,14 +120,16 @@
       padding:0;
       align-items:center;
       justify-content:center;
+      position: relative;
+      z-index: 10000;
     }
     .menuBtn span{
-      display:block;
       width:18px;
       height:2px;
-      background:rgba(11,11,15,.85);
+      background:#0b0b0f;
       border-radius:999px;
       position:relative;
+      display:block;
     }
     .menuBtn span::before,
     .menuBtn span::after{
@@ -148,67 +138,69 @@
       left:0;
       width:18px;
       height:2px;
-      background:rgba(11,11,15,.85);
+      background:#0b0b0f;
       border-radius:999px;
     }
     .menuBtn span::before{ top:-6px; }
-    .menuBtn span::after{ top:6px; }
+    .menuBtn span::after{ top: 6px; }
 
-    /* Mobile drawer */
-    .drawer{
+    /* ===== Popover menu (ONLY menu system) ===== */
+    .sx-pop{
+      position: fixed;
+      top: 58px;
+      right: 18px;
+      z-index: 9999;
       display:none;
-      position:fixed;
-      inset:0;
-      background: rgba(0,0,0,.45);
-      z-index:999;
-      padding: 14px;
     }
-    .drawer.open{ display:block; }
-    .drawerPanel{
-      width:min(520px, 100%);
-      margin-left:auto;
+    .sx-pop.open{ display:block; }
+
+    .sx-pop-panel{
+      width: min(360px, calc(100vw - 28px));
+      border-radius: 18px;
       background: rgba(255,255,255,.92);
       backdrop-filter: blur(12px);
-      border:1px solid rgba(0,0,0,.10);
-      border-radius: 18px;
-      box-shadow: 0 30px 90px rgba(0,0,0,.25);
-      padding: 14px;
-    }
-    .drawerTop{
-      display:flex; align-items:center; justify-content:space-between;
+      border: 1px solid rgba(0,0,0,.10);
+      box-shadow: 0 30px 90px rgba(0,0,0,.18);
+      padding: 12px;
+      display:flex;
+      flex-direction:column;
       gap:10px;
-      padding-bottom:10px;
-      border-bottom:1px solid rgba(0,0,0,.08);
     }
-    .drawerClose{
-      width:40px; height:40px;
-      border-radius:12px;
-      border:1px solid rgba(0,0,0,.12);
-      background:#fff;
-      cursor:pointer;
-    }
-    .drawerNav{
-      display:flex; flex-direction:column;
-      gap:10px;
-      padding:12px 0 6px;
-    }
-    .drawerNav a{
+
+    .sx-pop-cta{
+      display:block;
       text-decoration:none;
-      color:#0b0b0f;
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid rgba(0,0,0,.10);
-      background:#fff;
-      font-weight:700;
-    }
-    .drawerNav a.cta{
+      text-align:center;
+      padding: 12px 14px;
+      border-radius: 14px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
       background:#0b0b0f;
       color:#fff;
-      border-color: rgba(0,0,0,.10);
-      text-align:center;
-      letter-spacing:.12em;
-      text-transform:uppercase;
+      border: 1px solid rgba(0,0,0,.12);
     }
+    .sx-pop-link{
+      display:block;
+      text-decoration:none;
+      padding: 10px 12px;
+      border-radius: 14px;
+      font-weight: 700;
+      color:#0b0b0f;
+      border: 1px solid rgba(0,0,0,.10);
+      background: #fff;
+      opacity: .78;
+    }
+    .sx-pop-link:hover{ opacity:1; }
+
+    .sx-pop-backdrop{
+      position: fixed;
+      inset:0;
+      background: transparent;
+      z-index: 9998;
+      display:none;
+    }
+    .sx-pop-backdrop.open{ display:block; }
 
     main{ padding: clamp(26px, 5vw, 64px) 0; }
 
@@ -238,12 +230,139 @@
       white-space:nowrap;
     }
 
-    .lead{
-      font-size: clamp(1.03rem, 1.2vw, 1.12rem);
-      line-height: 1.65;
-      color: var(--muted);
-      margin: 14px 0 18px;
-      max-width: 70ch;
+    /* ===== HERO ===== */
+    .hero{
+      position:relative;
+      overflow:hidden;
+      padding: clamp(72px, 10vw, 120px) 20px;
+      text-align:center;
+      background:
+        radial-gradient(1200px 500px at 50% 0%, rgba(0,255,255,0.10), transparent 60%),
+        radial-gradient(900px 450px at 20% 30%, rgba(255,215,0,0.08), transparent 65%),
+        #05070d;
+      border-radius: 18px;
+      width: min(100%, 980px);
+      margin-inline:auto;
+    }
+
+    .hero .energy-bg{
+      position:absolute;
+      inset:-40%;
+      z-index:0;
+      background:
+        radial-gradient(closest-side at 50% 30%, rgba(0,255,255,0.12), transparent 70%),
+        radial-gradient(closest-side at 60% 45%, rgba(255,215,0,0.10), transparent 68%);
+      filter: blur(18px);
+      transform: translateZ(0);
+    }
+    .hero .spark-field{
+      position:absolute;
+      inset:0;
+      z-index:1;
+      opacity:0.55;
+      background-image:
+        radial-gradient(circle at 20% 40%, rgba(0,255,255,0.14) 0 2px, transparent 3px),
+        radial-gradient(circle at 70% 30%, rgba(255,215,0,0.12) 0 2px, transparent 3px),
+        radial-gradient(circle at 55% 70%, rgba(255,255,255,0.10) 0 1.5px, transparent 3px);
+      background-size: 280px 200px, 320px 240px, 260px 220px;
+      animation: sxDrift 10s linear infinite;
+    }
+    @keyframes sxDrift{
+      0%{ transform: translate3d(0,0,0); }
+      100%{ transform: translate3d(-40px, 20px, 0); }
+    }
+
+    .hero .cine-title{
+      position:relative;
+      display:inline-block;
+      z-index:3;
+      font-weight:900;
+      letter-spacing:0.3px;
+      line-height:1.05;
+      font-size: clamp(2.0rem, 4.2vw, 3.4rem);
+      color:#fff;
+      margin: 0 auto 16px;
+      text-shadow:
+        0 0 10px rgba(0,255,255,0.55),
+        0 0 22px rgba(0,255,255,0.35),
+        0 0 40px rgba(255,215,0,0.18);
+    }
+    .hero .cine-title .hl{
+      color:#ffd700;
+      text-shadow: 0 0 10px rgba(255,215,0,0.55), 0 0 22px rgba(255,215,0,0.35);
+    }
+
+    .hero .electric::after{
+      content:"";
+      position:absolute;
+      inset:-4px -10px;
+      left:-180%;
+      width: 360%;
+      height: calc(100% + 8px);
+      background: linear-gradient(120deg,
+        transparent 0%,
+        rgba(255,215,0,0.10) 24%,
+        rgba(0,255,255,0.95) 45%,
+        rgba(255,255,255,1) 50%,
+        rgba(0,255,255,0.95) 55%,
+        rgba(255,215,0,0.10) 76%,
+        transparent 100%);
+      mix-blend-mode: screen;
+      opacity: 0;
+      pointer-events:none;
+      filter: blur(0.2px);
+    }
+    .hero .electric.is-live::after{
+      opacity: 0.95;
+      animation: sxElectricFlow 1.25s cubic-bezier(.2,.7,.2,1) 1;
+    }
+    @keyframes sxElectricFlow{
+      0%{ left:-180%; }
+      100%{ left: 180%; }
+    }
+
+    .hero-sub{
+      z-index:3;
+      position:relative;
+      margin: 0 auto 26px;
+      max-width: 880px;
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      opacity: 0.88;
+      color: #dfe7ff;
+    }
+
+    /* Lightning */
+    .hero .lightning{
+      position:absolute;
+      top: 52%;
+      left:0;
+      width:100%;
+      height:140px;
+      z-index:2;
+      opacity:0;
+      pointer-events:none;
+    }
+    .hero .lightning polyline{
+      fill:none;
+      stroke: rgba(0,255,255,0.85);
+      stroke-width: 2.5;
+      filter: drop-shadow(0 0 8px rgba(0,255,255,0.9));
+      stroke-dasharray: 900;
+      stroke-dashoffset: 900;
+    }
+    .hero.zap .lightning{ opacity: 0.55; }
+    .hero.zap .lightning polyline{ animation: sxLightningDraw 0.55s ease-out 1; }
+    @keyframes sxLightningDraw{
+      0%{ stroke-dashoffset: 900; opacity: 0.15; }
+      40%{ opacity: 0.9; }
+      100%{ stroke-dashoffset: 0; opacity: 0.35; }
+    }
+
+    /* ===== Layout uniform widths ===== */
+    .sx-stack{ display:flex; flex-direction:column; gap: 18px; }
+    .form-card, .seo-sections, .sx-footer{
+      width: min(100%, 760px);
+      margin-inline: auto;
     }
 
     .form-card{
@@ -254,41 +373,11 @@
       backdrop-filter: blur(10px);
       box-shadow: var(--shadow2);
       padding: 18px;
-      max-width: 760px;
     }
     .form-title{ margin: 0 0 6px; font-size: 1.55rem; letter-spacing: -0.015em; }
-    .form-sub{ margin: 0 0 10px; color: var(--muted); line-height: 1.5; }
+    .microTrust{ margin: 10px 0 0; color: var(--muted2); font-size: .92rem; line-height: 1.45; }
 
-    /* Counter */
-    .sx-counter{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding: 7px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(0,0,0,.10);
-      background: rgba(255,255,255,.75);
-      color: rgba(11,11,15,.75);
-      font-weight: 900;
-      font-size: .95rem;
-      margin: 0 0 14px;
-      letter-spacing: .05em;
-    }
-
-    .microTrust{
-      margin: 10px 0 0;
-      color: var(--muted2);
-      font-size: .92rem;
-      line-height: 1.45;
-    }
-
-    /* SEO sections under fold */
-    .seo-sections{
-      margin-top: clamp(26px, 3.2vw, 40px);
-      display:grid;
-      gap: 14px;
-      max-width: 980px;
-    }
+    .seo-sections{ margin-top: clamp(26px, 3.2vw, 40px); display:grid; gap: 14px; }
     .seoCard{
       border-radius: 18px;
       border: 1px solid rgba(0,0,0,.08);
@@ -298,26 +387,22 @@
       padding: 16px 16px;
     }
     .seoCard h2{ margin: 0 0 8px; font-size: 1.1rem; letter-spacing: -0.01em; }
-    .seoCard p, .seoCard li{
-      margin: 0;
-      color: rgba(11,11,15,.74);
-      line-height: 1.6;
-      font-size: .98rem;
-    }
+    .seoCard p, .seoCard li{ margin: 0; color: rgba(11,11,15,.74); line-height: 1.6; font-size: .98rem; }
     .seoCard ul{ margin: 8px 0 0; padding-left: 18px; }
     .faq details{ border-top: 1px solid rgba(0,0,0,.08); padding: 10px 0; }
     .faq details:first-child{ border-top: 0; padding-top: 0; }
     .faq summary{ cursor:pointer; font-weight: 850; color: rgba(11,11,15,.85); list-style: none; }
     .faq summary::-webkit-details-marker{ display:none; }
 
-    footer{
-      margin-top: 34px;
-      padding: 22px 0 34px;
+    .sx-footer{
+      margin-top: 10px;
+      padding: 20px 0 30px;
+      text-align: center;
       color: rgba(11,11,15,.60);
       font-size: .92rem;
     }
-    footer a{ color: rgba(11,11,15,.70); text-decoration:none; }
-    footer a:hover{ text-decoration:underline; }
+    .sx-footer a{ color: rgba(11,11,15,.70); text-decoration:none; }
+    .sx-footer a:hover{ text-decoration: underline; }
 
     /* Brevo overrides */
     .sib-form{ background: transparent !important; text-align:left !important; }
@@ -341,8 +426,7 @@
       letter-spacing: .01em;
       text-align: left !important;
     }
-    #sib-container .input,
-    #sib-container select.input{
+    #sib-container .input, #sib-container select.input{
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial !important;
       height: 46px !important;
       border-radius: 12px !important;
@@ -355,8 +439,7 @@
       box-shadow: none !important;
       text-align: left !important;
     }
-    #sib-container .input:focus,
-    #sib-container select.input:focus{
+    #sib-container .input:focus, #sib-container select.input:focus{
       border-color: rgba(11,11,15,.28) !important;
       box-shadow: 0 0 0 4px rgba(60,150,255,.10) !important;
     }
@@ -364,8 +447,7 @@
     #sib-container .sib-form-block{ margin: 0 !important; }
     #sib-form-container .sib-input, #sib-form-container .sib-select{ margin-bottom: 12px !important; }
 
-    #sib-container button.sib-form-block__button,
-    .sx-joinBtn{
+    #sib-container button.sib-form-block__button, .sx-joinBtn{
       height: 50px !important;
       border-radius: 999px !important;
       padding: 0 18px !important;
@@ -377,11 +459,10 @@
       text-transform: uppercase !important;
       cursor: pointer !important;
       width: 100% !important;
-      transition: transform .12s ease, box-shadow .18s ease, opacity .12s ease, filter .18s ease;
+      transition: transform .12s ease, box-shadow .18s ease;
       box-shadow: 0 16px 40px rgba(0,0,0,.14);
     }
-    #sib-container button.sib-form-block__button:hover,
-    .sx-joinBtn:hover{ transform: translateY(-1px); }
+    #sib-container button.sib-form-block__button:hover, .sx-joinBtn:hover{ transform: translateY(-1px); }
 
     #sib-container .entry__specification{
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial !important;
@@ -416,336 +497,19 @@
     }
     .sx-share a:hover, .sx-share button:hover{ background:#0b0b0f; color:#fff; }
 
-    /* Mobile-first alignment + hamburger */
     @media (max-width: 768px){
       .container{ width: 92vw; }
       main{ padding: 18px 0 26px; }
-
       .kickerRow{ justify-content:center; text-align:center; }
-      .lead{ text-align:center; margin-bottom: 14px; }
       .form-card{ padding: 14px; border-radius: 18px; }
-      .form-title, .form-sub{ text-align:center; }
-      .sx-counter{ justify-content:center; width: fit-content; margin-left:auto; margin-right:auto; }
-    }
-
-    /* ============ HERO ELECTRIC (SCOPED, CLEAN) ============ */
-    .hero{
-      position:relative;
-      overflow:hidden;
-      padding: clamp(72px, 10vw, 120px) 20px;
-      text-align:center;
-      background:
-        radial-gradient(1200px 500px at 50% 0%, rgba(0,255,255,0.10), transparent 60%),
-        radial-gradient(900px 450px at 20% 30%, rgba(255,215,0,0.08), transparent 65%),
-        #05070d;
-      border-radius: 18px;
-    }
-
-    .hero .energy-bg{
-      position:absolute;
-      inset:-40%;
-      z-index:0;
-      background:
-        radial-gradient(closest-side at 50% 30%, rgba(0,255,255,0.12), transparent 70%),
-        radial-gradient(closest-side at 60% 45%, rgba(255,215,0,0.10), transparent 68%);
-      filter: blur(18px);
-      transform: translateZ(0);
-    }
-
-    .hero .spark-field{
-      position:absolute;
-      inset:0;
-      z-index:1;
-      opacity:0.55;
-      background-image:
-        radial-gradient(circle at 20% 40%, rgba(0,255,255,0.14) 0 2px, transparent 3px),
-        radial-gradient(circle at 70% 30%, rgba(255,215,0,0.12) 0 2px, transparent 3px),
-        radial-gradient(circle at 55% 70%, rgba(255,255,255,0.10) 0 1.5px, transparent 3px);
-      background-size: 280px 200px, 320px 240px, 260px 220px;
-      animation: sxDrift 10s linear infinite;
-    }
-    @keyframes sxDrift{
-      0%{ transform: translate3d(0,0,0); }
-      100%{ transform: translate3d(-40px, 20px, 0); }
-    }
-
-    .hero .cine-title{
-      position:relative;
-      display:inline-block;
-      z-index:3;
-      font-weight:900;
-      letter-spacing:0.3px;
-      line-height:1.05;
-      font-size: clamp(2.0rem, 4.2vw, 3.4rem);
-      color:#fff;
-      margin: 0 auto 16px;
-      text-shadow:
-        0 0 10px rgba(0,255,255,0.55),
-        0 0 22px rgba(0,255,255,0.35),
-        0 0 40px rgba(255,215,0,0.18);
-    }
-
-    .hero .cine-title .hl{
-      color:#ffd700;
-      text-shadow: 0 0 10px rgba(255,215,0,0.55), 0 0 22px rgba(255,215,0,0.35);
-    }
-
-    /* courant: OFF by default, ON once via .is-live */
-    .hero .electric::after{
-      content:"";
-      position:absolute;
-      inset:-4px -10px;
-      left:-180%;
-      width: 360%;
-      height: calc(100% + 8px);
-      background: linear-gradient(120deg,
-        transparent 0%,
-        rgba(255,215,0,0.10) 24%,
-        rgba(0,255,255,0.95) 45%,
-        rgba(255,255,255,1) 50%,
-        rgba(0,255,255,0.95) 55%,
-        rgba(255,215,0,0.10) 76%,
-        transparent 100%);
-      mix-blend-mode: screen;
-      opacity: 0;
-      pointer-events:none;
-      filter: blur(0.2px);
-    }
-
-    .hero .electric.is-live::after{
-      opacity: 0.95;
-      animation: sxElectricFlow 1.25s cubic-bezier(.2,.7,.2,1) 1;
-    }
-
-    @keyframes sxElectricFlow{
-      0%   { left:-180%; }
-      100% { left: 180%; }
-    }
-
-    .hero-sub{
-      z-index:3;
-      position:relative;
-      margin: 0 auto 26px;
-      max-width: 880px;
-      font-size: clamp(1rem, 1.4vw, 1.15rem);
-      opacity: 0.88;
-      color: #dfe7ff;
-    }
-
-    .hero-cta{
-      z-index:3;
-      position:relative;
-      display:flex;
-      gap:12px;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
-
-    .btn-primary, .btn-secondary{
-      text-decoration:none;
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 0.98rem;
-      transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
-    }
-    .btn-primary{
-      color:#071019;
-      background: linear-gradient(135deg, rgba(0,255,255,0.95), rgba(255,215,0,0.85));
-      box-shadow: 0 10px 30px rgba(0,255,255,0.14), 0 10px 30px rgba(255,215,0,0.10);
-    }
-    .btn-secondary{
-      color:#eaf3ff;
-      border:1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.03);
-    }
-    .btn-primary:hover, .btn-secondary:hover{ transform: translateY(-1px); }
-    .btn-primary:active, .btn-secondary:active{ transform: translateY(0px); }
-
-    /* Lightning SVG (rare, subtle) */
-    .hero .lightning{
-      position:absolute;
-      top: 52%;
-      left:0;
-      width:100%;
-      height:140px;
-      z-index:2;
-      opacity:0;
-      pointer-events:none;
-    }
-    .hero .lightning polyline{
-      fill:none;
-      stroke: rgba(0,255,255,0.85);
-      stroke-width: 2.5;
-      filter: drop-shadow(0 0 8px rgba(0,255,255,0.9));
-      stroke-dasharray: 900;
-      stroke-dashoffset: 900;
-    }
-
-    .hero.zap .lightning{
-      opacity: 0.55;
-    }
-    .hero.zap .lightning polyline{
-      animation: sxLightningDraw 0.55s ease-out 1;
-    }
-    @keyframes sxLightningDraw{
-      0%{ stroke-dashoffset: 900; opacity: 0.15; }
-      40%{ opacity: 0.9; }
-      100%{ stroke-dashoffset: 0; opacity: 0.35; }
     }
 
     @media (prefers-reduced-motion: reduce){
       .hero .spark-field{ animation: none; }
       .hero .electric.is-live::after{ animation: none; opacity: 0.35; }
       .hero.zap .lightning polyline{ animation: none; }
-      .btn-primary, .btn-secondary{ transition: none; }
     }
-
-/* ===== UNIFORM WIDTH FIX ===== */
-
-.sx-stack{
-  display:flex;
-  flex-direction:column;
-  gap: 18px;
-}
-
-.form-card,
-.seo-sections,
-.sx-footer{
-  width: min(100%, 760px);
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* make sure Brevo doesn't re-limit width */
-#sib-form-container,
-#sib-container{
-  max-width: 100% !important;
-}
-
-.hero{
-  width: min(100%, 980px);
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.form-card,
-.seoCard{
-  border-radius: 18px;
-}
-
-.sx-footer{
-  margin-top: 10px;
-  padding: 20px 0 30px;
-  text-align: center;
-  color: rgba(11,11,15,.60);
-  font-size: .92rem;
-}
-.sx-footer a{
-  color: rgba(11,11,15,.70);
-  text-decoration:none;
-}
-.sx-footer a:hover{
-  text-decoration: underline;
-}
-/* ===== Vercel-style popover menu ===== */
-
-.menuBtn{
-  display:flex;
-  width:44px; height:44px;
-  border-radius:12px;
-  border:1px solid rgba(0,0,0,.12);
-  background:rgba(255,255,255,.65);
-  cursor:pointer;
-  padding:0;
-  align-items:center;
-  justify-content:center;
-  position: relative;
-  z-index: 10000;
-}
-.menuBtn span{
-  width:18px;
-  height:2px;
-  background:#0b0b0f;
-  border-radius:999px;
-  position:relative;
-  display:block;
-}
-.menuBtn span::before,
-.menuBtn span::after{
-  content:"";
-  position:absolute;
-  left:0;
-  width:18px;
-  height:2px;
-  background:#0b0b0f;
-  border-radius:999px;
-}
-.menuBtn span::before{ top:-6px; }
-.menuBtn span::after{ top: 6px; }
-
-/* Popover wrapper anchored to header */
-.sx-pop{
-  position: fixed;
-  top: 64px;                 /* below sticky header */
-  right: 14px;
-  z-index: 9999;
-  display:none;
-}
-.sx-pop.open{ display:block; }
-
-.sx-pop-panel{
-  width: min(360px, calc(100vw - 28px));
-  border-radius: 18px;
-  background: rgba(255,255,255,.92);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(0,0,0,.10);
-  box-shadow: 0 30px 90px rgba(0,0,0,.18);
-  padding: 12px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-
-.sx-pop-cta{
-  display:block;
-  text-decoration:none;
-  text-align:center;
-  padding: 12px 14px;
-  border-radius: 14px;
-  font-weight: 900;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  background:#0b0b0f;
-  color:#fff;
-  border: 1px solid rgba(0,0,0,.12);
-}
-
-.sx-pop-link{
-  display:block;
-  text-decoration:none;
-  padding: 10px 12px;
-  border-radius: 14px;
-  font-weight: 700;
-  color:#0b0b0f;
-  border: 1px solid rgba(0,0,0,.10);
-  background: #fff;
-  opacity: .78;
-}
-.sx-pop-link:hover{ opacity:1; }
-
-/* Small click-away overlay (invisible but catches clicks) */
-.sx-pop-backdrop{
-  position: fixed;
-  inset:0;
-  background: transparent;
-  z-index: 9998;
-  display:none;
-}
-.sx-pop-backdrop.open{ display:block; }
-    
-</style>
-
+  </style>
 </head>
 
 <body>
@@ -759,47 +523,25 @@
     <div class="container header-inner">
       <a class="brand" href="/" aria-label="Solexi Home">
         <span class="logoMark" aria-hidden="true">
-          <img
-            src="/assets/brand/solexi-logo-128.webp"
-            alt="Solexi"
-            width="34" height="34"
-            decoding="async"
-            fetchpriority="high"
-          >
+          <img src="/assets/brand/solexi-logo-128.webp" alt="Solexi" width="34" height="34" decoding="async" fetchpriority="high">
         </span>
         SOLEXI
       </a>
 
-      <!-- Desktop nav -->
-      
-
-      <!-- Mobile hamburger -->
-      <button class="menuBtn" id="menuBtn" type="button" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+      <button class="menuBtn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">
         <span></span>
       </button>
     </div>
   </header>
 
-<!-- Menu popover (Vercel-style) -->
-<div class="sx-pop" id="sxPop" aria-hidden="true">
-  <div class="sx-pop-panel" role="dialog" aria-modal="false" aria-label="Menu">
-    <a class="sx-pop-cta" href="#subscribe" id="sxPopJoin">Join</a>
-    <a class="sx-pop-link" href="/privacy/">Privacy</a>
-  </div>
-</div>
-  
-      </div>
-      <button class="drawerClose" id="drawerClose" type="button" aria-label="Close">✕</button>
+  <!-- Popover menu -->
+  <div class="sx-pop" id="sxPop" aria-hidden="true">
+    <div class="sx-pop-panel" role="dialog" aria-modal="false" aria-label="Menu">
+      <a class="sx-pop-cta" href="#subscribe" id="sxPopJoin">Join</a>
+      <a class="sx-pop-link" href="/privacy/">Privacy</a>
     </div>
-
-    <!-- ✅ Minimal links (no confusion) -->
-    <nav class="drawerNav" aria-label="Mobile navigation">
-      <a class="cta" href="#subscribe" id="drawerJoin">Join</a>
-      <a href="/privacy/">Privacy</a>
-    </nav>
   </div>
-</div>
-    
+
   <main class="container">
     <div class="hero-grid">
       <section class="sx-stack" aria-label="Solexi waitlist">
@@ -808,7 +550,7 @@
           <span class="badge">Founding Cohort · 2026 · Limited access</span>
         </div>
 
-        <div class="hero">
+        <section class="hero" aria-label="Hero">
           <div class="energy-bg" aria-hidden="true"></div>
           <div class="spark-field" aria-hidden="true"></div>
 
@@ -820,11 +562,10 @@
             Your digital life tells your story but today, it’s fragmented and vulnerable. Solexi structures it so nothing is lost and no one is left navigating uncertainty.
           </p>
 
-
           <svg class="lightning" viewBox="0 0 900 140" preserveAspectRatio="none" aria-hidden="true">
             <polyline points="0,85 90,60 160,98 230,40 320,110 410,55 520,105 640,45 740,95 900,70" />
           </svg>
-        </div>
+        </section>
 
         <div id="subscribe" class="form-card">
           <h2 class="form-title">Join the waitlist</h2>
@@ -938,13 +679,10 @@
                   <input type="hidden" name="locale" value="en">
                 </form>
               </div>
-
             </div>
           </div>
 
-          <p class="microTrust">
-            Founding Cohort: early access, feedback loop, and roadmap influence.
-          </p>
+          <p class="microTrust">Founding Cohort: early access, feedback loop, and roadmap influence.</p>
         </div>
 
         <div class="seo-sections" aria-label="Solexi details">
@@ -986,19 +724,17 @@
               </p>
             </details>
           </div>
-
-        
         </div>
-        <footer class="sx-footer">
-         © <span id="sxYear"></span> Solexi · <a href="/privacy/">Privacy</a>
-          </footer>
 
-        
+        <footer class="sx-footer">
+          © <span id="sxYear"></span> Solexi · <a href="/privacy/">Privacy</a>
+        </footer>
+
       </section>
     </div>
   </main>
 
-  <!-- Schema.org structured data (FIXED: no nested scripts) -->
+  <!-- Schema.org structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1050,7 +786,7 @@
   }
   </script>
 
-  <!-- Hero electric trigger (ONCE on scroll) -->
+  <!-- Hero electric trigger -->
   <script>
     (function () {
       const hero = document.querySelector(".hero");
@@ -1100,35 +836,6 @@
       // Year
       const y = document.getElementById('sxYear');
       if (y) y.textContent = String(new Date().getFullYear());
-
-      // Waitlist count (manual)
-      const WAITLIST_COUNT = 62;
-      const wc = document.getElementById('sxWaitCount');
-      if (wc) wc.textContent = String(WAITLIST_COUNT);
-
-      // Mobile drawer
-      const btn = document.getElementById('menuBtn');
-      const drawer = document.getElementById('drawer');
-      const close = document.getElementById('drawerClose');
-      const join = document.getElementById('drawerJoin');
-
-      function openDrawer(){
-        drawer.classList.add('open');
-        drawer.setAttribute('aria-hidden','false');
-        btn.setAttribute('aria-expanded','true');
-        document.body.style.overflow = 'hidden';
-      }
-      function closeDrawer(){
-        drawer.classList.remove('open');
-        drawer.setAttribute('aria-hidden','true');
-        btn.setAttribute('aria-expanded','false');
-        document.body.style.overflow = '';
-      }
-      btn?.addEventListener('click', openDrawer);
-      close?.addEventListener('click', closeDrawer);
-      join?.addEventListener('click', closeDrawer);
-      drawer?.addEventListener('click', (e)=>{ if(e.target === drawer) closeDrawer(); });
-      document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeDrawer(); });
 
       // 2-step form
       const email = document.getElementById('EMAIL');
@@ -1184,46 +891,37 @@
           setTimeout(()=> cp.textContent = 'Copy text', 1200);
         }
       });
+
+      // Popover menu
+      const btn = document.getElementById('menuBtn');
+      const pop = document.getElementById('sxPop');
+      const join = document.getElementById('sxPopJoin');
+      if(!btn || !pop) return;
+
+      const backdrop = document.createElement('div');
+      backdrop.className = 'sx-pop-backdrop';
+      document.body.appendChild(backdrop);
+
+      function openPop(){
+        pop.classList.add('open');
+        backdrop.classList.add('open');
+        pop.setAttribute('aria-hidden','false');
+        btn.setAttribute('aria-expanded','true');
+      }
+      function closePop(){
+        pop.classList.remove('open');
+        backdrop.classList.remove('open');
+        pop.setAttribute('aria-hidden','true');
+        btn.setAttribute('aria-expanded','false');
+      }
+
+      btn.addEventListener('click', (e)=>{ e.stopPropagation();
+        pop.classList.contains('open') ? closePop() : openPop();
+      });
+      backdrop.addEventListener('click', closePop);
+      join?.addEventListener('click', closePop);
+      document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closePop(); });
     })();
-<script>
-(function(){
-  const btn = document.getElementById('menuBtn');
-  const pop = document.getElementById('sxPop');
-  const join = document.getElementById('sxPopJoin');
-
-  if(!btn || !pop) return;
-
-  // backdrop to close when clicking outside
-  const backdrop = document.createElement('div');
-  backdrop.className = 'sx-pop-backdrop';
-  document.body.appendChild(backdrop);
-
-  function openPop(){
-    pop.classList.add('open');
-    backdrop.classList.add('open');
-    pop.setAttribute('aria-hidden','false');
-    btn.setAttribute('aria-expanded','true');
-  }
-  function closePop(){
-    pop.classList.remove('open');
-    backdrop.classList.remove('open');
-    pop.setAttribute('aria-hidden','true');
-    btn.setAttribute('aria-expanded','false');
-  }
-  function toggle(){
-    if(pop.classList.contains('open')) closePop();
-    else openPop();
-  }
-
-  btn.addEventListener('click', (e)=>{ e.stopPropagation(); toggle(); });
-  backdrop.addEventListener('click', closePop);
-  join?.addEventListener('click', closePop);
-
-  document.addEventListener('keydown', (e)=>{
-    if(e.key === 'Escape') closePop();
-  });
-})();
-</script>
-  
+  </script>
 </body>
 </html>
