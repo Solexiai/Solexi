@@ -1,26 +1,24 @@
 {
   "redirects": [
-    { "source": "/solution.html", "destination": "/solutions/", "permanent": true },
     { "source": "/solutions.html", "destination": "/solutions/", "permanent": true },
-
-    { "source": "/problem.html", "destination": "/problemes/", "permanent": true },
-    { "source": "/problemes.html", "destination": "/problemes/", "permanent": true },
+    { "source": "/solution.html", "destination": "/solutions/", "permanent": true },
 
     { "source": "/research.html", "destination": "/research/", "permanent": true },
+
     { "source": "/use-cases.html", "destination": "/use-cases/", "permanent": true },
 
-    { "source": "/privacy.html", "destination": "/privacy/", "permanent": true },
     { "source": "/terms.html", "destination": "/terms/", "permanent": true },
 
-    { "source": "/glossary.html", "destination": "/glossary/", "permanent": true },
+    { "source": "/privacy.html", "destination": "/privacy/", "permanent": true },
 
-    { "source": "/thank-you", "destination": "/thank-you.html", "permanent": true }
-  ]
-}
+    { "source": "/faq.html", "destination": "/faq/", "permanent": true },
 
-{
-  "redirects": [
     { "source": "/how-it-works.html", "destination": "/how-it-works/", "permanent": true },
-    { "source": "/fr/vedette.html", "destination": "/fr/vedette/", "permanent": true }
+
+    { "source": "/comprendre", "destination": "/understand/", "permanent": true },
+    { "source": "/comprendre.html", "destination": "/understand/", "permanent": true },
+
+    { "source": "/fr/vedette", "destination": "/vedette/", "permanent": true },
+    { "source": "/fr/vedette.html", "destination": "/vedette/", "permanent": true }
   ]
 }
