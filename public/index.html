@@ -542,10 +542,11 @@
 
     </a>
 
-    <button class="menuBtn" id="menuBtn" type="button"
-            aria-label="Open menu" aria-expanded="false">
-      <span></span>
-    </button>
+    <button class="menuBtn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">
+  <span></span>
+</button>
+ 
+  
   </div>
 </header>
 
@@ -558,13 +559,21 @@
   <!-- Popover menu -->
   
 
-    <div class="sx-pop-panel" role="dialog" aria-modal="false" aria-label="Menu">
-  <a class="sx-pop-cta" href="#subscribe" id="sxPopJoin">Join</a>
-  <a class="sx-pop-link" href="/privacy/">Privacy</a>
-  <a class="sx-pop-link" href="/faq/">FAQ</a>
-</div>
+    <div class="sx-pop" id="sxPop" aria-hidden="true">
+  <div class="sx-pop-panel" role="dialog" aria-modal="false" aria-label="Menu">
 
-    
+    <a class="sx-pop-cta" href="#subscribe" id="sxPopJoin">Join</a>
+
+    <a class="sx-pop-link" href="/understand/">Understand</a>
+    <a class="sx-pop-link" href="/problemes/">Problem</a>
+    <a class="sx-pop-link" href="/solutions/">Solutions</a>
+    <a class="sx-pop-link" href="/use-cases/">Use cases</a>
+    <a class="sx-pop-link" href="/research/">Research</a>
+    <a class="sx-pop-link" href="/faq/">FAQ</a>
+    <a class="sx-pop-link" href="/privacy/">Privacy</a>
+  </div>
+
+  
   </div>
 
   <main class="container">
