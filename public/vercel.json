@@ -1,5 +1,15 @@
 {
   "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}
+
+{
+  "redirects": [
     { "source": "/solutions.html", "destination": "/solutions/", "permanent": true },
     { "source": "/solution.html", "destination": "/solutions/", "permanent": true },
 
