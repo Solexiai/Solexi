@@ -27,3 +27,13 @@
     { "source": "/fr/vedette.html", "destination": "/vedette/", "permanent": true }
   ]
 }
+
+{
+  "redirects": [
+    {
+      "source": "/how-it-works.html",
+      "destination": "/how-it-works/",
+      "permanent": true
+    }
+  ]
+}
