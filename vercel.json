@@ -22,18 +22,10 @@
     { "source": "/use-cases.html", "destination": "/use-cases/", "permanent": true },
     { "source": "/research.html", "destination": "/research/", "permanent": true },
 
+    { "source": "/how-it-works.html", "destination": "/how-it-works/", "permanent": true },
+
     { "source": "/fr/vedette", "destination": "/vedette/", "permanent": true },
     { "source": "/fr/vedette/", "destination": "/vedette/", "permanent": true },
     { "source": "/fr/vedette.html", "destination": "/vedette/", "permanent": true }
-  ]
-}
-
-{
-  "redirects": [
-    {
-      "source": "/how-it-works.html",
-      "destination": "/how-it-works/",
-      "permanent": true
-    }
   ]
 }
