@@ -36,6 +36,8 @@
     { "source": "/celebrities.html", "destination": "/celebrities/", "permanent": true },
     { "source": "/celebrities/index.html", "destination": "/celebrities/", "permanent": true }
 
+    { "source": "/celebrities.html", "destination": "/celebrities/", "permanent": true },
+    { "source": "/celebrities", "destination": "/celebrities/", "permanent": true }
     
   ]
 }
