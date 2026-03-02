@@ -1,418 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How Solexi Works | Structured Digital Legacy Infrastructure</title>
-    <meta name="description" content="Understand how Solexi structures digital legacy infrastructure through governed records, controlled access, and verified delivery workflows.">
-    <link rel="canonical" href="https://solexi.ai/how-it-works.html">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="theme-color" content="#FFFFFF">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://solexi.ai/how-it-works.html">
-    <meta property="og:title" content="How Solexi Works | Structured Digital Legacy Infrastructure">
-    <meta property="og:description" content="A clear overview of Solexi's structured vault, controlled access architecture, and verified delivery framework.">
-    <meta property="og:image" content="https://solexi.ai/images/og-how-it-works.jpg">
-    <meta property="og:site_name" content="Solexi.ai">
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5DZLVZS9');
+  </script>
+  <!-- End Google Tag Manager -->
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://solexi.ai/how-it-works.html">
-    <meta name="twitter:title" content="How Solexi Works | Structured Digital Legacy Infrastructure">
-    <meta name="twitter:description" content="A calm, technical overview of Solexi's preventive digital infrastructure and controlled onboarding approach.">
-    <meta name="twitter:image" content="https://solexi.ai/images/og-how-it-works.jpg">
+  <title>How Solexi Works | Structured Digital Legacy Infrastructure</title>
+  <meta name="description" content="Understand how Solexi structures digital legacy infrastructure through governed records, controlled access, and verified delivery workflows." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#FFFFFF" />
 
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+  <!-- Canonical (clean URL) -->
+  <link rel="canonical" href="https://solexi.ai/how-it-works/" />
 
-    <style>
-        .skip-link {
-            position: absolute;
-            left: -9999px;
-            top: 0;
-            background: var(--color-black);
-            color: var(--color-white);
-            padding: 0.75rem 1rem;
-            z-index: 3000;
-        }
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://solexi.ai/how-it-works/" />
+  <meta property="og:title" content="How Solexi Works | Structured Digital Legacy Infrastructure" />
+  <meta property="og:description" content="A clear overview of Solexi's structured vault, controlled access architecture, and verified delivery framework." />
+  <meta property="og:image" content="https://solexi.ai/images/og-how-it-works.jpg" />
+  <meta property="og:site_name" content="Solexi.ai" />
 
-        .skip-link:focus {
-            left: 1rem;
-            top: 1rem;
-        }
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://solexi.ai/how-it-works/" />
+  <meta name="twitter:title" content="How Solexi Works | Structured Digital Legacy Infrastructure" />
+  <meta name="twitter:description" content="A calm, technical overview of Solexi's preventive digital infrastructure and controlled onboarding approach." />
+  <meta name="twitter:image" content="https://solexi.ai/images/og-how-it-works.jpg" />
 
-        .how-main {
-            padding-top: 6rem;
-        }
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-        .how-section {
-            padding: 4rem 1.25rem;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-        .how-container {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
+  <!-- IMPORTANT: use absolute paths so it works from /how-it-works/ -->
+  <link rel="stylesheet" href="/css/style.css" />
 
-        .how-hero {
-            text-align: center;
-            padding: 4.5rem 1.25rem 3.5rem;
-            background: linear-gradient(to bottom, var(--color-white) 0%, var(--color-light-gray) 100%);
-        }
+  <style>
+    .skip-link{position:absolute;left:-9999px;top:0;background:var(--color-black);color:var(--color-white);padding:.75rem 1rem;z-index:3000}
+    .skip-link:focus{left:1rem;top:1rem}
+    .how-main{padding-top:6rem}
+    .how-section{padding:4rem 1.25rem}
+    .how-container{max-width:1100px;margin:0 auto}
+    .how-hero{text-align:center;padding:4.5rem 1.25rem 3.5rem;background:linear-gradient(to bottom,var(--color-white) 0%,var(--color-light-gray) 100%)}
+    .how-hero h1{font-family:var(--font-serif);color:var(--color-black);font-weight:500;line-height:1.2;font-size:clamp(2.1rem,6vw,3.5rem);margin-bottom:1rem}
+    .how-subheadline{max-width:760px;margin:0 auto .85rem;color:var(--color-dark-gray);font-size:1.1rem}
+    .how-authority{color:var(--color-black);font-size:.95rem;margin-bottom:1.5rem}
+    .how-cta{display:inline-block;background:var(--color-black);color:var(--color-white);border-radius:999px;padding:.8rem 1.6rem;font-weight:600}
+    .how-microcopy{margin-top:.75rem;color:var(--color-dark-gray);font-size:.92rem}
+    .how-section h2{font-family:var(--font-serif);color:var(--color-black);font-size:clamp(1.75rem,4vw,2.4rem);line-height:1.25;margin-bottom:1rem;font-weight:500}
+    .how-intro{max-width:760px;margin-bottom:2rem}
+    .how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+    .how-card{border:1px solid var(--color-medium-gray);background:var(--color-white);padding:1.25rem}
+    .how-card h3{color:var(--color-black);margin-bottom:.7rem;font-size:1.2rem;font-weight:600}
+    .how-band{background:var(--color-off-white)}
+    .how-list{list-style:disc;margin-left:1.2rem}
+    .how-list li{margin-bottom:.45rem}
+    .faq-item{border-top:1px solid var(--color-medium-gray);padding:1rem 0}
+    .faq-item:last-of-type{border-bottom:1px solid var(--color-medium-gray)}
+    .faq-item h3{color:var(--color-black);margin-bottom:.35rem;font-size:1.03rem}
+    .internal-links{margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.85rem 1.1rem;font-size:.95rem}
+    .internal-links a{text-decoration:underline;text-underline-offset:2px}
+    @media (max-width:860px){.nav-links{gap:1rem;flex-wrap:wrap;justify-content:flex-end}}
+  </style>
 
-        .how-hero h1 {
-            font-family: var(--font-serif);
-            color: var(--color-black);
-            font-weight: 500;
-            line-height: 1.2;
-            font-size: clamp(2.1rem, 6vw, 3.5rem);
-            margin-bottom: 1rem;
-        }
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"How Solexi Works",
+    "description":"A structured overview of Solexi's digital legacy infrastructure.",
+    "url":"https://solexi.ai/how-it-works/"
+  }
+  </script>
 
-        .how-subheadline {
-            max-width: 760px;
-            margin: 0 auto 0.85rem;
-            color: var(--color-dark-gray);
-            font-size: 1.1rem;
-        }
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Solexi.ai",
+    "url":"https://solexi.ai/",
+    "logo":"https://solexi.ai/images/logo.png"
+  }
+  </script>
 
-        .how-authority {
-            color: var(--color-black);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://solexi.ai/"},
+      {"@type":"ListItem","position":2,"name":"How Solexi Works","item":"https://solexi.ai/how-it-works/"}
+    ]
+  }
+  </script>
 
-        .how-cta {
-            display: inline-block;
-            background: var(--color-black);
-            color: var(--color-white);
-            border-radius: 999px;
-            padding: 0.8rem 1.6rem;
-            font-weight: 600;
-        }
-
-        .how-microcopy {
-            margin-top: 0.75rem;
-            color: var(--color-dark-gray);
-            font-size: 0.92rem;
-        }
-
-        .how-section h2 {
-            font-family: var(--font-serif);
-            color: var(--color-black);
-            font-size: clamp(1.75rem, 4vw, 2.4rem);
-            line-height: 1.25;
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-
-        .how-intro {
-            max-width: 760px;
-            margin-bottom: 2rem;
-        }
-
-        .how-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem;
-        }
-
-        .how-card {
-            border: 1px solid var(--color-medium-gray);
-            background: var(--color-white);
-            padding: 1.25rem;
-        }
-
-        .how-card h3 {
-            color: var(--color-black);
-            margin-bottom: 0.7rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .how-band {
-            background: var(--color-off-white);
-        }
-
-        .how-list {
-            list-style: disc;
-            margin-left: 1.2rem;
-        }
-
-        .how-list li {
-            margin-bottom: 0.45rem;
-        }
-
-        .faq-item {
-            border-top: 1px solid var(--color-medium-gray);
-            padding: 1rem 0;
-        }
-
-        .faq-item:last-of-type {
-            border-bottom: 1px solid var(--color-medium-gray);
-        }
-
-        .faq-item h3 {
-            color: var(--color-black);
-            margin-bottom: 0.35rem;
-            font-size: 1.03rem;
-        }
-
-        .internal-links {
-            margin-top: 1.5rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.85rem 1.1rem;
-            font-size: 0.95rem;
-        }
-
-        .internal-links a {
-            text-decoration: underline;
-            text-underline-offset: 2px;
-        }
-
-        @media (max-width: 860px) {
-            .nav-links {
-                gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: flex-end;
-            }
-        }
-    </style>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "How Solexi Works",
-      "description": "A structured overview of Solexi's digital legacy infrastructure.",
-      "url": "https://solexi.ai/how-it-works.html"
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Solexi.ai",
-      "url": "https://solexi.ai/",
-      "logo": "https://solexi.ai/images/logo.png"
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://solexi.ai/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "How Solexi Works",
-          "item": "https://solexi.ai/how-it-works.html"
-        }
-      ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Is this digital immortality?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. Solexi is designed for structured digital continuity, not immortality claims."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Who controls access?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You define and update access through role-based permissions and intent-driven controls designed around least privilege."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What if I change beneficiaries?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Beneficiaries and access rules can be updated as circumstances evolve."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I export everything?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Data export and portability are part of the system design objective to preserve long-term user control."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What happens if Solexi evolves?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The roadmap favors conservative infrastructure decisions, auditability, and portability as the platform evolves."
-          }
-        }
-      ]
-    }
-    </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Is this digital immortality?","acceptedAnswer":{"@type":"Answer","text":"No. Solexi is designed for structured digital continuity, not immortality claims."}},
+      {"@type":"Question","name":"Who controls access?","acceptedAnswer":{"@type":"Answer","text":"You define and update access through role-based permissions and intent-driven controls designed around least privilege."}},
+      {"@type":"Question","name":"What if I change beneficiaries?","acceptedAnswer":{"@type":"Answer","text":"Beneficiaries and access rules can be updated as circumstances evolve."}},
+      {"@type":"Question","name":"Can I export everything?","acceptedAnswer":{"@type":"Answer","text":"Data export and portability are part of the system design objective to preserve long-term user control."}},
+      {"@type":"Question","name":"What happens if Solexi evolves?","acceptedAnswer":{"@type":"Answer","text":"The roadmap favors conservative infrastructure decisions, auditability, and portability as the platform evolves."}}
+    ]
+  }
+  </script>
 </head>
+
 <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DZLVZS9"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-    <nav class="main-nav" aria-label="Primary navigation">
-        <div class="nav-container">
-            <a href="/" class="logo" aria-label="Solexi Home">
-                <span class="logo-icon" aria-hidden="true">⬡</span>
-                <span class="logo-text">SOLEXI.AI</span>
-            </a>
-            <div class="nav-links">
-                <a href="/understand/" class="nav-link">Understand</a>
-                <a href="/problems/" class="nav-link">Problem</a>
-                <a href="/solutions/" class="nav-link">Solution</a>
-                <a href="/use-cases/" class="nav-link">Use Cases</a>
-                <a href="/research/" class="nav-link">Research</a>
-                <a href="/faq/" class="nav-link">FAQ</a>
-                <a href="https://solexi.ai/#waitlist" class="nav-btn">Join</a>
-            </div>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <nav class="main-nav" aria-label="Primary navigation">
+    <div class="nav-container">
+      <a href="/" class="logo" aria-label="Solexi Home">
+        <span class="logo-icon" aria-hidden="true">⬡</span>
+        <span class="logo-text">SOLEXI.AI</span>
+      </a>
+      <div class="nav-links">
+        <a href="/understand/" class="nav-link">Understand</a>
+        <a href="/problems/" class="nav-link">Problem</a>
+        <a href="/solutions/" class="nav-link">Solution</a>
+        <a href="/use-cases/" class="nav-link">Use Cases</a>
+        <a href="/research/" class="nav-link">Research</a>
+        <a href="/faq/" class="nav-link">FAQ</a>
+        <a href="/#waitlist" class="nav-btn">Join</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content" class="how-main">
+    <section class="how-hero">
+      <div class="how-container">
+        <h1>How Solexi Works</h1>
+        <p class="how-subheadline">Solexi provides structured digital legacy infrastructure that organizes intent, governs access, and supports verified future delivery.</p>
+        <p class="how-authority">Founding cohort access currently limited.</p>
+        <a href="/#waitlist" class="how-cta">Join the Waitlist</a>
+        <p class="how-microcopy">Access granted in controlled onboarding waves.</p>
+      </div>
+    </section>
+
+    <section class="how-section">
+      <div class="how-container">
+        <h2>The System</h2>
+        <p class="how-intro">Three core mechanisms reduce future ambiguity, preserve user intent, and improve clarity for executors and beneficiaries.</p>
+        <div class="how-grid">
+          <article class="how-card">
+            <h3>Structured Vault</h3>
+            <p>Records are organized with clear structure and governance so heirs are not forced to reconstruct intent from scattered files, accounts, and disconnected instructions.</p>
+          </article>
+          <article class="how-card">
+            <h3>Controlled Access Architecture</h3>
+            <p>Permissions are role-based and intent-driven. Access is scoped by purpose and constrained with least-privilege logic to reduce unnecessary exposure.</p>
+          </article>
+          <article class="how-card">
+            <h3>Verified Delivery Framework</h3>
+            <p>Delivery workflows combine time triggers, multi-step verification, inactivity detection, and controlled execution paths before release actions are completed.</p>
+          </article>
         </div>
-    </nav>
+      </div>
+    </section>
 
-    <main id="main-content" class="how-main">
-        <section class="how-hero">
-            <div class="how-container">
-                <h1>How Solexi Works</h1>
-                <p class="how-subheadline">Solexi provides structured digital legacy infrastructure that organizes intent, governs access, and supports verified future delivery.</p>
-                <p class="how-authority">Founding cohort access currently limited.</p>
-                <a href="https://solexi.ai/#waitlist" class="how-cta">Join the Waitlist</a>
-                <p class="how-microcopy">Access granted in controlled onboarding waves.</p>
-            </div>
-        </section>
+    <section class="how-section how-band">
+      <div class="how-container">
+        <h2>Why Structured Access Matters</h2>
+        <ul class="how-list">
+          <li>Digital silence creates friction when operational context is missing.</li>
+          <li>Executors face complexity across systems, credentials, and responsibilities.</li>
+          <li>Intent without structure creates ambiguity at moments that require precision.</li>
+        </ul>
+        <p>Solexi is designed as preventive digital infrastructure.</p>
+      </div>
+    </section>
 
-        <section class="how-section">
-            <div class="how-container">
-                <h2>The System</h2>
-                <p class="how-intro">Three core mechanisms reduce future ambiguity, preserve user intent, and improve clarity for executors and beneficiaries.</p>
-                <div class="how-grid">
-                    <article class="how-card">
-                        <h3>Structured Vault</h3>
-                        <p>Records are organized with clear structure and governance so heirs are not forced to reconstruct intent from scattered files, accounts, and disconnected instructions.</p>
-                    </article>
-                    <article class="how-card">
-                        <h3>Controlled Access Architecture</h3>
-                        <p>Permissions are role-based and intent-driven. Access is scoped by purpose and constrained with least-privilege logic to reduce unnecessary exposure.</p>
-                    </article>
-                    <article class="how-card">
-                        <h3>Verified Delivery Framework</h3>
-                        <p>Delivery workflows combine time triggers, multi-step verification, inactivity detection, and controlled execution paths before release actions are completed.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
+    <section class="how-section">
+      <div class="how-container">
+        <h2>Trust &amp; Engineering Discipline</h2>
+        <div class="how-grid">
+          <article class="how-card">
+            <h3>Security Design Objectives</h3>
+            <p>Encryption in transit and encryption at rest are baseline design objectives across data handling layers.</p>
+          </article>
+          <article class="how-card">
+            <h3>Authentication Roadmap</h3>
+            <p>MFA is included in the roadmap to strengthen account and session controls as the system evolves.</p>
+          </article>
+          <article class="how-card">
+            <h3>Audit Logging Philosophy</h3>
+            <p>Audit logging is treated as an accountability layer for operational traceability and post-event review.</p>
+          </article>
+          <article class="how-card">
+            <h3>Data Portability</h3>
+            <p>Data export and portability are architectural priorities to preserve long-term continuity and user control.</p>
+          </article>
+          <article class="how-card">
+            <h3>Conservative Infrastructure Build</h3>
+            <p>The platform is developed conservatively, prioritizing reliability and predictable behavior over aggressive feature velocity.</p>
+          </article>
+        </div>
+        <p class="how-microcopy">Built with technical SEO discipline, AI-aware indexing architecture, and programmer-grade performance standards.</p>
+      </div>
+    </section>
 
-        <section class="how-section how-band">
-            <div class="how-container">
-                <h2>Why Structured Access Matters</h2>
-                <ul class="how-list">
-                    <li>Digital silence creates friction when operational context is missing.</li>
-                    <li>Executors face complexity across systems, credentials, and responsibilities.</li>
-                    <li>Intent without structure creates ambiguity at moments that require precision.</li>
-                </ul>
-                <p>Solexi is designed as preventive digital infrastructure.</p>
-            </div>
-        </section>
+    <section class="how-section how-band">
+      <div class="how-container">
+        <h2>Why Waitlist Access Is Structured</h2>
+        <ul class="how-list">
+          <li>Infrastructure-first development before broad expansion.</li>
+          <li>Security review cycles before increasing onboarding volume.</li>
+          <li>Controlled onboarding capacity to maintain implementation quality.</li>
+          <li>Founding cohort feedback loops to refine core systems.</li>
+        </ul>
+        <a href="/#waitlist" class="how-cta">Request Founding Access</a>
+        <p class="how-microcopy">Access invitations are sent progressively.</p>
+      </div>
+    </section>
 
-        <section class="how-section">
-            <div class="how-container">
-                <h2>Trust &amp; Engineering Discipline</h2>
-                <div class="how-grid">
-                    <article class="how-card">
-                        <h3>Security Design Objectives</h3>
-                        <p>Encryption in transit and encryption at rest are baseline design objectives across data handling layers.</p>
-                    </article>
-                    <article class="how-card">
-                        <h3>Authentication Roadmap</h3>
-                        <p>MFA is included in the roadmap to strengthen account and session controls as the system evolves.</p>
-                    </article>
-                    <article class="how-card">
-                        <h3>Audit Logging Philosophy</h3>
-                        <p>Audit logging is treated as an accountability layer for operational traceability and post-event review.</p>
-                    </article>
-                    <article class="how-card">
-                        <h3>Data Portability</h3>
-                        <p>Data export and portability are architectural priorities to preserve long-term continuity and user control.</p>
-                    </article>
-                    <article class="how-card">
-                        <h3>Conservative Infrastructure Build</h3>
-                        <p>The platform is developed conservatively, prioritizing reliability and predictable behavior over aggressive feature velocity.</p>
-                    </article>
-                </div>
-                <p class="how-microcopy">Built with technical SEO discipline, AI-aware indexing architecture, and programmer-grade performance standards.</p>
-            </div>
-        </section>
+    <section class="how-section">
+      <div class="how-container">
+        <h2>FAQ</h2>
 
-        <section class="how-section how-band">
-            <div class="how-container">
-                <h2>Why Waitlist Access Is Structured</h2>
-                <ul class="how-list">
-                    <li>Infrastructure-first development before broad expansion.</li>
-                    <li>Security review cycles before increasing onboarding volume.</li>
-                    <li>Controlled onboarding capacity to maintain implementation quality.</li>
-                    <li>Founding cohort feedback loops to refine core systems.</li>
-                </ul>
-                <a href="https://solexi.ai/#waitlist" class="how-cta">Request Founding Access</a>
-                <p class="how-microcopy">Access invitations are sent progressively.</p>
-            </div>
-        </section>
+        <article class="faq-item">
+          <h3>Is this digital immortality?</h3>
+          <p>No. Solexi focuses on structured digital continuity and controlled information transfer.</p>
+        </article>
 
-        <section class="how-section">
-            <div class="how-container">
-                <h2>FAQ</h2>
-                <article class="faq-item">
-                    <h3>Is this digital immortality?</h3>
-                    <p>No. Solexi focuses on structured digital continuity and controlled information transfer.</p>
-                </article>
-                <article class="faq-item">
-                    <h3>Who controls access?</h3>
-                    <p>You control and update access policy with role-based permissions aligned to your intent.</p>
-                </article>
-                <article class="faq-item">
-                    <h3>What if I change beneficiaries?</h3>
-                    <p>You can update beneficiaries and access instructions as your family or legal context changes.</p>
-                </article>
-                <article class="faq-item">
-                    <h3>Can I export everything?</h3>
-                    <p>Data export and portability are part of the platform design objective.</p>
-                </article>
-                <article class="faq-item">
-                    <h3>What happens if Solexi evolves?</h3>
-                    <p>The roadmap is continuity-focused, with conservative infrastructure decisions and portable data principles.</p>
-                </article>
+        <article class="faq-item">
+          <h3>Who controls access?</h3>
+          <p>You control and update access policy with role-based permissions aligned to your intent.</p>
+        </article>
 
-                <nav class="internal-links" aria-label="Related pages">
-                    <a href="/understand/">Understand</a>
-                    <a href="/problems/">Problem</a>
-                    <a href="/solutions/">Solution</a>
-                    <a href="/use-cases/">Use Cases</a>
-                    <a href="/research/">Research</a>
-                    <a href="/faq/">FAQ</a>
-                    <a href="/privacy/">Privacy</a>
-                </nav>
-            </div>
-        </section>
-    </main>
+        <article class="faq-item">
+          <h3>What if I change beneficiaries?</h3>
+          <p>You can update beneficiaries and access instructions as your family or legal context changes.</p>
+        </article>
+
+        <article class="faq-item">
+          <h3>Can I export everything?</h3>
+          <p>Data export and portability are part of the platform design objective.</p>
+        </article>
+
+        <article class="faq-item">
+          <h3>What happens if Solexi evolves?</h3>
+          <p>The roadmap is continuity-focused, with conservative infrastructure decisions and portable data principles.</p>
+        </article>
+
+        <nav class="internal-links" aria-label="Related pages">
+          <a href="/understand/">Understand</a>
+          <a href="/problems/">Problem</a>
+          <a href="/solutions/">Solution</a>
+          <a href="/use-cases/">Use Cases</a>
+          <a href="/research/">Research</a>
+          <a href="/faq/">FAQ</a>
+          <a href="/privacy/">Privacy</a>
+        </nav>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
