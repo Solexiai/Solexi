@@ -21,3 +21,12 @@ Solexi focuses on human continuity not simulation or replacement.
 
 ## Contact
 Daniel@solexi.ai
+
+## Route health check
+Run the local route validation script to confirm canonical routes return `200` and aliases return `301` where expected:
+
+```bash
+node scripts/route-health-check.mjs
+```
+
+The check validates: `/understand/`, `/comprendre/`, `/problems/`, `/problem/`, `/solutions/`, `/solution/`, `/use-cases/`, and `/research/`.
