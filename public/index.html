@@ -855,6 +855,17 @@
     window.translation = { common: { selectedList: '{quantity} liste sélectionnée', selectedLists: '{quantity} listes sélectionnées', selectedOption: '{quantity} sélectionné', selectedOptions: '{quantity} sélectionnés' } };
     var AUTOHIDE = false;
   </script>
+  
+  <script>
+  // Compatibility for third-party scripts expecting removeClass (jQuery-like)
+  if (window.Element && !Element.prototype.removeClass) {
+    Element.prototype.removeClass = function (cls) {
+      this.classList.remove(cls);
+      return this;
+    };
+  }
+</script>
+  
   <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
   <script>
