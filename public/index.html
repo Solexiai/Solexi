@@ -890,34 +890,76 @@
         role?.focus();
       });
 
-      // Share links
-      const shareText = 'When you die, who can access your digital life?';
-      const shareUrl = 'https://solexi.ai/';
-      const fb = document.getElementById('sxShareFb');
-      const ms = document.getElementById('sxShareMsgr');
-      const cp = document.getElementById('sxCopyShare');
+     // Share links
+const shareText = 'When you die, who can access your digital life?';
+const shareUrl = 'https://solexi.ai/';
+const fb = document.getElementById('sxShareFb');
+const ms = document.getElementById('sxShareMsgr');
+const cp = document.getElementById('sxCopyShare');
 
-      if (fb) fb.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl);
-      if (ms) ms.href = 'https://www.facebook.com/dialog/send?link=' + encodeURIComponent(shareUrl) + '&app_id=0&redirect_uri=' + encodeURIComponent(shareUrl);
+if (fb) fb.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl);
 
-      cp?.addEventListener('click', async () => {
-        const toCopy = shareText + ' ' + shareUrl;
-        try {
-          await navigator.clipboard.writeText(toCopy);
-          cp.textContent = 'Copied';
-          setTimeout(()=> cp.textContent = 'Copy text', 1200);
-        } catch(e){
-          const ta = document.createElement('textarea');
-          ta.value = toCopy;
-          document.body.appendChild(ta);
-          ta.select();
-          document.execCommand('copy');
-          ta.remove();
-          cp.textContent = 'Copied';
-          setTimeout(()=> cp.textContent = 'Copy text', 1200);
-        }
-      });
+// Messenger "Send Dialog" requires a real Facebook App ID.
+// With app_id=0 it won't work reliably. Fallback to FB share (works everywhere).
+if (ms) ms.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl);
 
+cp?.addEventListener('click', async () => {
+  const toCopy = shareText + ' ' + shareUrl;
+  try {
+    await navigator.clipboard.writeText(toCopy);
+    cp.textContent = 'Copied';
+    setTimeout(()=> cp.textContent = 'Copy text', 1200);
+  } catch(e){
+    const ta = document.createElement('textarea');
+    ta.value = toCopy;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    ta.remove();
+    cp.textContent = 'Copied';
+    setTimeout(()=> cp.textContent = 'Copy text', 1200);
+  }
+});
+
+// Redirect to thank-you page after Brevo confirms success
+(function redirectOnBrevoSuccess(){
+  const THANK_YOU_URL = '/thank-you/'; // change to '/thank-you' or '/thank-you.html' if needed
+
+  const form = document.getElementById('sib-form');
+  const successEl = document.getElementById('success-message');
+  if (!successEl) return;
+
+  // Track submit attempt (GTM)
+  form?.addEventListener('submit', () => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'waitlist_submit_attempt' });
+  });
+
+  const isVisible = (el) => {
+    const style = window.getComputedStyle(el);
+    return style && style.display !== 'none' && style.visibility !== 'hidden' && el.offsetHeight > 0;
+  };
+
+  // If already visible
+  if (isVisible(successEl)) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'waitlist_submit_success' });
+    window.location.assign(THANK_YOU_URL);
+    return;
+  }
+
+  // Observe Brevo toggling success visibility
+  const obs = new MutationObserver(() => {
+    if (isVisible(successEl)) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'waitlist_submit_success' });
+      obs.disconnect();
+      window.location.assign(THANK_YOU_URL);
+    }
+  });
+
+  obs.observe(successEl, { attributes: true, attributeFilter: ['style', 'class'] });
+})();
       // Popover menu
       const btn = document.getElementById('menuBtn');
       const pop = document.getElementById('sxPop');
