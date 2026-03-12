@@ -5,17 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Contact | Solexi</title>
-  <meta name="description" content="Contact Solexi for partnerships, early access, product questions, security inquiries, and digital legacy discussions." />
+  <meta name="description" content="Contact Solexi for early access, partnerships, security inquiries, and digital legacy questions." />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <link rel="canonical" href="https://solexi.ai/contact/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Contact | Solexi" />
-  <meta property="og:description" content="Contact Solexi for partnerships, early access, product questions, and security inquiries." />
+  <meta property="og:description" content="Contact Solexi for early access, partnerships, security inquiries, and digital legacy questions." />
   <meta property="og:url" content="https://solexi.ai/contact/" />
   <meta property="og:site_name" content="Solexi" />
-
   <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="theme-color" content="#0b0b0f" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Fraunces:opsz,wght@9..144,500;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Fraunces:opsz,wght@9..144,500;700&display=swap" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
 
   <style>
     :root{
@@ -28,8 +39,8 @@
       --shadow:0 18px 60px rgba(0,0,0,.45);
       --radius:24px;
       --max:1120px;
-      --serif:Georgia, serif;
-      --sans:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      --serif:"Fraunces", Georgia, serif;
+      --sans:"Inter", system-ui, sans-serif;
     }
 
     *{box-sizing:border-box}
@@ -63,10 +74,20 @@
     .links a{text-decoration:none;font-weight:700;font-size:14px;opacity:.9}
     .links a:hover{opacity:1}
     .hero{padding:46px 0 22px}
+    .kicker{
+      display:inline-flex;gap:10px;align-items:center;
+      padding:8px 12px;border-radius:999px;
+      background:rgba(255,255,255,.06);border:1px solid var(--line);
+      color:var(--muted);font-weight:700;font-size:13px;
+    }
+    .kicker .dot{
+      width:8px;height:8px;border-radius:50%;
+      background:#2ee59d;box-shadow:0 0 0 4px rgba(46,229,157,.18);
+    }
     h1{
-      margin:0 0 12px;
-      font-size:clamp(32px,4vw,56px);
-      line-height:1.05;
+      margin:14px 0 12px;
+      font-size:clamp(34px,4vw,58px);
+      line-height:1.04;
       font-family:var(--serif);
     }
     .sub{
@@ -78,11 +99,11 @@
     }
     .grid{
       display:grid;
-      grid-template-columns:1fr 1fr;
+      grid-template-columns:1.05fr .95fr;
       gap:18px;
       padding:18px 0 56px;
     }
-    @media (max-width: 900px){
+    @media (max-width: 980px){
       .grid{grid-template-columns:1fr}
     }
     .card{
@@ -97,24 +118,51 @@
       border-bottom:1px solid var(--line);
       background:linear-gradient(180deg, rgba(255,255,255,.05), transparent);
     }
-    .head h2{margin:0;font-size:24px}
-    .body{padding:18px;color:var(--muted);line-height:1.75}
-    .body strong{color:var(--text)}
-    .button{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:12px 16px;border-radius:999px;font-weight:800;
-      text-decoration:none;border:1px solid var(--line);
-      background:linear-gradient(135deg, rgba(124,92,255,.95), rgba(0,212,255,.65));
-      color:#07070b;
+    .head h2{
+      margin:0;
+      font-family:var(--serif);
+      font-size:24px;
     }
-    .email{
-      display:inline-block;
-      padding:10px 14px;
+    .body{
+      padding:18px;
+      color:var(--muted);
+      line-height:1.8;
+    }
+    .body strong{color:var(--text)}
+    .chips{
+      display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;
+    }
+    .chip{
+      padding:9px 12px;border-radius:999px;
       border:1px solid var(--line);
-      border-radius:999px;
-      text-decoration:none;
       background:rgba(255,255,255,.04);
-      margin:6px 8px 0 0;
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+    }
+    .ctaBox{
+      margin-top:18px;
+      padding:18px;
+      border-radius:var(--radius);
+      border:1px solid rgba(124,92,255,.28);
+      background:
+        radial-gradient(900px 220px at 20% 0%, rgba(124,92,255,.28), transparent 60%),
+        radial-gradient(700px 240px at 90% 0%, rgba(0,212,255,.18), transparent 60%),
+        rgba(255,255,255,.03);
+    }
+    .ctaBox h3{margin:0 0 8px;font-size:20px}
+    .ctaBox p{margin:0 0 14px;color:var(--muted)}
+    .btnRow{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:10px;padding:11px 14px;border-radius:999px;
+      font-weight:800;text-decoration:none;border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+    }
+    .btn.primary{
+      background:linear-gradient(135deg, rgba(124,92,255,.95), rgba(0,212,255,.65));
+      border-color:rgba(255,255,255,.18);
+      color:#07070b;
     }
     footer{
       padding:30px 0 46px;
@@ -144,9 +192,10 @@
 
   <main class="wrap">
     <section class="hero">
-      <h1>Contact</h1>
+      <div class="kicker"><span class="dot" aria-hidden="true"></span> Partnerships • Security • Early access</div>
+      <h1>Contact Solexi</h1>
       <p class="sub">
-        Reach out to Solexi for early access, partnerships, product questions, security inquiries, or digital legacy discussions.
+        Reach out for early access, partnerships, product questions, security reports, or digital legacy discussions.
       </p>
     </section>
 
@@ -154,19 +203,37 @@
       <article class="card">
         <div class="head"><h2>General inquiries</h2></div>
         <div class="body">
-          <p>If you have questions about the product, early access, roadmap, or partnerships, use the contact options below.</p>
-          <p><a class="email" href="mailto:hello@solexi.ai">hello@solexi.ai</a></p>
-          <p><a class="button" href="/#subscribe">Join the waitlist</a></p>
+          <p>Use this for product questions, early access, founder conversations, media requests, and partnerships.</p>
+          <div class="chips">
+            <a class="chip" href="mailto:hello@solexi.ai">hello@solexi.ai</a>
+            <a class="chip" href="mailto:partnerships@solexi.ai">partnerships@solexi.ai</a>
+          </div>
+
+          <div class="ctaBox">
+            <h3>Want early access?</h3>
+            <p>Join the waitlist and we’ll notify you when access opens.</p>
+            <div class="btnRow">
+              <a class="btn primary" href="/#subscribe">Join Waitlist</a>
+              <a class="btn" href="/faq/">Read FAQ</a>
+            </div>
+          </div>
         </div>
       </article>
 
       <article class="card">
-        <div class="head"><h2>Security & privacy</h2></div>
+        <div class="head"><h2>Privacy & security</h2></div>
         <div class="body">
-          <p>For privacy-related questions or responsible disclosure, contact the appropriate address below.</p>
-          <p>
-            <a class="email" href="mailto:privacy@solexi.ai">privacy@solexi.ai</a>
-            <a class="email" href="mailto:security@solexi.ai">security@solexi.ai</a>
+          <p>For privacy requests, security questions, or responsible disclosure, use the dedicated addresses below.</p>
+          <div class="chips">
+            <a class="chip" href="mailto:privacy@solexi.ai">privacy@solexi.ai</a>
+            <a class="chip" href="mailto:security@solexi.ai">security@solexi.ai</a>
+          </div>
+
+          <p style="margin-top:16px;">
+            Related pages:
+            <a href="/privacy/">Privacy</a> •
+            <a href="/security/">Security</a> •
+            <a href="/ai-policy/">AI Policy</a>
           </p>
         </div>
       </article>
