@@ -1,1 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <title>Contact | Solexi</title>
+  <meta name="description" content="Contact Solexi for partnerships, early access, product questions, security inquiries, and digital legacy discussions." />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <link rel="canonical" href="https://solexi.ai/contact/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact | Solexi" />
+  <meta property="og:description" content="Contact Solexi for partnerships, early access, product questions, and security inquiries." />
+  <meta property="og:url" content="https://solexi.ai/contact/" />
+  <meta property="og:site_name" content="Solexi" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    :root{
+      --bg:#0b0b0f;
+      --text:#e9e9f1;
+      --muted:#b8bbd3;
+      --line:rgba(255,255,255,.10);
+      --brand:#7c5cff;
+      --brand2:#00d4ff;
+      --shadow:0 18px 60px rgba(0,0,0,.45);
+      --radius:24px;
+      --max:1120px;
+      --serif:Georgia, serif;
+      --sans:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(124,92,255,.28), transparent 60%),
+        radial-gradient(900px 500px at 90% 0%, rgba(0,212,255,.18), transparent 55%),
+        linear-gradient(180deg, #07070b 0%, #0b0b0f 60%, #07070b 100%);
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+    .nav{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(12px) saturate(140%);
+      background:rgba(11,11,15,.62);
+      border-bottom:1px solid var(--line);
+    }
+    .bar{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:14px;padding:14px 0;
+    }
+    .brand{display:flex;gap:10px;align-items:center;text-decoration:none;font-weight:800}
+    .logo{
+      width:34px;height:34px;border-radius:12px;
+      background:linear-gradient(135deg,var(--brand),var(--brand2));
+    }
+    .links{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+    .links a{text-decoration:none;font-weight:700;font-size:14px;opacity:.9}
+    .links a:hover{opacity:1}
+    .hero{padding:46px 0 22px}
+    h1{
+      margin:0 0 12px;
+      font-size:clamp(32px,4vw,56px);
+      line-height:1.05;
+      font-family:var(--serif);
+    }
+    .sub{
+      margin:0;
+      max-width:72ch;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:18px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      padding:18px 0 56px;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+    }
+    .card{
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .head{
+      padding:18px 18px 14px;
+      border-bottom:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.05), transparent);
+    }
+    .head h2{margin:0;font-size:24px}
+    .body{padding:18px;color:var(--muted);line-height:1.75}
+    .body strong{color:var(--text)}
+    .button{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 16px;border-radius:999px;font-weight:800;
+      text-decoration:none;border:1px solid var(--line);
+      background:linear-gradient(135deg, rgba(124,92,255,.95), rgba(0,212,255,.65));
+      color:#07070b;
+    }
+    .email{
+      display:inline-block;
+      padding:10px 14px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      text-decoration:none;
+      background:rgba(255,255,255,.04);
+      margin:6px 8px 0 0;
+    }
+    footer{
+      padding:30px 0 46px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <div class="bar">
+        <a class="brand" href="/" aria-label="Solexi home">
+          <span class="logo" aria-hidden="true"></span>
+          <span>Solexi</span>
+        </a>
+        <nav class="links" aria-label="Primary">
+          <a href="/faq/">FAQ</a>
+          <a href="/privacy/">Privacy</a>
+          <a href="/security/">Security</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/" aria-current="page">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Contact</h1>
+      <p class="sub">
+        Reach out to Solexi for early access, partnerships, product questions, security inquiries, or digital legacy discussions.
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <div class="head"><h2>General inquiries</h2></div>
+        <div class="body">
+          <p>If you have questions about the product, early access, roadmap, or partnerships, use the contact options below.</p>
+          <p><a class="email" href="mailto:hello@solexi.ai">hello@solexi.ai</a></p>
+          <p><a class="button" href="/#subscribe">Join the waitlist</a></p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="head"><h2>Security & privacy</h2></div>
+        <div class="body">
+          <p>For privacy-related questions or responsible disclosure, contact the appropriate address below.</p>
+          <p>
+            <a class="email" href="mailto:privacy@solexi.ai">privacy@solexi.ai</a>
+            <a class="email" href="mailto:security@solexi.ai">security@solexi.ai</a>
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Solexi • Contact</div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
