@@ -1,1 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <title>Pricing | Solexi</title>
+  <meta name="description" content="Explore Solexi pricing for personal, family, and premium digital legacy plans." />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <link rel="canonical" href="https://solexi.ai/pricing/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Pricing | Solexi" />
+  <meta property="og:description" content="Explore Solexi pricing for personal, family, and premium digital legacy plans." />
+  <meta property="og:url" content="https://solexi.ai/pricing/" />
+  <meta property="og:site_name" content="Solexi" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="theme-color" content="#0b0b0f" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Fraunces:opsz,wght@9..144,500;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Fraunces:opsz,wght@9..144,500;700&display=swap" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+
+  <style>
+    :root{
+      --bg:#0b0b0f;
+      --text:#e9e9f1;
+      --muted:#b8bbd3;
+      --line:rgba(255,255,255,.10);
+      --brand:#7c5cff;
+      --brand2:#00d4ff;
+      --shadow:0 18px 60px rgba(0,0,0,.45);
+      --radius:24px;
+      --max:1120px;
+      --serif:"Fraunces", Georgia, serif;
+      --sans:"Inter", system-ui, sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(124,92,255,.28), transparent 60%),
+        radial-gradient(900px 500px at 90% 0%, rgba(0,212,255,.18), transparent 55%),
+        linear-gradient(180deg, #07070b 0%, #0b0b0f 60%, #07070b 100%);
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+    .nav{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(12px) saturate(140%);
+      background:rgba(11,11,15,.62);
+      border-bottom:1px solid var(--line);
+    }
+    .bar{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:14px;padding:14px 0;
+    }
+    .brand{display:flex;gap:10px;align-items:center;text-decoration:none;font-weight:800}
+    .logo{
+      width:34px;height:34px;border-radius:12px;
+      background:linear-gradient(135deg,var(--brand),var(--brand2));
+    }
+    .links{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+    .links a{text-decoration:none;font-weight:700;font-size:14px;opacity:.9}
+    .links a:hover{opacity:1}
+    .hero{padding:46px 0 22px}
+    .kicker{
+      display:inline-flex;gap:10px;align-items:center;
+      padding:8px 12px;border-radius:999px;
+      background:rgba(255,255,255,.06);border:1px solid var(--line);
+      color:var(--muted);font-weight:700;font-size:13px;
+    }
+    .kicker .dot{
+      width:8px;height:8px;border-radius:50%;
+      background:#2ee59d;box-shadow:0 0 0 4px rgba(46,229,157,.18);
+    }
+    h1{
+      margin:14px 0 12px;
+      font-size:clamp(34px,4vw,58px);
+      line-height:1.04;
+      font-family:var(--serif);
+    }
+    .sub{
+      margin:0;
+      max-width:72ch;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:18px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      padding:18px 0 56px;
+    }
+    @media (max-width: 980px){
+      .grid{grid-template-columns:1fr}
+    }
+    .card{
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .featured{
+      border-color:rgba(124,92,255,.36);
+      background:
+        radial-gradient(900px 220px at 20% 0%, rgba(124,92,255,.18), transparent 60%),
+        radial-gradient(700px 240px at 90% 0%, rgba(0,212,255,.12), transparent 60%),
+        rgba(255,255,255,.03);
+    }
+    .badge{
+      position:absolute;
+      top:14px;
+      right:14px;
+      padding:7px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:800;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.06);
+    }
+    .head{
+      padding:18px 18px 14px;
+      border-bottom:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.05), transparent);
+    }
+    .head h2{
+      margin:0 0 6px;
+      font-family:var(--serif);
+      font-size:24px;
+    }
+    .price{
+      font-size:34px;
+      font-weight:800;
+      color:var(--text);
+    }
+    .body{
+      padding:18px;
+      color:var(--muted);
+      line-height:1.8;
+    }
+    .body strong{color:var(--text)}
+    ul{padding-left:18px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:10px;padding:11px 14px;border-radius:999px;
+      font-weight:800;text-decoration:none;border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+    }
+    .btn.primary{
+      background:linear-gradient(135deg, rgba(124,92,255,.95), rgba(0,212,255,.65));
+      border-color:rgba(255,255,255,.18);
+      color:#07070b;
+    }
+    footer{
+      padding:30px 0 46px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <div class="bar">
+        <a class="brand" href="/" aria-label="Solexi home">
+          <span class="logo" aria-hidden="true"></span>
+          <span>Solexi</span>
+        </a>
+        <nav class="links" aria-label="Primary">
+          <a href="/faq/">FAQ</a>
+          <a href="/privacy/">Privacy</a>
+          <a href="/security/">Security</a>
+          <a href="/pricing/" aria-current="page">Pricing</a>
+          <a href="/contact/">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="kicker"><span class="dot" aria-hidden="true"></span> Personal • Family • Premium</div>
+      <h1>Pricing</h1>
+      <p class="sub">
+        Choose the level of structure, continuity planning, and controlled access that fits your digital legacy needs.
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <div class="head">
+          <h2>Starter</h2>
+          <div class="price">Coming soon</div>
+        </div>
+        <div class="body">
+          <ul>
+            <li>Personal vault</li>
+            <li>Core digital legacy structure</li>
+            <li>Basic document and memory organization</li>
+          </ul>
+          <p><a class="btn primary" href="/#subscribe">Join waitlist</a></p>
+        </div>
+      </article>
+
+      <article class="card featured">
+        <div class="badge">Most relevant</div>
+        <div class="head">
+          <h2>Family</h2>
+          <div class="price">Coming soon</div>
+        </div>
+        <div class="body">
+          <ul>
+            <li>Shared access planning</li>
+            <li>Heir and trusted contact permissions</li>
+            <li>More storage and continuity tools</li>
+          </ul>
+          <p><a class="btn primary" href="/#subscribe">Join waitlist</a></p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="head">
+          <h2>Premium</h2>
+          <div class="price">Custom</div>
+        </div>
+        <div class="body">
+          <ul>
+            <li>High-touch onboarding</li>
+            <li>Custom governance and structured access</li>
+            <li>Suitable for complex family or institutional needs</li>
+          </ul>
+          <p><a class="btn" href="/contact/">Contact us</a></p>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Solexi • Pricing</div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
