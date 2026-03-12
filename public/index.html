@@ -1035,7 +1035,7 @@ cp?.addEventListener('click', async () => {
     })();
   </script>
 
- <script>
+<script>
 (function () {
   const holder = document.getElementById('sx-particles');
   if (!holder) return;
@@ -1056,7 +1056,7 @@ cp?.addEventListener('click', async () => {
   let time = 0;
 
   const CONFIG = {
-    count: prefersReducedMotion ? 10 : (isMobile ? 20 : 28),
+    count: prefersReducedMotion ? 8 : (isMobile ? 14 : 18),
     speedMin: 0.025,
     speedMax: 0.09,
     sizeMin: 0.7,
@@ -1074,39 +1074,30 @@ cp?.addEventListener('click', async () => {
   const holograms = [
     {
       type: "hourglass",
-      xRatio: isMobile ? 0.18 : 0.19,
-      yRatio: isMobile ? 0.26 : 0.30,
-      scale: isMobile ? 0.62 : 0.92,
+      xRatio: isMobile ? 0.12 : 0.18,
+      yRatio: isMobile ? 0.22 : 0.34,
+      scale: isMobile ? 0.95 : 1.35,
       color: "99, 210, 255",
       accent: "255, 210, 90",
-      drift: 0.20
+      drift: 0.18
     },
     {
       type: "album",
-      xRatio: isMobile ? 0.80 : 0.80,
-      yRatio: isMobile ? 0.24 : 0.28,
-      scale: isMobile ? 0.58 : 0.88,
+      xRatio: isMobile ? 0.88 : 0.82,
+      yRatio: isMobile ? 0.22 : 0.34,
+      scale: isMobile ? 0.90 : 1.28,
       color: "255, 210, 90",
       accent: "99, 210, 255",
-      drift: 0.17
-    },
-    {
-      type: "frame",
-      xRatio: isMobile ? 0.78 : 0.81,
-      yRatio: isMobile ? 0.63 : 0.66,
-      scale: isMobile ? 0.58 : 0.82,
-      color: "70, 170, 255",
-      accent: "255, 210, 90",
-      drift: 0.15
+      drift: 0.16
     },
     {
       type: "family",
-      xRatio: isMobile ? 0.20 : 0.26,
-      yRatio: isMobile ? 0.70 : 0.72,
-      scale: isMobile ? 0.52 : 0.74,
+      xRatio: isMobile ? 0.82 : 0.75,
+      yRatio: isMobile ? 0.58 : 0.70,
+      scale: isMobile ? 0.72 : 1.00,
       color: "255, 210, 90",
       accent: "99, 210, 255",
-      drift: 0.13
+      drift: 0.12
     }
   ];
 
@@ -1233,14 +1224,14 @@ cp?.addEventListener('click', async () => {
   function beginStroke(color, alpha, width) {
     ctx.strokeStyle = `rgba(${color}, ${alpha})`;
     ctx.lineWidth = width;
-    ctx.shadowBlur = 14;
-    ctx.shadowColor = `rgba(${color}, ${alpha * 0.8})`;
+    ctx.shadowBlur = 26;
+    ctx.shadowColor = `rgba(${color}, ${Math.min(1, alpha * 1.15)})`;
   }
 
   function beginFill(color, alpha) {
     ctx.fillStyle = `rgba(${color}, ${alpha})`;
-    ctx.shadowBlur = 18;
-    ctx.shadowColor = `rgba(${color}, ${alpha * 0.9})`;
+    ctx.shadowBlur = 28;
+    ctx.shadowColor = `rgba(${color}, ${Math.min(1, alpha * 1.2)})`;
   }
 
   function endGlow() {
@@ -1268,21 +1259,27 @@ cp?.addEventListener('click', async () => {
   }
 
   function drawHoloBase(cx, cy, width, color, alpha) {
-    beginStroke(color, alpha, 0.9);
+    beginStroke(color, alpha * 1.25, 1.1);
     ctx.beginPath();
-    ctx.ellipse(cx, cy, width * 0.36, width * 0.07, 0, 0, Math.PI * 2);
+    ctx.ellipse(cx, cy, width * 0.42, width * 0.08, 0, 0, Math.PI * 2);
     ctx.stroke();
+
+    beginStroke(color, alpha * 0.55, 0.8);
+    ctx.beginPath();
+    ctx.ellipse(cx, cy, width * 0.28, width * 0.04, 0, 0, Math.PI * 2);
+    ctx.stroke();
+
     endGlow();
   }
 
   function drawHourglass(cx, cy, s, color, accent, pulse) {
-    const W = 54 * s;
-    const H = 94 * s;
+    const W = 68 * s;
+    const H = 118 * s;
     const sandPulse = (Math.sin(time * 3.2) + 1) * 0.5;
 
     drawHoloBase(cx, cy + H * 0.58, W, accent, 0.14 + pulse);
 
-    beginStroke(color, 0.34 + pulse, 1.1);
+    beginStroke(color, 0.42 + pulse, 1.2);
     ctx.beginPath();
     ctx.moveTo(cx - W/2, cy - H/2);
     ctx.lineTo(cx + W/2, cy - H/2);
@@ -1304,7 +1301,7 @@ cp?.addEventListener('click', async () => {
     ctx.closePath();
     ctx.stroke();
 
-    beginFill(accent, 0.12 + pulse * 0.5);
+    beginFill(accent, 0.14 + pulse * 0.55);
     ctx.beginPath();
     ctx.moveTo(cx - W*0.14, cy - H*0.10);
     ctx.lineTo(cx + W*0.14, cy - H*0.10);
@@ -1321,7 +1318,7 @@ cp?.addEventListener('click', async () => {
     ctx.closePath();
     ctx.fill();
 
-    beginStroke(accent, 0.22 + pulse * 0.5, 0.9);
+    beginStroke(accent, 0.26 + pulse * 0.5, 0.95);
     ctx.beginPath();
     ctx.moveTo(cx, cy - H*0.01);
     ctx.lineTo(cx, cy + H*0.12);
@@ -1329,7 +1326,7 @@ cp?.addEventListener('click', async () => {
 
     for (let i = 0; i < 4; i++) {
       const dy = (i * 0.06 + (time * 0.25 % 0.06));
-      beginFill(accent, 0.16 + pulse * 0.4);
+      beginFill(accent, 0.18 + pulse * 0.45);
       ctx.beginPath();
       ctx.arc(cx, cy + H * dy, 1.2 * s, 0, Math.PI * 2);
       ctx.fill();
@@ -1339,15 +1336,14 @@ cp?.addEventListener('click', async () => {
   }
 
   function drawAlbum(cx, cy, s, color, accent, pulse) {
-    const W = 82 * s;
-    const H = 56 * s;
+    const W = 104 * s;
+    const H = 70 * s;
     const open = 0.18 + ((Math.sin(time * 1.2) + 1) * 0.5) * 0.16;
 
     drawHoloBase(cx, cy + H * 0.72, W, accent, 0.10 + pulse);
 
-    beginStroke(color, 0.34 + pulse, 1.05);
+    beginStroke(color, 0.42 + pulse, 1.15);
 
-    // back page
     ctx.beginPath();
     ctx.moveTo(cx - W*0.42, cy - H*0.42);
     ctx.lineTo(cx - W*0.06, cy - H*(0.42 + open*0.4));
@@ -1356,7 +1352,6 @@ cp?.addEventListener('click', async () => {
     ctx.closePath();
     ctx.stroke();
 
-    // front page
     ctx.beginPath();
     ctx.moveTo(cx + W*0.06, cy - H*(0.42 + open*0.4));
     ctx.lineTo(cx + W*0.42, cy - H*0.42);
@@ -1365,7 +1360,6 @@ cp?.addEventListener('click', async () => {
     ctx.closePath();
     ctx.stroke();
 
-    // spine
     ctx.beginPath();
     ctx.moveTo(cx - W*0.03, cy - H*0.48);
     ctx.lineTo(cx - W*0.03, cy + H*0.48);
@@ -1373,8 +1367,7 @@ cp?.addEventListener('click', async () => {
     ctx.lineTo(cx + W*0.03, cy + H*0.48);
     ctx.stroke();
 
-    // picture glyph on right page
-    beginStroke(accent, 0.24 + pulse * 0.4, 0.9);
+    beginStroke(accent, 0.28 + pulse * 0.45, 0.95);
     roundedRectPath(cx + W*0.12, cy - H*0.14, W*0.18, H*0.16, 4 * s);
     ctx.stroke();
 
@@ -1391,69 +1384,34 @@ cp?.addEventListener('click', async () => {
     endGlow();
   }
 
-  function drawFrame(cx, cy, s, color, accent, pulse) {
-    const W = 74 * s;
-    const H = 54 * s;
-
-    drawHoloBase(cx, cy + H * 0.78, W, accent, 0.10 + pulse);
-
-    beginStroke(color, 0.34 + pulse, 1.05);
-    roundedRectPath(cx - W/2, cy - H/2, W, H, 8 * s);
-    ctx.stroke();
-
-    beginStroke(accent, 0.18 + pulse * 0.35, 0.85);
-    ctx.beginPath();
-    ctx.arc(cx - W*0.10, cy - H*0.10, 4.2 * s, 0, Math.PI * 2);
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.moveTo(cx - W*0.28, cy + H*0.13);
-    ctx.lineTo(cx - W*0.06, cy - H*0.03);
-    ctx.lineTo(cx + W*0.09, cy + H*0.07);
-    ctx.lineTo(cx + W*0.24, cy - H*0.09);
-    ctx.stroke();
-
-    // holographic scan line
-    const scan = ((Math.sin(time * 2.0) + 1) * 0.5);
-    const sy = cy - H*0.34 + scan * H*0.68;
-    beginStroke(color, 0.10 + pulse * 0.3, 1.0);
-    ctx.beginPath();
-    ctx.moveTo(cx - W*0.38, sy);
-    ctx.lineTo(cx + W*0.38, sy);
-    ctx.stroke();
-
-    endGlow();
-  }
-
   function drawFamily(cx, cy, s, color, accent, pulse) {
-    drawHoloBase(cx, cy + 34 * s, 70 * s, accent, 0.10 + pulse);
+    drawHoloBase(cx, cy + 40 * s, 86 * s, accent, 0.12 + pulse);
 
-    beginStroke(color, 0.32 + pulse, 1.0);
+    beginStroke(color, 0.44 + pulse, 1.15);
 
-    // heads
     ctx.beginPath();
-    ctx.arc(cx - 18 * s, cy - 12 * s, 8 * s, 0, Math.PI * 2);
-    ctx.arc(cx + 18 * s, cy - 12 * s, 8 * s, 0, Math.PI * 2);
-    ctx.arc(cx, cy - 4 * s, 6.5 * s, 0, Math.PI * 2);
+    ctx.arc(cx - 22 * s, cy - 14 * s, 9 * s, 0, Math.PI * 2);
+    ctx.arc(cx + 22 * s, cy - 14 * s, 9 * s, 0, Math.PI * 2);
+    ctx.arc(cx, cy - 4 * s, 7 * s, 0, Math.PI * 2);
     ctx.stroke();
 
-    // bodies
     ctx.beginPath();
-    ctx.moveTo(cx - 18 * s, cy - 4 * s);
-    ctx.lineTo(cx - 18 * s, cy + 16 * s);
-    ctx.moveTo(cx + 18 * s, cy - 4 * s);
-    ctx.lineTo(cx + 18 * s, cy + 16 * s);
+    ctx.moveTo(cx - 22 * s, cy - 5 * s);
+    ctx.lineTo(cx - 22 * s, cy + 20 * s);
+
+    ctx.moveTo(cx + 22 * s, cy - 5 * s);
+    ctx.lineTo(cx + 22 * s, cy + 20 * s);
+
     ctx.moveTo(cx, cy + 2 * s);
-    ctx.lineTo(cx, cy + 20 * s);
+    ctx.lineTo(cx, cy + 24 * s);
     ctx.stroke();
 
-    // arms
-    beginStroke(accent, 0.20 + pulse * 0.35, 0.9);
+    beginStroke(accent, 0.28 + pulse * 0.5, 1.0);
     ctx.beginPath();
-    ctx.moveTo(cx - 28 * s, cy + 6 * s);
-    ctx.lineTo(cx - 8 * s, cy + 6 * s);
-    ctx.lineTo(cx + 8 * s, cy + 6 * s);
-    ctx.lineTo(cx + 28 * s, cy + 6 * s);
+    ctx.moveTo(cx - 34 * s, cy + 8 * s);
+    ctx.lineTo(cx - 10 * s, cy + 8 * s);
+    ctx.lineTo(cx + 10 * s, cy + 8 * s);
+    ctx.lineTo(cx + 34 * s, cy + 8 * s);
     ctx.stroke();
 
     endGlow();
@@ -1464,7 +1422,7 @@ cp?.addEventListener('click', async () => {
     const baseY = h * holo.yRatio;
     const floatY = Math.sin(time * holo.drift + index * 1.6) * 10;
     const floatX = Math.cos(time * holo.drift * 0.8 + index * 0.7) * 4.5;
-    const pulse = (Math.sin(time * 1.5 + index) + 1) * 0.035;
+    const pulse = (Math.sin(time * 1.5 + index) + 1) * 0.06;
 
     const x = baseX + floatX;
     const y = baseY + floatY;
@@ -1475,7 +1433,6 @@ cp?.addEventListener('click', async () => {
 
     if (holo.type === "hourglass") drawHourglass(x, y, s, holo.color, holo.accent, pulse);
     if (holo.type === "album") drawAlbum(x, y, s, holo.color, holo.accent, pulse);
-    if (holo.type === "frame") drawFrame(x, y, s, holo.color, holo.accent, pulse);
     if (holo.type === "family") drawFamily(x, y, s, holo.color, holo.accent, pulse);
 
     ctx.restore();
