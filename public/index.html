@@ -515,17 +515,41 @@
       .hero .electric.is-live::after{ animation: none; opacity: 0.35; }
       .hero.zap .lightning polyline{ animation: none; }
     }
+  #sx-particles{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+#sx-particles canvas{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+header, main, footer, section, nav, .hero, .container, .wrap{
+  position: relative;
+  z-index: 1;
+}
+
+body:not(.home) #sx-particles{
+  display: none;
+}
   </style>
 </head>
 
-<body>
+<body class="home">
   <!-- Google Tag Manager (noscript) -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DZLVZS9"
       height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
 
- <header>
+  <div id="sx-particles" aria-hidden="true"></div>
+
+  <header>
   <div class="container header-inner">
     <a class="brand" href="/" aria-label="Solexi Home">
 
@@ -1010,5 +1034,204 @@ cp?.addEventListener('click', async () => {
       document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closePop(); });
     })();
   </script>
+
+  <script>
+(function () {
+  const holder = document.getElementById('sx-particles');
+  if (!holder) return;
+
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  holder.appendChild(canvas);
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.innerWidth < 768;
+  const DPR = Math.min(window.devicePixelRatio || 1, 2);
+
+  let w = 0;
+  let h = 0;
+  let particles = [];
+  let mouse = { x: null, y: null };
+  let animationId = null;
+
+  const CONFIG = {
+    count: prefersReducedMotion ? 14 : (isMobile ? 28 : 40),
+    speedMin: 0.05,
+    speedMax: 0.18,
+    sizeMin: 0.7,
+    sizeMax: 2.2,
+    linkDistance: isMobile ? 70 : 100,
+    mouseRadius: 90,
+    glow: true,
+    colors: [
+      "99, 210, 255",
+      "70, 170, 255",
+      "255, 210, 90",
+      "255, 185, 60"
+    ]
+  };
+
+  function rand(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  function pick(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  function createParticle() {
+    const color = pick(CONFIG.colors);
+    return {
+      x: rand(0, w),
+      y: rand(0, h),
+      vx: rand(CONFIG.speedMin, CONFIG.speedMax) * (Math.random() < 0.5 ? -1 : 1),
+      vy: rand(CONFIG.speedMin, CONFIG.speedMax) * (Math.random() < 0.5 ? -1 : 1),
+      r: rand(CONFIG.sizeMin, CONFIG.sizeMax),
+      a: rand(0.20, 0.80),
+      twinkle: rand(0.003, 0.012),
+      hue: color
+    };
+  }
+
+  function resize() {
+    w = window.innerWidth;
+    h = window.innerHeight;
+
+    canvas.width = Math.floor(w * DPR);
+    canvas.height = Math.floor(h * DPR);
+    canvas.style.width = w + 'px';
+    canvas.style.height = h + 'px';
+
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+
+    particles = [];
+    for (let i = 0; i < CONFIG.count; i++) {
+      particles.push(createParticle());
+    }
+  }
+
+  function drawParticle(p) {
+    const alpha = Math.max(0.08, Math.min(1, p.a));
+
+    if (CONFIG.glow) {
+      ctx.beginPath();
+      ctx.fillStyle = `rgba(${p.hue}, ${alpha * 0.10})`;
+      ctx.arc(p.x, p.y, p.r * 4.5, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    ctx.beginPath();
+    ctx.fillStyle = `rgba(${p.hue}, ${alpha})`;
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  function drawLinks() {
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const p1 = particles[i];
+        const p2 = particles[j];
+        const dx = p1.x - p2.x;
+        const dy = p1.y - p2.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < CONFIG.linkDistance) {
+          const alpha = (1 - dist / CONFIG.linkDistance) * 0.08;
+          const gradient = ctx.createLinearGradient(p1.x, p1.y, p2.x, p2.y);
+          gradient.addColorStop(0, `rgba(${p1.hue}, ${alpha})`);
+          gradient.addColorStop(1, `rgba(${p2.hue}, ${alpha})`);
+
+          ctx.beginPath();
+          ctx.strokeStyle = gradient;
+          ctx.lineWidth = 0.6;
+          ctx.moveTo(p1.x, p1.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  function updateParticle(p) {
+    p.x += p.vx;
+    p.y += p.vy;
+
+    p.a += (Math.random() - 0.5) * p.twinkle;
+    p.a = Math.max(0.16, Math.min(0.90, p.a));
+
+    if (p.x < -20) p.x = w + 20;
+    if (p.x > w + 20) p.x = -20;
+    if (p.y < -20) p.y = h + 20;
+    if (p.y > h + 20) p.y = -20;
+
+    if (mouse.x !== null && mouse.y !== null) {
+      const dx = p.x - mouse.x;
+      const dy = p.y - mouse.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+
+      if (dist < CONFIG.mouseRadius && dist > 0) {
+        const force = (CONFIG.mouseRadius - dist) / CONFIG.mouseRadius;
+        p.x += (dx / dist) * force * 0.35;
+        p.y += (dy / dist) * force * 0.35;
+      }
+    }
+  }
+
+  function drawBackgroundGlow() {
+    const g1 = ctx.createRadialGradient(w * 0.25, h * 0.18, 0, w * 0.25, h * 0.18, Math.min(w, h) * 0.28);
+    g1.addColorStop(0, 'rgba(80,160,255,0.04)');
+    g1.addColorStop(1, 'rgba(80,160,255,0)');
+
+    const g2 = ctx.createRadialGradient(w * 0.78, h * 0.30, 0, w * 0.78, h * 0.30, Math.min(w, h) * 0.22);
+    g2.addColorStop(0, 'rgba(255,210,90,0.035)');
+    g2.addColorStop(1, 'rgba(255,210,90,0)');
+
+    ctx.fillStyle = g1;
+    ctx.fillRect(0, 0, w, h);
+
+    ctx.fillStyle = g2;
+    ctx.fillRect(0, 0, w, h);
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, w, h);
+    drawBackgroundGlow();
+    drawLinks();
+
+    for (const p of particles) {
+      updateParticle(p);
+      drawParticle(p);
+    }
+
+    animationId = requestAnimationFrame(animate);
+  }
+
+  function onMouseMove(e) {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  }
+
+  function onMouseLeave() {
+    mouse.x = null;
+    mouse.y = null;
+  }
+
+  resize();
+  animate();
+
+  window.addEventListener('resize', resize, { passive: true });
+  window.addEventListener('mousemove', onMouseMove, { passive: true });
+  window.addEventListener('mouseleave', onMouseLeave, { passive: true });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden && animationId) {
+      cancelAnimationFrame(animationId);
+      animationId = null;
+    } else if (!document.hidden && !animationId) {
+      animate();
+    }
+  });
+})();
+</script>
 </body>
 </html>
