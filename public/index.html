@@ -1035,7 +1035,7 @@ cp?.addEventListener('click', async () => {
     })();
   </script>
 
-  <script>
+ <script>
 (function () {
   const holder = document.getElementById('sx-particles');
   if (!holder) return;
@@ -1053,16 +1053,16 @@ cp?.addEventListener('click', async () => {
   let particles = [];
   let mouse = { x: null, y: null };
   let animationId = null;
+  let time = 0;
 
   const CONFIG = {
-    count: prefersReducedMotion ? 14 : (isMobile ? 28 : 40),
-    speedMin: 0.05,
-    speedMax: 0.18,
+    count: prefersReducedMotion ? 10 : (isMobile ? 20 : 28),
+    speedMin: 0.025,
+    speedMax: 0.09,
     sizeMin: 0.7,
-    sizeMax: 2.2,
-    linkDistance: isMobile ? 70 : 100,
-    mouseRadius: 90,
-    glow: true,
+    sizeMax: 1.8,
+    linkDistance: isMobile ? 58 : 82,
+    mouseRadius: 80,
     colors: [
       "99, 210, 255",
       "70, 170, 255",
@@ -1070,6 +1070,45 @@ cp?.addEventListener('click', async () => {
       "255, 185, 60"
     ]
   };
+
+  const holograms = [
+    {
+      type: "hourglass",
+      xRatio: isMobile ? 0.18 : 0.19,
+      yRatio: isMobile ? 0.26 : 0.30,
+      scale: isMobile ? 0.62 : 0.92,
+      color: "99, 210, 255",
+      accent: "255, 210, 90",
+      drift: 0.20
+    },
+    {
+      type: "album",
+      xRatio: isMobile ? 0.80 : 0.80,
+      yRatio: isMobile ? 0.24 : 0.28,
+      scale: isMobile ? 0.58 : 0.88,
+      color: "255, 210, 90",
+      accent: "99, 210, 255",
+      drift: 0.17
+    },
+    {
+      type: "frame",
+      xRatio: isMobile ? 0.78 : 0.81,
+      yRatio: isMobile ? 0.63 : 0.66,
+      scale: isMobile ? 0.58 : 0.82,
+      color: "70, 170, 255",
+      accent: "255, 210, 90",
+      drift: 0.15
+    },
+    {
+      type: "family",
+      xRatio: isMobile ? 0.20 : 0.26,
+      yRatio: isMobile ? 0.70 : 0.72,
+      scale: isMobile ? 0.52 : 0.74,
+      color: "255, 210, 90",
+      accent: "99, 210, 255",
+      drift: 0.13
+    }
+  ];
 
   function rand(min, max) {
     return Math.random() * (max - min) + min;
@@ -1087,8 +1126,8 @@ cp?.addEventListener('click', async () => {
       vx: rand(CONFIG.speedMin, CONFIG.speedMax) * (Math.random() < 0.5 ? -1 : 1),
       vy: rand(CONFIG.speedMin, CONFIG.speedMax) * (Math.random() < 0.5 ? -1 : 1),
       r: rand(CONFIG.sizeMin, CONFIG.sizeMax),
-      a: rand(0.20, 0.80),
-      twinkle: rand(0.003, 0.012),
+      a: rand(0.14, 0.72),
+      twinkle: rand(0.0025, 0.009),
       hue: color
     };
   }
@@ -1111,14 +1150,12 @@ cp?.addEventListener('click', async () => {
   }
 
   function drawParticle(p) {
-    const alpha = Math.max(0.08, Math.min(1, p.a));
+    const alpha = Math.max(0.05, Math.min(1, p.a));
 
-    if (CONFIG.glow) {
-      ctx.beginPath();
-      ctx.fillStyle = `rgba(${p.hue}, ${alpha * 0.10})`;
-      ctx.arc(p.x, p.y, p.r * 4.5, 0, Math.PI * 2);
-      ctx.fill();
-    }
+    ctx.beginPath();
+    ctx.fillStyle = `rgba(${p.hue}, ${alpha * 0.10})`;
+    ctx.arc(p.x, p.y, p.r * 4, 0, Math.PI * 2);
+    ctx.fill();
 
     ctx.beginPath();
     ctx.fillStyle = `rgba(${p.hue}, ${alpha})`;
@@ -1136,14 +1173,14 @@ cp?.addEventListener('click', async () => {
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         if (dist < CONFIG.linkDistance) {
-          const alpha = (1 - dist / CONFIG.linkDistance) * 0.08;
+          const alpha = (1 - dist / CONFIG.linkDistance) * 0.05;
           const gradient = ctx.createLinearGradient(p1.x, p1.y, p2.x, p2.y);
           gradient.addColorStop(0, `rgba(${p1.hue}, ${alpha})`);
           gradient.addColorStop(1, `rgba(${p2.hue}, ${alpha})`);
 
           ctx.beginPath();
           ctx.strokeStyle = gradient;
-          ctx.lineWidth = 0.6;
+          ctx.lineWidth = 0.5;
           ctx.moveTo(p1.x, p1.y);
           ctx.lineTo(p2.x, p2.y);
           ctx.stroke();
@@ -1157,7 +1194,7 @@ cp?.addEventListener('click', async () => {
     p.y += p.vy;
 
     p.a += (Math.random() - 0.5) * p.twinkle;
-    p.a = Math.max(0.16, Math.min(0.90, p.a));
+    p.a = Math.max(0.12, Math.min(0.82, p.a));
 
     if (p.x < -20) p.x = w + 20;
     if (p.x > w + 20) p.x = -20;
@@ -1171,18 +1208,18 @@ cp?.addEventListener('click', async () => {
 
       if (dist < CONFIG.mouseRadius && dist > 0) {
         const force = (CONFIG.mouseRadius - dist) / CONFIG.mouseRadius;
-        p.x += (dx / dist) * force * 0.35;
-        p.y += (dy / dist) * force * 0.35;
+        p.x += (dx / dist) * force * 0.22;
+        p.y += (dy / dist) * force * 0.22;
       }
     }
   }
 
   function drawBackgroundGlow() {
-    const g1 = ctx.createRadialGradient(w * 0.25, h * 0.18, 0, w * 0.25, h * 0.18, Math.min(w, h) * 0.28);
-    g1.addColorStop(0, 'rgba(80,160,255,0.04)');
+    const g1 = ctx.createRadialGradient(w * 0.24, h * 0.18, 0, w * 0.24, h * 0.18, Math.min(w, h) * 0.26);
+    g1.addColorStop(0, 'rgba(80,160,255,0.045)');
     g1.addColorStop(1, 'rgba(80,160,255,0)');
 
-    const g2 = ctx.createRadialGradient(w * 0.78, h * 0.30, 0, w * 0.78, h * 0.30, Math.min(w, h) * 0.22);
+    const g2 = ctx.createRadialGradient(w * 0.78, h * 0.30, 0, w * 0.78, h * 0.30, Math.min(w, h) * 0.20);
     g2.addColorStop(0, 'rgba(255,210,90,0.035)');
     g2.addColorStop(1, 'rgba(255,210,90,0)');
 
@@ -1193,14 +1230,271 @@ cp?.addEventListener('click', async () => {
     ctx.fillRect(0, 0, w, h);
   }
 
+  function beginStroke(color, alpha, width) {
+    ctx.strokeStyle = `rgba(${color}, ${alpha})`;
+    ctx.lineWidth = width;
+    ctx.shadowBlur = 14;
+    ctx.shadowColor = `rgba(${color}, ${alpha * 0.8})`;
+  }
+
+  function beginFill(color, alpha) {
+    ctx.fillStyle = `rgba(${color}, ${alpha})`;
+    ctx.shadowBlur = 18;
+    ctx.shadowColor = `rgba(${color}, ${alpha * 0.9})`;
+  }
+
+  function endGlow() {
+    ctx.shadowBlur = 0;
+    ctx.shadowColor = 'transparent';
+  }
+
+  function roundedRectPath(x, y, width, height, radius) {
+    if (ctx.roundRect) {
+      ctx.beginPath();
+      ctx.roundRect(x, y, width, height, radius);
+      return;
+    }
+
+    ctx.beginPath();
+    ctx.moveTo(x + radius, y);
+    ctx.lineTo(x + width - radius, y);
+    ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+    ctx.lineTo(x + width, y + height - radius);
+    ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+    ctx.lineTo(x + radius, y + height);
+    ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+    ctx.lineTo(x, y + radius);
+    ctx.quadraticCurveTo(x, y, x + radius, y);
+  }
+
+  function drawHoloBase(cx, cy, width, color, alpha) {
+    beginStroke(color, alpha, 0.9);
+    ctx.beginPath();
+    ctx.ellipse(cx, cy, width * 0.36, width * 0.07, 0, 0, Math.PI * 2);
+    ctx.stroke();
+    endGlow();
+  }
+
+  function drawHourglass(cx, cy, s, color, accent, pulse) {
+    const W = 54 * s;
+    const H = 94 * s;
+    const sandPulse = (Math.sin(time * 3.2) + 1) * 0.5;
+
+    drawHoloBase(cx, cy + H * 0.58, W, accent, 0.14 + pulse);
+
+    beginStroke(color, 0.34 + pulse, 1.1);
+    ctx.beginPath();
+    ctx.moveTo(cx - W/2, cy - H/2);
+    ctx.lineTo(cx + W/2, cy - H/2);
+    ctx.moveTo(cx - W/2, cy + H/2);
+    ctx.lineTo(cx + W/2, cy + H/2);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(cx - W*0.32, cy - H*0.37);
+    ctx.lineTo(cx + W*0.32, cy - H*0.37);
+    ctx.lineTo(cx + W*0.08, cy - H*0.05);
+    ctx.lineTo(cx + W*0.03, cy);
+    ctx.lineTo(cx + W*0.08, cy + H*0.05);
+    ctx.lineTo(cx + W*0.32, cy + H*0.37);
+    ctx.lineTo(cx - W*0.32, cy + H*0.37);
+    ctx.lineTo(cx - W*0.08, cy + H*0.05);
+    ctx.lineTo(cx - W*0.03, cy);
+    ctx.lineTo(cx - W*0.08, cy - H*0.05);
+    ctx.closePath();
+    ctx.stroke();
+
+    beginFill(accent, 0.12 + pulse * 0.5);
+    ctx.beginPath();
+    ctx.moveTo(cx - W*0.14, cy - H*0.10);
+    ctx.lineTo(cx + W*0.14, cy - H*0.10);
+    ctx.lineTo(cx, cy - H*0.015);
+    ctx.closePath();
+    ctx.fill();
+
+    const bottomHeight = 0.10 + sandPulse * 0.08;
+    ctx.beginPath();
+    ctx.moveTo(cx - W*0.13, cy + H*0.24);
+    ctx.lineTo(cx + W*0.13, cy + H*0.24);
+    ctx.lineTo(cx + W*0.09, cy + H*(0.24 + bottomHeight));
+    ctx.lineTo(cx - W*0.09, cy + H*(0.24 + bottomHeight));
+    ctx.closePath();
+    ctx.fill();
+
+    beginStroke(accent, 0.22 + pulse * 0.5, 0.9);
+    ctx.beginPath();
+    ctx.moveTo(cx, cy - H*0.01);
+    ctx.lineTo(cx, cy + H*0.12);
+    ctx.stroke();
+
+    for (let i = 0; i < 4; i++) {
+      const dy = (i * 0.06 + (time * 0.25 % 0.06));
+      beginFill(accent, 0.16 + pulse * 0.4);
+      ctx.beginPath();
+      ctx.arc(cx, cy + H * dy, 1.2 * s, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    endGlow();
+  }
+
+  function drawAlbum(cx, cy, s, color, accent, pulse) {
+    const W = 82 * s;
+    const H = 56 * s;
+    const open = 0.18 + ((Math.sin(time * 1.2) + 1) * 0.5) * 0.16;
+
+    drawHoloBase(cx, cy + H * 0.72, W, accent, 0.10 + pulse);
+
+    beginStroke(color, 0.34 + pulse, 1.05);
+
+    // back page
+    ctx.beginPath();
+    ctx.moveTo(cx - W*0.42, cy - H*0.42);
+    ctx.lineTo(cx - W*0.06, cy - H*(0.42 + open*0.4));
+    ctx.lineTo(cx - W*0.06, cy + H*(0.42 + open*0.3));
+    ctx.lineTo(cx - W*0.42, cy + H*0.42);
+    ctx.closePath();
+    ctx.stroke();
+
+    // front page
+    ctx.beginPath();
+    ctx.moveTo(cx + W*0.06, cy - H*(0.42 + open*0.4));
+    ctx.lineTo(cx + W*0.42, cy - H*0.42);
+    ctx.lineTo(cx + W*0.42, cy + H*0.42);
+    ctx.lineTo(cx + W*0.06, cy + H*(0.42 + open*0.3));
+    ctx.closePath();
+    ctx.stroke();
+
+    // spine
+    ctx.beginPath();
+    ctx.moveTo(cx - W*0.03, cy - H*0.48);
+    ctx.lineTo(cx - W*0.03, cy + H*0.48);
+    ctx.moveTo(cx + W*0.03, cy - H*0.48);
+    ctx.lineTo(cx + W*0.03, cy + H*0.48);
+    ctx.stroke();
+
+    // picture glyph on right page
+    beginStroke(accent, 0.24 + pulse * 0.4, 0.9);
+    roundedRectPath(cx + W*0.12, cy - H*0.14, W*0.18, H*0.16, 4 * s);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(cx + W*0.18, cy - H*0.08, 3.2 * s, 0, Math.PI * 2);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(cx + W*0.12, cy + H*0.02);
+    ctx.lineTo(cx + W*0.19, cy - H*0.02);
+    ctx.lineTo(cx + W*0.25, cy + H*0.03);
+    ctx.stroke();
+
+    endGlow();
+  }
+
+  function drawFrame(cx, cy, s, color, accent, pulse) {
+    const W = 74 * s;
+    const H = 54 * s;
+
+    drawHoloBase(cx, cy + H * 0.78, W, accent, 0.10 + pulse);
+
+    beginStroke(color, 0.34 + pulse, 1.05);
+    roundedRectPath(cx - W/2, cy - H/2, W, H, 8 * s);
+    ctx.stroke();
+
+    beginStroke(accent, 0.18 + pulse * 0.35, 0.85);
+    ctx.beginPath();
+    ctx.arc(cx - W*0.10, cy - H*0.10, 4.2 * s, 0, Math.PI * 2);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(cx - W*0.28, cy + H*0.13);
+    ctx.lineTo(cx - W*0.06, cy - H*0.03);
+    ctx.lineTo(cx + W*0.09, cy + H*0.07);
+    ctx.lineTo(cx + W*0.24, cy - H*0.09);
+    ctx.stroke();
+
+    // holographic scan line
+    const scan = ((Math.sin(time * 2.0) + 1) * 0.5);
+    const sy = cy - H*0.34 + scan * H*0.68;
+    beginStroke(color, 0.10 + pulse * 0.3, 1.0);
+    ctx.beginPath();
+    ctx.moveTo(cx - W*0.38, sy);
+    ctx.lineTo(cx + W*0.38, sy);
+    ctx.stroke();
+
+    endGlow();
+  }
+
+  function drawFamily(cx, cy, s, color, accent, pulse) {
+    drawHoloBase(cx, cy + 34 * s, 70 * s, accent, 0.10 + pulse);
+
+    beginStroke(color, 0.32 + pulse, 1.0);
+
+    // heads
+    ctx.beginPath();
+    ctx.arc(cx - 18 * s, cy - 12 * s, 8 * s, 0, Math.PI * 2);
+    ctx.arc(cx + 18 * s, cy - 12 * s, 8 * s, 0, Math.PI * 2);
+    ctx.arc(cx, cy - 4 * s, 6.5 * s, 0, Math.PI * 2);
+    ctx.stroke();
+
+    // bodies
+    ctx.beginPath();
+    ctx.moveTo(cx - 18 * s, cy - 4 * s);
+    ctx.lineTo(cx - 18 * s, cy + 16 * s);
+    ctx.moveTo(cx + 18 * s, cy - 4 * s);
+    ctx.lineTo(cx + 18 * s, cy + 16 * s);
+    ctx.moveTo(cx, cy + 2 * s);
+    ctx.lineTo(cx, cy + 20 * s);
+    ctx.stroke();
+
+    // arms
+    beginStroke(accent, 0.20 + pulse * 0.35, 0.9);
+    ctx.beginPath();
+    ctx.moveTo(cx - 28 * s, cy + 6 * s);
+    ctx.lineTo(cx - 8 * s, cy + 6 * s);
+    ctx.lineTo(cx + 8 * s, cy + 6 * s);
+    ctx.lineTo(cx + 28 * s, cy + 6 * s);
+    ctx.stroke();
+
+    endGlow();
+  }
+
+  function drawHologram(holo, index) {
+    const baseX = w * holo.xRatio;
+    const baseY = h * holo.yRatio;
+    const floatY = Math.sin(time * holo.drift + index * 1.6) * 10;
+    const floatX = Math.cos(time * holo.drift * 0.8 + index * 0.7) * 4.5;
+    const pulse = (Math.sin(time * 1.5 + index) + 1) * 0.035;
+
+    const x = baseX + floatX;
+    const y = baseY + floatY;
+    const s = holo.scale;
+
+    ctx.save();
+    ctx.globalCompositeOperation = "screen";
+
+    if (holo.type === "hourglass") drawHourglass(x, y, s, holo.color, holo.accent, pulse);
+    if (holo.type === "album") drawAlbum(x, y, s, holo.color, holo.accent, pulse);
+    if (holo.type === "frame") drawFrame(x, y, s, holo.color, holo.accent, pulse);
+    if (holo.type === "family") drawFamily(x, y, s, holo.color, holo.accent, pulse);
+
+    ctx.restore();
+  }
+
   function animate() {
+    time += 0.01;
     ctx.clearRect(0, 0, w, h);
+
     drawBackgroundGlow();
     drawLinks();
 
     for (const p of particles) {
       updateParticle(p);
       drawParticle(p);
+    }
+
+    for (let i = 0; i < holograms.length; i++) {
+      drawHologram(holograms[i], i);
     }
 
     animationId = requestAnimationFrame(animate);
