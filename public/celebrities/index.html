@@ -1,80 +1,329 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- ═══════════════════════════════════════════════════════
+       PRIMARY META TAGS
+       ═══════════════════════════════════════════════════════ -->
   <title>Celebrity Estate Planning & Legacy Preservation Platform | Solexi</title>
+
   <meta name="description" content="Exclusive preservation solution for artists, athletes, celebrities and institutions. Private multimedia library, professional mini-documentary, exclusive AI avatar, prestige heir vault. Custom partnerships for musical groups, sports teams, halls of fame, wax museums, foundations and heritage companies." />
+
   <meta name="keywords" content="celebrity legacy, legacy preservation, AI celebrity avatar, biographical documentary, VIP private library, prestige heir vault, music groups legacy, sports teams heritage, digital hall of fame, digital wax museum, legacy foundation, heritage company, artistic career conservation, sports memory, institutional legacy" />
+
   <meta name="author" content="Solexi.ai" />
+
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
-  <!-- Canonical (new clean URL) -->
-  <link rel="canonical" href="https://solexi.ai/celebrities/" />
+  <!-- Signal de fraîcheur pour les crawlers -->
+  <meta name="revisit-after" content="7 days" />
 
-  <!-- hreflang (aligned with your FR migration) -->
-  <link rel="alternate" hreflang="en" href="https://solexi.ai/celebrities/" />
-  <link rel="alternate" hreflang="fr" href="https://solexi.ai/vedette/" />
+  <!-- ═══════════════════════════════════════════════════════
+       CANONICAL & HREFLANG
+       ═══════════════════════════════════════════════════════ -->
+  <link rel="canonical" href="https://solexi.ai/celebrities/" />
+  <link rel="alternate" hreflang="en"        href="https://solexi.ai/celebrities/" />
+  <link rel="alternate" hreflang="fr"        href="https://solexi.ai/vedette/" />
   <link rel="alternate" hreflang="x-default" href="https://solexi.ai/celebrities/" />
 
   <meta name="theme-color" content="#FFFFFF" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Solexi.ai" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:url" content="https://solexi.ai/celebrities/" />
-  <meta property="og:title" content="Premium Solutions for Celebrities & Institutions | Solexi" />
-  <meta property="og:description" content="Exclusive preservation for artists, athletes and institutions. Private library, professional documentary, AI avatar and custom partnerships." />
-  <meta property="og:image" content="https://solexi.ai/images/og-vedette.jpg" />
-  <meta property="og:image:alt" content="Solexi Premium — Legacy preservation for celebrities and institutions" />
+  <!-- ═══════════════════════════════════════════════════════
+       OPEN GRAPH — version complète
+       ═══════════════════════════════════════════════════════ -->
+  <meta property="og:type"              content="website" />
+  <meta property="og:site_name"         content="Solexi.ai" />
+  <meta property="og:locale"            content="en_US" />
+  <!-- FIX : locale alternate pour la version FR -->
+  <meta property="og:locale:alternate"  content="fr_FR" />
+  <meta property="og:url"               content="https://solexi.ai/celebrities/" />
+  <meta property="og:title"             content="Premium Solutions for Celebrities & Institutions | Solexi" />
+  <meta property="og:description"       content="Exclusive preservation for artists, athletes and institutions. Private library, professional documentary, AI avatar and custom partnerships." />
 
+  <!-- FIX : image avec dimensions explicites + type MIME -->
+  <meta property="og:image"             content="https://solexi.ai/images/og-vedette.jpg" />
+  <meta property="og:image:secure_url"  content="https://solexi.ai/images/og-vedette.jpg" />
+  <meta property="og:image:type"        content="image/jpeg" />
+  <meta property="og:image:width"       content="1200" />
+  <meta property="og:image:height"      content="630" />
+  <meta property="og:image:alt"         content="Solexi Premium — Legacy preservation for celebrities and institutions" />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://solexi.ai/celebrities/" />
-  <meta name="twitter:title" content="Premium Celebrity Legacy | Solexi" />
+  <!-- FIX : signal de mise à jour (ISO 8601) -->
+  <meta property="og:updated_time"      content="2025-06-01T00:00:00+00:00" />
+
+  <!-- ═══════════════════════════════════════════════════════
+       TWITTER CARD — version complète
+       ═══════════════════════════════════════════════════════ -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:url"         content="https://solexi.ai/celebrities/" />
+  <!-- FIX : handle de marque et auteur -->
+  <meta name="twitter:site"        content="@SolexiAI" />
+  <meta name="twitter:creator"     content="@SolexiAI" />
+  <meta name="twitter:title"       content="Premium Celebrity Legacy | Solexi" />
   <meta name="twitter:description" content="High-end preservation for celebrities and institutions. Documentaries, AI avatars and prestige heir vaults." />
-  <meta name="twitter:image" content="https://solexi.ai/images/og-vedette.jpg" />
+  <meta name="twitter:image"       content="https://solexi.ai/images/og-vedette.jpg" />
+  <!-- FIX : alt texte pour accessibilité de la card -->
+  <meta name="twitter:image:alt"   content="Solexi Premium — Legacy preservation for celebrities and institutions" />
+  <!-- FIX : rich data labels affichés sous la card -->
+  <meta name="twitter:label1"      content="Service type" />
+  <meta name="twitter:data1"       content="Legacy Preservation" />
+  <meta name="twitter:label2"      content="Audience" />
+  <meta name="twitter:data2"       content="Celebrities, Artists, Athletes, Institutions" />
 
-  <!-- Performance hints -->
+  <!-- ═══════════════════════════════════════════════════════
+       PERFORMANCE HINTS
+       ═══════════════════════════════════════════════════════ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- Icons / CSS (ABSOLUTE PATHS so they work under /celebrities/) -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <!-- ═══════════════════════════════════════════════════════
+       FAVICONS & PWA
+       ═══════════════════════════════════════════════════════ -->
+  <link rel="icon"             type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon"             type="image/png"     href="/favicon.png" />
+  <link rel="apple-touch-icon"                      href="/apple-touch-icon.png" />
+
+  <!-- ═══════════════════════════════════════════════════════
+       CSS
+       ═══════════════════════════════════════════════════════ -->
   <link rel="stylesheet" href="/assets/css/main.css" />
   <link rel="stylesheet" href="/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
 
-  <!-- Structured Data -->
+
+  <!-- ═══════════════════════════════════════════════════════
+       SCHEMA.ORG — 1 / 6  WebPage
+       Décrit la page elle-même pour Google
+       ═══════════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://solexi.ai/celebrities/#webpage",
+    "url": "https://solexi.ai/celebrities/",
+    "name": "Celebrity Estate Planning & Legacy Preservation Platform | Solexi",
+    "description": "Exclusive preservation solution for artists, athletes, celebrities and institutions.",
+    "inLanguage": "en",
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "https://solexi.ai/#website",
+      "url": "https://solexi.ai/",
+      "name": "Solexi.ai",
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://solexi.ai/#organization"
+      }
+    },
+    "breadcrumb": { "@id": "https://solexi.ai/celebrities/#breadcrumb" },
+    "potentialAction": {
+      "@type": "ReadAction",
+      "target": "https://solexi.ai/celebrities/"
+    },
+    "dateModified": "2025-06-01"
+  }
+  </script>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       SCHEMA.ORG — 2 / 6  Organization (enrichie)
+       Fournit sameAs, contactPoint, knowsAbout
+       ═══════════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://solexi.ai/#organization",
+    "name": "Solexi.ai",
+    "url": "https://solexi.ai/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://solexi.ai/images/logo.png",
+      "width": 200,
+      "height": 60
+    },
+    "description": "Digital legacy preservation platform for families, celebrities, and cultural institutions.",
+    "foundingDate": "2023",
+    "knowsAbout": [
+      "Digital Legacy Preservation",
+      "AI Avatar Generation",
+      "Biographical Documentary Production",
+      "Cultural Heritage Archiving",
+      "Estate Planning Technology"
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/company/solexi-ai",
+      "https://twitter.com/SolexiAI",
+      "https://www.instagram.com/solexi.ai"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "French"],
+      "url": "https://solexi.ai/#contact"
+    }
+  }
+  </script>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       SCHEMA.ORG — 3 / 6  Service (enrichie)
+       Ajoute hasOfferCatalog, areaServed, availableLanguage
+       ═══════════════════════════════════════════════════════ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": "https://solexi.ai/celebrities/#service",
     "serviceType": "Premium Legacy Preservation Solutions",
-    "name": "Solexi — Premium Solutions for Celebrities and Institutions",
-    "description": "High-end preservation service for artists, athletes, celebrities and institutions. Private library, professional documentaries, exclusive AI avatars and custom partnerships.",
-    "provider": { "@type": "Organization", "name": "Solexi.ai", "url": "https://solexi.ai/" },
-    "category": "Premium Digital Preservation",
-    "audience": { "@type": "Audience", "audienceType": "Celebrities, Artists, Athletes, Institutions, Music Groups, Sports Teams, Foundations" },
-    "url": "https://solexi.ai/celebrities/"
+    "name": "Solexi Premium — Solutions for Celebrities and Institutions",
+    "description": "High-end preservation for artists, athletes, celebrities and institutions: private multimedia library, professional mini-documentary, exclusive AI avatar, prestige heir vault, and custom institutional partnerships.",
+    "url": "https://solexi.ai/celebrities/",
+    "provider": {
+      "@type": "Organization",
+      "@id": "https://solexi.ai/#organization"
+    },
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Worldwide"
+    },
+    "availableLanguage": ["English", "French"],
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Celebrities, Artists, Athletes, Institutions, Music Groups, Sports Teams, Foundations"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Solexi Premium Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Private Multimedia Library",
+            "description": "Secure, high-capacity private archive for photos, videos, documents and audio recordings."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Legacy Mini-Documentary",
+            "description": "Professionally produced biographical film (10–30 min) capturing career, achievements and legacy."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Exclusive AI Avatar",
+            "description": "Interactive AI representation preserving voice, likeness and personal narrative for future generations."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Prestige Heir Vault",
+            "description": "Controlled-access encrypted archive for exclusive transmission to designated heirs."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Institutional Partnership",
+            "description": "Custom legacy preservation agreements for music groups, sports teams, halls of fame, museums, foundations and heritage companies."
+          }
+        }
+      ]
+    }
   }
   </script>
 
+
+  <!-- ═══════════════════════════════════════════════════════
+       SCHEMA.ORG — 4 / 6  BreadcrumbList
+       ═══════════════════════════════════════════════════════ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": "https://solexi.ai/celebrities/#breadcrumb",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://solexi.ai/" },
-      { "@type": "ListItem", "position": 2, "name": "Celebrities & Institutions", "item": "https://solexi.ai/celebrities/" }
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://solexi.ai/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Celebrities & Institutions",
+        "item": "https://solexi.ai/celebrities/"
+      }
     ]
   }
   </script>
 
+
+  <!-- ═══════════════════════════════════════════════════════
+       SCHEMA.ORG — 5 / 6  ItemList (services listés)
+       Permet à Google d'indexer chaque service séparément
+       ═══════════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Solexi Premium — Services for Celebrities and Institutions",
+    "description": "Complete list of premium legacy preservation services offered by Solexi.",
+    "numberOfItems": 5,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Private Multimedia Library",
+        "url": "https://solexi.ai/celebrities/#private-library",
+        "description": "Secure high-capacity archive for photos, videos, documents and audio."
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Legacy Mini-Documentary",
+        "url": "https://solexi.ai/celebrities/#documentary",
+        "description": "Professional biographical film (10–30 min) produced by Solexi experts."
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Exclusive AI Avatar",
+        "url": "https://solexi.ai/celebrities/#ai-avatar",
+        "description": "AI-powered interactive avatar preserving voice, likeness and personal narrative."
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Prestige Heir Vault",
+        "url": "https://solexi.ai/celebrities/#heir-vault",
+        "description": "Encrypted controlled-access archive for heirs and designated beneficiaries."
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Institutional Partnership",
+        "url": "https://solexi.ai/celebrities/#partnerships",
+        "description": "Custom agreements for music groups, sports teams, halls of fame, museums and foundations."
+      }
+    ]
+  }
+  </script>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       SCHEMA.ORG — 6 / 6  FAQPage (étendue à 7 questions)
+       Rich Snippets directement dans les SERP Google
+       ═══════════════════════════════════════════════════════ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -101,129 +350,43 @@
         "name": "How does pricing work for celebrities and institutions?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Pricing depends on content volume, project complexity, preservation duration, customization level, and organization type. Partnership agreements are available."
+          "text": "Pricing depends on content volume, project complexity, preservation duration, customization level, and organization type. Partnership agreements with custom pricing are available for institutions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is an exclusive AI avatar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An AI avatar is an interactive digital representation built from your voice, likeness, and personal narrative. It allows future generations to engage with your story in a conversational and dynamic format, fully controlled by you or your estate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a Prestige Heir Vault?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Prestige Heir Vault is an encrypted, access-controlled digital archive designed for the exclusive transmission of memories, documents, and media to designated heirs or beneficiaries. Access is granted only according to rules you define."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the preserved content protected and private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All content uploaded to Solexi is stored in encrypted infrastructure with granular access controls. You decide who sees what, and when. No content is shared publicly without your explicit authorization."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long is the legacy preserved?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Preservation duration is defined by your subscription plan and can be extended at any time. Institutional plans include multi-decade preservation options with dedicated archive management."
         }
       }
     ]
   }
   </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Solexi.ai",
-    "url": "https://solexi.ai/",
-    "logo": "https://solexi.ai/images/logo.png",
-    "description": "Digital legacy preservation platform for families, celebrities, and cultural institutions."
-  }
-  </script>
 </head>
-
-<body class="page-vedette">
-
-  <!-- Navigation (ABSOLUTE LINKS) -->
-  <nav class="main-nav nav-vedette">
-    <div class="nav-container">
-      <a href="/" class="logo">
-        <span class="logo-icon">⬡</span>
-        <span class="logo-text">SOLEXI.AI</span>
-      </a>
-
-      <div class="nav-links">
-        <a href="/understand/" class="nav-link">Understand</a>
-        <a href="/problems/" class="nav-link">Problem</a>
-        <a href="/solutions/" class="nav-link">Solution</a>
-        <a href="/use-cases/" class="nav-link">Use Cases</a>
-        <a href="/research/" class="nav-link">Research</a>
-        <a href="/faq/" class="nav-link">FAQ</a>
-        <a href="/glossary/" class="nav-link">Glossary</a>
-        <a href="/#contact" class="nav-link">Contact</a>
-        <a href="#consultation" class="nav-btn">Request a private consultation</a>
-
-        <div class="language-selector">
-          <button class="lang-btn active" type="button">EN</button>
-          <div class="lang-dropdown">
-            <a href="/vedette/">FR</a>
-          </div>
-        </div>
-      </div>
-
-      <button class="mobile-menu-btn" aria-label="Menu" type="button">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <section class="hero-vedette">
-    <div class="hero-vedette-overlay"></div>
-    <div class="hero-content">
-      <h1 class="hero-title">For those who want<br>to leave a mark.</h1>
-      <p class="hero-subtitle">High-end digital preservation for artists, athletes, leaders and foundations.</p>
-    </div>
-    <div class="hero-portrait">
-      <div class="portrait-frame">
-        <div class="portrait-glow"></div>
-      </div>
-      <p class="portrait-caption">Your legacy. Preserved with excellence.</p>
-    </div>
-  </section>
-
-  <!-- Excellence -->
-  <section class="excellence-section">
-    <div class="excellence-content">
-      <div class="excellence-badge"><i class="fas fa-gem"></i></div>
-      <h2>Excellence at the service of your legacy</h2>
-      <p class="excellence-lead">You dedicated your life to excellence. Your legacy deserves the same discipline.</p>
-      <p>Solexi Premium is a tailored solution for individuals and institutions who want controlled preservation, verified delivery, and a narrative that remains coherent over time.</p>
-    </div>
-  </section>
-
-  <!-- The rest of your existing sections can stay as-is -->
-  <!-- (Legacy Premium, Institutions, Prestige Vault, Security, Testimonials, Process, Pricing, CTA, Footer) -->
-
-  <footer class="main-footer footer-vedette">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>Solexi.ai</h4>
-        <p>Preserving what matters, responsibly.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-
-      <div class="footer-section">
-        <h4>Pages</h4>
-        <ul>
-          <li><a href="/understand/">Understand</a></li>
-          <li><a href="/problems/">Problem</a></li>
-          <li><a href="/solutions/">Solution</a></li>
-          <li><a href="/research/">Research</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-section">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="/privacy-policy/">Privacy</a></li>
-          <li><a href="/terms-of-use-2/">Terms</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2024 Solexi.ai. All rights reserved.</p>
-      <div class="footer-languages">
-        <a href="/celebrities/" class="active">English</a>
-        <a href="/vedette/">Français</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- JS (ABSOLUTE PATH) -->
-  <script src="/js/main.js"></script>
-</body>
-</html>
