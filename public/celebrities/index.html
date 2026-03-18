@@ -15,8 +15,7 @@
 
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
-  <!-- Signal de fraîcheur pour les crawlers -->
-  <meta name="revisit-after" content="7 days" />
+  <!-- ✅ FIX #7 : meta revisit-after supprimé (ignoré par tous les crawlers modernes) -->
 
   <!-- ═══════════════════════════════════════════════════════
        CANONICAL & HREFLANG
@@ -34,37 +33,32 @@
   <meta property="og:type"              content="website" />
   <meta property="og:site_name"         content="Solexi.ai" />
   <meta property="og:locale"            content="en_US" />
-  <!-- FIX : locale alternate pour la version FR -->
-  <meta property="og:locale:alternate"  content="fr_FR" />
+  <meta property="og:locale:alternate"  content="fr_CA" />
   <meta property="og:url"               content="https://solexi.ai/celebrities/" />
   <meta property="og:title"             content="Premium Solutions for Celebrities & Institutions | Solexi" />
   <meta property="og:description"       content="Exclusive preservation for artists, athletes and institutions. Private library, professional documentary, AI avatar and custom partnerships." />
 
-  <!-- FIX : image avec dimensions explicites + type MIME -->
-  <meta property="og:image"             content="https://solexi.ai/images/og-vedette.jpg" />
-  <meta property="og:image:secure_url"  content="https://solexi.ai/images/og-vedette.jpg" />
-  <meta property="og:image:type"        content="image/jpeg" />
+  <!-- ✅ FIX #11 : chemin OG image cohérent avec le plan (à uploader sur le serveur) -->
+  <meta property="og:image"             content="https://solexi.ai/wp-content/uploads/og/og_homepage_solexi.png" />
+  <meta property="og:image:secure_url"  content="https://solexi.ai/wp-content/uploads/og/og_homepage_solexi.png" />
+  <meta property="og:image:type"        content="image/png" />
   <meta property="og:image:width"       content="1200" />
   <meta property="og:image:height"      content="630" />
   <meta property="og:image:alt"         content="Solexi Premium — Legacy preservation for celebrities and institutions" />
 
-  <!-- FIX : signal de mise à jour (ISO 8601) -->
-  <meta property="og:updated_time"      content="2025-06-01T00:00:00+00:00" />
+  <!-- ✅ FIX #5 : date mise à jour -->
+  <meta property="og:updated_time"      content="2026-03-18T00:00:00+00:00" />
 
   <!-- ═══════════════════════════════════════════════════════
        TWITTER CARD — version complète
+       ✅ FIX #8 : twitter:site et twitter:creator supprimés (handle non vérifié)
        ═══════════════════════════════════════════════════════ -->
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:url"         content="https://solexi.ai/celebrities/" />
-  <!-- FIX : handle de marque et auteur -->
-  <meta name="twitter:site"        content="@SolexiAI" />
-  <meta name="twitter:creator"     content="@SolexiAI" />
   <meta name="twitter:title"       content="Premium Celebrity Legacy | Solexi" />
   <meta name="twitter:description" content="High-end preservation for celebrities and institutions. Documentaries, AI avatars and prestige heir vaults." />
-  <meta name="twitter:image"       content="https://solexi.ai/images/og-vedette.jpg" />
-  <!-- FIX : alt texte pour accessibilité de la card -->
+  <meta name="twitter:image"       content="https://solexi.ai/wp-content/uploads/og/og_homepage_solexi.png" />
   <meta name="twitter:image:alt"   content="Solexi Premium — Legacy preservation for celebrities and institutions" />
-  <!-- FIX : rich data labels affichés sous la card -->
   <meta name="twitter:label1"      content="Service type" />
   <meta name="twitter:data1"       content="Legacy Preservation" />
   <meta name="twitter:label2"      content="Audience" />
@@ -72,9 +66,12 @@
 
   <!-- ═══════════════════════════════════════════════════════
        PERFORMANCE HINTS
+       ✅ FIX #9 : ajout preconnect cdn.jsdelivr.net (FontAwesome)
        ═══════════════════════════════════════════════════════ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
 
   <!-- ═══════════════════════════════════════════════════════
        FAVICONS & PWA
@@ -94,7 +91,6 @@
 
   <!-- ═══════════════════════════════════════════════════════
        SCHEMA.ORG — 1 / 6  WebPage
-       Décrit la page elle-même pour Google
        ═══════════════════════════════════════════════════════ -->
   <script type="application/ld+json">
   {
@@ -120,14 +116,19 @@
       "@type": "ReadAction",
       "target": "https://solexi.ai/celebrities/"
     },
-    "dateModified": "2025-06-01"
+    "dateModified": "2026-03-18"
   }
   </script>
 
 
   <!-- ═══════════════════════════════════════════════════════
-       SCHEMA.ORG — 2 / 6  Organization (enrichie)
-       Fournit sameAs, contactPoint, knowsAbout
+       SCHEMA.ORG — 2 / 6  Organization (corrigée)
+       ✅ FIX #1 foundingDate 2023 → 2025
+       ✅ FIX #2 logo URL réelle WordPress
+       ✅ FIX #3 sameAs : 2 URLs vérifiées uniquement
+       ✅ FIX #4 NAP complet : adresse, téléphone, email
+       ✅ FIX #10 contactPoint : email au lieu de #contact
+       ✅ FIX #12 inLanguage ajouté
        ═══════════════════════════════════════════════════════ -->
   <script type="application/ld+json">
   {
@@ -136,14 +137,25 @@
     "@id": "https://solexi.ai/#organization",
     "name": "Solexi.ai",
     "url": "https://solexi.ai/",
+    "inLanguage": "en",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://solexi.ai/images/logo.png",
+      "url": "https://solexi.ai/wp-content/uploads/2025/08/solexi-logo-white.png",
       "width": 200,
       "height": 60
     },
     "description": "Digital legacy preservation platform for families, celebrities, and cultural institutions.",
-    "foundingDate": "2023",
+    "foundingDate": "2025",
+    "email": "support@solexi.ai",
+    "telephone": "+1-438-602-1761",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4388 Rue Saint-Denis",
+      "addressLocality": "Montréal",
+      "addressRegion": "QC",
+      "postalCode": "H2J 2L1",
+      "addressCountry": "CA"
+    },
     "knowsAbout": [
       "Digital Legacy Preservation",
       "AI Avatar Generation",
@@ -152,23 +164,21 @@
       "Estate Planning Technology"
     ],
     "sameAs": [
-      "https://www.linkedin.com/company/solexi-ai",
-      "https://twitter.com/SolexiAI",
-      "https://www.instagram.com/solexi.ai"
+      "https://www.facebook.com/people/Solexiai/61579267002313/",
+      "https://www.linkedin.com/company/solexi-ai/"
     ],
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
-      "availableLanguage": ["English", "French"],
-      "url": "https://solexi.ai/#contact"
+      "email": "support@solexi.ai",
+      "availableLanguage": ["English", "French"]
     }
   }
   </script>
 
 
   <!-- ═══════════════════════════════════════════════════════
-       SCHEMA.ORG — 3 / 6  Service (enrichie)
-       Ajoute hasOfferCatalog, areaServed, availableLanguage
+       SCHEMA.ORG — 3 / 6  Service (inchangée — conforme)
        ═══════════════════════════════════════════════════════ -->
   <script type="application/ld+json">
   {
@@ -243,7 +253,7 @@
 
 
   <!-- ═══════════════════════════════════════════════════════
-       SCHEMA.ORG — 4 / 6  BreadcrumbList
+       SCHEMA.ORG — 4 / 6  BreadcrumbList (inchangée — conforme)
        ═══════════════════════════════════════════════════════ -->
   <script type="application/ld+json">
   {
@@ -269,8 +279,7 @@
 
 
   <!-- ═══════════════════════════════════════════════════════
-       SCHEMA.ORG — 5 / 6  ItemList (services listés)
-       Permet à Google d'indexer chaque service séparément
+       SCHEMA.ORG — 5 / 6  ItemList (inchangée — conforme)
        ═══════════════════════════════════════════════════════ -->
   <script type="application/ld+json">
   {
@@ -321,8 +330,7 @@
 
 
   <!-- ═══════════════════════════════════════════════════════
-       SCHEMA.ORG — 6 / 6  FAQPage (étendue à 7 questions)
-       Rich Snippets directement dans les SERP Google
+       SCHEMA.ORG — 6 / 6  FAQPage (inchangée — conforme)
        ═══════════════════════════════════════════════════════ -->
   <script type="application/ld+json">
   {
