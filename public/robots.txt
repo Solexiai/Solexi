@@ -1,6 +1,6 @@
 # ============================================================
 # robots.txt — Solexi.ai
-# Version : 2.0 · IA-First · SEO Bot Control · Security
+# Version : 2.1 · IA-First · SEO Kill · App-Ready · Bugfixed
 # Last updated : 2026-03-18
 # ============================================================
 
@@ -9,13 +9,27 @@ User-agent: *
 Allow: /
 Crawl-delay: 2
 
-# Zones sensibles protégées pour tous les robots
+# ⚠️ Fix critique : autoriser sitemap AVANT le bloc *.xml
+Allow: /sitemap.xml
+
+# Zones sensibles — protégées pour tous les bots
 Disallow: /admin/
 Disallow: /api/
+Disallow: /app/
+Disallow: /account/
+Disallow: /auth/
+Disallow: /login/
+Disallow: /signup/
+Disallow: /register/
+Disallow: /checkout/
+Disallow: /settings/
+Disallow: /upload/
 Disallow: /dashboard/
 Disallow: /vault/
 Disallow: /private/
 Disallow: /tmp/
+Disallow: /docs/
+Disallow: /_next/
 Disallow: /*.json$
 Disallow: /*.xml$
 
