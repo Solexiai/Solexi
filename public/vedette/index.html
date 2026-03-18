@@ -1,581 +1,505 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5DZLVZS9');
-  </script>
-  <!-- End Google Tag Manager -->
-
-  <title>Celebrities, Artists & Institutions | Emotional Memory & Digital Legacy | Solexi</title>
-  <meta name="description" content="Solexi helps artists, celebrities, public figures, families, and institutions preserve emotional memory, organize private archives, structure digital legacy, and prepare future memorial experiences with privacy and controlled access." />
-  <link rel="canonical" href="https://solexi.ai/celebrities/" />
-  <meta name="robots" content="max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
-
-  <link rel="alternate" hreflang="en" href="https://solexi.ai/celebrities/" />
-  <link rel="alternate" hreflang="fr" href="https://solexi.ai/vedette/" />
-  <link rel="alternate" hreflang="x-default" href="https://solexi.ai/celebrities/" />
-
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Solexi" />
-  <meta property="og:title" content="Celebrities, Artists & Institutions | Emotional Memory & Digital Legacy | Solexi" />
-  <meta property="og:description" content="Private archives, emotional memory preservation, structured digital legacy, and controlled access for artists, celebrities, public figures, families, and institutions." />
-  <meta property="og:url" content="https://solexi.ai/celebrities/" />
-  <!-- Add a real 1200x630 image before launch -->
-  <!-- <meta property="og:image" content="https://solexi.ai/assets/og/celebrities-cover.jpg" /> -->
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Celebrities, Artists & Institutions | Emotional Memory & Digital Legacy | Solexi" />
-  <meta name="twitter:description" content="Private archives, emotional memory preservation, structured digital legacy, and controlled access for artists, celebrities, public figures, families, and institutions." />
-
-  <style>
-    :root {
-      --text: #111111;
-      --muted: #5f6368;
-      --line: rgba(0,0,0,.12);
-      --soft: #f7f7f8;
-      --bg: #ffffff;
-      --radius: 16px;
-      --shadow: 0 1px 2px rgba(0,0,0,.04);
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      color: var(--text);
-      background: var(--bg);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      line-height: 1.65;
-    }
-
-    a { color: inherit; }
-
-    .skip-link {
-      position: absolute;
-      left: -9999px;
-      top: 0;
-      background: #000;
-      color: #fff;
-      padding: 10px 14px;
-      border-radius: 10px;
-      z-index: 100;
-      text-decoration: none;
-    }
-
-    .skip-link:focus {
-      left: 16px;
-      top: 16px;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(255,255,255,.96);
-      backdrop-filter: saturate(180%) blur(10px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .header-inner,
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding-top: 14px;
-      padding-bottom: 14px;
-    }
-
-    .brand {
-      text-decoration: none;
-      color: #000;
-      font-weight: 700;
-      letter-spacing: .02em;
-    }
-
-    .primary-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      align-items: center;
-    }
-
-    .primary-nav a {
-      text-decoration: none;
-      opacity: .85;
-    }
-
-    .primary-nav a[aria-current="page"] {
-      opacity: 1;
-      font-weight: 600;
-    }
-
-    .nav-cta {
-      padding: 8px 12px;
-      border: 1px solid rgba(0,0,0,.18);
-      border-radius: 12px;
-    }
-
-    .container {
-      padding-top: 40px;
-      padding-bottom: 80px;
-    }
-
-    .eyebrow {
-      margin: 0 0 8px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      font-size: .82rem;
-    }
-
-    h1 {
-      margin: 0 0 18px;
-      font-size: clamp(2.1rem, 4vw, 3.2rem);
-      line-height: 1.05;
-      max-width: 15ch;
-    }
-
-    h2 {
-      margin: 0 0 10px;
-      font-size: 1.55rem;
-      line-height: 1.2;
-    }
-
-    h3 {
-      margin: 0 0 8px;
-      font-size: 1.08rem;
-      line-height: 1.3;
-    }
-
-    p { margin: 0 0 16px; }
-
-    .lead {
-      max-width: 54rem;
-      font-size: 1.125rem;
-      color: var(--muted);
-    }
-
-    .breadcrumb {
-      margin-bottom: 24px;
-      color: var(--muted);
-      font-size: .95rem;
-    }
-
-    .breadcrumb ol {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: .5rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    .breadcrumb li + li::before {
-      content: "/";
-      margin-right: .5rem;
-    }
-
-    .panel,
-    .toc,
-    .cta,
-    .card {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .panel,
-    .toc,
-    .cta {
-      padding: 22px;
-    }
-
-    .panel {
-      margin: 28px 0;
-      background: var(--soft);
-    }
-
-    .toc {
-      margin: 28px 0 36px;
-      background: #fff;
-    }
-
-    .cta {
-      background: var(--soft);
-      padding: 24px;
-    }
-
-    .panel ul,
-    .toc ul,
-    .source-list {
-      margin: 12px 0 0;
-      padding-left: 20px;
-    }
-
-    section {
-      padding: 34px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .cards {
-      display: grid;
-      gap: 16px;
-      margin-top: 18px;
-    }
-
-    .card {
-      padding: 18px;
-      background: #fff;
-    }
-
-    .meta,
-    .note {
-      color: var(--muted);
-      font-size: .95rem;
-    }
-
-    .link-list a,
-    .source-list a,
-    .breadcrumb a,
-    .toc a,
-    .card a {
-      text-underline-offset: 2px;
-    }
-
-    .faq-item + .faq-item {
-      margin-top: 18px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-    }
-
-    .button {
-      display: inline-block;
-      padding: 14px 18px;
-      border: 1px solid rgba(0,0,0,.2);
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    @media (min-width: 720px) {
-      .cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-  </style>
-</head>
-
-<body data-page-key="celebrities">
-
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DZLVZS9"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <a class="skip-link" href="#main-content">Skip to content</a>
-
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="/" aria-label="Solexi home">SOLEXI</a>
-
-      <nav class="primary-nav" aria-label="Primary">
-        <a href="/understand/">Understand</a>
-        <a href="/problems/">Problems</a>
-        <a href="/solutions/">Solutions</a>
-        <a href="/use-cases/">Use Cases</a>
-        <a href="/research/">Research</a>
-        <a href="/celebrities/" aria-current="page">Celebrities</a>
-        <a class="nav-cta" href="/#subscribe">Join early access</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main-content" class="container">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li aria-current="page">Celebrities & Institutions</li>
-      </ol>
-    </nav>
-
-    <p class="eyebrow">Celebrities & Institutions</p>
-    <h1>Preserve emotional memory, private archives, and digital legacy with structure.</h1>
-
-    <p class="lead">
-      Solexi is designed for artists, celebrities, public figures, families, and institutions that want
-      to preserve more than files. This page explains how structured digital legacy, private archive planning,
-      controlled access, and future memorial experiences can reduce loss, confusion, and fragmentation over time.
-    </p>
-
-    <div class="panel" aria-labelledby="summary-title">
-      <h2 id="summary-title">What this page covers</h2>
-      <ul>
-        <li>How Solexi can help organize private archives, memories, documents, and digital materials.</li>
-        <li>Why emotional memory and human context matter as much as storage.</li>
-        <li>How controlled access and long-term structure can support families, estates, and institutions.</li>
-      </ul>
-    </div>
-
-    <section aria-labelledby="definition-title">
-      <h2 id="definition-title">Definition and related pages</h2>
-      <p>
-        For the broader problem, see <a href="/digital-life-after-death/">Digital Life After Death</a>.
-        For product context, see <a href="/solutions/">Solutions</a>.
-        For supporting terms, see the <a href="/glossary/">Glossary</a>.
-      </p>
-      <p class="note">
-        This page focuses on premium digital legacy, emotional memory preservation, archive structure,
-        and responsible future memorial experiences. It does not make claims about consciousness transfer,
-        digital immortality, or autonomous simulation of a deceased person.
-      </p>
-    </section>
-
-    <nav class="toc" aria-label="On this page">
-      <strong>On this page</strong>
-      <ul>
-        <li><a href="#who-it-is-for">Who this is for</a></li>
-        <li><a href="#what-can-be-preserved">What can be preserved</a></li>
-        <li><a href="#why-solexi">Why Solexi is different</a></li>
-        <li><a href="#controlled-access">Controlled access and governance</a></li>
-        <li><a href="#future-memorial">Future memorial experiences</a></li>
-        <li><a href="#common-questions">Common questions</a></li>
-      </ul>
-    </nav>
-
-    <section id="who-it-is-for" aria-labelledby="audience-title">
-      <h2 id="audience-title">1) Who this is for</h2>
-      <p>
-        Solexi is for people and organizations whose memories, archives, and digital materials deserve more
-        than generic storage. That includes cultural figures, families, rights holders, and institutions that
-        need clarity, privacy, and long-term structure.
-      </p>
-
-      <div class="cards">
-        <article class="card">
-          <h3>Artists and creators</h3>
-          <p>
-            Preserve recordings, notes, creative drafts, private materials, correspondence, and meaningful
-            context around a body of work.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Celebrities and public figures</h3>
-          <p>
-            Organize sensitive materials, memories, documents, and digital presence with more structure,
-            discretion, and continuity.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Families and estates</h3>
-          <p>
-            Reduce uncertainty by creating a clearer framework for archives, memories, private content,
-            and long-term access expectations.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Institutions and foundations</h3>
-          <p>
-            Support long-term archive planning, cultural continuity, and preservation workflows for sensitive
-            or historically meaningful materials.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section id="what-can-be-preserved" aria-labelledby="preserve-title">
-      <h2 id="preserve-title">2) What can be preserved</h2>
-      <p>
-        Solexi is not limited to simple files. The practical goal is to preserve organized, meaningful,
-        and understandable digital memory across different types of content and relationships.
-      </p>
-
-      <ul class="source-list">
-        <li>Photos, videos, audio, letters, notes, documents, and digital archives</li>
-        <li>Personal stories, emotional context, and life-journey materials</li>
-        <li>Private collections, estate records, and selected access instructions</li>
-        <li>Archive groupings by person, period, project, role, or confidentiality level</li>
-      </ul>
-    </section>
-
-    <section id="why-solexi" aria-labelledby="difference-title">
-      <h2 id="difference-title">3) Why Solexi is different</h2>
-      <p>
-        Most tools keep files. Solexi is designed to help preserve memory with structure, context, access logic,
-        and transmission intent. The objective is not only storage capacity, but usable continuity over time.
-      </p>
-
-      <div class="cards">
-        <article class="card">
-          <h3>Emotional memory</h3>
-          <p>
-            Preserve meaning, relationships, and human context, not only digital objects.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Structured legacy</h3>
-          <p>
-            Organize materials in a way that stays understandable for families, collaborators, or future custodians.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Premium archive logic</h3>
-          <p>
-            Useful when privacy, reputation, cultural value, or estate complexity require more than consumer-grade storage.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Future-ready foundation</h3>
-          <p>
-            Create a stronger base for future memorial experiences assisted by AI, within clear consent and governance boundaries.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section id="controlled-access" aria-labelledby="access-title">
-      <h2 id="access-title">4) Controlled access and governance</h2>
-      <p>
-        Digital legacy is not only about preservation. It is also about who can access what, under what
-        conditions, and with what level of trust. Clear structure reduces future confusion, conflict, and guesswork.
-      </p>
-
-      <ul class="source-list">
-        <li>Trusted roles and selected access logic</li>
-        <li>Separation between private, family, estate, or institutional materials</li>
-        <li>Archive planning designed to reduce ambiguity for future custodians</li>
-        <li>Privacy-conscious handling of emotionally sensitive materials</li>
-      </ul>
-    </section>
-
-    <section id="future-memorial" aria-labelledby="future-title">
-      <h2 id="future-title">5) Future memorial experiences</h2>
-      <p>
-        Solexi may support future memorial experiences assisted by AI, but only as a structured extension of
-        intentionally preserved materials. That means stories, recordings, documents, and memories organized
-        with consent, governance, and clear access boundaries.
-      </p>
-      <p class="note">
-        Solexi does not claim to recreate consciousness or make unverifiable promises about digital immortality.
-        The practical focus is preservation, structure, emotional memory, and responsible continuity.
-      </p>
-    </section>
-
-    <section id="common-questions" aria-labelledby="questions-title">
-      <h2 id="questions-title">Common questions</h2>
-
-      <div class="faq-item">
-        <h3>Is this only for celebrities?</h3>
-        <p>
-          No. This page highlights premium use cases for celebrities, artists, public figures, families,
-          and institutions, but the underlying need is broader.
-        </p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Why not just use cloud storage?</h3>
-        <p>
-          Cloud storage holds files. Solexi is meant to add structure, meaning, archive logic, and future
-          continuity around those files.
-        </p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Can this prepare for a memorial avatar later?</h3>
-        <p>
-          It can help create the documentary and emotional foundation for future memorial experiences assisted
-          by AI, provided they are built with consent and controlled access.
-        </p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Why does emotional memory matter?</h3>
-        <p>
-          Because what families, collaborators, and future generations lose is often not just a file, but the
-          meaning and story attached to it.
-        </p>
-      </div>
-    </section>
-
-    <section aria-labelledby="cta-title">
-      <div class="cta">
-        <h2 id="cta-title">Start preserving memory before it becomes fragmented or inaccessible.</h2>
-        <p>
-          Join early access if you want to follow the development of Solexi for premium digital legacy,
-          emotional memory preservation, and structured archive continuity.
-        </p>
-        <p><a class="button" href="/#subscribe">Join the early access list</a></p>
-      </div>
-    </section>
-  </main>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Préservation de l'Héritage Numérique pour Célébrités & Institutions | Solexi</title>
+  <meta name="description" content="Solexi est conçu pour les artistes, célébrités, personnalités publiques, familles et institutions qui souhaitent préserver la mémoire émotionnelle, les archives privées et l'héritage numérique avec structure, accès contrôlé et continuité à long terme." />
+  <meta name="keywords" content="héritage numérique célébrité, préservation legacy, avatar IA célébrité, mini-documentaire biographique, bibliothèque privée VIP, coffre héritier prestige, héritage groupes musicaux, patrimoine équipes sportives, hall of fame numérique, mémoire émotionnelle, héritage institutionnel" />
+  <meta name="author" content="Solexi.ai" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="revisit-after" content="7 days" />
+
+  <!-- ── Canonical & hreflang ─────────────────────────────── -->
+  <link rel="canonical"  href="https://solexi.ai/vedette/" />
+  <link rel="alternate"  hreflang="fr"        href="https://solexi.ai/vedette/" />
+  <link rel="alternate"  hreflang="en"        href="https://solexi.ai/celebrities/" />
+  <link rel="alternate"  hreflang="x-default" href="https://solexi.ai/celebrities/" />
+
+  <meta name="theme-color" content="#FFFFFF" />
+
+  <!-- ── Open Graph ───────────────────────────────────────── -->
+  <meta property="og:type"             content="website" />
+  <meta property="og:site_name"        content="Solexi.ai" />
+  <meta property="og:locale"           content="fr_FR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:url"              content="https://solexi.ai/vedette/" />
+  <meta property="og:title"            content="Préservation de l'Héritage Numérique pour Célébrités & Institutions | Solexi" />
+  <meta property="og:description"      content="Préservez la mémoire émotionnelle, les archives privées et l'héritage numérique avec structure. Pour artistes, célébrités, familles et institutions." />
+  <meta property="og:image"            content="https://solexi.ai/images/og-vedette.jpg" />
+  <meta property="og:image:secure_url" content="https://solexi.ai/images/og-vedette.jpg" />
+  <meta property="og:image:type"       content="image/jpeg" />
+  <meta property="og:image:width"      content="1200" />
+  <meta property="og:image:height"     content="630" />
+  <meta property="og:image:alt"        content="Solexi — Préservation de l'héritage numérique pour célébrités et institutions" />
+  <meta property="og:updated_time"     content="2025-06-01T00:00:00+00:00" />
+
+  <!-- ── Twitter Card ─────────────────────────────────────── -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@SolexiAI" />
+  <meta name="twitter:creator"     content="@SolexiAI" />
+  <meta name="twitter:url"         content="https://solexi.ai/vedette/" />
+  <meta name="twitter:title"       content="Héritage Numérique pour Célébrités | Solexi" />
+  <meta name="twitter:description" content="Préservez la mémoire émotionnelle, les archives privées et l'héritage numérique avec structure." />
+  <meta name="twitter:image"       content="https://solexi.ai/images/og-vedette.jpg" />
+  <meta name="twitter:image:alt"   content="Solexi — Préservation de l'héritage numérique pour célébrités et institutions" />
+  <meta name="twitter:label1"      content="Type de service" />
+  <meta name="twitter:data1"       content="Préservation de l'héritage" />
+  <meta name="twitter:label2"      content="Audience" />
+  <meta name="twitter:data2"       content="Célébrités, Artistes, Athlètes, Institutions" />
+
+  <!-- ── Fonts & Icons ────────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+
+  <!-- ── Favicons ─────────────────────────────────────────── -->
+  <link rel="icon"             type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon"             type="image/png"     href="/favicon.png" />
+  <link rel="apple-touch-icon"                      href="/apple-touch-icon.png" />
+
+  <!-- ── CSS ──────────────────────────────────────────────── -->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+
+  <!-- ── Schema.org — WebPage ─────────────────────────────── -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@graph": [
+    "@type": "WebPage",
+    "@id": "https://solexi.ai/vedette/#webpage",
+    "url": "https://solexi.ai/vedette/",
+    "name": "Préservation de l'Héritage Numérique pour Célébrités & Institutions | Solexi",
+    "description": "Préservez la mémoire émotionnelle, les archives privées et l'héritage numérique avec structure.",
+    "inLanguage": "fr",
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "https://solexi.ai/#website",
+      "url": "https://solexi.ai/",
+      "name": "Solexi.ai",
+      "publisher": { "@type": "Organization", "@id": "https://solexi.ai/#organization" }
+    },
+    "breadcrumb": { "@id": "https://solexi.ai/vedette/#breadcrumb" },
+    "dateModified": "2025-06-01"
+  }
+  </script>
+
+  <!-- ── Schema.org — Organization ───────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://solexi.ai/#organization",
+    "name": "Solexi.ai",
+    "url": "https://solexi.ai/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://solexi.ai/images/logo.png",
+      "width": 200, "height": 60
+    },
+    "description": "Plateforme de préservation de l'héritage numérique pour familles, célébrités et institutions culturelles.",
+    "foundingDate": "2023",
+    "knowsAbout": ["Préservation de l'héritage numérique","Génération d'avatar IA","Production de documentaire biographique","Archivage du patrimoine culturel","Technologies de planification successorale"],
+    "sameAs": [
+      "https://www.linkedin.com/company/solexi-ai",
+      "https://twitter.com/SolexiAI",
+      "https://www.instagram.com/solexi.ai"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "availableLanguage": ["French","English"],
+      "url": "https://solexi.ai/#contact"
+    }
+  }
+  </script>
+
+  <!-- ── Schema.org — Service ─────────────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://solexi.ai/vedette/#service",
+    "serviceType": "Solutions Premium de Préservation de l'Héritage",
+    "name": "Solexi Premium — Solutions pour Célébrités et Institutions",
+    "description": "Préservez la mémoire émotionnelle, les archives privées et l'héritage numérique avec structure, accès contrôlé et continuité à long terme.",
+    "url": "https://solexi.ai/vedette/",
+    "provider": { "@type": "Organization", "@id": "https://solexi.ai/#organization" },
+    "areaServed": { "@type": "AdministrativeArea", "name": "Worldwide" },
+    "availableLanguage": ["French","English"],
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Célébrités, Artistes, Athlètes, Institutions, Groupes musicaux, Équipes sportives, Fondations"
+    }
+  }
+  </script>
+
+  <!-- ── Schema.org — BreadcrumbList ──────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://solexi.ai/vedette/#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil",                     "item": "https://solexi.ai/" },
+      { "@type": "ListItem", "position": 2, "name": "Célébrités & Institutions",   "item": "https://solexi.ai/vedette/" }
+    ]
+  }
+  </script>
+
+  <!-- ── Schema.org — FAQPage ─────────────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
       {
-        "@type": "CollectionPage",
-        "@id": "https://solexi.ai/celebrities/#webpage",
-        "url": "https://solexi.ai/celebrities/",
-        "name": "Celebrities, Artists & Institutions | Emotional Memory & Digital Legacy",
-        "description": "Solexi helps artists, celebrities, public figures, families, and institutions preserve emotional memory, organize private archives, structure digital legacy, and prepare future memorial experiences with privacy and controlled access.",
-        "isPartOf": { "@id": "https://solexi.ai/#website" },
-        "publisher": { "@id": "https://solexi.ai/#organization" },
-        "about": [
-          { "@type": "Thing", "name": "Emotional memory preservation" },
-          { "@type": "Thing", "name": "Digital legacy" },
-          { "@type": "Thing", "name": "Private archives" },
-          { "@type": "Thing", "name": "Memorial avatar" },
-          { "@type": "Thing", "name": "Controlled access" }
-        ],
-        "breadcrumb": { "@id": "https://solexi.ai/celebrities/#breadcrumb" }
+        "@type": "Question",
+        "name": "Est-ce uniquement pour les célébrités ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Non. Cette page met en avant des cas d'usage premium pour les célébrités, artistes, personnalités publiques, familles et institutions, mais le besoin sous-jacent est plus large." }
       },
       {
-        "@type": "BreadcrumbList",
-        "@id": "https://solexi.ai/celebrities/#breadcrumb",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://solexi.ai/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Celebrities & Institutions",
-            "item": "https://solexi.ai/celebrities/"
-          }
-        ]
+        "@type": "Question",
+        "name": "Pourquoi ne pas simplement utiliser un stockage cloud ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Le stockage cloud conserve des fichiers. Solexi est conçu pour ajouter structure, sens, logique d'archivage et continuité future autour de ces fichiers." }
+      },
+      {
+        "@type": "Question",
+        "name": "Cela peut-il préparer un avatar mémoriel pour plus tard ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Cela peut aider à créer le fondement documentaire et émotionnel pour de futures expériences mémorielles assistées par IA, à condition qu'elles soient construites avec consentement et accès contrôlé." }
+      },
+      {
+        "@type": "Question",
+        "name": "Pourquoi la mémoire émotionnelle est-elle importante ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Parce que ce que les familles, collaborateurs et générations futures perdent n'est souvent pas seulement un fichier, mais le sens et l'histoire qui y sont attachés." }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment fonctionne la tarification pour les célébrités et les institutions ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "La tarification dépend du volume de contenu, de la complexité du projet, de la durée de conservation et du type d'organisation. Des accords de partenariat avec tarification personnalisée sont disponibles pour les institutions." }
       }
     ]
   }
   </script>
+
+  <style>
+    .lang-banner {
+      background: #f5f5f0;
+      border-bottom: 1px solid #e0ddd5;
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #555;
+    }
+    .lang-banner a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border: 1px solid #c8c3b8;
+      border-radius: 4px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: background .2s, border-color .2s;
+    }
+    .lang-banner a:hover { background: #ece8e0; border-color: #999; }
+    .lang-banner a.active {
+      background: #1a1a1a;
+      color: #fff;
+      border-color: #1a1a1a;
+      pointer-events: none;
+    }
+    .lang-banner .lang-flag { font-size: 16px; }
+  </style>
+</head>
+
+<body class="page-vedette">
+
+  <!-- ── Skip link ─────────────────────────────────────────── -->
+  <a href="#main-content" class="skip-link"
+     style="position:absolute;left:-9999px;top:4px;z-index:9999;background:#000;color:#fff;padding:8px 16px;border-radius:4px;font-family:Inter,sans-serif;font-size:14px;"
+     onfocus="this.style.left='4px'" onblur="this.style.left='-9999px'">
+    Aller au contenu principal
+  </a>
+
+  <!-- ── Bandeau de langue ─────────────────────────────────── -->
+  <div class="lang-banner" role="navigation" aria-label="Sélection de la langue">
+    <span>Langue :</span>
+    <a href="/celebrities/" hreflang="en">
+      <span class="lang-flag" aria-hidden="true">🇬🇧</span> English
+    </a>
+    <a href="/vedette/" class="active" hreflang="fr" aria-current="page">
+      <span class="lang-flag" aria-hidden="true">🇫🇷</span> Français
+    </a>
+  </div>
+
+  <!-- ── Navigation principale ────────────────────────────── -->
+  <header role="banner">
+    <nav class="main-nav nav-vedette" aria-label="Navigation principale">
+      <div class="nav-container">
+        <a href="/" class="logo">
+          <span class="logo-icon" aria-hidden="true">⬡</span>
+          <span class="logo-text">SOLEXI.AI</span>
+        </a>
+        <div class="nav-links" id="nav-links">
+          <a href="/understand/"  class="nav-link">Comprendre</a>
+          <a href="/problems/"    class="nav-link">Problème</a>
+          <a href="/solutions/"   class="nav-link">Solution</a>
+          <a href="/use-cases/"   class="nav-link">Cas d'usage</a>
+          <a href="/research/"    class="nav-link">Recherche</a>
+          <a href="/faq/"         class="nav-link">FAQ</a>
+          <a href="/glossary/"    class="nav-link">Glossaire</a>
+          <a href="/#contact"     class="nav-link">Contact</a>
+          <a href="#subscribe"    class="nav-btn">Rejoindre l'accès anticipé</a>
+          <div class="language-selector" style="display:flex;align-items:center;gap:6px;margin-left:12px;">
+            <a href="/celebrities/" hreflang="en"
+               style="font-size:13px;text-decoration:none;color:#666;opacity:.7;">EN</a>
+            <span style="color:#999;font-size:11px;">|</span>
+            <a href="/vedette/" aria-current="page" hreflang="fr"
+               style="font-weight:600;font-size:13px;text-decoration:none;color:inherit;opacity:1;">FR</a>
+          </div>
+        </div>
+        <button class="mobile-menu-btn"
+                aria-label="Ouvrir le menu de navigation"
+                aria-expanded="false"
+                aria-controls="nav-links"
+                type="button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ── Contenu principal ─────────────────────────────────── -->
+  <main id="main-content">
+
+    <!-- Fil d'Ariane -->
+    <nav aria-label="Fil d'Ariane" style="padding:12px 24px;font-family:Inter,sans-serif;font-size:13px;color:#888;">
+      <ol style="list-style:none;margin:0;padding:0;display:flex;gap:6px;align-items:center;">
+        <li><a href="/" style="color:#666;text-decoration:none;">Accueil</a></li>
+        <li aria-hidden="true" style="color:#bbb;">›</li>
+        <li aria-current="page" style="color:#333;">Célébrités &amp; Institutions</li>
+      </ol>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-vedette" aria-labelledby="hero-heading">
+      <div class="hero-content">
+        <h1 class="hero-title" id="hero-heading">
+          Préservez la mémoire émotionnelle, les archives privées<br>
+          et l'héritage numérique avec structure.
+        </h1>
+        <p class="hero-subtitle">
+          Solexi est conçu pour les artistes, célébrités, personnalités publiques, familles et institutions
+          qui souhaitent préserver bien plus que des fichiers — avec un accès contrôlé, un contexte humain
+          et une continuité à long terme.
+        </p>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section aria-labelledby="intro-heading" style="padding:48px 24px;max-width:860px;margin:0 auto;">
+      <h2 id="intro-heading">Ce que couvre cette page</h2>
+      <ul>
+        <li>Comment Solexi peut aider à organiser des archives privées, des souvenirs, des documents et des matériaux numériques.</li>
+        <li>Pourquoi la mémoire émotionnelle et le contexte humain comptent autant que le stockage.</li>
+        <li>Comment un accès contrôlé et une structure à long terme peuvent soutenir les familles, les successions et les institutions.</li>
+      </ul>
+      <p>Pour le problème général, voir <a href="/digital-life-after-death/">La vie numérique après la mort</a>.
+         Pour le contexte produit, voir <a href="/solutions/">Solutions</a>.
+         Pour les termes de référence, voir le <a href="/glossary/">Glossaire</a>.</p>
+      <nav aria-label="Navigation sur la page">
+        <p><strong>Sur cette page</strong></p>
+        <ul>
+          <li><a href="#who-it-is-for">À qui s'adresse ce service</a></li>
+          <li><a href="#what-can-be-preserved">Ce qui peut être préservé</a></li>
+          <li><a href="#why-solexi">Pourquoi Solexi est différent</a></li>
+          <li><a href="#controlled-access">Accès contrôlé et gouvernance</a></li>
+          <li><a href="#future-memorial">Expériences mémorielles futures</a></li>
+          <li><a href="#common-questions">Questions fréquentes</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- 1. À qui s'adresse ce service -->
+    <section id="who-it-is-for" aria-labelledby="who-heading">
+      <div style="max-width:860px;margin:0 auto;padding:40px 24px;">
+        <h2 id="who-heading">1) À qui s'adresse ce service</h2>
+        <p>Solexi s'adresse aux personnes et organisations dont les souvenirs, archives et matériaux numériques méritent plus qu'un stockage générique — notamment les figures culturelles, familles, ayants droit et institutions qui ont besoin de clarté, de confidentialité et d'une structure à long terme.</p>
+
+        <h3>Artistes et créateurs</h3>
+        <p>Préservez enregistrements, notes, ébauches créatives, matériaux privés, correspondances et contexte significatif autour d'un corpus d'œuvres.</p>
+
+        <h3>Célébrités et personnalités publiques</h3>
+        <p>Organisez matériaux sensibles, souvenirs, documents et présence numérique avec plus de structure, de discrétion et de continuité.</p>
+
+        <h3>Familles et successions</h3>
+        <p>Réduisez l'incertitude en créant un cadre plus clair pour les archives, souvenirs, contenus privés et attentes d'accès à long terme.</p>
+
+        <h3>Institutions et fondations</h3>
+        <p>Soutenez la planification d'archives à long terme, la continuité culturelle et les flux de travail de préservation pour des matériaux sensibles ou historiquement significatifs.</p>
+      </div>
+    </section>
+
+    <!-- 2. Ce qui peut être préservé -->
+    <section id="what-can-be-preserved" aria-labelledby="what-heading">
+      <div style="max-width:860px;margin:0 auto;padding:40px 24px;">
+        <h2 id="what-heading">2) Ce qui peut être préservé</h2>
+        <p>Solexi ne se limite pas à de simples fichiers. L'objectif pratique est de préserver une mémoire numérique organisée, significative et compréhensible à travers différents types de contenus et de relations.</p>
+        <ul>
+          <li>Photos, vidéos, audio, lettres, notes, documents et archives numériques</li>
+          <li>Histoires personnelles, contexte émotionnel et matériaux retraçant un parcours de vie</li>
+          <li>Collections privées, dossiers de succession et instructions d'accès sélectif</li>
+          <li>Regroupements d'archives par personne, période, projet, rôle ou niveau de confidentialité</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3. Pourquoi Solexi est différent -->
+    <section id="why-solexi" aria-labelledby="why-heading">
+      <div style="max-width:860px;margin:0 auto;padding:40px 24px;">
+        <h2 id="why-heading">3) Pourquoi Solexi est différent</h2>
+        <p>La plupart des outils conservent des fichiers. Solexi est conçu pour aider à préserver la mémoire avec structure, contexte, logique d'accès et intention de transmission. L'objectif n'est pas seulement la capacité de stockage, mais une continuité utilisable dans le temps.</p>
+
+        <h3>Mémoire émotionnelle</h3>
+        <p>Préservez le sens, les relations et le contexte humain — pas seulement des objets numériques.</p>
+
+        <h3>Héritage structuré</h3>
+        <p>Organisez les matériaux de manière à rester compréhensible pour les familles, collaborateurs ou futurs gardiens.</p>
+
+        <h3>Logique d'archive premium</h3>
+        <p>Utile lorsque la confidentialité, la réputation, la valeur culturelle ou la complexité successorale exigent plus qu'un stockage grand public.</p>
+
+        <h3>Base prête pour l'avenir</h3>
+        <p>Créez une base solide pour de futures expériences mémorielles assistées par IA, dans le cadre de limites claires de consentement et de gouvernance.</p>
+      </div>
+    </section>
+
+    <!-- 4. Accès contrôlé -->
+    <section id="controlled-access" aria-labelledby="access-heading">
+      <div style="max-width:860px;margin:0 auto;padding:40px 24px;">
+        <h2 id="access-heading">4) Accès contrôlé et gouvernance</h2>
+        <p>L'héritage numérique ne concerne pas seulement la préservation. Il s'agit aussi de savoir qui peut accéder à quoi, dans quelles conditions et avec quel niveau de confiance. Une structure claire réduit la confusion, les conflits et les incertitudes futures.</p>
+        <ul>
+          <li>Rôles de confiance et logique d'accès sélectif</li>
+          <li>Séparation entre matériaux privés, familiaux, successoraux ou institutionnels</li>
+          <li>Planification d'archives conçue pour réduire l'ambiguïté pour les futurs gardiens</li>
+          <li>Traitement respectueux de la confidentialité des matériaux émotionnellement sensibles</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5. Expériences mémorielles futures -->
+    <section id="future-memorial" aria-labelledby="memorial-heading">
+      <div style="max-width:860px;margin:0 auto;padding:40px 24px;">
+        <h2 id="memorial-heading">5) Expériences mémorielles futures</h2>
+        <p>Solexi peut soutenir de futures expériences mémorielles assistées par IA, mais uniquement comme extension structurée de matériaux intentionnellement préservés — histoires, enregistrements, documents et souvenirs organisés avec consentement, gouvernance et limites d'accès claires.</p>
+        <p>Solexi ne prétend pas recréer la conscience ni faire des promesses invérifiables sur l'immortalité numérique. L'objectif pratique est la préservation, la structure, la mémoire émotionnelle et la continuité responsable.</p>
+      </div>
+    </section>
+
+    <!-- 6. FAQ -->
+    <section id="common-questions" aria-labelledby="faq-heading">
+      <div style="max-width:860px;margin:0 auto;padding:40px 24px;">
+        <h2 id="faq-heading">Questions fréquentes</h2>
+
+        <h3>Est-ce uniquement pour les célébrités ?</h3>
+        <p>Non. Cette page met en avant des cas d'usage premium pour les célébrités, artistes, personnalités publiques, familles et institutions, mais le besoin sous-jacent est plus large.</p>
+
+        <h3>Pourquoi ne pas simplement utiliser un stockage cloud ?</h3>
+        <p>Le stockage cloud conserve des fichiers. Solexi est conçu pour ajouter structure, sens, logique d'archivage et continuité future autour de ces fichiers.</p>
+
+        <h3>Cela peut-il préparer un avatar mémoriel pour plus tard ?</h3>
+        <p>Cela peut aider à créer le fondement documentaire et émotionnel pour de futures expériences mémorielles assistées par IA, à condition qu'elles soient construites avec consentement et accès contrôlé.</p>
+
+        <h3>Pourquoi la mémoire émotionnelle est-elle importante ?</h3>
+        <p>Parce que ce que les familles, collaborateurs et générations futures perdent n'est souvent pas seulement un fichier, mais le sens et l'histoire qui y sont attachés.</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="subscribe" aria-labelledby="cta-heading"
+             style="background:#f5f5f0;padding:64px 24px;text-align:center;">
+      <div style="max-width:640px;margin:0 auto;">
+        <h2 id="cta-heading">Commencez à préserver la mémoire avant qu'elle ne devienne fragmentée ou inaccessible.</h2>
+        <p>Rejoignez l'accès anticipé pour suivre le développement de Solexi pour la préservation de l'héritage numérique premium, la mémoire émotionnelle et la continuité d'archive structurée.</p>
+        <a href="https://solexi.ai/#subscribe"
+           style="display:inline-block;margin-top:24px;padding:14px 32px;background:#1a1a1a;color:#fff;text-decoration:none;border-radius:4px;font-family:Inter,sans-serif;font-weight:500;font-size:15px;">
+          Rejoindre la liste d'accès anticipé
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer class="main-footer footer-vedette" role="contentinfo">
+    <div class="footer-content">
+
+      <div class="footer-section">
+        <h4>Solexi.ai</h4>
+        <p>Préserver ce qui compte, de façon responsable.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/company/solexi-ai" aria-label="LinkedIn"  target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"  aria-hidden="true"></i></a>
+          <a href="https://twitter.com/SolexiAI"               aria-label="Twitter"   target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"   aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/solexi.ai"         aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4 id="footer-pages-heading">Pages</h4>
+        <nav aria-labelledby="footer-pages-heading">
+          <ul>
+            <li><a href="/understand/">Comprendre</a></li>
+            <li><a href="/problems/">Problème</a></li>
+            <li><a href="/solutions/">Solution</a></li>
+            <li><a href="/research/">Recherche</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-section">
+        <h4 id="footer-legal-heading">Mentions légales</h4>
+        <nav aria-labelledby="footer-legal-heading">
+          <ul>
+            <li><a href="/privacy-policy/">Confidentialité</a></li>
+            <li><a href="/terms-of-use-2/">Conditions</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Solexi.ai. Tous droits réservés.</p>
+      <div class="footer-languages">
+        <a href="/celebrities/" hreflang="en">English</a>
+        <a href="/vedette/" class="active" aria-current="page" hreflang="fr">Français</a>
+      </div>
+    </div>
+  </footer>
+
+  <script defer>
+    (function(){
+      var btn = document.querySelector('.mobile-menu-btn');
+      var nav = document.getElementById('nav-links');
+      if(btn && nav){
+        btn.addEventListener('click', function(){
+          var open = nav.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          btn.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu de navigation');
+        });
+      }
+    })();
+  </script>
+
 </body>
 </html>
