@@ -26,3 +26,5 @@
   </url>
 
 </urlset>
+
+{ path: '/sitemap.xml', ok: (r) => r.status === 200 && r.contentType?.includes('xml') }
