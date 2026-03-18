@@ -1,9 +1,53 @@
+# ============================================================
+# robots.txt — Solexi.ai
+# Version : 2.0 · IA-First · SEO Bot Control · Security
+# Last updated : 2026-03-18
+# ============================================================
+
+# ── RÈGLE GÉNÉRALE ──────────────────────────────────────────
 User-agent: *
 Allow: /
+Crawl-delay: 2
 
-Sitemap: https://solexi.ai/sitemap.xml
+# Zones sensibles protégées pour tous les robots
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /vault/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /*.json$
+Disallow: /*.xml$
 
-# Robots IA — à autoriser
+
+# ============================================================
+# ✅ MOTEURS DE RECHERCHE PRINCIPAUX — Accès prioritaire
+# ============================================================
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+
+# ============================================================
+# 🤖 ROBOTS IA — Indexation LLM autorisée (IA-First SEO)
+# ============================================================
+
 User-agent: GPTBot
 Allow: /
 
@@ -19,12 +63,113 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-# Robots agressifs — ralentir
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+Crawl-delay: 2
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+
+# ============================================================
+# 🚫 OUTILS SEO TIERS — KILL MODE (blocage total)
+# ============================================================
+
 User-agent: AhrefsBot
-Crawl-delay: 10
+Disallow: /
+
+User-agent: AhrefsSiteAudit
+Disallow: /
 
 User-agent: SemrushBot
-Crawl-delay: 10
+Disallow: /
+
+User-agent: SemrushBot-SA
+Disallow: /
+
+User-agent: SemrushBot-BA
+Disallow: /
+
+User-agent: MajesticBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: SeekportBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: ZoominfoBot
+Disallow: /
+
+User-agent: MozBot
+Disallow: /
+
+User-agent: Rogerbot
+Disallow: /
+
+User-agent: SiteAuditBot
+Disallow: /
+
+User-agent: SpyBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+
+# ============================================================
+# ☠️ BOTS MALVEILLANTS — Blocage total
+# ============================================================
+
+User-agent: scrapy
+Disallow: /
+
+User-agent: python-requests
+Disallow: /
+
+User-agent: Go-http-client
+Disallow: /
+
+User-agent: curl
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+
+# ============================================================
+# 📍 SITEMAP
+# ============================================================
 
 Sitemap: https://solexi.ai/sitemap.xml
-
