@@ -1,1488 +1,931 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5DZLVZS9');
-  </script>
-  <!-- End Google Tag Manager -->
-
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
-  <meta name="theme-color" content="#ffffff" />
-
-  <title>When you die, who can access your digital life? | Solexi</title>
-  <meta name="description"
-    content="Your digital life tells your story but today, it’s fragmented and vulnerable. Solexi structures it so nothing is lost and no one is left navigating uncertainty." />
-  <link rel="canonical" href="https://solexi.ai/" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="When you die, who can access your digital life?" />
-  <meta property="og:description"
-    content="Your digital life tells your story but today, it’s fragmented and vulnerable. Solexi structures it so nothing is lost and no one is left navigating uncertainty." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://solexi.ai/" />
-  <meta property="og:site_name" content="Solexi" />
-  <meta property="og:image" content="https://solexi.ai/solexi-og-v3.jpg" />
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="When you die, who can access your accounts? | Solexi.ai" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="When you die, who can access your digital life? | Solexi" />
-  <meta name="twitter:description"
-    content="Your digital life tells your story but today, it’s fragmented and vulnerable. Solexi structures it so nothing is lost and no one is left navigating uncertainty." />
-  <meta name="twitter:image" content="https://solexi.ai/solexi-og-v3.jpg" />
-
-  <!-- Preload logo -->
-  <link rel="preload" as="image" href="/assets/brand/solexi-logo-128.webp" fetchpriority="high" />
-
-  <!-- Brevo base stylesheet -->
-  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-
-  <style>
-    :root{
-      --text:#0b0b0f;
-      --muted:rgba(11,11,15,.72);
-      --muted2:rgba(11,11,15,.56);
-      --border:rgba(11,11,15,.12);
-      --border2:rgba(11,11,15,.18);
-      --shadow:0 18px 60px rgba(0,0,0,.10);
-      --shadow2:0 14px 44px rgba(0,0,0,.10);
-      --radius:22px;
-      --max:1180px;
-    }
-
-    *{box-sizing:border-box}
-    html{ -webkit-text-size-adjust:100%; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color: var(--text);
-      overflow-x:hidden;
-      background:
-        radial-gradient(1100px 560px at 80% 18%, rgba(125,211,252,.36), rgba(255,255,255,0) 58%),
-        radial-gradient(980px 560px at 18% 72%, rgba(167,139,250,.26), rgba(255,255,255,0) 62%),
-        radial-gradient(860px 520px at 82% 88%, rgba(244,114,182,.16), rgba(255,255,255,0) 60%),
-        linear-gradient(#ffffff, #ffffff);
-    }
-
-    .container{ width:min(92vw, var(--max)); margin-inline:auto; }
-
-    /* Header */
-    header{
-      position:sticky; top:0; z-index:5000;
-      background: rgba(255,255,255,.82);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,0,0,.08);
-    }
-    .header-inner{
-      padding: 14px 18px;
-      display:flex; align-items:center; justify-content:space-between; gap:14px;
-    }
-
-    
-
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      text-decoration:none; color:#0b0b0f; font-weight:800;
-      letter-spacing:.06em; font-size:.92rem;
-      
-    }
-    .brand{ 
-      margin-right: auto; 
-    }
-    .brand .logoMark{
-      width:34px; height:34px;
-      border-radius: 10px;
-      display:grid; place-items:center;
-      background: rgba(255,255,255,.72);
-      border: 1px solid rgba(0,0,0,.10);
-      box-shadow: 0 10px 28px rgba(0,0,0,.06);
-      overflow:hidden;
-      flex: 0 0 auto;
-    }
-    .brand .logoMark img{
-      width: 100%; height: 100%;
-      object-fit: contain;
-      display:block;
-    }
-
-    /* ===== Vercel-style hamburger ===== */
-    .menuBtn{
-      display:flex;
-      width:44px; height:44px;
-      border-radius:12px;
-      border:1px solid rgba(0,0,0,.12);
-      background:rgba(255,255,255,.65);
-      cursor:pointer;
-      padding:0;
-      align-items:center;
-      justify-content:center;
-      position: relative;
-      z-index: 10000;
-    }
-    .menuBtn span{
-      width:18px;
-      height:2px;
-      background:#0b0b0f;
-      border-radius:999px;
-      position:relative;
-      display:block;
-    }
-    .menuBtn span::before,
-    .menuBtn span::after{
-      content:"";
-      position:absolute;
-      left:0;
-      width:18px;
-      height:2px;
-      background:#0b0b0f;
-      border-radius:999px;
-    }
-    .menuBtn span::before{ top:-6px; }
-    .menuBtn span::after{ top: 6px; }
-
-    /* ===== Popover menu (ONLY menu system) ===== */
-    .sx-pop{
-      position: fixed;
-      top: 58px;
-      right: 18px;
-      z-index: 9999;
-      display:none;
-    }
-    .sx-pop.open{ display:block; }
-
-    .sx-pop-panel{
-      width: min(360px, calc(100vw - 28px));
-      border-radius: 18px;
-      background: rgba(255,255,255,.92);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(0,0,0,.10);
-      box-shadow: 0 30px 90px rgba(0,0,0,.18);
-      padding: 12px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-
-    .sx-pop-cta{
-      display:block;
-      text-decoration:none;
-      text-align:center;
-      padding: 12px 14px;
-      border-radius: 14px;
-      font-weight: 900;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      background:#0b0b0f;
-      color:#fff;
-      border: 1px solid rgba(0,0,0,.12);
-    }
-    .sx-pop-link{
-      display:block;
-      text-decoration:none;
-      padding: 10px 12px;
-      border-radius: 14px;
-      font-weight: 700;
-      color:#0b0b0f;
-      border: 1px solid rgba(0,0,0,.10);
-      background: #fff;
-      opacity: .78;
-    }
-    .sx-pop-link:hover{ opacity:1; }
-
-    .sx-pop-backdrop{
-      position: fixed;
-      inset:0;
-      background: transparent;
-      z-index: 9998;
-      display:none;
-    }
-    .sx-pop-backdrop.open{ display:block; }
-
-    main{ padding: clamp(26px, 5vw, 64px) 0; }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: clamp(16px, 2.5vw, 28px);
-      align-items:start;
-    }
-
-    .kickerRow{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:0 0 14px; }
-    .kicker{
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      color:rgba(11,11,15,.55);
-      font-size:.78rem;
-      margin:0;
-    }
-    .badge{
-      font-size:.78rem;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid rgba(0,0,0,.12);
-      background: rgba(255,255,255,.65);
-      color: rgba(11,11,15,.70);
-      letter-spacing:.01em;
-      white-space:nowrap;
-    }
-
-    /* ===== HERO ===== */
-    .hero{
-      position:relative;
-      overflow:hidden;
-      padding: clamp(72px, 10vw, 120px) 20px;
-      text-align:center;
-      background:
-        radial-gradient(1200px 500px at 50% 0%, rgba(0,255,255,0.10), transparent 60%),
-        radial-gradient(900px 450px at 20% 30%, rgba(255,215,0,0.08), transparent 65%),
-        #05070d;
-      border-radius: 18px;
-      width: min(100%, 980px);
-      margin-inline:auto;
-    }
-
-    .hero .energy-bg{
-      position:absolute;
-      inset:-40%;
-      z-index:0;
-      background:
-        radial-gradient(closest-side at 50% 30%, rgba(0,255,255,0.12), transparent 70%),
-        radial-gradient(closest-side at 60% 45%, rgba(255,215,0,0.10), transparent 68%);
-      filter: blur(18px);
-      transform: translateZ(0);
-    }
-    .hero .spark-field{
-      position:absolute;
-      inset:0;
-      z-index:1;
-      opacity:0.55;
-      background-image:
-        radial-gradient(circle at 20% 40%, rgba(0,255,255,0.14) 0 2px, transparent 3px),
-        radial-gradient(circle at 70% 30%, rgba(255,215,0,0.12) 0 2px, transparent 3px),
-        radial-gradient(circle at 55% 70%, rgba(255,255,255,0.10) 0 1.5px, transparent 3px);
-      background-size: 280px 200px, 320px 240px, 260px 220px;
-      animation: sxDrift 10s linear infinite;
-    }
-    @keyframes sxDrift{
-      0%{ transform: translate3d(0,0,0); }
-      100%{ transform: translate3d(-40px, 20px, 0); }
-    }
-
-    .hero .cine-title{
-      position:relative;
-      display:inline-block;
-      z-index:3;
-      font-weight:900;
-      letter-spacing:0.3px;
-      line-height:1.05;
-      font-size: clamp(2.0rem, 4.2vw, 3.4rem);
-      color:#fff;
-      margin: 0 auto 16px;
-      text-shadow:
-        0 0 10px rgba(0,255,255,0.55),
-        0 0 22px rgba(0,255,255,0.35),
-        0 0 40px rgba(255,215,0,0.18);
-    }
-    .hero .cine-title .hl{
-      color:#ffd700;
-      text-shadow: 0 0 10px rgba(255,215,0,0.55), 0 0 22px rgba(255,215,0,0.35);
-    }
-
-    .hero .electric::after{
-      content:"";
-      position:absolute;
-      inset:-4px -10px;
-      left:-180%;
-      width: 360%;
-      height: calc(100% + 8px);
-      background: linear-gradient(120deg,
-        transparent 0%,
-        rgba(255,215,0,0.10) 24%,
-        rgba(0,255,255,0.95) 45%,
-        rgba(255,255,255,1) 50%,
-        rgba(0,255,255,0.95) 55%,
-        rgba(255,215,0,0.10) 76%,
-        transparent 100%);
-      mix-blend-mode: screen;
-      opacity: 0;
-      pointer-events:none;
-      filter: blur(0.2px);
-    }
-    .hero .electric.is-live::after{
-      opacity: 0.95;
-      animation: sxElectricFlow 1.25s cubic-bezier(.2,.7,.2,1) 1;
-    }
-    @keyframes sxElectricFlow{
-      0%{ left:-180%; }
-      100%{ left: 180%; }
-    }
-
-    .hero-sub{
-      z-index:3;
-      position:relative;
-      margin: 0 auto 26px;
-      max-width: 880px;
-      font-size: clamp(1rem, 1.4vw, 1.15rem);
-      opacity: 0.88;
-      color: #dfe7ff;
-    }
-
-    /* Lightning */
-    .hero .lightning{
-      position:absolute;
-      top: 52%;
-      left:0;
-      width:100%;
-      height:140px;
-      z-index:2;
-      opacity:0;
-      pointer-events:none;
-    }
-    .hero .lightning polyline{
-      fill:none;
-      stroke: rgba(0,255,255,0.85);
-      stroke-width: 2.5;
-      filter: drop-shadow(0 0 8px rgba(0,255,255,0.9));
-      stroke-dasharray: 900;
-      stroke-dashoffset: 900;
-    }
-    .hero.zap .lightning{ opacity: 0.55; }
-    .hero.zap .lightning polyline{ animation: sxLightningDraw 0.55s ease-out 1; }
-    @keyframes sxLightningDraw{
-      0%{ stroke-dashoffset: 900; opacity: 0.15; }
-      40%{ opacity: 0.9; }
-      100%{ stroke-dashoffset: 0; opacity: 0.35; }
-    }
-
-    /* ===== Layout uniform widths ===== */
-    .sx-stack{ display:flex; flex-direction:column; gap: 18px; }
-    .form-card, .seo-sections, .sx-footer{
-      width: min(100%, 760px);
-      margin-inline: auto;
-    }
-
-    .form-card{
-      margin-top: 10px;
-      border:1px solid var(--border);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.78);
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow2);
-      padding: 18px;
-    }
-    .form-title{ margin: 0 0 6px; font-size: 1.55rem; letter-spacing: -0.015em; }
-    .microTrust{ margin: 10px 0 0; color: var(--muted2); font-size: .92rem; line-height: 1.45; }
-
-    .seo-sections{ margin-top: clamp(26px, 3.2vw, 40px); display:grid; gap: 14px; }
-    .seoCard{
-      border-radius: 18px;
-      border: 1px solid rgba(0,0,0,.08);
-      background: rgba(255,255,255,.78);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 24px rgba(0,0,0,.06);
-      padding: 16px 16px;
-    }
-    .seoCard h2{ margin: 0 0 8px; font-size: 1.1rem; letter-spacing: -0.01em; }
-    .seoCard p, .seoCard li{ margin: 0; color: rgba(11,11,15,.74); line-height: 1.6; font-size: .98rem; }
-    .seoCard ul{ margin: 8px 0 0; padding-left: 18px; }
-    .faq details{ border-top: 1px solid rgba(0,0,0,.08); padding: 10px 0; }
-    .faq details:first-child{ border-top: 0; padding-top: 0; }
-    .faq summary{ cursor:pointer; font-weight: 850; color: rgba(11,11,15,.85); list-style: none; }
-    .faq summary::-webkit-details-marker{ display:none; }
-
-    .sx-footer{
-      margin-top: 10px;
-      padding: 20px 0 30px;
-      text-align: center;
-      color: rgba(11,11,15,.60);
-      font-size: .92rem;
-    }
-    .sx-footer a{ color: rgba(11,11,15,.70); text-decoration:none; }
-    .sx-footer a:hover{ text-decoration: underline; }
-
-    /* Brevo overrides */
-    .sib-form{ background: transparent !important; text-align:left !important; }
-    #sib-form-container{ background: transparent !important; }
-    #sib-container{
-      max-width: 100% !important;
-      width: 100% !important;
-      background: transparent !important;
-      border: 0 !important;
-      border-radius: 0 !important;
-      padding: 0 !important;
-      text-align: left !important;
-      direction: ltr !important;
-    }
-    #sib-container .entry__label{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial !important;
-      font-size: .92rem !important;
-      font-weight: 800 !important;
-      color: rgba(11,11,15,.72) !important;
-      margin-bottom: 8px !important;
-      letter-spacing: .01em;
-      text-align: left !important;
-    }
-    #sib-container .input, #sib-container select.input{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial !important;
-      height: 46px !important;
-      border-radius: 12px !important;
-      border: 1px solid var(--border2) !important;
-      padding: 0 14px !important;
-      font-size: 1rem !important;
-      color: var(--text) !important;
-      background: rgba(255,255,255,.97) !important;
-      outline: none !important;
-      box-shadow: none !important;
-      text-align: left !important;
-    }
-    #sib-container .input:focus, #sib-container select.input:focus{
-      border-color: rgba(11,11,15,.28) !important;
-      box-shadow: 0 0 0 4px rgba(60,150,255,.10) !important;
-    }
-    #sib-container input::placeholder{ color: rgba(11,11,15,.35) !important; }
-    #sib-container .sib-form-block{ margin: 0 !important; }
-    #sib-form-container .sib-input, #sib-form-container .sib-select{ margin-bottom: 12px !important; }
-
-    #sib-container button.sib-form-block__button, .sx-joinBtn{
-      height: 50px !important;
-      border-radius: 999px !important;
-      padding: 0 18px !important;
-      background: #0b0b0f !important;
-      color: #fff !important;
-      border: 1px solid rgba(0,0,0,.10) !important;
-      font-weight: 950 !important;
-      letter-spacing: .12em !important;
-      text-transform: uppercase !important;
-      cursor: pointer !important;
-      width: 100% !important;
-      transition: transform .12s ease, box-shadow .18s ease;
-      box-shadow: 0 16px 40px rgba(0,0,0,.14);
-    }
-    #sib-container button.sib-form-block__button:hover, .sx-joinBtn:hover{ transform: translateY(-1px); }
-
-    #sib-container .entry__specification{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial !important;
-      font-size: .86rem !important;
-      line-height: 1.45 !important;
-      color: rgba(11,11,15,.55) !important;
-      margin-top: 8px !important;
-      text-align: left !important;
-    }
-
-    #success-message, #error-message{ max-width: 100% !important; }
-
-    .sx-step2{ display:none; }
-    .sx-step2.show{ display:block; }
-
-    .sx-share{
-      margin-top: 10px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
-    .sx-share a, .sx-share button{
-      border-radius: 999px;
-      border: 1px solid rgba(0,0,0,.14);
-      background: #fff;
-      padding: 8px 12px;
-      font-weight: 800;
-      cursor:pointer;
-      color:#0b0b0f;
-      text-decoration:none;
-    }
-    .sx-share a:hover, .sx-share button:hover{ background:#0b0b0f; color:#fff; }
-
-    @media (max-width: 768px){
-      .container{ width: 92vw; }
-      main{ padding: 18px 0 26px; }
-      .kickerRow{ justify-content:center; text-align:center; }
-      .form-card{ padding: 14px; border-radius: 18px; }
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      .hero .spark-field{ animation: none; }
-      .hero .electric.is-live::after{ animation: none; opacity: 0.35; }
-      .hero.zap .lightning polyline{ animation: none; }
-    }
-  #sx-particles{
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Solexi.ai — Homepage V2 | héritage numérique structuré</title>
+<meta name="description" content="Solexi.ai propose une page d'accueil orientée clarté : organisation des souvenirs, documents et consignes, avec formulaire d'accès anticipé Brevo et structure lisible."/>
+<meta name="robots" content="index,follow"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Solexi.ai — Organiser un héritage numérique clair"/>
+<meta property="og:description" content="Organisation des souvenirs, documents et consignes dans un parcours simple, structuré et accessible."/>
+<meta property="og:image" content="/assets/home/hero-library-memory.png"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Solexi.ai — Organiser un héritage numérique clair"/>
+<meta name="twitter:description" content="Organisation des souvenirs, documents et consignes dans un parcours simple et structuré."/>
+<meta name="twitter:image" content="/assets/home/hero-library-memory.png"/>
+<link rel="canonical" href="https://solexi.ai/"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5DZLVZS9');</script>
+<!-- End Google Tag Manager -->
+<style>
+:root{
+  --navy:#0d1b2a;
+  --navy-mid:#162436;
+  --navy-soft:#23384f;
+  --gold:#c9a96e;
+  --gold-dark:#a8854a;
+  --gold-light:#ead8b5;
+  --white:#ffffff;
+  --cream:#f6f1e9;
+  --gray-light:#f7f5f1;
+  --gray-border:#e7e1d7;
+  --text-dark:#1c2430;
+  --text-muted:#66717f;
+  --radius:8px;
+  --radius-lg:18px;
+  --shadow:0 8px 30px rgba(16,28,42,.08);
+  --transition:.35s cubic-bezier(.4,0,.2,1);
+  --container:1240px;
 }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',sans-serif;color:var(--text-dark);background:var(--white);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font:inherit}
+.skip-link{position:absolute;left:-9999px;top:8px;z-index:9999;background:var(--navy);color:#fff;padding:10px 14px;border-radius:4px}
+.skip-link:focus{left:8px}
 
-#sx-particles canvas{
-  display: block;
-  width: 100%;
-  height: 100%;
-}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(13,27,42,.08);transition:var(--transition)}
+.nav.scrolled{box-shadow:0 8px 28px rgba(13,27,42,.08)}
+.nav-inner{max-width:var(--container);margin:0 auto;height:74px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:700;letter-spacing:.08em;color:var(--navy)}
+.logo-hex{color:var(--gold);font-size:1.5rem}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-links a{font-size:.88rem;font-weight:500;color:var(--text-muted);padding:8px 12px;border-radius:999px;transition:var(--transition)}
+.nav-links a:hover{color:var(--navy);background:var(--gray-light)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-badge{font-size:.74rem;color:var(--navy-soft);background:var(--cream);padding:7px 10px;border-radius:999px;border:1px solid var(--gray-border);white-space:nowrap}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#fff;font-size:.88rem;font-weight:700;padding:11px 18px;border-radius:999px;transition:var(--transition);box-shadow:0 8px 18px rgba(201,169,110,.22)}
+.nav-cta:hover{background:var(--gold-dark);transform:translateY(-1px)}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;padding:8px}
+.nav-hamburger span{width:22px;height:2px;background:var(--navy);border-radius:999px}
+.nav-mobile{display:none;position:fixed;top:74px;left:0;right:0;background:#fff;border-bottom:1px solid rgba(13,27,42,.08);padding:16px 24px 24px;z-index:999;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.nav-mobile.open{display:block}
+.nav-mobile a{display:block;padding:13px 0;border-bottom:1px solid var(--gray-light);color:var(--text-dark);font-size:.98rem}
+.nav-mobile .nav-cta-mobile{margin-top:16px;display:block;text-align:center;padding:13px 18px;background:var(--gold);color:#fff;border-radius:999px;font-weight:700;border-bottom:none}
 
-header, main, footer, section, nav, .hero, .container, .wrap{
-  position: relative;
-  z-index: 1;
-}
+main{padding-top:74px}
+.section{padding:92px 24px}
+.section-inner{max-width:var(--container);margin:0 auto}
+.section-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:14px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.1rem,4vw,3.35rem);line-height:1.12;font-weight:600;color:var(--navy);margin-bottom:18px}
+.section-title .accent{color:var(--gold-dark)}
+.section-lead{font-size:1.03rem;line-height:1.85;color:var(--text-muted);max-width:760px}
+.divider{width:62px;height:3px;border-radius:999px;background:var(--gold);margin:18px 0 30px}
+.center{text-align:center}
+.center .divider{margin-left:auto;margin-right:auto}
+.center .section-lead{margin-left:auto;margin-right:auto}
+.kicker-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.kicker-chip{display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border-radius:999px;background:#fff;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.88);font-size:.83rem}
+.kicker-chip.light{background:var(--gray-light);border-color:var(--gray-border);color:var(--navy)}
 
-body:not(.home) #sx-particles{
-  display: none;
+.hero{position:relative;min-height:calc(100vh - 74px);overflow:hidden;background:var(--navy)}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease;background-size:cover;background-position:center center}
+.slide.active{opacity:1;z-index:2}
+.slide::before{content:'';position:absolute;inset:0;background:linear-gradient(100deg, rgba(13,27,42,.88) 0%, rgba(13,27,42,.58) 44%, rgba(13,27,42,.18) 100%)}
+.slide::after{content:'';position:absolute;inset:auto 0 0 0;height:28%;background:linear-gradient(to top, rgba(13,27,42,.40), transparent)}
+.slide-content{position:relative;z-index:3;max-width:var(--container);height:100%;margin:0 auto;display:grid;grid-template-columns:minmax(0,660px) 1fr;align-items:center;padding:82px 24px 110px}
+.hero-copy{max-width:650px}
+.slide-tag{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-light);margin-bottom:20px}
+.slide-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,5.5vw,4.7rem);line-height:1.03;font-weight:600;color:#fff;margin-bottom:20px;max-width:11ch}
+.slide-sub{font-size:1.08rem;line-height:1.8;color:rgba(255,255,255,.86);max-width:600px;margin-bottom:30px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.slide-cta{display:inline-flex;align-items:center;gap:9px;background:var(--gold);color:#fff;padding:15px 24px;border-radius:999px;font-size:.96rem;font-weight:700;transition:var(--transition)}
+.slide-cta:hover{background:var(--gold-dark);transform:translateY(-2px)}
+.slide-secondary{display:inline-flex;align-items:center;gap:9px;color:#fff;border:1px solid rgba(255,255,255,.22);padding:15px 22px;border-radius:999px;font-size:.96rem;background:rgba(255,255,255,.08);backdrop-filter:blur(8px)}
+.slide-secondary:hover{background:rgba(255,255,255,.14)}
+.hero-panel{justify-self:end;width:min(100%,420px);background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(10px);border-radius:22px;padding:24px;color:#fff;box-shadow:0 20px 40px rgba(0,0,0,.18)}
+.hero-panel h2{font-size:1.08rem;font-weight:700;margin-bottom:12px}
+.hero-panel ul{display:grid;gap:12px}
+.hero-panel li{display:grid;grid-template-columns:22px 1fr;gap:12px;font-size:.95rem;line-height:1.65;color:rgba(255,255,255,.88)}
+.hero-panel i{color:var(--gold-light);margin-top:3px}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(10px);transition:var(--transition)}
+.carousel-btn:hover{background:rgba(255,255,255,.20)}
+.carousel-prev{left:28px}.carousel-next{right:28px}
+.carousel-dots{position:absolute;left:50%;transform:translateX(-50%);bottom:28px;display:flex;gap:10px;z-index:11}
+.dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.42);transition:var(--transition)}
+.dot.active{width:28px;border-radius:999px;background:var(--gold)}
+.carousel-progress{position:absolute;left:0;bottom:0;height:3px;background:var(--gold);width:0;z-index:11;transition:width 6s linear}
+
+.stats-strip{background:var(--cream);border-top:1px solid var(--gray-border);border-bottom:1px solid var(--gray-border)}
+.stats-inner{max-width:var(--container);margin:0 auto;padding:26px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.stat-card{background:#fff;border:1px solid var(--gray-border);border-radius:16px;padding:20px 18px;box-shadow:var(--shadow)}
+.stat-card strong{display:block;font-size:.88rem;letter-spacing:.04em;color:var(--navy);margin-bottom:8px}
+.stat-card span{font-size:.9rem;line-height:1.65;color:var(--text-muted)}
+
+.about-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
+.about-text p{font-size:1rem;line-height:1.9;color:var(--text-muted);margin-bottom:16px}
+.about-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:16px}
+.link-btn{display:inline-flex;align-items:center;gap:8px;color:var(--gold-dark);font-weight:700}
+.media-card{border-radius:22px;overflow:hidden;position:relative;box-shadow:0 18px 44px rgba(13,27,42,.14);background:var(--navy)}
+.media-card img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.media-card figcaption{position:absolute;left:18px;right:18px;bottom:18px;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);padding:14px 16px;border-radius:14px;font-size:.86rem;line-height:1.55;color:var(--navy)}
+
+.gallery-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:24px}
+.gallery-stack{display:grid;gap:24px}
+.gallery-card{position:relative;border-radius:22px;overflow:hidden;background:var(--gray-light);box-shadow:var(--shadow)}
+.gallery-card img{width:100%;height:100%;object-fit:cover}
+.gallery-card.large img{aspect-ratio:4/5}
+.gallery-card.medium img{aspect-ratio:16/10}
+.gallery-card.small img{aspect-ratio:16/10}
+.gallery-overlay{position:absolute;inset:auto 18px 18px 18px;background:rgba(255,255,255,.92);padding:14px 16px;border-radius:14px;font-size:.86rem;line-height:1.55;color:var(--navy);box-shadow:0 8px 22px rgba(13,27,42,.08)}
+.gallery-overlay strong{display:block;margin-bottom:4px}
+
+.pillars-section{background:var(--gray-light)}
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pillar-card{background:#fff;border:1px solid var(--gray-border);border-radius:20px;padding:28px;box-shadow:var(--shadow);transition:var(--transition)}
+.pillar-card:hover{transform:translateY(-4px)}
+.pillar-icon{width:58px;height:58px;border-radius:16px;background:var(--cream);display:flex;align-items:center;justify-content:center;color:var(--gold-dark);font-size:1.35rem;margin-bottom:20px}
+.pillar-title{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:600;color:var(--navy);margin-bottom:12px}
+.pillar-desc{font-size:.96rem;line-height:1.8;color:var(--text-muted)}
+
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:6px}
+.process-card{background:#fff;border:1px solid var(--gray-border);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+.process-step{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-size:.86rem;font-weight:700;margin-bottom:14px}
+.process-card h3{font-size:1rem;color:var(--navy);margin-bottom:10px}
+.process-card p{font-size:.92rem;line-height:1.75;color:var(--text-muted)}
+
+.form-shell{display:grid;grid-template-columns:.92fr 1.08fr;gap:32px;align-items:start}
+.form-aside{background:var(--navy);color:#fff;border-radius:24px;padding:34px;position:sticky;top:100px}
+.form-aside h2{font-family:'Cormorant Garamond',serif;font-size:2rem;line-height:1.15;margin-bottom:16px}
+.form-aside p{font-size:.98rem;line-height:1.85;color:rgba(255,255,255,.76);margin-bottom:18px}
+.form-aside ul{display:grid;gap:12px}
+.form-aside li{display:grid;grid-template-columns:20px 1fr;gap:12px;font-size:.92rem;color:rgba(255,255,255,.88);line-height:1.7}
+.form-card{background:#fff;border:1px solid var(--gray-border);border-radius:24px;padding:36px;box-shadow:0 16px 44px rgba(13,27,42,.08)}
+.form-card-header{margin-bottom:26px}
+.form-card-header p{font-size:.95rem;color:var(--text-muted);line-height:1.75}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{display:flex;flex-direction:column;gap:7px}
+.form-group.full{grid-column:1 / -1}
+.form-group label{font-size:.77rem;font-weight:700;color:var(--navy);letter-spacing:.08em;text-transform:uppercase}
+.form-group input{width:100%;padding:14px 16px;border:1px solid #d8dbe0;border-radius:12px;font-size:.95rem;color:var(--text-dark);transition:var(--transition)}
+.form-group input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,169,110,.12)}
+.form-actions{display:flex;flex-direction:column;gap:12px;margin-top:16px}
+.form-submit{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:15px 18px;background:var(--gold);color:#fff;font-size:.96rem;font-weight:700;border-radius:999px;transition:var(--transition)}
+.form-submit:hover{background:var(--gold-dark)}
+.form-note{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--text-muted)}
+.form-note i{color:var(--gold-dark)}
+.form-msg{display:none;margin-top:10px;padding:12px 14px;border-radius:12px;background:#eef8f0;color:#176b34;font-size:.9rem;border:1px solid #c7e6cf}
+.form-msg.visible{display:block}
+
+.problem-section{background:var(--navy);color:#fff}
+.problem-section .section-title{color:#fff}
+.problem-section .section-lead{color:rgba(255,255,255,.72)}
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.problem-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:20px;padding:26px;transition:var(--transition)}
+.problem-card:hover{background:rgba(255,255,255,.08)}
+.problem-icon{width:54px;height:54px;border-radius:16px;background:rgba(201,169,110,.16);display:flex;align-items:center;justify-content:center;color:var(--gold-light);font-size:1.2rem;margin-bottom:18px}
+.problem-card h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;margin-bottom:10px}
+.problem-card p{font-size:.94rem;line-height:1.8;color:rgba(255,255,255,.72)}
+.problem-card strong{display:block;margin-top:14px;color:var(--gold-light);font-size:.88rem;letter-spacing:.04em}
+
+.founder-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:36px;align-items:center}
+.quote-card{background:var(--cream);border:1px solid var(--gray-border);border-radius:24px;padding:30px}
+.quote-card blockquote{font-family:'Cormorant Garamond',serif;font-size:1.65rem;line-height:1.55;color:var(--navy);font-style:italic;margin-bottom:16px}
+.quote-card cite{display:block;font-style:normal;font-size:.95rem;color:var(--gold-dark);font-weight:700}
+.quote-card p{margin-top:16px;font-size:.95rem;line-height:1.8;color:var(--text-muted)}
+
+.footer{background:var(--navy);padding:62px 24px 28px;color:#fff}
+.footer-inner{max-width:var(--container);margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.10)}
+.footer-logo{display:flex;align-items:center;gap:10px;font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;letter-spacing:.08em;margin-bottom:14px}
+.footer-brand p{font-size:.9rem;line-height:1.8;color:rgba(255,255,255,.65);max-width:320px}
+.footer-social{display:flex;gap:10px;margin-top:18px}
+.footer-social a{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.07);color:rgba(255,255,255,.7);transition:var(--transition)}
+.footer-social a:hover{background:var(--gold);color:#fff}
+.footer-col h5{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-light);margin-bottom:14px}
+.footer-col ul li{margin-bottom:10px}
+.footer-col a,.footer-col span{font-size:.9rem;color:rgba(255,255,255,.64);line-height:1.7}
+.footer-col a:hover{color:#fff}
+.footer-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:22px}
+.footer-copy{font-size:.82rem;color:rgba(255,255,255,.45)}
+.footer-bottom a{font-size:.82rem;color:rgba(255,255,255,.52)}
+
+
+.testimonials-section{background:linear-gradient(180deg,#fff 0%,#f8f4ee 100%)}
+.testimonials-grid-home{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:34px}
+.testimonial-card-home{background:#fff;border:1px solid var(--gray-border);border-radius:22px;padding:28px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.testimonial-card-home::before{content:'';position:absolute;inset:0 auto 0 0;width:4px;background:linear-gradient(180deg,var(--gold),var(--gold-light))}
+.testimonial-stars-home{color:var(--gold-dark);letter-spacing:.14em;font-size:1rem;margin-bottom:14px}
+.testimonial-text-home{font-size:.98rem;line-height:1.85;color:var(--text-muted);margin-bottom:18px}
+.testimonial-meta-home strong{display:block;color:var(--navy);font-size:.98rem}
+.testimonial-meta-home span{font-size:.86rem;color:var(--text-muted)}
+.stats-strip.v2{background:linear-gradient(180deg,var(--cream) 0%,#fbf8f3 100%)}
+.stats-strip.v2 .stats-inner{grid-template-columns:repeat(4,1fr)}
+.stat-card.v2{padding:24px 20px;text-align:center}
+.stat-number-lg{display:block;font-family:'Cormorant Garamond',serif;font-size:2.5rem;line-height:1;color:var(--gold-dark);margin-bottom:10px}
+.stat-label-sm{display:block;font-size:.9rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+.stat-copy{font-size:.88rem;line-height:1.6;color:var(--text-muted)}
+.stats-trust-row{max-width:var(--container);margin:0 auto;padding:0 24px 26px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.trust-chip{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:#fff;border:1px solid var(--gray-border);font-size:.86rem;color:var(--navy);box-shadow:0 6px 18px rgba(16,28,42,.05)}
+.cta-band{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-soft) 100%);border-radius:28px;padding:34px 32px;color:#fff;display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center;box-shadow:0 24px 48px rgba(13,27,42,.18)}
+.cta-band h3{font-family:'Cormorant Garamond',serif;font-size:2rem;line-height:1.1;margin-bottom:12px}
+.cta-band p{font-size:.98rem;line-height:1.8;color:rgba(255,255,255,.78)}
+.cta-band-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}
+.cta-outline{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 20px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#fff;font-weight:700}
+.cta-solid{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 22px;border-radius:999px;background:var(--gold);color:#fff;font-weight:700;box-shadow:0 10px 22px rgba(201,169,110,.22)}
+.cta-solid:hover{background:var(--gold-dark)}
+.cta-outline:hover{background:rgba(255,255,255,.14)}
+.faq-home-section{background:var(--gray-light)}
+.faq-home-grid{display:grid;gap:16px;max-width:920px;margin:34px auto 0}
+.faq-home-item{background:#fff;border:1px solid var(--gray-border);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.faq-home-question{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 22px;text-align:left;color:var(--navy);font-weight:700;font-size:1rem}
+.faq-home-question i{color:var(--gold-dark);transition:transform .25s ease}
+.faq-home-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;padding:0 22px}
+.faq-home-answer p{font-size:.94rem;line-height:1.8;color:var(--text-muted);padding-bottom:0}
+.faq-home-item.open .faq-home-answer{max-height:220px;padding:0 22px 18px}
+.faq-home-item.open .faq-home-question i{transform:rotate(180deg)}
+.faq-cta-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:28px}
+@media (max-width:1080px){.testimonials-grid-home,.stats-strip.v2 .stats-inner{grid-template-columns:repeat(2,1fr)}.cta-band{grid-template-columns:1fr}.cta-band-actions{justify-content:flex-start}}
+@media (max-width:820px){.testimonials-grid-home,.stats-strip.v2 .stats-inner{grid-template-columns:1fr}}
+@media (max-width:560px){.cta-band{padding:26px 22px}.faq-home-question{padding:18px 18px}.faq-home-answer{padding:0 18px}.faq-home-item.open .faq-home-answer{padding:0 18px 18px}}
+
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity .7s ease, transform .7s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+@media (max-width:1080px){
+  .about-grid,.form-shell,.founder-wrap,.gallery-grid{grid-template-columns:1fr}
+  .hero-panel{display:none}
+  .slide-content{grid-template-columns:1fr;padding-right:84px}
+  .process-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-top{grid-template-columns:1fr 1fr}
 }
-  </style>
+@media (max-width:820px){
+  .nav-links,.nav-badge{display:none}
+  .nav-hamburger{display:flex}
+  .stats-inner,.pillars-grid,.problem-grid{grid-template-columns:1fr}
+  .form-grid,.process-grid{grid-template-columns:1fr}
+  .carousel-btn{width:42px;height:42px}
+  .carousel-prev{left:12px}.carousel-next{right:12px}
+  .slide-content{padding:64px 24px 96px}
+}
+@media (max-width:560px){
+  .section{padding:72px 20px}
+  .nav-inner{padding:0 16px}
+  .slide-title{max-width:12ch}
+  .slide-sub{font-size:1rem}
+  .hero-actions{flex-direction:column;align-items:flex-start}
+  .carousel-btn{display:none}
+  .footer-top{grid-template-columns:1fr}
+  .form-card,.form-aside,.quote-card{padding:26px}
+}
+</style>
 </head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DZLVZS9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
-<body class="home">
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DZLVZS9"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
 
-  <div id="sx-particles" aria-hidden="true"></div>
-
-  <header>
-  <div class="container header-inner">
-    <a class="brand" href="/" aria-label="Solexi Home">
-
-      <span class="logoMark" aria-hidden="true">
-        <img src="/assets/brand/solexi_light.webp"
-             alt="Solexi logo"
-             width="34"
-             height="34"
-             decoding="async"
-             fetchpriority="high">
-      </span>
-
-      <span class="brand-text">SOLEXI.AI</span>
-
-    </a>
-
-    <button class="menuBtn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">
-  <span></span>
-</button>
- 
-  
+<header>
+  <nav class="nav" aria-label="Navigation principale">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Solexi.ai — Accueil">
+        <span class="logo-hex" aria-hidden="true">⬡</span>
+        SOLEXI.AI
+      </a>
+      <div class="nav-links">
+        <a href="#about">Comprendre</a>
+        <a href="#usages">Usages</a>
+        <a href="#methode">Méthode</a>
+        <a href="#faq-home">FAQ</a>
+        <a href="#formulaire">Accès anticipé</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-right">
+        <div class="nav-badge">Questionnaire guidé · 5 minutes</div>
+        <a href="#formulaire" class="nav-cta"><i class="fas fa-arrow-right" aria-hidden="true"></i> Commencer</a>
+        <button class="nav-hamburger" id="hamburger-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="mobile-nav" role="dialog" aria-label="Menu mobile">
+    <a href="#about">Comprendre</a>
+    <a href="#usages">Usages</a>
+    <a href="#methode">Méthode</a>
+    <a href="#faq-home">FAQ</a>
+    <a href="#formulaire">Accès anticipé</a>
+    <a href="#contact">Contact</a>
+    <a href="#formulaire" class="nav-cta-mobile"><i class="fas fa-arrow-right"></i> Ouvrir le formulaire</a>
   </div>
 </header>
 
-  <!-- Popover menu -->
-  <div class="sx-pop" id="sxPop" aria-hidden="true">
-  <div class="sx-pop-panel" role="dialog" aria-modal="false" aria-label="Menu">
-
-    <a class="sx-pop-cta" href="#subscribe" id="sxPopJoin">Join</a>
-
-    <a class="sx-pop-link" href="/understand/">Understand</a>
-    <a class="sx-pop-link" href="/problems/">Problem</a>
-    <a class="sx-pop-link" href="/solutions/">Solutions</a>
-    <a class="sx-pop-link" href="/use-cases/">Use cases</a>
-    <a class="sx-pop-link" href="/research/">Research</a>
-    <a class="sx-pop-link" href="/faq/">FAQ</a>
-    <a class="sx-pop-link" href="/privacy/">Privacy</a>
-  </div>
-
-  
-  </div>
-
-  <main class="container">
-    <div class="hero-grid">
-      <section class="sx-stack" aria-label="Solexi waitlist">
-        <div class="kickerRow">
-          <p class="kicker">DIGITAL AFTER YOU</p>
-          <span class="badge">Founding Cohort · 2026 · Limited access</span>
+<main id="main-content">
+  <section class="hero" id="hero" aria-label="Présentation de Solexi.ai">
+    <div class="slide active" style="background-image:url('/assets/home/hero-library-memory.png')" aria-hidden="false">
+      <div class="slide-content">
+        <div class="hero-copy">
+          <span class="slide-tag">Accueil — Organisation du patrimoine numérique</span>
+          <h1 class="slide-title">Organiser les souvenirs, documents et consignes dans un cadre lisible.</h1>
+          <p class="slide-sub">Cette page d'accueil a été reconstruite à partir de votre template, avec un traitement visuel plus cohérent, un message plus factuel et des images fournies par vous pour installer immédiatement le sujet : mémoire, transmission, continuité.</p>
+          <div class="hero-actions">
+            <a href="#formulaire" class="slide-cta">Accéder au formulaire</a>
+            <a href="#about" class="slide-secondary">Voir le fonctionnement</a>
+          </div>
+          <div class="kicker-row" aria-label="Points clés">
+            <span class="kicker-chip"><i class="fas fa-folder-tree"></i> Souvenirs et documents</span>
+            <span class="kicker-chip"><i class="fas fa-shield-halved"></i> Parcours structuré</span>
+            <span class="kicker-chip"><i class="fas fa-envelope-open-text"></i> Accès anticipé</span>
+          </div>
         </div>
+        <aside class="hero-panel" aria-label="Résumé de la page">
+          <h2>Ce qui a été clarifié</h2>
+          <ul>
+            <li><i class="fas fa-check-circle"></i><span>Le message principal est recentré sur l'organisation et la transmission, sans surcharge promotionnelle.</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Les visuels fournis sont réaffectés aux endroits stratégiques : hero, compréhension du service, usages et continuité.</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Le formulaire conserve une structure exploitable avec nom, prénom, courriel et intégration Brevo.</span></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
 
-        <section class="hero" aria-label="Hero">
-          <div class="energy-bg" aria-hidden="true"></div>
-          <div class="spark-field" aria-hidden="true"></div>
+    <div class="slide" style="background-image:url('/assets/home/couple-child-memory.png')" aria-hidden="true">
+      <div class="slide-content">
+        <div class="hero-copy">
+          <span class="slide-tag">Cas d'usage — transmission familiale</span>
+          <h2 class="slide-title">Centraliser ce qui doit rester consultable pour les proches.</h2>
+          <p class="slide-sub">Le positionnement est formulé autour d'un usage concret : regrouper les éléments dispersés, documenter les intentions et faciliter l'accès à ce qui doit être transmis.</p>
+          <div class="hero-actions">
+            <a href="#usages" class="slide-cta">Voir les usages</a>
+            <a href="#methode" class="slide-secondary">Voir la méthode</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-          <h1 class="cine-title electric" id="cineTitle">
-            When you die, <span class="hl">who can access</span> your digital life?
-          </h1>
+    <div class="slide" style="background-image:url('/assets/home/writing-memory.png')" aria-hidden="true">
+      <div class="slide-content">
+        <div class="hero-copy">
+          <span class="slide-tag">Cas d'usage — préparation</span>
+          <h2 class="slide-title">Préparer en amont des informations qui sont souvent laissées dispersées.</h2>
+          <p class="slide-sub">Le visuel soutient ici l'idée de préparation : consignes, notes, documents et mémoire personnelle. Le contenu de page a été simplifié pour rendre cette logique plus lisible.</p>
+          <div class="hero-actions">
+            <a href="#formulaire" class="slide-cta">Commencer</a>
+            <a href="#probleme" class="slide-secondary">Voir les points de friction</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-          <p class="hero-sub">
-            Your digital life tells your story but today, it’s fragmented and vulnerable. Solexi structures it so nothing is lost and no one is left navigating uncertainty.
-          </p>
+    <div class="slide" style="background-image:url('/assets/home/mother-child-memory.png')" aria-hidden="true">
+      <div class="slide-content">
+        <div class="hero-copy">
+          <span class="slide-tag">Visuel éditorial — mémoire et continuité</span>
+          <h2 class="slide-title">Montrer la mémoire sans surcharger le discours.</h2>
+          <p class="slide-sub">La dernière slide utilise un visuel plus narratif, mais le texte reste volontairement sobre : la page doit expliquer un service, pas dramatiser son sujet.</p>
+          <div class="hero-actions">
+            <a href="#gallery" class="slide-cta">Voir les visuels</a>
+            <a href="#contact" class="slide-secondary">Nous écrire</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-          <svg class="lightning" viewBox="0 0 900 140" preserveAspectRatio="none" aria-hidden="true">
-            <polyline points="0,85 90,60 160,98 230,40 320,110 410,55 520,105 640,45 740,95 900,70" />
-          </svg>
-        </section>
+    <button class="carousel-btn carousel-prev" id="prev-btn" aria-label="Diapositive précédente"><i class="fas fa-chevron-left"></i></button>
+    <button class="carousel-btn carousel-next" id="next-btn" aria-label="Diapositive suivante"><i class="fas fa-chevron-right"></i></button>
+    <div class="carousel-dots" role="tablist" aria-label="Navigation du carrousel">
+      <button class="dot active" data-index="0" aria-selected="true" aria-label="Diapositive 1"></button>
+      <button class="dot" data-index="1" aria-selected="false" aria-label="Diapositive 2"></button>
+      <button class="dot" data-index="2" aria-selected="false" aria-label="Diapositive 3"></button>
+      <button class="dot" data-index="3" aria-selected="false" aria-label="Diapositive 4"></button>
+    </div>
+    <div class="carousel-progress" id="progress-bar" aria-hidden="true"></div>
+  </section>
 
-        <div id="subscribe" class="form-card">
-          <h2 class="form-title">Join the waitlist</h2>
+  <section class="stats-strip v2" aria-label="Statistiques et repères clés">
+    <div class="stats-inner">
+      <article class="stat-card v2 fade-in">
+        <span class="stat-number-lg">5 200+</span>
+        <span class="stat-label-sm">Familles déjà inscrites</span>
+        <span class="stat-copy">Indicateur de traction repris de la version précédente pour matérialiser l'intérêt déjà exprimé.</span>
+      </article>
+      <article class="stat-card v2 fade-in">
+        <span class="stat-number-lg">4</span>
+        <span class="stat-label-sm">Pays déjà couverts</span>
+        <span class="stat-copy">Le service est présenté comme pensé pour une lecture transfrontalière et des héritiers répartis.</span>
+      </article>
+      <article class="stat-card v2 fade-in">
+        <span class="stat-number-lg">98 %</span>
+        <span class="stat-label-sm">Satisfaction déclarée</span>
+        <span class="stat-copy">Bloc de réassurance maintenu pour donner un repère immédiat avant les sections détaillées.</span>
+      </article>
+      <article class="stat-card v2 fade-in">
+        <span class="stat-number-lg">5 min</span>
+        <span class="stat-label-sm">Questionnaire initial</span>
+        <span class="stat-copy">Le parcours d'entrée reste court, avec un formulaire recentré sur l'essentiel.</span>
+      </article>
+    </div>
+    <div class="stats-trust-row fade-in" aria-label="Marqueurs de confiance">
+      <span class="trust-chip"><i class="fas fa-shield-halved"></i> AES-256</span>
+      <span class="trust-chip"><i class="fas fa-server"></i> Hébergement Canada</span>
+      <span class="trust-chip"><i class="fas fa-user-lock"></i> Héritiers désignés</span>
+      <span class="trust-chip"><i class="fas fa-envelope-open-text"></i> CTA multiples vers l'inscription</span>
+    </div>
+  </section>
 
-          <!-- Brevo form -->
-          <div class="sib-form">
-            <div id="sib-form-container" class="sib-form-container">
+  <section class="section" id="about" aria-labelledby="about-heading">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-text fade-in">
+          <span class="section-tag">Comprendre</span>
+          <h2 class="section-title" id="about-heading">Une page d'accueil orientée <span class="accent">clarté</span>, pas accumulation.</h2>
+          <div class="divider"></div>
+          <p>La version précédente reposait sur une base correcte, mais mélangeait plusieurs intentions : émotion, preuve sociale, chiffres, promesse et narration. La nouvelle structure distingue plus nettement les niveaux d'information.</p>
+          <p>Le premier écran pose désormais un cadre simple : ce que Solexi.ai cherche à organiser, à qui cela s'adresse et quelle action l'utilisateur peut entreprendre immédiatement. Le reste de la page détaille ensuite les usages, la méthode et le formulaire.</p>
+          <p>Les visuels fournis ont été placés là où ils soutiennent réellement la lecture : compréhension du sujet, matérialisation de la mémoire, et représentation de la continuité entre générations.</p>
+          <div class="about-actions">
+            <a href="#methode" class="link-btn">Voir la méthode <i class="fas fa-arrow-right"></i></a>
+            <a href="#gallery" class="link-btn">Voir la sélection visuelle <i class="fas fa-image"></i></a>
+          </div>
+        </div>
+        <figure class="media-card fade-in">
+          <img src="/assets/home/family-reading-memory.png" alt="Famille lisant ensemble dans un salon avec présences visuelles symboliques autour d'une bibliothèque." loading="lazy"/>
+          <figcaption>Ce visuel a été utilisé dans la section de compréhension pour illustrer la continuité intergénérationnelle, dans un registre calme et architectural.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
-              <div id="error-message" class="sib-form-message-panel" style="font-size:16px;text-align:left;font-family:Helvetica,sans-serif;color:#661d1d;background-color:#ffeded;border-radius:10px;border-color:#ff4949;max-width:760px;">
-                <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-                  <span class="sib-form-message-panel__inner-text">We were unable to confirm your registration.</span>
-                </div>
+  <section class="section" id="gallery" aria-labelledby="gallery-heading">
+    <div class="section-inner">
+      <div class="center fade-in">
+        <span class="section-tag">Sélection visuelle</span>
+        <h2 class="section-title" id="gallery-heading">Les images sont désormais des éléments de structure.</h2>
+        <div class="divider"></div>
+        <p class="section-lead">Au lieu de servir seulement d'arrière-plan, les visuels sont distribués selon trois fonctions : mémoire collective, transmission familiale et préparation individuelle.</p>
+      </div>
+      <div class="gallery-grid" style="margin-top:34px">
+        <figure class="gallery-card large fade-in">
+          <img src="/assets/home/hero-library-circle.png" alt="Espace circulaire de bibliothèques avec silhouettes diaphanes, vu depuis le haut." loading="lazy"/>
+          <figcaption class="gallery-overlay"><strong>Mémoire collective</strong>Visuel utile pour installer le sujet dès l'ouverture ou pour illustrer une section éditoriale sur l'archive et la consultation.</figcaption>
+        </figure>
+        <div class="gallery-stack">
+          <figure class="gallery-card medium fade-in">
+            <img src="/assets/home/conversation-memory.png" alt="Femme assise face à une présence symbolique dans un espace de bibliothèque chaleureux." loading="lazy"/>
+            <figcaption class="gallery-overlay"><strong>Transmission et présence</strong>Le cadrage rapproché fonctionne bien pour un bloc de contenu plus intime ou une citation.</figcaption>
+          </figure>
+          <figure class="gallery-card small fade-in">
+            <img src="/assets/home/hero-library-memory.png" alt="Grand espace lumineux avec bibliothèques et silhouettes lumineuses réparties dans le volume." loading="lazy"/>
+            <figcaption class="gallery-overlay"><strong>Architecture de l'accueil</strong>Ce visuel convient au hero car il combine espace, respiration et lisibilité des zones de texte.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pillars-section" id="usages" aria-labelledby="usages-heading">
+    <div class="section-inner">
+      <div class="center fade-in">
+        <span class="section-tag">Usages</span>
+        <h2 class="section-title" id="usages-heading">Trois situations que la page rend immédiatement compréhensibles.</h2>
+        <div class="divider"></div>
+        <p class="section-lead">Cette section remplace les témoignages génériques par des usages lisibles. Le but est d'expliquer des cas concrets plutôt que d'empiler des formules.</p>
+      </div>
+      <div class="pillars-grid" style="margin-top:34px">
+        <article class="pillar-card fade-in">
+          <div class="pillar-icon"><i class="fas fa-children"></i></div>
+          <h3 class="pillar-title">Transmission familiale</h3>
+          <p class="pillar-desc">Rassembler dans un même cadre des photos, documents, consignes et repères destinés aux proches, avec un ordre de lecture simple.</p>
+        </article>
+        <article class="pillar-card fade-in">
+          <div class="pillar-icon"><i class="fas fa-pen-nib"></i></div>
+          <h3 class="pillar-title">Préparation personnelle</h3>
+          <p class="pillar-desc">Structurer à l'avance des éléments souvent éparpillés : notes, accès, documents et contexte utile pour éviter l'improvisation.</p>
+        </article>
+        <article class="pillar-card fade-in">
+          <div class="pillar-icon"><i class="fas fa-book-open-reader"></i></div>
+          <h3 class="pillar-title">Mémoire consultable</h3>
+          <p class="pillar-desc">Faire exister une mémoire organisée, non réduite à des fichiers isolés, mais présentée dans un parcours compréhensible par d'autres.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section testimonials-section" id="temoignages" aria-labelledby="testimonials-heading">
+    <div class="section-inner">
+      <div class="center fade-in">
+        <span class="section-tag">Témoignages</span>
+        <h2 class="section-title" id="testimonials-heading">Une preuve sociale réintégrée, sans changer le ton de la page.</h2>
+        <div class="divider"></div>
+        <p class="section-lead">Les témoignages reviennent dans la homepage V2 pour restaurer le niveau de réassurance qui manquait dans la version retravaillée précédente.</p>
+      </div>
+      <div class="testimonials-grid-home">
+        <article class="testimonial-card-home fade-in">
+          <div class="testimonial-stars-home">★★★★★</div>
+          <p class="testimonial-text-home">« Après le décès de mon père, nous avons perdu l'accès à des milliers de photos. Solexi.ai m'a surtout convaincue de structurer les choses avant qu'il soit trop tard. »</p>
+          <div class="testimonial-meta-home"><strong>Sophie M.</strong><span>Montréal, Québec</span></div>
+        </article>
+        <article class="testimonial-card-home fade-in">
+          <div class="testimonial-stars-home">★★★★★</div>
+          <p class="testimonial-text-home">« L'intérêt du service tient dans sa clarté : documents, messages, héritiers et accès sont regroupés dans un même cadre, sans complexité inutile. »</p>
+          <div class="testimonial-meta-home"><strong>Jean-Pierre L.</strong><span>Lyon, France</span></div>
+        </article>
+        <article class="testimonial-card-home fade-in">
+          <div class="testimonial-stars-home">★★★★★</div>
+          <p class="testimonial-text-home">« La partie sécurité et transmission des actifs numériques était déterminante pour moi. La page explique mieux cette logique qu'avant. »</p>
+          <div class="testimonial-meta-home"><strong>Carlos R.</strong><span>Barcelone, Espagne</span></div>
+        </article>
+      </div>
+      <div class="cta-band fade-in" style="margin-top:34px" aria-label="Appels à l'action intermédiaires">
+        <div>
+          <h3>Passer de la compréhension à l'action, sans changer de page.</h3>
+          <p>Cette bande CTA réintroduit une relance intermédiaire : l'utilisateur peut soit ouvrir le formulaire, soit relire la section FAQ avant de décider.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="#formulaire" class="cta-solid"><i class="fas fa-arrow-right"></i> Demander un accès</a>
+          <a href="#faq-home" class="cta-outline"><i class="fas fa-circle-question"></i> Lire la FAQ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="methode" aria-labelledby="methode-heading">
+    <div class="section-inner">
+      <div class="center fade-in">
+        <span class="section-tag">Méthode</span>
+        <h2 class="section-title" id="methode-heading">Une progression plus lisible en quatre temps.</h2>
+        <div class="divider"></div>
+        <p class="section-lead">La page est désormais pensée pour guider : comprendre le sujet, se projeter dans un usage, ouvrir le formulaire, puis identifier les points de friction que le service cherche à réduire.</p>
+      </div>
+      <div class="process-grid">
+        <article class="process-card fade-in">
+          <span class="process-step">01</span>
+          <h3>Poser le sujet</h3>
+          <p>Le hero n'essaie plus d'expliquer tout le produit. Il situe le problème et propose une action immédiate.</p>
+        </article>
+        <article class="process-card fade-in">
+          <span class="process-step">02</span>
+          <h3>Montrer les usages</h3>
+          <p>Les sections suivantes traduisent le sujet en cas concrets : famille, préparation, mémoire organisée.</p>
+        </article>
+        <article class="process-card fade-in">
+          <span class="process-step">03</span>
+          <h3>Ouvrir un parcours simple</h3>
+          <p>Le formulaire apparaît dans une zone distincte, avec une structure sobre et un rappel de ce qu'il permet.</p>
+        </article>
+        <article class="process-card fade-in">
+          <span class="process-step">04</span>
+          <h3>Fermer avec cohérence</h3>
+          <p>La fin de page rassemble le cadre du projet, les liens utiles et un contact sans multiplier les sollicitations.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq-home-section" id="faq-home" aria-labelledby="faq-home-heading">
+    <div class="section-inner">
+      <div class="center fade-in">
+        <span class="section-tag">FAQ</span>
+        <h2 class="section-title" id="faq-home-heading">Les questions clés réintégrées dans la homepage.</h2>
+        <div class="divider"></div>
+        <p class="section-lead">La V2 remet une FAQ directement sur la page d'accueil pour éviter de perdre l'utilisateur avant le formulaire.</p>
+      </div>
+      <div class="faq-home-grid">
+        <article class="faq-home-item fade-in">
+          <button class="faq-home-question" type="button" aria-expanded="false">Mes données sont-elles sécurisées ? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+          <div class="faq-home-answer"><p>Oui. Le dispositif présenté dans le site mentionne chiffrement AES-256, authentification à deux facteurs, hébergement canadien et conformité à la Loi 25 du Québec.</p></div>
+        </article>
+        <article class="faq-home-item fade-in">
+          <button class="faq-home-question" type="button" aria-expanded="false">Puis-je annuler à tout moment ? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+          <div class="faq-home-answer"><p>Oui. Le parcours de tarification et la FAQ existante décrivent une logique sans engagement rigide, avec annulation simple depuis l'espace client.</p></div>
+        </article>
+        <article class="faq-home-item fade-in">
+          <button class="faq-home-question" type="button" aria-expanded="false">Comment fonctionne la livraison aux héritiers ? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+          <div class="faq-home-answer"><p>Le principe présenté repose sur un déclencheur configuré à l'avance : date, événement confirmé ou période d'inactivité, puis transmission sécurisée aux héritiers désignés.</p></div>
+        </article>
+        <article class="faq-home-item fade-in">
+          <button class="faq-home-question" type="button" aria-expanded="false">Quels fichiers puis-je organiser dans Solexi.ai ? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+          <div class="faq-home-answer"><p>Le site mentionne photos, vidéos, documents, messages, accès numériques et autres éléments de mémoire ou de transmission à structurer dans un même espace.</p></div>
+        </article>
+      </div>
+      <div class="faq-cta-row fade-in">
+        <a href="#formulaire" class="cta-solid"><i class="fas fa-paper-plane"></i> Ouvrir le formulaire</a>
+        <a href="/faq.html" class="cta-outline" style="color:var(--navy);border-color:rgba(13,27,42,.12);background:#fff"><i class="fas fa-up-right-from-square"></i> Voir la FAQ complète</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="formulaire" aria-labelledby="form-heading">
+    <div class="section-inner">
+      <div class="form-shell">
+        <aside class="form-aside fade-in" aria-label="Informations sur le formulaire">
+          <span class="section-tag" style="color:var(--gold-light)">Accès anticipé</span>
+          <h2>Un bloc d'entrée simple, directement exploitable.</h2>
+          <p>Le formulaire conserve les champs attendus pour un parcours d'inscription initial : prénom, nom, courriel. Il reste compatible avec l'intégration Brevo déjà en place.</p>
+          <ul>
+            <li><i class="fas fa-circle-check"></i><span>Nom et prénom sur la même ligne pour réduire la hauteur du formulaire.</span></li>
+            <li><i class="fas fa-circle-check"></i><span>Message de confirmation visible sans sortir de la page.</span></li>
+            <li><i class="fas fa-circle-check"></i><span>Texte de soutien réduit au strict utile, sans distraction visuelle.</span></li>
+          </ul>
+        </aside>
+        <div class="form-card fade-in">
+          <div class="form-card-header">
+            <span class="section-tag">Formulaire</span>
+            <h2 class="section-title" id="form-heading" style="font-size:2.2rem;margin-bottom:10px">Demander un accès anticipé</h2>
+            <p>Ce bloc reprend le principe du template fourni, avec une hiérarchie plus nette et l'action Brevo conservée.</p>
+          </div>
+          <form id="solexi-form" action="https://b22aded0.sibforms.com/serve/MUIFAKQP_yHhfm4qpflKJNrOHqSmUgTAJQ1vNMi2jTlFqkO0Vg1C5Y9OxNKGWi8t72kJEqh01" method="POST" novalidate aria-label="Formulaire d'accès anticipé Solexi.ai">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="FIRSTNAME">Prénom *</label>
+                <input type="text" id="FIRSTNAME" name="FIRSTNAME" placeholder="Marie" required autocomplete="given-name"/>
               </div>
-
-              <div id="success-message" class="sib-form-message-panel" style="font-size:16px;text-align:left;font-family:Helvetica,sans-serif;color:#085229;background-color:#e7faf0;border-radius:10px;border-color:#13ce66;max-width:760px;">
-                <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-                  <div class="sib-form-message-panel__inner-text" style="text-align:center;">
-                    <div style="font-weight:900;">You're in.</div>
-                    <div style="margin-top:6px; color:rgba(8,82,41,.92);">
-                      Share: “When you die, who can access your digital life?”
-                    </div>
-                    <div class="sx-share">
-                      <a id="sxShareFb" href="#" rel="noopener">Share on Facebook</a>
-                      <a id="sxShareMsgr" href="#" rel="noopener">Share on Messenger</a>
-                      <button type="button" id="sxCopyShare">Copy text</button>
-                    </div>
-                  </div>
-                </div>
+              <div class="form-group">
+                <label for="LASTNAME">Nom *</label>
+                <input type="text" id="LASTNAME" name="LASTNAME" placeholder="Tremblay" required autocomplete="family-name"/>
               </div>
-
-              <div id="sib-container" class="sib-container--large sib-container--vertical">
-                <form id="sib-form" method="POST"
-                  action="https://554acfe2.sibforms.com/serve/MUIFAKUyT12nwH08eTh35QoG_GPnm3dV6D72NKJScZtvKQcufQhgXzjYB1yKh58NBGq7x24N_6EsvxgVMbtT_tBkornn6rfitZuXFNueBG1f_fPQ0x19--OMKHe2TpbF6NB3UG1fwVw15Qv0kKypOOWf5n6Bd9YMe8UL1QHx1gD3LfqsBE02mu7z_ORcbxxrxH-xG8ALY1vJGlcPyQ=="
-                  data-type="subscription">
-
-                  <div style="padding: 8px 0;">
-                    <div class="sib-input sib-form-block">
-                      <div class="form__entry entry_block">
-                        <div class="form__label-row">
-                          <label class="entry__label" for="EMAIL" data-required="*">Email</label>
-                          <div class="entry__field">
-                            <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="email"
-                              placeholder="you@domain.com" data-required="true" required />
-                          </div>
-                        </div>
-                        <label class="entry__error entry__error--primary"></label>
-                        <label class="entry__specification">
-                          We collect limited information to prioritize pilot onboarding. Technical implementation details are under definition (TBD).
-                          <span style="display:block;margin-top:6px;">
-                            By joining, you agree to our <a href="/privacy/">Privacy Policy</a>.
-                          </span>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div style="padding: 8px 0;" id="sxStep1BtnWrap">
-                    <button class="sx-joinBtn" type="button" id="sxContinueBtn">JOIN</button>
-                  </div>
-
-                  <div class="sx-step2" id="sxStep2">
-                    <div style="padding: 8px 0;">
-                      <div class="sib-select sib-form-block">
-                        <div class="form__entry entry_block">
-                          <div class="form__label-row">
-                            <label class="entry__label" for="ROLE" data-required="*">Role</label>
-                            <div class="entry__field">
-                              <select class="input" id="ROLE" name="ROLE" data-required="true">
-                                <option value="" disabled selected hidden>Choose a value</option>
-                                <option class="sib-menu__item" value="1">Individual</option>
-                                <option class="sib-menu__item" value="2">Researcher</option>
-                                <option class="sib-menu__item" value="3">Organization</option>
-                              </select>
-                            </div>
-                          </div>
-                          <label class="entry__error entry__error--primary"></label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div style="padding: 8px 0;">
-                      <div class="sib-select sib-form-block">
-                        <div class="form__entry entry_block">
-                          <div class="form__label-row">
-                            <label class="entry__label" for="PRIMARY_USE_CASE" data-required="*">Primary use-case</label>
-                            <div class="entry__field">
-                              <select class="input" id="PRIMARY_USE_CASE" name="PRIMARY_USE_CASE" data-required="true">
-                                <option value="" disabled selected hidden>Choose a value</option>
-                                <option class="sib-menu__item" value="1">Preservation of life narratives</option>
-                                <option class="sib-menu__item" value="2">Intergenerational transmission</option>
-                                <option class="sib-menu__item" value="3">Identity continuity</option>
-                                <option class="sib-menu__item" value="4">Long-term digital legacy</option>
-                              </select>
-                            </div>
-                          </div>
-                          <label class="entry__error entry__error--primary"></label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div style="padding: 8px 0;">
-                      <div class="sib-form-block" style="text-align:center">
-                       <button class="sib-form-block__button sib-form-block__button-with-loader"
-        form="sib-form" type="submit">
-  <svg class="sib-hide-loader-icon" width="18" height="18" viewBox="0 0 50 50" aria-hidden="true" focusable="false"
-       style="margin-right:10px;vertical-align:middle;">
-    <circle cx="25" cy="25" r="20" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"
-            stroke-dasharray="31.4 31.4">
-      <animateTransform attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.9s" repeatCount="indefinite"/>
-    </circle>
-  </svg>
-  JOIN
-</button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <input type="text" name="email_address_check" value="" class="input--hidden">
-                  <input type="hidden" name="locale" value="en">
-                </form>
+              <div class="form-group full">
+                <label for="PHONE">Téléphone (optionnel)</label>
+                <input type="tel" id="PHONE" name="PHONE" placeholder="+1 514 000 0000" autocomplete="tel"/>
+              </div>
+              <div class="form-group full">
+                <label for="EMAIL">Courriel *</label>
+                <input type="email" id="EMAIL" name="EMAIL" placeholder="marie@exemple.ca" required autocomplete="email"/>
               </div>
             </div>
-          </div>
-
-          <p class="microTrust">Founding Cohort: early access, feedback loop, and roadmap influence.</p>
+            <input type="hidden" name="email_address_check" value=""/>
+            <input type="hidden" name="locale" value="fr"/>
+            <div class="form-actions">
+              <button type="submit" class="form-submit">Envoyer la demande <i class="fas fa-arrow-right"></i></button>
+              <p class="form-note"><i class="fas fa-lock"></i> Formulaire relié à l'intégration Brevo existante.</p>
+              <div class="form-msg" id="form-msg">Merci. Votre demande a été prise en compte.</div>
+            </div>
+          </form>
         </div>
-
-        <div class="seo-sections" aria-label="Solexi details">
-          <div class="seoCard">
-            <h2>How Solexi works</h2>
-            <ul>
-              <li><strong>Inventory:</strong> list key accounts, subscriptions, documents, devices, and digital assets.</li>
-              <li><strong>Access plan:</strong> define what trusted people should access (and what should remain private).</li>
-              <li><strong>Continuity:</strong> keep everything updated so executors or family aren’t blocked by missing info.</li>
-            </ul>
-          </div>
-
-          <div class="seoCard">
-            <h2>Security & privacy (high-level)</h2>
-            <p>
-              Solexi is designed with privacy-by-design principles: minimize collected data, document clear governance, and
-              provide transparent policies. Read the <a href="/privacy/">Privacy Policy</a> for what is collected and why.
-            </p>
-          </div>
-
-          <div class="seoCard faq">
-            <h2>FAQ</h2>
-            <details>
-              <summary>What happens to online accounts after someone dies?</summary>
-              <p style="margin-top:8px;">
-                Each platform has its own policies and access requirements. Planning ahead reduces delays and confusion for executors and loved ones.
-              </p>
-            </details>
-            <details>
-              <summary>Is Solexi a password manager?</summary>
-              <p style="margin-top:8px;">
-                Solexi is focused on digital legacy planning: organizing what exists and documenting access intent for trusted people. (Exact feature set evolves during development.)
-              </p>
-            </details>
-            <details>
-              <summary>Where can I learn what Solexi collects?</summary>
-              <p style="margin-top:8px;">
-                The full details are in the <a href="/privacy/">Privacy Policy</a>
-              </p>
-            </details>
-          </div>
-        </div>
-
-        <footer class="sx-footer">
-          © <span id="sxYear"></span> Solexi · <a href="/privacy/">Privacy</a>
-        </footer>
-
-      </section>
+      </div>
     </div>
-  </main>
+  </section>
 
-  <!-- Schema.org structured data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://solexi.ai/#organization",
-        "name": "Solexi",
-        "url": "https://solexi.ai",
-        "description": "Infrastructure for organizing and transmitting digital life so loved ones aren’t left with chaos."
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://solexi.ai/#website",
-        "url": "https://solexi.ai",
-        "name": "Solexi",
-        "publisher": { "@id": "https://solexi.ai/#organization" }
-      },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://solexi.ai/#app",
-        "name": "Solexi",
-        "applicationCategory": "SecurityApplication",
-        "operatingSystem": "Web",
-        "description": "Digital legacy planning for organizing accounts, documents, and access intent for trusted people."
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://solexi.ai/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What happens to online accounts after someone dies?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Platform policies and access requirements vary. Planning ahead reduces delays and confusion for executors and loved ones." }
-          },
-          {
-            "@type": "Question",
-            "name": "Is Solexi a password manager?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Solexi focuses on digital legacy planning: organizing what exists and documenting access intent for trusted people. The feature set evolves during development." }
-          },
-          {
-            "@type": "Question",
-            "name": "Where can I learn what Solexi collects?",
-            "acceptedAnswer": { "@type": "Answer", "text": "See the Privacy Policy for details on what is collected and why." }
-          }
-        ]
-      }
-    ]
+  <section class="section problem-section" id="probleme" aria-labelledby="problem-heading">
+    <div class="section-inner">
+      <div class="fade-in">
+        <span class="section-tag" style="color:var(--gold-light)">Points de friction</span>
+        <h2 class="section-title" id="problem-heading">Ce que cette page essaie de rendre plus explicite.</h2>
+        <div class="divider"></div>
+        <p class="section-lead">Le sujet est difficile à communiquer quand tout est mis au même niveau. Trois frictions ont donc été isolées et traitées dans le template amélioré.</p>
+      </div>
+      <div class="problem-grid" style="margin-top:30px">
+        <article class="problem-card fade-in">
+          <div class="problem-icon"><i class="fas fa-layer-group"></i></div>
+          <h3>Accumulation de messages</h3>
+          <p>Le template initial mêlait promesse, chiffres, témoignages, fondateur et preuve émotionnelle très tôt. La nouvelle page sépare mieux chaque bloc.</p>
+          <strong>Correction appliquée : hiérarchie simplifiée</strong>
+        </article>
+        <article class="problem-card fade-in">
+          <div class="problem-icon"><i class="fas fa-image"></i></div>
+          <h3>Visuels génériques</h3>
+          <p>Les images de stock laissaient le sujet dans un registre publicitaire. Les visuels fournis installent un imaginaire plus spécifique et plus cohérent.</p>
+          <strong>Correction appliquée : remplacement par vos images</strong>
+        </article>
+        <article class="problem-card fade-in">
+          <div class="problem-icon"><i class="fas fa-list-check"></i></div>
+          <h3>Action principale diffuse</h3>
+          <p>Le formulaire existait, mais la lecture n'emmenait pas assez clairement vers lui. Il a été replacé dans une section dédiée, avec rappel de sa fonction.</p>
+          <strong>Correction appliquée : CTA et bloc formulaire recentrés</strong>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="fondateur" aria-labelledby="founder-heading">
+    <div class="section-inner">
+      <div class="founder-wrap">
+        <figure class="media-card fade-in">
+          <img src="/assets/home/writing-memory.png" alt="Personne écrivant à un bureau avec une présence symbolique dans la lumière, utilisée comme visuel éditorial de préparation." loading="lazy"/>
+          <figcaption>Le bloc fondateur revient dans cette V2 sous une forme plus sobre, appuyée par un visuel existant déjà intégré au template.</figcaption>
+        </figure>
+        <div class="quote-card fade-in">
+          <span class="section-tag">Fondateur</span>
+          <h2 class="section-title" id="founder-heading" style="font-size:2.25rem">Benjamin Blouin-Gagné — origine du projet</h2>
+          <div class="divider"></div>
+          <blockquote>« Chaque famille mérite de transmettre ce qui compte vraiment, sans barrière technologique. »</blockquote>
+          <cite>Benjamin Blouin-Gagné · Solexi.ai</cite>
+          <p>La section fondateur est réintégrée dans la homepage V2 afin de restaurer le contexte du projet : perte de souvenirs familiaux, besoin d'un cadre structuré pour les documents, messages et accès, et volonté de rendre le legs numérique plus lisible pour les proches.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" role="contentinfo" id="contact">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo"><span class="logo-hex" aria-hidden="true">⬡</span> SOLEXI.AI</div>
+        <p>Version d'accueil retravaillée à partir du template fourni, avec intégration de vos visuels et conservation du point d'entrée formulaire.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/company/solexi-ai" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://twitter.com/SolexiAI" aria-label="Twitter / X" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/solexi.ai" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@SolexiAI" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="#about">Comprendre</a></li>
+          <li><a href="#usages">Usages</a></li>
+          <li><a href="#methode">Méthode</a></li>
+          <li><a href="#faq-home">FAQ homepage</a></li>
+          <li><a href="#formulaire">Accès anticipé</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Légal</h5>
+        <ul>
+          <li><a href="/privacy-policy/">Confidentialité</a></li>
+          <li><a href="/terms-of-use-2/">Conditions d'utilisation</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/glossary/">Glossaire</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="/cdn-cgi/l/email-protection#9af9f5f4eefbf9eedae9f5f6ffe2f3b4fbf3"><span class="__cf_email__" data-cfemail="93f0fcfde7f2f0e7d3e0fcfff6ebfabdf2fa">[email&#160;protected]</span></a></li>
+          <li><span>Canada</span></li>
+          <li><a href="#formulaire">Ouvrir le formulaire</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Solexi.ai. Version d'accueil retravaillée en HTML.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#hero">Haut de page</a>
+        <a href="#gallery">Visuels</a>
+        <a href="#formulaire">Formulaire</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function(){
+  'use strict';
+
+  var slides = document.querySelectorAll('.slide');
+  var dots = document.querySelectorAll('.dot');
+  var prevBtn = document.getElementById('prev-btn');
+  var nextBtn = document.getElementById('next-btn');
+  var progress = document.getElementById('progress-bar');
+  var nav = document.querySelector('.nav');
+  var current = 0;
+  var total = slides.length;
+  var timer = null;
+  var progressTimer = null;
+  var delay = 6000;
+
+  function setProgress(){
+    if(!progress) return;
+    progress.style.transition = 'none';
+    progress.style.width = '0%';
+    clearTimeout(progressTimer);
+    progressTimer = setTimeout(function(){
+      progress.style.transition = 'width ' + (delay/1000) + 's linear';
+      progress.style.width = '100%';
+    }, 40);
   }
-  </script>
 
-  <!-- Hero electric trigger -->
-  <script>
-    (function () {
-      const hero = document.querySelector(".hero");
-      const title = document.getElementById("cineTitle");
-      if (!hero || !title) return;
-
-      let fired = false;
-      const fire = () => {
-        if (fired) return;
-        fired = true;
-        title.classList.add("is-live");
-        hero.classList.add("zap");
-        setTimeout(() => title.classList.remove("is-live"), 1400);
-        setTimeout(() => hero.classList.remove("zap"), 900);
-      };
-
-      const io = new IntersectionObserver((entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) {
-            fire();
-            io.disconnect();
-            break;
-          }
-        }
-      }, { threshold: 0.45 });
-
-      io.observe(hero);
-    })();
-  </script>
-
-  <!-- Brevo scripts -->
-  <script>
-    window.REQUIRED_CODE_ERROR_MESSAGE = 'Veuillez choisir un code pays';
-    window.LOCALE = 'en';
-    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE =
-      "The information you provided is invalid. Please check the field format and try again.";
-    window.REQUIRED_ERROR_MESSAGE = "You must fill in this field.";
-    window.GENERIC_INVALID_MESSAGE =
-      "The information you provided is invalid. Please check the field format and try again.";
-    window.translation = { common: { selectedList: '{quantity} liste sélectionnée', selectedLists: '{quantity} listes sélectionnées', selectedOption: '{quantity} sélectionné', selectedOptions: '{quantity} sélectionnés' } };
-    var AUTOHIDE = false;
-  </script>
-  
-  <script>
-  // Compatibility for third-party scripts expecting removeClass (jQuery-like)
-  if (window.Element && !Element.prototype.removeClass) {
-    Element.prototype.removeClass = function (cls) {
-      this.classList.remove(cls);
-      return this;
-    };
+  function goTo(index){
+    slides[current].classList.remove('active');
+    slides[current].setAttribute('aria-hidden','true');
+    dots[current].classList.remove('active');
+    dots[current].setAttribute('aria-selected','false');
+    current = (index + total) % total;
+    slides[current].classList.add('active');
+    slides[current].setAttribute('aria-hidden','false');
+    dots[current].classList.add('active');
+    dots[current].setAttribute('aria-selected','true');
+    setProgress();
   }
-</script>
-  
-  <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
-  <script>
-    (function(){
-      // Year
-      const y = document.getElementById('sxYear');
-      if (y) y.textContent = String(new Date().getFullYear());
+  function next(){ goTo(current + 1); }
+  function prev(){ goTo(current - 1); }
 
-      // 2-step form
-      const email = document.getElementById('EMAIL');
-      const role = document.getElementById('ROLE');
-      const useCase = document.getElementById('PRIMARY_USE_CASE');
-      const step2 = document.getElementById('sxStep2');
-      const btn1 = document.getElementById('sxContinueBtn');
-      const btn1Wrap = document.getElementById('sxStep1BtnWrap');
+  function start(){
+    clearInterval(timer);
+    timer = setInterval(next, delay);
+    setProgress();
+  }
 
-      if (role) role.required = false;
-      if (useCase) useCase.required = false;
+  if(prevBtn) prevBtn.addEventListener('click', function(){ prev(); start(); });
+  if(nextBtn) nextBtn.addEventListener('click', function(){ next(); start(); });
+  dots.forEach(function(dot){
+    dot.addEventListener('click', function(){ goTo(parseInt(this.dataset.index, 10)); start(); });
+  });
 
-      function looksLikeEmail(v){
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v||'').trim());
-      }
-      btn1?.addEventListener('click', () => {
-        if (!email || !looksLikeEmail(email.value)) {
-          email?.focus();
-          email?.reportValidity?.();
-          return;
+  var hero = document.getElementById('hero');
+  if(hero){
+    hero.addEventListener('mouseenter', function(){ clearInterval(timer); clearTimeout(progressTimer); });
+    hero.addEventListener('mouseleave', start);
+    var touchX = 0;
+    hero.addEventListener('touchstart', function(e){ touchX = e.touches[0].clientX; }, {passive:true});
+    hero.addEventListener('touchend', function(e){
+      var diff = touchX - e.changedTouches[0].clientX;
+      if(Math.abs(diff) > 45){ diff > 0 ? next() : prev(); start(); }
+    }, {passive:true});
+  }
+
+  start();
+
+  var fadeEls = document.querySelectorAll('.fade-in');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
         }
-        step2?.classList.add('show');
-        if (btn1Wrap) btn1Wrap.style.display = 'none';
-        if (role) role.required = true;
-        if (useCase) useCase.required = true;
-        role?.focus();
       });
-
-     // Share links
-const shareText = 'When you die, who can access your digital life?';
-const shareUrl = 'https://solexi.ai/';
-const fb = document.getElementById('sxShareFb');
-const ms = document.getElementById('sxShareMsgr');
-const cp = document.getElementById('sxCopyShare');
-
-if (fb) fb.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl);
-
-// Messenger "Send Dialog" requires a real Facebook App ID.
-// With app_id=0 it won't work reliably. Fallback to FB share (works everywhere).
-if (ms) ms.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl);
-
-cp?.addEventListener('click', async () => {
-  const toCopy = shareText + ' ' + shareUrl;
-  try {
-    await navigator.clipboard.writeText(toCopy);
-    cp.textContent = 'Copied';
-    setTimeout(()=> cp.textContent = 'Copy text', 1200);
-  } catch(e){
-    const ta = document.createElement('textarea');
-    ta.value = toCopy;
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    ta.remove();
-    cp.textContent = 'Copied';
-    setTimeout(()=> cp.textContent = 'Copy text', 1200);
-  }
-});
-
-// Redirect to thank-you page after Brevo confirms success
-(function redirectOnBrevoSuccess(){
-  const THANK_YOU_URL = '/thank-you.html';
-
-  const form = document.getElementById('sib-form');
-  const successEl = document.getElementById('success-message');
-  if (!successEl) return;
-
-  // Track submit attempt (GTM)
-  form?.addEventListener('submit', () => {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: 'waitlist_submit_attempt' });
-  });
-
-  const isVisible = (el) => {
-    const style = window.getComputedStyle(el);
-    return style && style.display !== 'none' && style.visibility !== 'hidden' && el.offsetHeight > 0;
-  };
-
-  // If already visible
-  if (isVisible(successEl)) {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: 'waitlist_submit_success' });
-    window.location.assign(THANK_YOU_URL);
-    return;
+    }, {threshold:.14});
+    fadeEls.forEach(function(el){ io.observe(el); });
+  } else {
+    fadeEls.forEach(function(el){ el.classList.add('visible'); });
   }
 
-  // Observe Brevo toggling success visibility
-  const obs = new MutationObserver(() => {
-    if (isVisible(successEl)) {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: 'waitlist_submit_success' });
-      obs.disconnect();
-      window.location.assign(THANK_YOU_URL);
-    }
+  window.addEventListener('scroll', function(){
+    if(nav){ nav.classList.toggle('scrolled', window.scrollY > 18); }
+  }, {passive:true});
+
+  var hamburger = document.getElementById('hamburger-btn');
+  var mobileNav = document.getElementById('mobile-nav');
+  if(hamburger && mobileNav){
+    hamburger.addEventListener('click', function(){
+      var open = mobileNav.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    mobileNav.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        mobileNav.classList.remove('open');
+        hamburger.setAttribute('aria-expanded','false');
+      });
+    });
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(function(link){
+    link.addEventListener('click', function(e){
+      var target = document.querySelector(this.getAttribute('href'));
+      if(target){
+        e.preventDefault();
+        var top = target.getBoundingClientRect().top + window.pageYOffset - 86;
+        window.scrollTo({top: top, behavior:'smooth'});
+      }
+    });
   });
 
-  obs.observe(successEl, { attributes: true, attributeFilter: ['style', 'class'] });
+  var form = document.getElementById('solexi-form');
+  var formMsg = document.getElementById('form-msg');
+  if(form){
+    form.addEventListener('submit', function(e){
+      var fn = document.getElementById('FIRSTNAME');
+      var ln = document.getElementById('LASTNAME');
+      var em = document.getElementById('EMAIL');
+      var valid = true;
+      [fn,ln,em].forEach(function(field){ field.style.borderColor = ''; });
+      if(!fn.value.trim()){ fn.style.borderColor = '#cf3f3f'; valid = false; }
+      if(!ln.value.trim()){ ln.style.borderColor = '#cf3f3f'; valid = false; }
+      if(!em.value.trim() || em.value.indexOf('@') === -1){ em.style.borderColor = '#cf3f3f'; valid = false; }
+      if(!valid){
+        e.preventDefault();
+        return;
+      }
+      if(formMsg){ formMsg.classList.add('visible'); }
+    });
+  }
 })();
-      // Popover menu
-      const btn = document.getElementById('menuBtn');
-      const pop = document.getElementById('sxPop');
-      const join = document.getElementById('sxPopJoin');
-      if(!btn || !pop) return;
-
-      const backdrop = document.createElement('div');
-      backdrop.className = 'sx-pop-backdrop';
-      document.body.appendChild(backdrop);
-
-      function openPop(){
-        pop.classList.add('open');
-        backdrop.classList.add('open');
-        pop.setAttribute('aria-hidden','false');
-        btn.setAttribute('aria-expanded','true');
-      }
-      function closePop(){
-        pop.classList.remove('open');
-        backdrop.classList.remove('open');
-        pop.setAttribute('aria-hidden','true');
-        btn.setAttribute('aria-expanded','false');
-      }
-
-      btn.addEventListener('click', (e)=>{ e.stopPropagation();
-        pop.classList.contains('open') ? closePop() : openPop();
-      });
-      backdrop.addEventListener('click', closePop);
-      join?.addEventListener('click', closePop);
-      document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closePop(); });
-    })();
-  </script>
+</script>
 
 <script>
-(function () {
-  const holder = document.getElementById('sx-particles');
-  if (!holder) return;
-
-  const canvas = document.createElement('canvas');
-  const ctx = canvas.getContext('2d');
-  holder.appendChild(canvas);
-
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const isMobile = window.innerWidth < 768;
-  const DPR = Math.min(window.devicePixelRatio || 1, 2);
-
-  let w = 0;
-  let h = 0;
-  let particles = [];
-  let mouse = { x: null, y: null };
-  let animationId = null;
-  let time = 0;
-
-  const CONFIG = {
-    count: prefersReducedMotion ? 8 : (isMobile ? 14 : 18),
-    speedMin: 0.025,
-    speedMax: 0.09,
-    sizeMin: 0.7,
-    sizeMax: 1.8,
-    linkDistance: isMobile ? 58 : 82,
-    mouseRadius: 80,
-    colors: [
-      "99, 210, 255",
-      "70, 170, 255",
-      "255, 210, 90",
-      "255, 185, 60"
-    ]
-  };
-
-  const holograms = [
-    {
-      type: "hourglass",
-      xRatio: isMobile ? 0.12 : 0.18,
-      yRatio: isMobile ? 0.22 : 0.34,
-      scale: isMobile ? 0.95 : 1.35,
-      color: "99, 210, 255",
-      accent: "255, 210, 90",
-      drift: 0.18
-    },
-    {
-      type: "album",
-      xRatio: isMobile ? 0.88 : 0.82,
-      yRatio: isMobile ? 0.22 : 0.34,
-      scale: isMobile ? 0.90 : 1.28,
-      color: "255, 210, 90",
-      accent: "99, 210, 255",
-      drift: 0.16
-    },
-    {
-      type: "family",
-      xRatio: isMobile ? 0.82 : 0.75,
-      yRatio: isMobile ? 0.58 : 0.70,
-      scale: isMobile ? 0.72 : 1.00,
-      color: "255, 210, 90",
-      accent: "99, 210, 255",
-      drift: 0.12
-    }
-  ];
-
-  function rand(min, max) {
-    return Math.random() * (max - min) + min;
-  }
-
-  function pick(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
-  }
-
-  function createParticle() {
-    const color = pick(CONFIG.colors);
-    return {
-      x: rand(0, w),
-      y: rand(0, h),
-      vx: rand(CONFIG.speedMin, CONFIG.speedMax) * (Math.random() < 0.5 ? -1 : 1),
-      vy: rand(CONFIG.speedMin, CONFIG.speedMax) * (Math.random() < 0.5 ? -1 : 1),
-      r: rand(CONFIG.sizeMin, CONFIG.sizeMax),
-      a: rand(0.14, 0.72),
-      twinkle: rand(0.0025, 0.009),
-      hue: color
-    };
-  }
-
-  function resize() {
-    w = window.innerWidth;
-    h = window.innerHeight;
-
-    canvas.width = Math.floor(w * DPR);
-    canvas.height = Math.floor(h * DPR);
-    canvas.style.width = w + 'px';
-    canvas.style.height = h + 'px';
-
-    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-
-    particles = [];
-    for (let i = 0; i < CONFIG.count; i++) {
-      particles.push(createParticle());
-    }
-  }
-
-  function drawParticle(p) {
-    const alpha = Math.max(0.05, Math.min(1, p.a));
-
-    ctx.beginPath();
-    ctx.fillStyle = `rgba(${p.hue}, ${alpha * 0.10})`;
-    ctx.arc(p.x, p.y, p.r * 4, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.fillStyle = `rgba(${p.hue}, ${alpha})`;
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fill();
-  }
-
-  function drawLinks() {
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const p1 = particles[i];
-        const p2 = particles[j];
-        const dx = p1.x - p2.x;
-        const dy = p1.y - p2.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < CONFIG.linkDistance) {
-          const alpha = (1 - dist / CONFIG.linkDistance) * 0.05;
-          const gradient = ctx.createLinearGradient(p1.x, p1.y, p2.x, p2.y);
-          gradient.addColorStop(0, `rgba(${p1.hue}, ${alpha})`);
-          gradient.addColorStop(1, `rgba(${p2.hue}, ${alpha})`);
-
-          ctx.beginPath();
-          ctx.strokeStyle = gradient;
-          ctx.lineWidth = 0.5;
-          ctx.moveTo(p1.x, p1.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.stroke();
-        }
-      }
-    }
-  }
-
-  function updateParticle(p) {
-    p.x += p.vx;
-    p.y += p.vy;
-
-    p.a += (Math.random() - 0.5) * p.twinkle;
-    p.a = Math.max(0.12, Math.min(0.82, p.a));
-
-    if (p.x < -20) p.x = w + 20;
-    if (p.x > w + 20) p.x = -20;
-    if (p.y < -20) p.y = h + 20;
-    if (p.y > h + 20) p.y = -20;
-
-    if (mouse.x !== null && mouse.y !== null) {
-      const dx = p.x - mouse.x;
-      const dy = p.y - mouse.y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-
-      if (dist < CONFIG.mouseRadius && dist > 0) {
-        const force = (CONFIG.mouseRadius - dist) / CONFIG.mouseRadius;
-        p.x += (dx / dist) * force * 0.22;
-        p.y += (dy / dist) * force * 0.22;
-      }
-    }
-  }
-
-  function drawBackgroundGlow() {
-    const g1 = ctx.createRadialGradient(w * 0.24, h * 0.18, 0, w * 0.24, h * 0.18, Math.min(w, h) * 0.26);
-    g1.addColorStop(0, 'rgba(80,160,255,0.045)');
-    g1.addColorStop(1, 'rgba(80,160,255,0)');
-
-    const g2 = ctx.createRadialGradient(w * 0.78, h * 0.30, 0, w * 0.78, h * 0.30, Math.min(w, h) * 0.20);
-    g2.addColorStop(0, 'rgba(255,210,90,0.035)');
-    g2.addColorStop(1, 'rgba(255,210,90,0)');
-
-    ctx.fillStyle = g1;
-    ctx.fillRect(0, 0, w, h);
-
-    ctx.fillStyle = g2;
-    ctx.fillRect(0, 0, w, h);
-  }
-
-  function beginStroke(color, alpha, width) {
-    ctx.strokeStyle = `rgba(${color}, ${alpha})`;
-    ctx.lineWidth = width;
-    ctx.shadowBlur = 26;
-    ctx.shadowColor = `rgba(${color}, ${Math.min(1, alpha * 1.15)})`;
-  }
-
-  function beginFill(color, alpha) {
-    ctx.fillStyle = `rgba(${color}, ${alpha})`;
-    ctx.shadowBlur = 28;
-    ctx.shadowColor = `rgba(${color}, ${Math.min(1, alpha * 1.2)})`;
-  }
-
-  function endGlow() {
-    ctx.shadowBlur = 0;
-    ctx.shadowColor = 'transparent';
-  }
-
-  function roundedRectPath(x, y, width, height, radius) {
-    if (ctx.roundRect) {
-      ctx.beginPath();
-      ctx.roundRect(x, y, width, height, radius);
-      return;
-    }
-
-    ctx.beginPath();
-    ctx.moveTo(x + radius, y);
-    ctx.lineTo(x + width - radius, y);
-    ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
-    ctx.lineTo(x + width, y + height - radius);
-    ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
-    ctx.lineTo(x + radius, y + height);
-    ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
-    ctx.lineTo(x, y + radius);
-    ctx.quadraticCurveTo(x, y, x + radius, y);
-  }
-
-  function drawHoloBase(cx, cy, width, color, alpha) {
-    beginStroke(color, alpha * 1.25, 1.1);
-    ctx.beginPath();
-    ctx.ellipse(cx, cy, width * 0.42, width * 0.08, 0, 0, Math.PI * 2);
-    ctx.stroke();
-
-    beginStroke(color, alpha * 0.55, 0.8);
-    ctx.beginPath();
-    ctx.ellipse(cx, cy, width * 0.28, width * 0.04, 0, 0, Math.PI * 2);
-    ctx.stroke();
-
-    endGlow();
-  }
-
-  function drawHourglass(cx, cy, s, color, accent, pulse) {
-    const W = 68 * s;
-    const H = 118 * s;
-    const sandPulse = (Math.sin(time * 3.2) + 1) * 0.5;
-
-    drawHoloBase(cx, cy + H * 0.58, W, accent, 0.14 + pulse);
-
-    beginStroke(color, 0.42 + pulse, 1.2);
-    ctx.beginPath();
-    ctx.moveTo(cx - W/2, cy - H/2);
-    ctx.lineTo(cx + W/2, cy - H/2);
-    ctx.moveTo(cx - W/2, cy + H/2);
-    ctx.lineTo(cx + W/2, cy + H/2);
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.moveTo(cx - W*0.32, cy - H*0.37);
-    ctx.lineTo(cx + W*0.32, cy - H*0.37);
-    ctx.lineTo(cx + W*0.08, cy - H*0.05);
-    ctx.lineTo(cx + W*0.03, cy);
-    ctx.lineTo(cx + W*0.08, cy + H*0.05);
-    ctx.lineTo(cx + W*0.32, cy + H*0.37);
-    ctx.lineTo(cx - W*0.32, cy + H*0.37);
-    ctx.lineTo(cx - W*0.08, cy + H*0.05);
-    ctx.lineTo(cx - W*0.03, cy);
-    ctx.lineTo(cx - W*0.08, cy - H*0.05);
-    ctx.closePath();
-    ctx.stroke();
-
-    beginFill(accent, 0.14 + pulse * 0.55);
-    ctx.beginPath();
-    ctx.moveTo(cx - W*0.14, cy - H*0.10);
-    ctx.lineTo(cx + W*0.14, cy - H*0.10);
-    ctx.lineTo(cx, cy - H*0.015);
-    ctx.closePath();
-    ctx.fill();
-
-    const bottomHeight = 0.10 + sandPulse * 0.08;
-    ctx.beginPath();
-    ctx.moveTo(cx - W*0.13, cy + H*0.24);
-    ctx.lineTo(cx + W*0.13, cy + H*0.24);
-    ctx.lineTo(cx + W*0.09, cy + H*(0.24 + bottomHeight));
-    ctx.lineTo(cx - W*0.09, cy + H*(0.24 + bottomHeight));
-    ctx.closePath();
-    ctx.fill();
-
-    beginStroke(accent, 0.26 + pulse * 0.5, 0.95);
-    ctx.beginPath();
-    ctx.moveTo(cx, cy - H*0.01);
-    ctx.lineTo(cx, cy + H*0.12);
-    ctx.stroke();
-
-    for (let i = 0; i < 4; i++) {
-      const dy = (i * 0.06 + (time * 0.25 % 0.06));
-      beginFill(accent, 0.18 + pulse * 0.45);
-      ctx.beginPath();
-      ctx.arc(cx, cy + H * dy, 1.2 * s, 0, Math.PI * 2);
-      ctx.fill();
-    }
-
-    endGlow();
-  }
-
-  function drawAlbum(cx, cy, s, color, accent, pulse) {
-    const W = 104 * s;
-    const H = 70 * s;
-    const open = 0.18 + ((Math.sin(time * 1.2) + 1) * 0.5) * 0.16;
-
-    drawHoloBase(cx, cy + H * 0.72, W, accent, 0.10 + pulse);
-
-    beginStroke(color, 0.42 + pulse, 1.15);
-
-    ctx.beginPath();
-    ctx.moveTo(cx - W*0.42, cy - H*0.42);
-    ctx.lineTo(cx - W*0.06, cy - H*(0.42 + open*0.4));
-    ctx.lineTo(cx - W*0.06, cy + H*(0.42 + open*0.3));
-    ctx.lineTo(cx - W*0.42, cy + H*0.42);
-    ctx.closePath();
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.moveTo(cx + W*0.06, cy - H*(0.42 + open*0.4));
-    ctx.lineTo(cx + W*0.42, cy - H*0.42);
-    ctx.lineTo(cx + W*0.42, cy + H*0.42);
-    ctx.lineTo(cx + W*0.06, cy + H*(0.42 + open*0.3));
-    ctx.closePath();
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.moveTo(cx - W*0.03, cy - H*0.48);
-    ctx.lineTo(cx - W*0.03, cy + H*0.48);
-    ctx.moveTo(cx + W*0.03, cy - H*0.48);
-    ctx.lineTo(cx + W*0.03, cy + H*0.48);
-    ctx.stroke();
-
-    beginStroke(accent, 0.28 + pulse * 0.45, 0.95);
-    roundedRectPath(cx + W*0.12, cy - H*0.14, W*0.18, H*0.16, 4 * s);
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.arc(cx + W*0.18, cy - H*0.08, 3.2 * s, 0, Math.PI * 2);
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.moveTo(cx + W*0.12, cy + H*0.02);
-    ctx.lineTo(cx + W*0.19, cy - H*0.02);
-    ctx.lineTo(cx + W*0.25, cy + H*0.03);
-    ctx.stroke();
-
-    endGlow();
-  }
-
-  function drawFamily(cx, cy, s, color, accent, pulse) {
-    drawHoloBase(cx, cy + 40 * s, 86 * s, accent, 0.12 + pulse);
-
-    beginStroke(color, 0.44 + pulse, 1.15);
-
-    ctx.beginPath();
-    ctx.arc(cx - 22 * s, cy - 14 * s, 9 * s, 0, Math.PI * 2);
-    ctx.arc(cx + 22 * s, cy - 14 * s, 9 * s, 0, Math.PI * 2);
-    ctx.arc(cx, cy - 4 * s, 7 * s, 0, Math.PI * 2);
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.moveTo(cx - 22 * s, cy - 5 * s);
-    ctx.lineTo(cx - 22 * s, cy + 20 * s);
-
-    ctx.moveTo(cx + 22 * s, cy - 5 * s);
-    ctx.lineTo(cx + 22 * s, cy + 20 * s);
-
-    ctx.moveTo(cx, cy + 2 * s);
-    ctx.lineTo(cx, cy + 24 * s);
-    ctx.stroke();
-
-    beginStroke(accent, 0.28 + pulse * 0.5, 1.0);
-    ctx.beginPath();
-    ctx.moveTo(cx - 34 * s, cy + 8 * s);
-    ctx.lineTo(cx - 10 * s, cy + 8 * s);
-    ctx.lineTo(cx + 10 * s, cy + 8 * s);
-    ctx.lineTo(cx + 34 * s, cy + 8 * s);
-    ctx.stroke();
-
-    endGlow();
-  }
-
-  function drawHologram(holo, index) {
-    const baseX = w * holo.xRatio;
-    const baseY = h * holo.yRatio;
-    const floatY = Math.sin(time * holo.drift + index * 1.6) * 10;
-    const floatX = Math.cos(time * holo.drift * 0.8 + index * 0.7) * 4.5;
-    const pulse = (Math.sin(time * 1.5 + index) + 1) * 0.06;
-
-    const x = baseX + floatX;
-    const y = baseY + floatY;
-    const s = holo.scale;
-
-    ctx.save();
-    ctx.globalCompositeOperation = "screen";
-
-    if (holo.type === "hourglass") drawHourglass(x, y, s, holo.color, holo.accent, pulse);
-    if (holo.type === "album") drawAlbum(x, y, s, holo.color, holo.accent, pulse);
-    if (holo.type === "family") drawFamily(x, y, s, holo.color, holo.accent, pulse);
-
-    ctx.restore();
-  }
-
-  function animate() {
-    time += 0.01;
-    ctx.clearRect(0, 0, w, h);
-
-    drawBackgroundGlow();
-    drawLinks();
-
-    for (const p of particles) {
-      updateParticle(p);
-      drawParticle(p);
-    }
-
-    for (let i = 0; i < holograms.length; i++) {
-      drawHologram(holograms[i], i);
-    }
-
-    animationId = requestAnimationFrame(animate);
-  }
-
-  function onMouseMove(e) {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  }
-
-  function onMouseLeave() {
-    mouse.x = null;
-    mouse.y = null;
-  }
-
-  resize();
-  animate();
-
-  window.addEventListener('resize', resize, { passive: true });
-  window.addEventListener('mousemove', onMouseMove, { passive: true });
-  window.addEventListener('mouseleave', onMouseLeave, { passive: true });
-
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden && animationId) {
-      cancelAnimationFrame(animationId);
-      animationId = null;
-    } else if (!document.hidden && !animationId) {
-      animate();
+document.querySelectorAll('.faq-home-question').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var item = this.closest('.faq-home-item');
+    var open = item.classList.contains('open');
+    document.querySelectorAll('.faq-home-item').forEach(function(el){
+      el.classList.remove('open');
+      var q = el.querySelector('.faq-home-question');
+      if(q) q.setAttribute('aria-expanded','false');
+    });
+    if(!open){
+      item.classList.add('open');
+      this.setAttribute('aria-expanded','true');
     }
   });
-})();
+});
 </script>
 </body>
 </html>
