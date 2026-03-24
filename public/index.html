@@ -1,1487 +1,1740 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5DZLVZS9');
-  </script>
-  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
-  <meta name="theme-color" content="#ffffff" />
+  <!-- ═══ PRIMARY SEO ══════════════════════════════════════════ -->
+  <title>Solexi.ai — Your Digital Life, Organized for Those You Leave Behind</title>
+  <meta name="description" content="80% of families lose access to a loved one's digital life. Solexi organizes your memory, passwords, archives and final wishes in 5 minutes. Secure. Private. AES-256 encrypted." />
+  <meta name="keywords" content="digital legacy, memory preservation, digital will, estate planning, digital heritage, emotional memory, family archives, Solexi" />
+  <meta name="author" content="Solexi.ai — Daniel Tanguay" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="theme-color" content="#f7f4ef" />
 
-  <title>When you die, who can access your digital life? | Solexi</title>
-  <meta name="description"
-    content="Your digital life tells your story but today, it’s fragmented and vulnerable. Solexi structures it so nothing is lost and no one is left navigating uncertainty." />
+  <!-- ═══ CANONICAL & HREFLANG ════════════════════════════════ -->
   <link rel="canonical" href="https://solexi.ai/" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="When you die, who can access your digital life?" />
-  <meta property="og:description"
-    content="Your digital life tells your story but today, it’s fragmented and vulnerable. Solexi structures it so nothing is lost and no one is left navigating uncertainty." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://solexi.ai/" />
-  <meta property="og:site_name" content="Solexi" />
-  <meta property="og:image" content="https://solexi.ai/solexi-og-v3.jpg" />
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="When you die, who can access your accounts? | Solexi.ai" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="When you die, who can access your digital life? | Solexi" />
-  <meta name="twitter:description"
-    content="Your digital life tells your story but today, it’s fragmented and vulnerable. Solexi structures it so nothing is lost and no one is left navigating uncertainty." />
-  <meta name="twitter:image" content="https://solexi.ai/solexi-og-v3.jpg" />
-
-  <!-- Preload logo -->
-  <link rel="preload" as="image" href="/assets/brand/solexi-logo-128.webp" fetchpriority="high" />
-
-  <!-- Brevo base stylesheet -->
-  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-
-  <style>
-    :root{
-      --text:#0b0b0f;
-      --muted:rgba(11,11,15,.72);
-      --muted2:rgba(11,11,15,.56);
-      --border:rgba(11,11,15,.12);
-      --border2:rgba(11,11,15,.18);
-      --shadow:0 18px 60px rgba(0,0,0,.10);
-      --shadow2:0 14px 44px rgba(0,0,0,.10);
-      --radius:22px;
-      --max:1180px;
-    }
-
-    *{box-sizing:border-box}
-    html{ -webkit-text-size-adjust:100%; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color: var(--text);
-      overflow-x:hidden;
-      background:
-        radial-gradient(1100px 560px at 80% 18%, rgba(125,211,252,.36), rgba(255,255,255,0) 58%),
-        radial-gradient(980px 560px at 18% 72%, rgba(167,139,250,.26), rgba(255,255,255,0) 62%),
-        radial-gradient(860px 520px at 82% 88%, rgba(244,114,182,.16), rgba(255,255,255,0) 60%),
-        linear-gradient(#ffffff, #ffffff);
-    }
-
-    .container{ width:min(92vw, var(--max)); margin-inline:auto; }
-
-    /* Header */
-    header{
-      position:sticky; top:0; z-index:5000;
-      background: rgba(255,255,255,.82);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,0,0,.08);
-    }
-    .header-inner{
-      padding: 14px 18px;
-      display:flex; align-items:center; justify-content:space-between; gap:14px;
-    }
-
-    
-
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      text-decoration:none; color:#0b0b0f; font-weight:800;
-      letter-spacing:.06em; font-size:.92rem;
-      
-    }
-    .brand{ 
-      margin-right: auto; 
-    }
-    .brand .logoMark{
-      width:34px; height:34px;
-      border-radius: 10px;
-      display:grid; place-items:center;
-      background: rgba(255,255,255,.72);
-      border: 1px solid rgba(0,0,0,.10);
-      box-shadow: 0 10px 28px rgba(0,0,0,.06);
-      overflow:hidden;
-      flex: 0 0 auto;
-    }
-    .brand .logoMark img{
-      width: 100%; height: 100%;
-      object-fit: contain;
-      display:block;
-    }
-
-    /* ===== Vercel-style hamburger ===== */
-    .menuBtn{
-      display:flex;
-      width:44px; height:44px;
-      border-radius:12px;
-      border:1px solid rgba(0,0,0,.12);
-      background:rgba(255,255,255,.65);
-      cursor:pointer;
-      padding:0;
-      align-items:center;
-      justify-content:center;
-      position: relative;
-      z-index: 10000;
-    }
-    .menuBtn span{
-      width:18px;
-      height:2px;
-      background:#0b0b0f;
-      border-radius:999px;
-      position:relative;
-      display:block;
-    }
-    .menuBtn span::before,
-    .menuBtn span::after{
-      content:"";
-      position:absolute;
-      left:0;
-      width:18px;
-      height:2px;
-      background:#0b0b0f;
-      border-radius:999px;
-    }
-    .menuBtn span::before{ top:-6px; }
-    .menuBtn span::after{ top: 6px; }
-
-    /* ===== Popover menu (ONLY menu system) ===== */
-    .sx-pop{
-      position: fixed;
-      top: 58px;
-      right: 18px;
-      z-index: 9999;
-      display:none;
-    }
-    .sx-pop.open{ display:block; }
-
-    .sx-pop-panel{
-      width: min(360px, calc(100vw - 28px));
-      border-radius: 18px;
-      background: rgba(255,255,255,.92);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(0,0,0,.10);
-      box-shadow: 0 30px 90px rgba(0,0,0,.18);
-      padding: 12px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-
-    .sx-pop-cta{
-      display:block;
-      text-decoration:none;
-      text-align:center;
-      padding: 12px 14px;
-      border-radius: 14px;
-      font-weight: 900;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      background:#0b0b0f;
-      color:#fff;
-      border: 1px solid rgba(0,0,0,.12);
-    }
-    .sx-pop-link{
-      display:block;
-      text-decoration:none;
-      padding: 10px 12px;
-      border-radius: 14px;
-      font-weight: 700;
-      color:#0b0b0f;
-      border: 1px solid rgba(0,0,0,.10);
-      background: #fff;
-      opacity: .78;
-    }
-    .sx-pop-link:hover{ opacity:1; }
-
-    .sx-pop-backdrop{
-      position: fixed;
-      inset:0;
-      background: transparent;
-      z-index: 9998;
-      display:none;
-    }
-    .sx-pop-backdrop.open{ display:block; }
-
-    main{ padding: clamp(26px, 5vw, 64px) 0; }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: clamp(16px, 2.5vw, 28px);
-      align-items:start;
-    }
-
-    .kickerRow{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:0 0 14px; }
-    .kicker{
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      color:rgba(11,11,15,.55);
-      font-size:.78rem;
-      margin:0;
-    }
-    .badge{
-      font-size:.78rem;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid rgba(0,0,0,.12);
-      background: rgba(255,255,255,.65);
-      color: rgba(11,11,15,.70);
-      letter-spacing:.01em;
-      white-space:nowrap;
-    }
-
-    /* ===== HERO ===== */
-    .hero{
-      position:relative;
-      overflow:hidden;
-      padding: clamp(72px, 10vw, 120px) 20px;
-      text-align:center;
-      background:
-        radial-gradient(1200px 500px at 50% 0%, rgba(0,255,255,0.10), transparent 60%),
-        radial-gradient(900px 450px at 20% 30%, rgba(255,215,0,0.08), transparent 65%),
-        #05070d;
-      border-radius: 18px;
-      width: min(100%, 980px);
-      margin-inline:auto;
-    }
-
-    .hero .energy-bg{
-      position:absolute;
-      inset:-40%;
-      z-index:0;
-      background:
-        radial-gradient(closest-side at 50% 30%, rgba(0,255,255,0.12), transparent 70%),
-        radial-gradient(closest-side at 60% 45%, rgba(255,215,0,0.10), transparent 68%);
-      filter: blur(18px);
-      transform: translateZ(0);
-    }
-    .hero .spark-field{
-      position:absolute;
-      inset:0;
-      z-index:1;
-      opacity:0.55;
-      background-image:
-        radial-gradient(circle at 20% 40%, rgba(0,255,255,0.14) 0 2px, transparent 3px),
-        radial-gradient(circle at 70% 30%, rgba(255,215,0,0.12) 0 2px, transparent 3px),
-        radial-gradient(circle at 55% 70%, rgba(255,255,255,0.10) 0 1.5px, transparent 3px);
-      background-size: 280px 200px, 320px 240px, 260px 220px;
-      animation: sxDrift 10s linear infinite;
-    }
-    @keyframes sxDrift{
-      0%{ transform: translate3d(0,0,0); }
-      100%{ transform: translate3d(-40px, 20px, 0); }
-    }
-
-    .hero .cine-title{
-      position:relative;
-      display:inline-block;
-      z-index:3;
-      font-weight:900;
-      letter-spacing:0.3px;
-      line-height:1.05;
-      font-size: clamp(2.0rem, 4.2vw, 3.4rem);
-      color:#fff;
-      margin: 0 auto 16px;
-      text-shadow:
-        0 0 10px rgba(0,255,255,0.55),
-        0 0 22px rgba(0,255,255,0.35),
-        0 0 40px rgba(255,215,0,0.18);
-    }
-    .hero .cine-title .hl{
-      color:#ffd700;
-      text-shadow: 0 0 10px rgba(255,215,0,0.55), 0 0 22px rgba(255,215,0,0.35);
-    }
-
-    .hero .electric::after{
-      content:"";
-      position:absolute;
-      inset:-4px -10px;
-      left:-180%;
-      width: 360%;
-      height: calc(100% + 8px);
-      background: linear-gradient(120deg,
-        transparent 0%,
-        rgba(255,215,0,0.10) 24%,
-        rgba(0,255,255,0.95) 45%,
-        rgba(255,255,255,1) 50%,
-        rgba(0,255,255,0.95) 55%,
-        rgba(255,215,0,0.10) 76%,
-        transparent 100%);
-      mix-blend-mode: screen;
-      opacity: 0;
-      pointer-events:none;
-      filter: blur(0.2px);
-    }
-    .hero .electric.is-live::after{
-      opacity: 0.95;
-      animation: sxElectricFlow 1.25s cubic-bezier(.2,.7,.2,1) 1;
-    }
-    @keyframes sxElectricFlow{
-      0%{ left:-180%; }
-      100%{ left: 180%; }
-    }
-
-    .hero-sub{
-      z-index:3;
-      position:relative;
-      margin: 0 auto 26px;
-      max-width: 880px;
-      font-size: clamp(1rem, 1.4vw, 1.15rem);
-      opacity: 0.88;
-      color: #dfe7ff;
-    }
-
-    /* Lightning */
-    .hero .lightning{
-      position:absolute;
-      top: 52%;
-      left:0;
-      width:100%;
-      height:140px;
-      z-index:2;
-      opacity:0;
-      pointer-events:none;
-    }
-    .hero .lightning polyline{
-      fill:none;
-      stroke: rgba(0,255,255,0.85);
-      stroke-width: 2.5;
-      filter: drop-shadow(0 0 8px rgba(0,255,255,0.9));
-      stroke-dasharray: 900;
-      stroke-dashoffset: 900;
-    }
-    .hero.zap .lightning{ opacity: 0.55; }
-    .hero.zap .lightning polyline{ animation: sxLightningDraw 0.55s ease-out 1; }
-    @keyframes sxLightningDraw{
-      0%{ stroke-dashoffset: 900; opacity: 0.15; }
-      40%{ opacity: 0.9; }
-      100%{ stroke-dashoffset: 0; opacity: 0.35; }
-    }
-
-    /* ===== Layout uniform widths ===== */
-    .sx-stack{ display:flex; flex-direction:column; gap: 18px; }
-    .form-card, .seo-sections, .sx-footer{
-      width: min(100%, 760px);
-      margin-inline: auto;
-    }
-
-    .form-card{
-      margin-top: 10px;
-      border:1px solid var(--border);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.78);
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow2);
-      padding: 18px;
-    }
-    .form-title{ margin: 0 0 6px; font-size: 1.55rem; letter-spacing: -0.015em; }
-    .microTrust{ margin: 10px 0 0; color: var(--muted2); font-size: .92rem; line-height: 1.45; }
-
-    .seo-sections{ margin-top: clamp(26px, 3.2vw, 40px); display:grid; gap: 14px; }
-    .seoCard{
-      border-radius: 18px;
-      border: 1px solid rgba(0,0,0,.08);
-      background: rgba(255,255,255,.78);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 24px rgba(0,0,0,.06);
-      padding: 16px 16px;
-    }
-    .seoCard h2{ margin: 0 0 8px; font-size: 1.1rem; letter-spacing: -0.01em; }
-    .seoCard p, .seoCard li{ margin: 0; color: rgba(11,11,15,.74); line-height: 1.6; font-size: .98rem; }
-    .seoCard ul{ margin: 8px 0 0; padding-left: 18px; }
-    .faq details{ border-top: 1px solid rgba(0,0,0,.08); padding: 10px 0; }
-    .faq details:first-child{ border-top: 0; padding-top: 0; }
-    .faq summary{ cursor:pointer; font-weight: 850; color: rgba(11,11,15,.85); list-style: none; }
-    .faq summary::-webkit-details-marker{ display:none; }
-
-    .sx-footer{
-      margin-top: 10px;
-      padding: 20px 0 30px;
-      text-align: center;
-      color: rgba(11,11,15,.60);
-      font-size: .92rem;
-    }
-    .sx-footer a{ color: rgba(11,11,15,.70); text-decoration:none; }
-    .sx-footer a:hover{ text-decoration: underline; }
-
-    /* Brevo overrides */
-    .sib-form{ background: transparent !important; text-align:left !important; }
-    #sib-form-container{ background: transparent !important; }
-    #sib-container{
-      max-width: 100% !important;
-      width: 100% !important;
-      background: transparent !important;
-      border: 0 !important;
-      border-radius: 0 !important;
-      padding: 0 !important;
-      text-align: left !important;
-      direction: ltr !important;
-    }
-    #sib-container .entry__label{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial !important;
-      font-size: .92rem !important;
-      font-weight: 800 !important;
-      color: rgba(11,11,15,.72) !important;
-      margin-bottom: 8px !important;
-      letter-spacing: .01em;
-      text-align: left !important;
-    }
-    #sib-container .input, #sib-container select.input{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial !important;
-      height: 46px !important;
-      border-radius: 12px !important;
-      border: 1px solid var(--border2) !important;
-      padding: 0 14px !important;
-      font-size: 1rem !important;
-      color: var(--text) !important;
-      background: rgba(255,255,255,.97) !important;
-      outline: none !important;
-      box-shadow: none !important;
-      text-align: left !important;
-    }
-    #sib-container .input:focus, #sib-container select.input:focus{
-      border-color: rgba(11,11,15,.28) !important;
-      box-shadow: 0 0 0 4px rgba(60,150,255,.10) !important;
-    }
-    #sib-container input::placeholder{ color: rgba(11,11,15,.35) !important; }
-    #sib-container .sib-form-block{ margin: 0 !important; }
-    #sib-form-container .sib-input, #sib-form-container .sib-select{ margin-bottom: 12px !important; }
-
-    #sib-container button.sib-form-block__button, .sx-joinBtn{
-      height: 50px !important;
-      border-radius: 999px !important;
-      padding: 0 18px !important;
-      background: #0b0b0f !important;
-      color: #fff !important;
-      border: 1px solid rgba(0,0,0,.10) !important;
-      font-weight: 950 !important;
-      letter-spacing: .12em !important;
-      text-transform: uppercase !important;
-      cursor: pointer !important;
-      width: 100% !important;
-      transition: transform .12s ease, box-shadow .18s ease;
-      box-shadow: 0 16px 40px rgba(0,0,0,.14);
-    }
-    #sib-container button.sib-form-block__button:hover, .sx-joinBtn:hover{ transform: translateY(-1px); }
-
-    #sib-container .entry__specification{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial !important;
-      font-size: .86rem !important;
-      line-height: 1.45 !important;
-      color: rgba(11,11,15,.55) !important;
-      margin-top: 8px !important;
-      text-align: left !important;
-    }
-
-    #success-message, #error-message{ max-width: 100% !important; }
-
-    .sx-step2{ display:none; }
-    .sx-step2.show{ display:block; }
-
-    .sx-share{
-      margin-top: 10px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
-    .sx-share a, .sx-share button{
-      border-radius: 999px;
-      border: 1px solid rgba(0,0,0,.14);
-      background: #fff;
-      padding: 8px 12px;
-      font-weight: 800;
-      cursor:pointer;
-      color:#0b0b0f;
-      text-decoration:none;
-    }
-    .sx-share a:hover, .sx-share button:hover{ background:#0b0b0f; color:#fff; }
-
-    @media (max-width: 768px){
-      .container{ width: 92vw; }
-      main{ padding: 18px 0 26px; }
-      .kickerRow{ justify-content:center; text-align:center; }
-      .form-card{ padding: 14px; border-radius: 18px; }
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      .hero .spark-field{ animation: none; }
-      .hero .electric.is-live::after{ animation: none; opacity: 0.35; }
-      .hero.zap .lightning polyline{ animation: none; }
-    }
-  #sx-particles{
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-#sx-particles canvas{
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-header, main, footer, section, nav, .hero, .container, .wrap{
-  position: relative;
-  z-index: 1;
-}
-
-body:not(.home) #sx-particles{
-  display: none;
-}
-  </style>
-</head>
-
-<body class="home">
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DZLVZS9"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-
-  <div id="sx-particles" aria-hidden="true"></div>
-
-  <header>
-  <div class="container header-inner">
-    <a class="brand" href="/" aria-label="Solexi Home">
-
-      <span class="logoMark" aria-hidden="true">
-        <img src="/assets/brand/solexi_light.webp"
-             alt="Solexi logo"
-             width="34"
-             height="34"
-             decoding="async"
-             fetchpriority="high">
-      </span>
-
-      <span class="brand-text">SOLEXI.AI</span>
-
-    </a>
-
-    <button class="menuBtn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">
-  <span></span>
-</button>
- 
-  
-  </div>
-</header>
-
-  <!-- Popover menu -->
-  <div class="sx-pop" id="sxPop" aria-hidden="true">
-  <div class="sx-pop-panel" role="dialog" aria-modal="false" aria-label="Menu">
-
-    <a class="sx-pop-cta" href="#subscribe" id="sxPopJoin">Join</a>
-
-    <a class="sx-pop-link" href="/understand/">Understand</a>
-    <a class="sx-pop-link" href="/problems/">Problem</a>
-    <a class="sx-pop-link" href="/solutions/">Solutions</a>
-    <a class="sx-pop-link" href="/use-cases/">Use cases</a>
-    <a class="sx-pop-link" href="/research/">Research</a>
-    <a class="sx-pop-link" href="/faq/">FAQ</a>
-    <a class="sx-pop-link" href="/privacy/">Privacy</a>
-  </div>
-
-  
-  </div>
-
-  <main class="container">
-    <div class="hero-grid">
-      <section class="sx-stack" aria-label="Solexi waitlist">
-        <div class="kickerRow">
-          <p class="kicker">DIGITAL AFTER YOU</p>
-          <span class="badge">Founding Cohort · 2026 · Limited access</span>
-        </div>
-
-        <section class="hero" aria-label="Hero">
-          <div class="energy-bg" aria-hidden="true"></div>
-          <div class="spark-field" aria-hidden="true"></div>
-
-          <h1 class="cine-title electric" id="cineTitle">
-            When you die, <span class="hl">who can access</span> your digital life?
-          </h1>
-
-          <p class="hero-sub">
-            Your digital life tells your story but today, it’s fragmented and vulnerable. Solexi structures it so nothing is lost and no one is left navigating uncertainty.
-          </p>
-
-          <svg class="lightning" viewBox="0 0 900 140" preserveAspectRatio="none" aria-hidden="true">
-            <polyline points="0,85 90,60 160,98 230,40 320,110 410,55 520,105 640,45 740,95 900,70" />
-          </svg>
-        </section>
-
-        <div id="subscribe" class="form-card">
-          <h2 class="form-title">Join the waitlist</h2>
-
-          <!-- Brevo form -->
-          <div class="sib-form">
-            <div id="sib-form-container" class="sib-form-container">
-
-              <div id="error-message" class="sib-form-message-panel" style="font-size:16px;text-align:left;font-family:Helvetica,sans-serif;color:#661d1d;background-color:#ffeded;border-radius:10px;border-color:#ff4949;max-width:760px;">
-                <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-                  <span class="sib-form-message-panel__inner-text">We were unable to confirm your registration.</span>
-                </div>
-              </div>
-
-              <div id="success-message" class="sib-form-message-panel" style="font-size:16px;text-align:left;font-family:Helvetica,sans-serif;color:#085229;background-color:#e7faf0;border-radius:10px;border-color:#13ce66;max-width:760px;">
-                <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-                  <div class="sib-form-message-panel__inner-text" style="text-align:center;">
-                    <div style="font-weight:900;">You're in.</div>
-                    <div style="margin-top:6px; color:rgba(8,82,41,.92);">
-                      Share: “When you die, who can access your digital life?”
-                    </div>
-                    <div class="sx-share">
-                      <a id="sxShareFb" href="#" rel="noopener">Share on Facebook</a>
-                      <a id="sxShareMsgr" href="#" rel="noopener">Share on Messenger</a>
-                      <button type="button" id="sxCopyShare">Copy text</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div id="sib-container" class="sib-container--large sib-container--vertical">
-                <form id="sib-form" method="POST"
-                  action="https://554acfe2.sibforms.com/serve/MUIFAKUyT12nwH08eTh35QoG_GPnm3dV6D72NKJScZtvKQcufQhgXzjYB1yKh58NBGq7x24N_6EsvxgVMbtT_tBkornn6rfitZuXFNueBG1f_fPQ0x19--OMKHe2TpbF6NB3UG1fwVw15Qv0kKypOOWf5n6Bd9YMe8UL1QHx1gD3LfqsBE02mu7z_ORcbxxrxH-xG8ALY1vJGlcPyQ=="
-                  data-type="subscription">
-
-                  <div style="padding: 8px 0;">
-                    <div class="sib-input sib-form-block">
-                      <div class="form__entry entry_block">
-                        <div class="form__label-row">
-                          <label class="entry__label" for="EMAIL" data-required="*">Email</label>
-                          <div class="entry__field">
-                            <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="email"
-                              placeholder="you@domain.com" data-required="true" required />
-                          </div>
-                        </div>
-                        <label class="entry__error entry__error--primary"></label>
-                        <label class="entry__specification">
-                          We collect limited information to prioritize pilot onboarding. Technical implementation details are under definition (TBD).
-                          <span style="display:block;margin-top:6px;">
-                            By joining, you agree to our <a href="/privacy/">Privacy Policy</a>.
-                          </span>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div style="padding: 8px 0;" id="sxStep1BtnWrap">
-                    <button class="sx-joinBtn" type="button" id="sxContinueBtn">JOIN</button>
-                  </div>
-
-                  <div class="sx-step2" id="sxStep2">
-                    <div style="padding: 8px 0;">
-                      <div class="sib-select sib-form-block">
-                        <div class="form__entry entry_block">
-                          <div class="form__label-row">
-                            <label class="entry__label" for="ROLE" data-required="*">Role</label>
-                            <div class="entry__field">
-                              <select class="input" id="ROLE" name="ROLE" data-required="true">
-                                <option value="" disabled selected hidden>Choose a value</option>
-                                <option class="sib-menu__item" value="1">Individual</option>
-                                <option class="sib-menu__item" value="2">Researcher</option>
-                                <option class="sib-menu__item" value="3">Organization</option>
-                              </select>
-                            </div>
-                          </div>
-                          <label class="entry__error entry__error--primary"></label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div style="padding: 8px 0;">
-                      <div class="sib-select sib-form-block">
-                        <div class="form__entry entry_block">
-                          <div class="form__label-row">
-                            <label class="entry__label" for="PRIMARY_USE_CASE" data-required="*">Primary use-case</label>
-                            <div class="entry__field">
-                              <select class="input" id="PRIMARY_USE_CASE" name="PRIMARY_USE_CASE" data-required="true">
-                                <option value="" disabled selected hidden>Choose a value</option>
-                                <option class="sib-menu__item" value="1">Preservation of life narratives</option>
-                                <option class="sib-menu__item" value="2">Intergenerational transmission</option>
-                                <option class="sib-menu__item" value="3">Identity continuity</option>
-                                <option class="sib-menu__item" value="4">Long-term digital legacy</option>
-                              </select>
-                            </div>
-                          </div>
-                          <label class="entry__error entry__error--primary"></label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div style="padding: 8px 0;">
-                      <div class="sib-form-block" style="text-align:center">
-                       <button class="sib-form-block__button sib-form-block__button-with-loader"
-        form="sib-form" type="submit">
-  <svg class="sib-hide-loader-icon" width="18" height="18" viewBox="0 0 50 50" aria-hidden="true" focusable="false"
-       style="margin-right:10px;vertical-align:middle;">
-    <circle cx="25" cy="25" r="20" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"
-            stroke-dasharray="31.4 31.4">
-      <animateTransform attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.9s" repeatCount="indefinite"/>
-    </circle>
-  </svg>
-  JOIN
-</button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <input type="text" name="email_address_check" value="" class="input--hidden">
-                  <input type="hidden" name="locale" value="en">
-                </form>
-              </div>
-            </div>
-          </div>
-
-          <p class="microTrust">Founding Cohort: early access, feedback loop, and roadmap influence.</p>
-        </div>
-
-        <div class="seo-sections" aria-label="Solexi details">
-          <div class="seoCard">
-            <h2>How Solexi works</h2>
-            <ul>
-              <li><strong>Inventory:</strong> list key accounts, subscriptions, documents, devices, and digital assets.</li>
-              <li><strong>Access plan:</strong> define what trusted people should access (and what should remain private).</li>
-              <li><strong>Continuity:</strong> keep everything updated so executors or family aren’t blocked by missing info.</li>
-            </ul>
-          </div>
-
-          <div class="seoCard">
-            <h2>Security & privacy (high-level)</h2>
-            <p>
-              Solexi is designed with privacy-by-design principles: minimize collected data, document clear governance, and
-              provide transparent policies. Read the <a href="/privacy/">Privacy Policy</a> for what is collected and why.
-            </p>
-          </div>
-
-          <div class="seoCard faq">
-            <h2>FAQ</h2>
-            <details>
-              <summary>What happens to online accounts after someone dies?</summary>
-              <p style="margin-top:8px;">
-                Each platform has its own policies and access requirements. Planning ahead reduces delays and confusion for executors and loved ones.
-              </p>
-            </details>
-            <details>
-              <summary>Is Solexi a password manager?</summary>
-              <p style="margin-top:8px;">
-                Solexi is focused on digital legacy planning: organizing what exists and documenting access intent for trusted people. (Exact feature set evolves during development.)
-              </p>
-            </details>
-            <details>
-              <summary>Where can I learn what Solexi collects?</summary>
-              <p style="margin-top:8px;">
-                The full details are in the <a href="/privacy/">Privacy Policy</a>
-              </p>
-            </details>
-          </div>
-        </div>
-
-        <footer class="sx-footer">
-          © <span id="sxYear"></span> Solexi · <a href="/privacy/">Privacy</a>
-        </footer>
-
-      </section>
-    </div>
-  </main>
-
-  <!-- Schema.org structured data -->
+  <link rel="alternate" hreflang="en"        href="https://solexi.ai/" />
+  <link rel="alternate" hreflang="fr"        href="https://solexi.ai/fr/" />
+  <link rel="alternate" hreflang="es"        href="https://solexi.ai/es/" />
+  <link rel="alternate" hreflang="x-default" href="https://solexi.ai/" />
+
+  <!-- ═══ OPEN GRAPH ══════════════════════════════════════════ -->
+  <meta property="og:type"             content="website" />
+  <meta property="og:site_name"        content="Solexi.ai" />
+  <meta property="og:locale"           content="en_US" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:url"              content="https://solexi.ai/" />
+  <meta property="og:title"            content="Solexi.ai — Your Digital Life, Organized for Those You Leave Behind" />
+  <meta property="og:description"      content="80% of families lose access to a loved one's digital life. Organize your memory, passwords and wishes in 5 minutes." />
+  <meta property="og:image"            content="https://solexi.ai/images/og-home.jpg" />
+  <meta property="og:image:secure_url" content="https://solexi.ai/images/og-home.jpg" />
+  <meta property="og:image:type"       content="image/jpeg" />
+  <meta property="og:image:width"      content="1200" />
+  <meta property="og:image:height"     content="630" />
+  <meta property="og:image:alt"        content="Solexi.ai — Scandinavian digital legacy library" />
+  <meta property="og:updated_time"     content="2026-03-23T00:00:00+00:00" />
+
+  <!-- ═══ TWITTER CARD ════════════════════════════════════════ -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@SolexiAI" />
+  <meta name="twitter:creator"     content="@SolexiAI" />
+  <meta name="twitter:url"         content="https://solexi.ai/" />
+  <meta name="twitter:title"       content="Solexi.ai — They'll Need Answers When You're Gone" />
+  <meta name="twitter:description" content="80% of families can't access a loved one's digital life. Organize yours in 5 minutes." />
+  <meta name="twitter:image"       content="https://solexi.ai/images/og-home.jpg" />
+  <meta name="twitter:image:alt"   content="Solexi.ai — Scandinavian digital heritage" />
+
+  <!-- ═══ FAVICONS ════════════════════════════════════════════ -->
+  <link rel="icon"             type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon"             type="image/png"     href="/favicon.png" />
+  <link rel="apple-touch-icon"                      href="/apple-touch-icon.png" />
+
+  <!-- ═══ PERFORMANCE HINTS ════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
+  <!-- ═══ GOOGLE TAG MANAGER ══════════════════════════════════ -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5DZLVZS9');</script>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" /></noscript>
+
+  <!-- ═══ SCHEMA.ORG — WebSite ════════════════════════════════ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@graph": [
+    "@type": "WebSite",
+    "@id": "https://solexi.ai/#website",
+    "url": "https://solexi.ai/",
+    "name": "Solexi.ai",
+    "description": "Digital legacy preservation platform for families, celebrities and cultural institutions.",
+    "inLanguage": ["en", "fr", "es"],
+    "publisher": { "@type": "Organization", "@id": "https://solexi.ai/#organization" },
+    "potentialAction": {
+      "@type": "ReadAction",
+      "target": "https://solexi.ai/"
+    }
+  }
+  </script>
+
+  <!-- ═══ SCHEMA.ORG — WebPage ════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://solexi.ai/#webpage",
+    "url": "https://solexi.ai/",
+    "name": "Solexi.ai — Preserve Your Digital Legacy for Those You Love",
+    "description": "Solexi.ai structures your emotional memory, private archives and digital wishes in 5 minutes.",
+    "inLanguage": "en",
+    "isPartOf": { "@type": "WebSite", "@id": "https://solexi.ai/#website" },
+    "dateModified": "2026-03-23",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://solexi.ai/" }]
+    }
+  }
+  </script>
+
+  <!-- ═══ SCHEMA.ORG — Organization ══════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://solexi.ai/#organization",
+    "name": "Solexi.ai",
+    "url": "https://solexi.ai/",
+    "logo": { "@type": "ImageObject", "url": "https://solexi.ai/images/logo.png", "width": 200, "height": 60 },
+    "description": "Digital legacy preservation platform for families, celebrities and cultural institutions.",
+    "foundingDate": "2023",
+    "founder": { "@type": "Person", "name": "Daniel Tanguay" },
+    "knowsAbout": ["Digital legacy preservation","Emotional memory","Estate planning","Family archives","Digital heritage"],
+    "sameAs": ["https://www.linkedin.com/company/solexi-ai","https://twitter.com/SolexiAI","https://www.instagram.com/solexi.ai"],
+    "contactPoint": { "@type": "ContactPoint", "contactType": "customer service", "availableLanguage": ["English","French","Spanish"], "url": "https://solexi.ai/#form" }
+  }
+  </script>
+
+  <!-- ═══ SCHEMA.ORG — Service ════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://solexi.ai/#service",
+    "name": "Solexi.ai — Digital Legacy Preservation",
+    "description": "Service for structuring and transmitting emotional memory, private archives and digital wishes.",
+    "provider": { "@type": "Organization", "@id": "https://solexi.ai/#organization" },
+    "serviceType": "Digital Legacy Preservation",
+    "areaServed": { "@type": "AdministrativeArea", "name": "Worldwide" },
+    "availableLanguage": ["English","French","Spanish"],
+    "url": "https://solexi.ai/",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Solexi.ai Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Private Memory Vault", "description": "Secure digital archive for photos, videos, documents and personal messages." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Controlled Transmission", "description": "Decide who accesses what, and when — after death or incapacity." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wishes Guide", "description": "Guided questionnaire to organize documents, digital access and final wishes." } }
+      ]
+    }
+  }
+  </script>
+
+  <!-- ═══ SCHEMA.ORG — FAQPage ════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
       {
-        "@type": "Organization",
-        "@id": "https://solexi.ai/#organization",
-        "name": "Solexi",
-        "url": "https://solexi.ai",
-        "description": "Infrastructure for organizing and transmitting digital life so loved ones aren’t left with chaos."
+        "@type": "Question",
+        "name": "What is Solexi.ai?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Solexi.ai is a digital legacy preservation platform that helps people organize their memories, important documents and final wishes for their loved ones — in case of incapacity or after death." }
       },
       {
-        "@type": "WebSite",
-        "@id": "https://solexi.ai/#website",
-        "url": "https://solexi.ai",
-        "name": "Solexi",
-        "publisher": { "@id": "https://solexi.ai/#organization" }
+        "@type": "Question",
+        "name": "How long does it take to get started?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Only 5 minutes to create your space. You complete it at your own pace, without pressure, without legal jargon and without a lawyer." }
       },
       {
-        "@type": "SoftwareApplication",
-        "@id": "https://solexi.ai/#app",
-        "name": "Solexi",
-        "applicationCategory": "SecurityApplication",
-        "operatingSystem": "Web",
-        "description": "Digital legacy planning for organizing accounts, documents, and access intent for trusted people."
+        "@type": "Question",
+        "name": "Is it secure?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. All data is encrypted. You fully control who can access what, and your information is never shared without your explicit authorization." }
       },
       {
-        "@type": "FAQPage",
-        "@id": "https://solexi.ai/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What happens to online accounts after someone dies?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Platform policies and access requirements vary. Planning ahead reduces delays and confusion for executors and loved ones." }
-          },
-          {
-            "@type": "Question",
-            "name": "Is Solexi a password manager?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Solexi focuses on digital legacy planning: organizing what exists and documenting access intent for trusted people. The feature set evolves during development." }
-          },
-          {
-            "@type": "Question",
-            "name": "Where can I learn what Solexi collects?",
-            "acceptedAnswer": { "@type": "Answer", "text": "See the Privacy Policy for details on what is collected and why." }
-          }
-        ]
+        "@type": "Question",
+        "name": "Is it only for elderly people?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Solexi.ai is designed for anyone who loves someone and wants to spare their loved ones the administrative and emotional chaos. The best time to start is now." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a notary or a lawyer?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Solexi.ai is a complementary tool, accessible without legal professionals. It does not replace a legal will, but organizes the essentials in a human and structured way." }
       }
     ]
   }
   </script>
 
-  <!-- Hero electric trigger -->
-  <script>
-    (function () {
-      const hero = document.querySelector(".hero");
-      const title = document.getElementById("cineTitle");
-      if (!hero || !title) return;
-
-      let fired = false;
-      const fire = () => {
-        if (fired) return;
-        fired = true;
-        title.classList.add("is-live");
-        hero.classList.add("zap");
-        setTimeout(() => title.classList.remove("is-live"), 1400);
-        setTimeout(() => hero.classList.remove("zap"), 900);
-      };
-
-      const io = new IntersectionObserver((entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) {
-            fire();
-            io.disconnect();
-            break;
-          }
-        }
-      }, { threshold: 0.45 });
-
-      io.observe(hero);
-    })();
-  </script>
-
-  <!-- Brevo scripts -->
-  <script>
-    window.REQUIRED_CODE_ERROR_MESSAGE = 'Veuillez choisir un code pays';
-    window.LOCALE = 'en';
-    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE =
-      "The information you provided is invalid. Please check the field format and try again.";
-    window.REQUIRED_ERROR_MESSAGE = "You must fill in this field.";
-    window.GENERIC_INVALID_MESSAGE =
-      "The information you provided is invalid. Please check the field format and try again.";
-    window.translation = { common: { selectedList: '{quantity} liste sélectionnée', selectedLists: '{quantity} listes sélectionnées', selectedOption: '{quantity} sélectionné', selectedOptions: '{quantity} sélectionnés' } };
-    var AUTOHIDE = false;
-  </script>
-  
-  <script>
-  // Compatibility for third-party scripts expecting removeClass (jQuery-like)
-  if (window.Element && !Element.prototype.removeClass) {
-    Element.prototype.removeClass = function (cls) {
-      this.classList.remove(cls);
-      return this;
-    };
+  <!-- ═══ SCHEMA.ORG — Person (Founder) ════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://solexi.ai/#daniel-tanguay",
+    "name": "Daniel Tanguay",
+    "jobTitle": "Founder & CEO",
+    "worksFor": { "@type": "Organization", "@id": "https://solexi.ai/#organization" },
+    "url": "https://solexi.ai/#founder"
   }
-</script>
-  
-  <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+  </script>
 
-  <script>
-    (function(){
-      // Year
-      const y = document.getElementById('sxYear');
-      if (y) y.textContent = String(new Date().getFullYear());
+  <style>
+  /* ═══════════════════════════════════════════════════════════
+     DESIGN SYSTEM v3 — Scandinavian · Serenity · Legacy
+     Palette extracted from 3 reference images
+  ═══════════════════════════════════════════════════════════ */
+  :root {
+    --white:       #ffffff;
+    --off-white:   #f7f4ef;
+    --cream:       #ede8df;
+    --linen:       #ddd0b3;
+    --stone:       #c4bba8;
+    --stone-text:  #9a9080;
+    --slate:       #8fa3b1;
+    --slate-mid:   #6e8fa0;
+    --slate-deep:  #4a7082;
+    --charcoal:    #3a3530;
+    --ink:         #1e1c1a;
+    --ghost-blue:  rgba(180,210,230,0.55);
+    --ghost-glow:  rgba(180,210,230,0.25);
+    --serif:       'Cormorant Garamond', Georgia, serif;
+    --sans:        'Inter', system-ui, sans-serif;
+    --radius:      3px;
+    --shadow-sm:   0 2px 12px rgba(30,28,26,0.06);
+    --shadow-md:   0 8px 32px rgba(30,28,26,0.10);
+    --shadow-lg:   0 20px 60px rgba(30,28,26,0.14);
+    --transition:  0.25s cubic-bezier(0.4,0,0.2,1);
+  }
 
-      // 2-step form
-      const email = document.getElementById('EMAIL');
-      const role = document.getElementById('ROLE');
-      const useCase = document.getElementById('PRIMARY_USE_CASE');
-      const step2 = document.getElementById('sxStep2');
-      const btn1 = document.getElementById('sxContinueBtn');
-      const btn1Wrap = document.getElementById('sxStep1BtnWrap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--off-white);
+    color: var(--charcoal);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+  img { display: block; max-width: 100%; height: auto; }
+  button { font-family: var(--sans); }
+  ::selection { background: var(--slate); color: var(--white); }
 
-      if (role) role.required = false;
-      if (useCase) useCase.required = false;
+  .skip {
+    position: absolute; left: -999px; top: 4px; z-index: 9999;
+    background: var(--ink); color: var(--white);
+    padding: 8px 16px; border-radius: var(--radius); font-size: 13px;
+    transition: left .2s;
+  }
+  .skip:focus { left: 4px; }
 
-      function looksLikeEmail(v){
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v||'').trim());
-      }
-      btn1?.addEventListener('click', () => {
-        if (!email || !looksLikeEmail(email.value)) {
-          email?.focus();
-          email?.reportValidity?.();
-          return;
+  /* ═══ NAV ═══ */
+  .nav {
+    position: fixed; inset: 0 0 auto 0; z-index: 200;
+    background: rgba(247,244,239,0.94);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+  .nav.scrolled {
+    border-color: rgba(200,191,175,0.35);
+    box-shadow: 0 1px 24px rgba(30,28,26,0.07);
+  }
+  .nav-in {
+    max-width: 1240px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 32px; height: 64px;
+  }
+  .logo {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--serif); font-size: 17px;
+    font-weight: 500; letter-spacing: 0.08em; color: var(--ink);
+    flex-shrink: 0;
+  }
+  .logo svg { flex-shrink: 0; }
+  .nav-links { display: flex; align-items: center; gap: 0; }
+  .nav-links a {
+    font-size: 12px; font-weight: 400; color: var(--stone-text);
+    letter-spacing: 0.05em; padding: 6px 13px; border-radius: 20px;
+    transition: color var(--transition), background var(--transition);
+    white-space: nowrap;
+  }
+  .nav-links a:hover { color: var(--ink); background: var(--cream); }
+  .nav-links a.active { color: var(--slate-deep); font-weight: 500; }
+  .nav-cta {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--slate-deep) !important; color: var(--white) !important;
+    padding: 9px 22px !important; border-radius: 24px !important;
+    font-size: 12px !important; font-weight: 500 !important;
+    letter-spacing: 0.07em !important; margin-left: 12px;
+    box-shadow: 0 2px 14px rgba(74,112,130,0.3);
+    transition: background var(--transition), transform var(--transition), box-shadow var(--transition) !important;
+  }
+  .nav-cta:hover {
+    background: var(--slate-mid) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(74,112,130,0.4) !important;
+  }
+  .nav-right { display: flex; align-items: center; gap: 16px; }
+  .lang-sw {
+    display: flex; align-items: center; gap: 1px;
+    font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
+  }
+  .lang-sw a {
+    padding: 4px 9px; border-radius: 3px;
+    color: var(--stone-text); transition: all var(--transition);
+  }
+  .lang-sw a.on { color: var(--ink); background: var(--cream); }
+  .lang-sw span { color: rgba(200,191,175,0.6); font-size: 10px; }
+  .burger {
+    display: none; flex-direction: column; justify-content: center; gap: 5px;
+    background: none; border: none; cursor: pointer;
+    padding: 6px; width: 32px; height: 32px;
+  }
+  .burger span {
+    display: block; height: 1.5px; background: var(--ink); border-radius: 2px;
+    transition: transform var(--transition), opacity var(--transition), width var(--transition);
+  }
+  .burger span:nth-child(1) { width: 20px; }
+  .burger span:nth-child(2) { width: 14px; }
+  .burger span:nth-child(3) { width: 17px; }
+  .burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); width: 20px; }
+  .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); width: 20px; }
+
+  /* ═══ HERO ═══ */
+  /* ── Hero carousel ── */
+  .hero-carousel { position:absolute; inset:0; z-index:0; }
+  .hero-carousel-slide {
+    position:absolute; inset:0;
+    background-size:cover; background-position:center;
+    opacity:0; transition:opacity 1.6s ease-in-out;
+    will-change:opacity;
+  }
+  .hero-carousel-slide.active { opacity:1; }
+  .hero-overlay {
+    position:absolute; inset:0; z-index:1;
+    background:linear-gradient(
+      180deg,
+      rgba(30,28,26,0.52) 0%,
+      rgba(30,28,26,0.48) 50%,
+      rgba(30,28,26,0.55) 100%
+    );
+  }
+  .hero {
+    position: relative; min-height: 100svh;
+    display: flex; align-items: center;
+    padding-top: 64px; overflow: hidden;
+    background: var(--ink);
+  }
+  .shelf {
+    position: absolute; top: 64px; bottom: 0;
+    width: 200px; display: flex; flex-direction: column;
+    pointer-events: none; z-index: 0;
+  }
+  .shelf.L { left: 0; border-right: 1px solid rgba(200,191,175,0.3); }
+  .shelf.R { right: 0; border-left: 1px solid rgba(200,191,175,0.3); }
+  .shelf-plank {
+    flex: 1; border-bottom: 1px solid rgba(200,191,175,0.25);
+    padding: 6px 10px; display: flex; align-items: flex-end; gap: 2px;
+    background: linear-gradient(180deg, transparent 0%, rgba(237,232,223,0.15) 100%);
+  }
+  .bk { border-radius: 1px 2px 2px 1px; flex-shrink: 0; }
+  .hero-zenith {
+    position: absolute; top: 64px; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 500px;
+    background: radial-gradient(ellipse at top, rgba(255,255,255,0.18) 0%, rgba(245,240,232,0.08) 45%, transparent 75%);
+    pointer-events: none; z-index: 1;
+  }
+  .hero-spirit {
+    position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%);
+    width: 120px; height: 380px;
+    background: radial-gradient(ellipse at 50% 25%, rgba(180,210,230,0.25) 0%, rgba(180,210,230,0.08) 50%, transparent 75%);
+    filter: blur(12px);
+    animation: breathe 5s ease-in-out infinite;
+    pointer-events: none; z-index: 1;
+  }
+  @keyframes breathe {
+    0%,100% { opacity:.45; transform: translateX(-50%) scaleY(1) scaleX(1); }
+    50%      { opacity:.8;  transform: translateX(-50%) scaleY(1.03) scaleX(1.05); }
+  }
+  .particles { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
+  .particle {
+    position: absolute; border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    animation: drift linear infinite;
+  }
+  @keyframes drift {
+    0%   { transform: translateY(100vh) translateX(0); opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: .5; }
+    100% { transform: translateY(-20vh) translateX(40px); opacity: 0; }
+  }
+  .hero-in {
+    position: relative; z-index: 2;
+    max-width: 780px; margin: 0 auto; padding: 72px 32px 96px;
+    text-align: center;
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 10px; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; color: rgba(200,210,218,0.8);
+    margin-bottom: 32px;
+  }
+  .eyebrow::before, .eyebrow::after {
+    content: ''; display: block; width: 24px; height: 1px; background: var(--slate);
+  }
+  .hero-h1 {
+    font-family: var(--serif); font-size: clamp(44px, 6.5vw, 82px);
+    font-weight: 300; line-height: 1.08; color: #ffffff;
+    letter-spacing: -0.01em; margin-bottom: 10px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+  .hero-h1 em { font-style: italic; color: rgba(180,210,230,0.95); }
+  .hero-rule {
+    display: block; width: 1px; height: 52px;
+    background: linear-gradient(to bottom, rgba(200,210,218,0.3), transparent);
+    margin: 28px auto;
+  }
+  .hero-sub {
+    font-size: 16px; font-weight: 300; line-height: 1.9;
+    color: rgba(230,228,224,0.85); max-width: 480px; margin: 0 auto 52px;
+  }
+  .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--slate-deep); color: var(--white);
+    padding: 15px 34px; border-radius: 32px;
+    font-size: 13px; font-weight: 500; letter-spacing: 0.07em;
+    border: none; cursor: pointer;
+    box-shadow: 0 4px 20px rgba(74,112,130,0.35);
+    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  }
+  .btn-primary:hover {
+    background: var(--slate-mid); transform: translateY(-2px);
+    box-shadow: 0 10px 32px rgba(74,112,130,0.45);
+  }
+  .btn-primary svg { transition: transform var(--transition); }
+  .btn-primary:hover svg { transform: translateX(3px); }
+  .hero .btn-outline {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.15); color: #ffffff;
+    padding: 14px 34px; border-radius: 32px;
+    font-size: 13px; font-weight: 500; letter-spacing: 0.05em;
+    border: 1px solid rgba(255,255,255,0.45); cursor: pointer;
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    transition: border-color var(--transition), background var(--transition), color var(--transition);
+  }
+  .hero .btn-outline:hover { border-color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.25); color: #fff; }
+  /* Non-hero btn-outline (used elsewhere in the page) */
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent; color: var(--charcoal);
+    padding: 14px 34px; border-radius: 32px;
+    font-size: 13px; font-weight: 400; letter-spacing: 0.05em;
+    border: 1px solid var(--linen); cursor: pointer;
+    transition: border-color var(--transition), background var(--transition), color var(--transition);
+  }
+  .btn-outline:hover { border-color: var(--stone); background: var(--cream); color: var(--ink); }
+  /* Carousel progress dots */
+  .hero-dots { position:absolute; bottom:32px; left:50%; transform:translateX(-50%); z-index:3; display:flex; gap:12px; align-items:center; }
+  .hero-dot {
+    width:10px; height:10px; border-radius:50%; border:1.5px solid rgba(255,255,255,0.5);
+    background:transparent; cursor:pointer; transition:background 0.3s, border-color 0.3s, transform 0.3s;
+    padding:0; box-sizing:border-box;
+  }
+  .hero-dot:hover { border-color:rgba(255,255,255,0.8); transform:scale(1.2); }
+  .hero-dot.active { background:rgba(255,255,255,0.95); border-color:rgba(255,255,255,0.95); }
+  /* Accessible minimum touch target (24×24) via padding on parent */
+  .hero-dots button { min-width:24px; min-height:24px; display:flex; align-items:center; justify-content:center; }
+  .scroll-hint {
+    display: none; /* Removed — dots now serve as bottom anchor */
+  }
+  .scroll-hint span { font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(200,210,218,0.6); }
+  @keyframes bounceY {
+    0%,100% { transform: translateX(-50%) translateY(0); }
+    50%      { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* ═══ UTILS ═══ */
+  .section { padding: 104px 32px; }
+  .section-sm { padding: 72px 32px; }
+  .s-wrap    { max-width: 1160px; margin: 0 auto; }
+  .s-wrap-md { max-width: 880px; margin: 0 auto; }
+  .s-wrap-sm { max-width: 640px; margin: 0 auto; }
+  .label {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 10px; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--slate-mid); margin-bottom: 20px;
+  }
+  .label::before { content: ''; display: block; width: 16px; height: 1px; background: var(--slate); }
+  .h2 {
+    font-family: var(--serif); font-size: clamp(32px, 4.5vw, 56px);
+    font-weight: 300; line-height: 1.12; color: var(--ink);
+    letter-spacing: -0.01em; margin-bottom: 18px;
+  }
+  .h2 em { font-style: italic; color: var(--slate-deep); }
+  .h3 {
+    font-family: var(--serif); font-size: 22px; font-weight: 400;
+    color: var(--ink); margin-bottom: 10px;
+  }
+  .lead {
+    font-size: 16px; font-weight: 300; line-height: 1.9;
+    color: var(--stone-text); max-width: 560px;
+  }
+  .body {
+    font-size: 15px; font-weight: 300; line-height: 1.9; color: #706860;
+  }
+  .body strong { color: var(--charcoal); font-weight: 500; }
+  .rule { display: block; width: 32px; height: 1px; background: var(--linen); margin: 20px 0 28px; }
+
+  /* ═══ STATS ═══ */
+  .stats-band { background: var(--ink); padding: 0 32px; }
+  .stats-in {
+    max-width: 1160px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border-left: 1px solid rgba(255,255,255,0.06);
+  }
+  .stat-item {
+    padding: 44px 32px;
+    border-right: 1px solid rgba(255,255,255,0.06);
+    transition: background var(--transition);
+  }
+  .stat-item:hover { background: rgba(255,255,255,0.02); }
+  .stat-n {
+    font-family: var(--serif); font-size: 46px; font-weight: 300;
+    color: var(--slate); display: block; line-height: 1; margin-bottom: 10px;
+  }
+  .stat-l { font-size: 12px; font-weight: 300; color: rgba(200,191,175,0.5); line-height: 1.6; }
+
+  /* ═══ ABOUT ═══ */
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 88px; align-items: center;
+  }
+  .about-visual { position: relative; }
+  .about-img {
+    width: 100%; aspect-ratio: 4/5; border-radius: 2px; overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+  .about-img img { width: 100%; height: 100%; object-fit: cover; }
+  .about-badge {
+    position: absolute; bottom: -20px; right: -20px;
+    background: var(--off-white); border: 1px solid var(--cream);
+    padding: 20px 24px; border-radius: 2px; box-shadow: var(--shadow-md);
+    max-width: 200px;
+  }
+  .about-badge .bn {
+    font-family: var(--serif); font-size: 28px; font-weight: 300;
+    color: var(--slate-deep); display: block; margin-bottom: 4px;
+  }
+  .about-badge .bl { font-size: 11px; font-weight: 300; color: var(--stone-text); line-height: 1.5; }
+
+  /* ═══ HEXAGONAL MEMORY ═══ */
+  .memory-section { background: var(--white); }
+  .memory-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: center; }
+  .hex-wall { padding: 16px; }
+  .hex-grid { display: flex; flex-direction: column; gap: 3px; align-items: flex-start; }
+  .hex-row  { display: flex; gap: 3px; }
+  .hex-row.off { margin-left: 37px; }
+  .hx {
+    width: 70px; height: 70px; flex-shrink: 0;
+    clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+    background: var(--cream); display: flex; align-items: center;
+    justify-content: center; font-size: 20px; cursor: default;
+    position: relative; overflow: hidden;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  .hx:hover { transform: scale(1.1); background: rgba(143,163,177,0.18); }
+  .hx.lit { background: linear-gradient(135deg, rgba(180,210,230,0.45), rgba(200,225,240,0.2)); }
+  .hx.lit .glow {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 30%, rgba(180,210,230,0.9) 0%, transparent 65%);
+    animation: pulse 3.5s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:.35;} 50%{opacity:.9;} }
+  .hx.wood { background: rgba(221,208,179,0.3); }
+  .hx.dark { background: rgba(190,182,168,0.2); }
+
+  /* ═══ FEATURES ═══ */
+  .features-section { background: var(--off-white); }
+  .feat-grid {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    margin-top: 56px;
+    border: 1px solid var(--cream); border-radius: var(--radius);
+    overflow: hidden; background: var(--cream); gap: 1px;
+  }
+  .feat {
+    background: var(--off-white); padding: 48px 36px;
+    transition: background var(--transition); position: relative;
+  }
+  .feat::before {
+    content: ''; position: absolute; top: 0; left: 36px; right: 36px;
+    height: 2px; background: transparent; transition: background var(--transition);
+  }
+  .feat:hover { background: var(--white); }
+  .feat:hover::before { background: var(--slate); }
+  .feat-num {
+    font-family: var(--serif); font-size: 52px; font-weight: 300;
+    color: rgba(143,163,177,0.25); line-height: 1;
+    display: block; margin-bottom: 24px; transition: color var(--transition);
+  }
+  .feat:hover .feat-num { color: rgba(74,112,130,0.3); }
+  .feat-title { margin-bottom: 12px; }
+  .feat-desc { font-size: 14px; font-weight: 300; line-height: 1.85; color: var(--stone-text); }
+
+  /* ═══ LIBRARY DARK ═══ */
+  .library-section { background: var(--ink); position: relative; overflow: hidden; }
+  .library-section .label { color: rgba(143,163,177,0.7); }
+  .library-section .label::before { background: rgba(143,163,177,0.5); }
+  .library-section .h2 { color: var(--off-white); }
+  .library-section .h2 em { color: var(--slate); }
+  .library-section .lead { color: rgba(196,187,168,0.6); }
+  .library-section .body { color: rgba(196,187,168,0.45); }
+  .lib-bg {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .ghosts {
+    position: absolute; right: 0; top: 0; bottom: 0;
+    width: 420px; pointer-events: none; z-index: 1; overflow: hidden;
+  }
+  .gs {
+    position: absolute; border-radius: 50%; filter: blur(7px);
+    animation: floatG linear infinite;
+  }
+  @keyframes floatG {
+    0%,100% { transform: translateY(0) scale(1); opacity: .35; }
+    50%      { transform: translateY(-16px) scale(1.04); opacity: .75; }
+  }
+  .lib-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 88px; align-items: center; position: relative; z-index: 2; }
+  .lib-img-wrap { position: relative; border-radius: 2px; overflow: hidden; box-shadow: 0 24px 64px rgba(0,0,0,0.5); }
+  .lib-img-wrap img { width: 100%; display: block; }
+  .lib-img-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 20px 24px;
+    background: linear-gradient(transparent, rgba(13,27,42,0.8));
+    font-family: var(--serif); font-size: 13px; font-style: italic;
+    color: rgba(247,244,239,0.6); text-align: center;
+  }
+
+  /* ═══ PROCESS ═══ */
+  .process-section { background: var(--cream); }
+  .proc-list { margin-top: 60px; }
+  .proc-item {
+    display: grid; grid-template-columns: 52px 1fr;
+    gap: 28px; margin-bottom: 48px; position: relative;
+  }
+  .proc-item:last-child { margin-bottom: 0; }
+  .proc-item::after {
+    content: ''; position: absolute;
+    left: 25px; top: 52px; bottom: -48px; width: 1px;
+    background: linear-gradient(var(--linen), transparent);
+  }
+  .proc-item:last-child::after { display: none; }
+  .proc-n {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--off-white); border: 1px solid var(--linen);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-size: 19px; font-weight: 300;
+    color: var(--slate-deep); flex-shrink: 0; z-index: 1;
+    transition: background var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
+  }
+  .proc-item:hover .proc-n {
+    background: var(--slate-deep); border-color: var(--slate-deep);
+    color: var(--white); box-shadow: 0 4px 16px rgba(74,112,130,0.3);
+  }
+  .proc-body { padding-top: 12px; }
+  .proc-title { font-family: var(--serif); font-size: 20px; font-weight: 400; color: var(--ink); margin-bottom: 8px; }
+  .proc-desc  { font-size: 14px; font-weight: 300; line-height: 1.85; color: var(--stone-text); }
+
+  /* ═══ QUOTE ═══ */
+  .quote-section {
+    background: var(--off-white); text-align: center; padding: 120px 32px;
+  }
+  .big-quote {
+    font-family: var(--serif); font-size: clamp(22px, 3.5vw, 40px);
+    font-weight: 300; font-style: italic; line-height: 1.5;
+    color: var(--ink); max-width: 780px; margin: 0 auto 20px;
+  }
+  .big-quote-author {
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--slate-mid); font-weight: 400;
+  }
+
+  /* ═══ SPLIT ═══ */
+  .split-section { background: var(--white); }
+  .split-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    min-height: 520px; border-radius: 2px; overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+  .split-img { overflow: hidden; }
+  .split-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 6s ease; }
+  .split-img:hover img { transform: scale(1.03); }
+  .split-text {
+    background: var(--cream); padding: 72px 56px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+
+  /* ═══ FORM ═══ */
+  .form-section { background: var(--white); }
+  .form-card {
+    max-width: 560px; margin: 0 auto;
+    border: 1px solid var(--cream); border-radius: 2px;
+    padding: 64px 56px; background: var(--off-white);
+    box-shadow: var(--shadow-sm);
+  }
+  .form-h { font-family: var(--serif); font-size: clamp(28px,4vw,44px); font-weight: 300; color: var(--ink); margin-bottom: 8px; }
+  .form-h em { font-style: italic; color: var(--slate-deep); }
+  .form-sub { font-size: 14px; font-weight: 300; color: var(--stone-text); margin-bottom: 40px; line-height: 1.7; }
+  .field { margin-bottom: 18px; }
+  .field label {
+    display: block; font-size: 10px; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--stone-text); margin-bottom: 8px;
+  }
+  .field input {
+    width: 100%; padding: 13px 16px;
+    border: 1px solid var(--cream); border-radius: var(--radius);
+    background: var(--white); font-size: 15px; font-weight: 300;
+    font-family: var(--sans); color: var(--charcoal); outline: none;
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+  .field input:focus {
+    border-color: var(--slate);
+    box-shadow: 0 0 0 3px rgba(143,163,177,0.12);
+  }
+  .field input::placeholder { color: rgba(200,191,175,0.7); }
+  .field input.err { border-color: #b05555; box-shadow: 0 0 0 3px rgba(176,85,85,0.1); }
+  .btn-submit {
+    width: 100%; padding: 16px; margin-top: 10px;
+    background: var(--slate-deep); color: var(--white);
+    border: none; border-radius: var(--radius);
+    font-size: 12px; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; font-family: var(--sans); cursor: pointer;
+    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+    box-shadow: 0 4px 16px rgba(74,112,130,0.25);
+  }
+  .btn-submit:hover { background: var(--slate-mid); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(74,112,130,0.35); }
+  .form-note {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 11px; font-weight: 300; color: rgba(154,144,128,0.8);
+    margin-top: 18px; justify-content: center;
+  }
+
+  /* ═══ FAQ ═══ */
+  .faq-section { background: var(--cream); }
+  .faq-list { margin-top: 48px; }
+  .faq-item { border-bottom: 1px solid rgba(200,191,175,0.6); }
+  .faq-q {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 24px 0; cursor: pointer; gap: 16px;
+    background: none; border: none; width: 100%; text-align: left;
+  }
+  .faq-q-text {
+    font-family: var(--serif); font-size: 18px; font-weight: 400;
+    color: var(--ink); transition: color var(--transition);
+  }
+  .faq-q:hover .faq-q-text { color: var(--slate-deep); }
+  .faq-icon {
+    width: 24px; height: 24px; flex-shrink: 0;
+    border: 1px solid var(--linen); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--slate); font-size: 14px; font-weight: 300;
+    transition: all var(--transition);
+  }
+  .faq-item.open .faq-icon {
+    background: var(--slate-deep); border-color: var(--slate-deep);
+    color: var(--white); transform: rotate(45deg);
+  }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+  }
+  .faq-a-inner {
+    padding: 0 0 24px; font-size: 14px; font-weight: 300;
+    line-height: 1.85; color: var(--stone-text); max-width: 680px;
+  }
+  .faq-item.open .faq-a { max-height: 200px; }
+
+  /* ═══ TESTIMONIALS ═══ */
+  .testi-section { background: var(--off-white); }
+  .testi-grid {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 1px; background: var(--linen); border-radius: var(--radius);
+    overflow: hidden; margin-top: 56px;
+  }
+  .testi {
+    background: var(--white); padding: 44px 36px;
+    transition: background var(--transition);
+  }
+  .testi:hover { background: var(--off-white); }
+  .testi-stars { color: var(--slate); font-size: 12px; letter-spacing: 2px; margin-bottom: 20px; }
+  .testi-text {
+    font-family: var(--serif); font-size: 17px; font-weight: 300;
+    font-style: italic; line-height: 1.8; color: var(--charcoal);
+    margin-bottom: 28px;
+  }
+  .testi-sep { width: 20px; height: 1px; background: var(--linen); margin-bottom: 18px; }
+  .testi-name { font-size: 12px; font-weight: 500; letter-spacing: 0.07em; color: var(--ink); }
+  .testi-loc  { font-size: 11px; font-weight: 300; color: var(--stone-text); margin-top: 3px; }
+
+  /* ═══ FOUNDER ═══ */
+  .founder-section { background: var(--white); }
+  .founder-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 88px; align-items: start; }
+  .founder-img-wrap {
+    aspect-ratio: 3/4; background: var(--cream); border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden; box-shadow: var(--shadow-md);
+  }
+  .founder-ghost {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 60%, rgba(143,163,177,0.15) 0%, transparent 70%);
+  }
+  .founder-initial {
+    font-family: var(--serif); font-size: 72px; font-weight: 300;
+    color: rgba(143,163,177,0.3); z-index: 1;
+  }
+  .founder-name {
+    font-family: var(--serif); font-size: 34px; font-weight: 400;
+    color: var(--ink); margin-bottom: 3px;
+  }
+  .founder-role {
+    font-size: 11px; font-weight: 400; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--slate-mid); margin-bottom: 32px;
+  }
+  .founder-quote {
+    border-left: 2px solid var(--slate); padding-left: 22px;
+    font-family: var(--serif); font-size: 20px; font-weight: 300;
+    font-style: italic; line-height: 1.65; color: var(--charcoal);
+    margin-bottom: 28px;
+  }
+
+  /* ═══ FOOTER ═══ */
+  footer {
+    background: var(--ink); color: rgba(196,187,168,0.55);
+    padding: 72px 32px 36px;
+  }
+  .foot-grid {
+    max-width: 1160px; margin: 0 auto;
+    display: grid; grid-template-columns: 2.5fr 1fr 1fr 1fr;
+    gap: 56px; margin-bottom: 56px;
+  }
+  .foot-logo { margin-bottom: 16px; }
+  .foot-desc { font-size: 13px; font-weight: 300; line-height: 1.8; max-width: 240px; }
+  .foot-social { display: flex; gap: 10px; margin-top: 22px; }
+  .soc {
+    width: 34px; height: 34px; border-radius: 50%;
+    border: 1px solid rgba(196,187,168,0.15);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; color: rgba(196,187,168,0.4);
+    transition: all var(--transition); cursor: pointer; text-decoration: none;
+  }
+  .soc:hover { border-color: var(--slate); color: var(--slate); background: rgba(143,163,177,0.05); }
+  .foot-col h5 {
+    font-size: 10px; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; color: rgba(196,187,168,0.35); margin-bottom: 18px;
+  }
+  .foot-col ul { display: flex; flex-direction: column; gap: 10px; }
+  .foot-col a { font-size: 13px; font-weight: 300; transition: color var(--transition); }
+  .foot-col a:hover { color: rgba(247,244,239,0.8); }
+  .foot-bottom {
+    max-width: 1160px; margin: 0 auto;
+    border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 14px; font-size: 12px;
+  }
+  .foot-langs { display: flex; gap: 6px; }
+  .foot-langs a { padding: 3px 10px; border-radius: 2px; font-size: 12px; transition: all var(--transition); }
+  .foot-langs a.on { color: rgba(247,244,239,0.8); background: rgba(255,255,255,0.06); }
+
+  /* ═══ MOBILE OVERLAY ═══ */
+  .mob {
+    position: fixed; inset: 0; z-index: 199;
+    background: rgba(30,28,26,0.97);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 28px;
+    opacity: 0; pointer-events: none; transition: opacity .35s;
+  }
+  .mob.open { opacity: 1; pointer-events: all; }
+  .mob a {
+    font-family: var(--serif); font-size: 30px; font-weight: 300;
+    color: rgba(196,187,168,0.7); transition: color var(--transition);
+  }
+  .mob a:hover { color: var(--off-white); }
+  .mob-x {
+    position: absolute; top: 20px; right: 26px;
+    background: none; border: none; color: rgba(196,187,168,0.4);
+    font-size: 22px; cursor: pointer; transition: color var(--transition);
+  }
+  .mob-x:hover { color: var(--off-white); }
+
+  /* ═══ TOAST ═══ */
+  .toast {
+    position: fixed; bottom: 28px; right: 28px; z-index: 999;
+    background: var(--ink); color: rgba(247,244,239,0.9);
+    padding: 14px 22px; border-radius: var(--radius);
+    font-size: 13px; font-weight: 300;
+    border-left: 2px solid var(--slate);
+    box-shadow: var(--shadow-lg);
+    opacity: 0; transform: translateY(8px);
+    transition: opacity .4s ease, transform .4s ease;
+    max-width: 320px; pointer-events: none;
+  }
+  .toast.show { opacity: 1; transform: none; pointer-events: all; }
+
+  /* ═══ SCROLL ANIMATIONS ═══ */
+  .fade {
+    opacity: 0; transform: translateY(22px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .fade.in { opacity: 1; transform: none; }
+  .fade.d1 { transition-delay: .12s; }
+  .fade.d2 { transition-delay: .22s; }
+  .fade.d3 { transition-delay: .32s; }
+  .fade.d4 { transition-delay: .42s; }
+
+  /* ═══ RESPONSIVE ═══ */
+  @media(max-width:1100px){
+    .nav-links { display: none; }
+    .burger { display: flex; }
+    .about-grid, .memory-grid, .lib-grid, .founder-grid { grid-template-columns: 1fr; gap: 48px; }
+    .feat-grid { grid-template-columns: 1fr; }
+    .split-grid { grid-template-columns: 1fr; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+    .stats-in { grid-template-columns: 1fr 1fr; }
+    .ghosts { display: none; }
+    .shelf { display: none; }
+  }
+  @media(max-width:768px){
+    .section { padding: 72px 20px; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .hero-in { padding: 56px 20px 80px; }
+    .form-card { padding: 40px 24px; }
+    .foot-grid { grid-template-columns: 1fr; }
+    .foot-bottom { flex-direction: column; align-items: flex-start; }
+    .stats-in { grid-template-columns: 1fr 1fr; }
+    .lib-grid { grid-template-columns: 1fr; }
+    .about-badge { right: 0; bottom: -16px; }
+  }
+  @media(max-width:480px){
+    .stats-in { grid-template-columns: 1fr; }
+    .hero-btns { flex-direction: column; align-items: center; }
+    .split-text { padding: 48px 28px; }
+  }
+  </style>
+</head>
+
+<body>
+<!-- GTM noscript -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DZLVZS9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<a href="#main" class="skip">Skip to main content</a>
+
+<!-- ═══ NAV ═══ -->
+<header>
+<nav class="nav" id="nav" aria-label="Main navigation">
+  <div class="nav-in">
+    <a href="/" class="logo" aria-label="Solexi.ai — Home">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+        <polygon points="13,1 25,7 25,19 13,25 1,19 1,7" fill="#1e1c1a"/>
+        <polygon points="13,5 21,9.5 21,16.5 13,21 5,16.5 5,9.5" fill="none" stroke="#8fa3b1" stroke-width="0.8"/>
+        <circle cx="13" cy="13" r="1.8" fill="#8fa3b1"/>
+      </svg>
+      SOLEXI.AI
+    </a>
+
+    <div class="nav-links" id="nav-links">
+      <a href="#about">Understand</a>
+      <a href="#memory">Memory</a>
+      <a href="#library">Data</a>
+      <a href="#process">How</a>
+      <a href="#faq">FAQ</a>
+      <a href="#founder">Founder</a>
+      <a href="/trust/">Trust</a>
+      <a href="#form" class="nav-cta">Get Started</a>
+    </div>
+
+    <div class="nav-right">
+      <nav class="lang-sw" aria-label="Language">
+        <a href="/" hreflang="en" class="on" aria-current="page">EN</a>
+        <span aria-hidden="true">·</span>
+        <a href="/fr/" hreflang="fr">FR</a>
+        <span aria-hidden="true">·</span>
+        <a href="/es/" hreflang="es">ES</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mob-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<!-- Mobile overlay -->
+<div class="mob" id="mob-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <button class="mob-x" id="mob-close" aria-label="Close menu">&#x2715;</button>
+  <a href="#about"   class="mlink">Understand</a>
+  <a href="#memory"  class="mlink">Memory</a>
+  <a href="#library" class="mlink">Data</a>
+  <a href="/trust/"  class="mlink">Trust Center</a>
+  <a href="#process" class="mlink">How It Works</a>
+  <a href="#faq"     class="mlink">FAQ</a>
+  <a href="#founder" class="mlink">Founder</a>
+  <a href="#form"    class="mlink" style="color:rgba(143,163,177,0.85)">Get Started →</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<main id="main">
+<section class="hero" aria-labelledby="hero-h1">
+
+  <!-- Hero carousel background -->
+  <div class="hero-carousel" aria-hidden="true">
+    <div class="hero-carousel-slide active" style="background-image:url('images/hero-1.jpg')"></div>
+    <div class="hero-carousel-slide" style="background-image:url('images/hero-2.jpg')"></div>
+    <div class="hero-carousel-slide" style="background-image:url('images/hero-3.jpg')"></div>
+    <div class="hero-carousel-slide" style="background-image:url('images/hero-4.jpg')"></div>
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <!-- Library shelves -->
+  <div class="shelf L" aria-hidden="true">
+    <div class="shelf-plank"><div class="bk" style="width:7px;height:48px;background:#c8bfaf"></div><div class="bk" style="width:9px;height:56px;background:#ddd0b3"></div><div class="bk" style="width:6px;height:42px;background:#b8c8d0"></div><div class="bk" style="width:11px;height:52px;background:#d0c8b8"></div><div class="bk" style="width:8px;height:44px;background:#c0b8a8"></div><div class="bk" style="width:7px;height:58px;background:#b8cad4"></div><div class="bk" style="width:10px;height:46px;background:#d8d0c0"></div></div>
+    <div class="shelf-plank"><div class="bk" style="width:11px;height:44px;background:#ddd0b3"></div><div class="bk" style="width:7px;height:54px;background:#c8d4dc"></div><div class="bk" style="width:9px;height:48px;background:#c8bfaf"></div><div class="bk" style="width:10px;height:52px;background:#d4c8b4"></div><div class="bk" style="width:6px;height:60px;background:#b4c4cc"></div><div class="bk" style="width:8px;height:46px;background:#e0d8c8"></div></div>
+    <div class="shelf-plank"><div class="bk" style="width:8px;height:50px;background:#b8cad0"></div><div class="bk" style="width:10px;height:46px;background:#ddd0b3"></div><div class="bk" style="width:7px;height:56px;background:#c8bfaf"></div><div class="bk" style="width:11px;height:48px;background:#d8ccc0"></div><div class="bk" style="width:9px;height:42px;background:#c0d0d8"></div><div class="bk" style="width:7px;height:54px;background:#d0c4b4"></div></div>
+    <div class="shelf-plank"><div class="bk" style="width:9px;height:52px;background:#c8bfaf"></div><div class="bk" style="width:7px;height:44px;background:#dcc8a8"></div><div class="bk" style="width:11px;height:56px;background:#b8c8d4"></div><div class="bk" style="width:6px;height:48px;background:#d4ccbc"></div><div class="bk" style="width:10px;height:42px;background:#ccd4dc"></div><div class="bk" style="width:8px;height:58px;background:#c8c0b0"></div></div>
+    <div class="shelf-plank"><div class="bk" style="width:7px;height:48px;background:#b4c4cc"></div><div class="bk" style="width:9px;height:56px;background:#ddd0b3"></div><div class="bk" style="width:8px;height:44px;background:#c8bfaf"></div><div class="bk" style="width:11px;height:52px;background:#d8d0c0"></div><div class="bk" style="width:6px;height:46px;background:#c4d0d8"></div></div>
+  </div>
+  <div class="shelf R" aria-hidden="true">
+    <div class="shelf-plank"><div class="bk" style="width:9px;height:50px;background:#ddd0b3"></div><div class="bk" style="width:7px;height:44px;background:#c8bfaf"></div><div class="bk" style="width:11px;height:56px;background:#b8cad4"></div><div class="bk" style="width:6px;height:48px;background:#d8d0c0"></div><div class="bk" style="width:10px;height:52px;background:#c0b8a8"></div><div class="bk" style="width:8px;height:42px;background:#b8c8cc"></div></div>
+    <div class="shelf-plank"><div class="bk" style="width:8px;height:54px;background:#c8bfaf"></div><div class="bk" style="width:10px;height:46px;background:#d4ccbc"></div><div class="bk" style="width:6px;height:58px;background:#b8ccd4"></div><div class="bk" style="width:11px;height:50px;background:#ddd0b3"></div><div class="bk" style="width:7px;height:44px;background:#c8bfaf"></div></div>
+    <div class="shelf-plank"><div class="bk" style="width:10px;height:48px;background:#d0c8b8"></div><div class="bk" style="width:7px;height:56px;background:#b8c8d0"></div><div class="bk" style="width:9px;height:44px;background:#ddd0b3"></div><div class="bk" style="width:6px;height:52px;background:#c8bfaf"></div><div class="bk" style="width:11px;height:58px;background:#d8ccc0"></div></div>
+    <div class="shelf-plank"><div class="bk" style="width:7px;height:52px;background:#dcc8a8"></div><div class="bk" style="width:9px;height:46px;background:#b8c8d4"></div><div class="bk" style="width:10px;height:56px;background:#d4ccbc"></div><div class="bk" style="width:6px;height:44px;background:#c8bfaf"></div><div class="bk" style="width:8px;height:50px;background:#ccd4dc"></div></div>
+    <div class="shelf-plank"><div class="bk" style="width:9px;height:50px;background:#c8bfaf"></div><div class="bk" style="width:7px;height:56px;background:#ddd0b3"></div><div class="bk" style="width:11px;height:44px;background:#b4c4cc"></div><div class="bk" style="width:8px;height:52px;background:#d8d0c0"></div></div>
+  </div>
+
+  <!-- Light + spirit -->
+  <div class="hero-zenith" aria-hidden="true"></div>
+  <div class="hero-spirit" aria-hidden="true"></div>
+
+  <!-- Particles -->
+  <div class="particles" aria-hidden="true" id="particles"></div>
+
+  <!-- Content -->
+  <div class="hero-in">
+    <span class="eyebrow">Digital Legacy · Memory · Serenity</span>
+    <h1 class="hero-h1" id="hero-h1">
+      When you're gone,<br><em>they'll need answers.</em>
+    </h1>
+    <span class="hero-rule" aria-hidden="true"></span>
+    <p class="hero-sub">
+      80% of families can't access a loved one's digital life after death. Solexi organizes your memory, archives, passwords and final wishes — in 5 minutes — so your loved ones never face chaos.
+    </p>
+    <div class="hero-btns">
+      <a href="#form" class="btn-primary">
+        Get Started in 5 Minutes
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#about" class="btn-outline">Learn More</a>
+    </div>
+  </div>
+
+  <!-- Carousel dots -->
+  <div class="hero-dots" aria-label="Carousel navigation">
+    <button class="hero-dot active" aria-label="Photo 1"></button>
+    <button class="hero-dot" aria-label="Photo 2"></button>
+    <button class="hero-dot" aria-label="Photo 3"></button>
+    <button class="hero-dot" aria-label="Photo 4"></button>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <svg width="16" height="20" viewBox="0 0 16 20" fill="none" role="img" aria-label="Scroll indicator"><rect x="1" y="1" width="14" height="18" rx="7" stroke="currentColor" stroke-width="1"/><circle cx="8" cy="6" r="2" fill="currentColor"/></svg>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ═══ STATS ═══ -->
+<section class="stats-band" aria-label="Key statistics">
+  <div class="stats-in">
+    <div class="stat-item fade">
+      <span class="stat-n">50%</span>
+      <span class="stat-l">of Canadian adults<br>have no will</span>
+    </div>
+    <div class="stat-item fade d1">
+      <span class="stat-n">$15k</span>
+      <span class="stat-l">in digital assets lost<br>per family on average</span>
+    </div>
+    <div class="stat-item fade d2">
+      <span class="stat-n">5 min</span>
+      <span class="stat-l">is all it takes<br>to get started</span>
+    </div>
+    <div class="stat-item fade d3">
+      <span class="stat-n">1/3</span>
+      <span class="stat-l">only have a complete<br>estate plan</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="section" id="about" aria-labelledby="about-h">
+  <div class="s-wrap">
+    <div class="about-grid">
+      <div class="about-visual fade">
+        <div class="about-img">
+          <img src="https://www.genspark.ai/api/files/s/1kY4kU0t"
+               alt="Woman contemplating a luminous presence in hexagonal wooden niches — preserved memory"
+               loading="lazy" width="600" height="750" />
+        </div>
+        <div class="about-badge" aria-hidden="true">
+          <span class="bn">2023</span>
+          <span class="bl">Founded with the conviction that every family deserves clarity</span>
+        </div>
+      </div>
+      <div class="fade d1">
+        <span class="label">What We Do</span>
+        <h2 class="h2" id="about-h">A living library<br>of <em>your</em> life.</h2>
+        <span class="rule" aria-hidden="true"></span>
+        <p class="body">Solexi.ai is a digital legacy preservation platform founded by Daniel Tanguay. Our mission: <strong>reduce the confusion left to loved ones</strong> — in case of incapacity, or after death.</p>
+        <p class="body" style="margin-top:16px;">No legal jargon. No appointments. A guided space where you organize what matters — memories, documents, access, wishes — at your own pace, in serenity.</p>
+        <a href="#form" class="btn-primary" style="margin-top:32px; display:inline-flex;">
+          Create My Space
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HEXAGONAL MEMORY ═══ -->
+<section class="section memory-section" id="memory" aria-labelledby="mem-h">
+  <div class="s-wrap">
+    <div class="memory-grid">
+      <div class="fade d1">
+        <span class="label">Emotional Memory</span>
+        <h2 class="h2" id="mem-h">Every memory<br>deserves <em>a niche.</em></h2>
+        <span class="rule" aria-hidden="true"></span>
+        <p class="body">Photos, letters, audio recordings, family videos, important documents, heartfelt messages — Solexi preserves everything that gives <strong>meaning to a life</strong>.</p>
+        <p class="body" style="margin-top:16px;">Not just storage. An organized, structured, transmissible space — where every digital object finds its place and retains its meaning for future generations.</p>
+      </div>
+      <!-- Hexagonal wall -->
+      <div class="hex-wall fade" aria-hidden="true">
+        <div class="hex-grid">
+          <div class="hex-row">
+            <div class="hx wood">📷</div><div class="hx dark">📜</div>
+            <div class="hx lit"><div class="glow"></div></div>
+            <div class="hx wood">🎵</div><div class="hx dark">💌</div>
+          </div>
+          <div class="hex-row off">
+            <div class="hx dark">📖</div>
+            <div class="hx lit"><div class="glow"></div></div>
+            <div class="hx wood">🗝️</div><div class="hx dark">📼</div>
+          </div>
+          <div class="hex-row">
+            <div class="hx wood">🏡</div><div class="hx dark">📝</div><div class="hx wood">👣</div>
+            <div class="hx lit"><div class="glow"></div></div>
+            <div class="hx dark">🎭</div>
+          </div>
+          <div class="hex-row off">
+            <div class="hx dark">📮</div><div class="hx wood">🖼️</div>
+            <div class="hx lit"><div class="glow"></div></div>
+            <div class="hx wood">💎</div>
+          </div>
+          <div class="hex-row">
+            <div class="hx wood">🕯️</div><div class="hx dark">📺</div>
+            <div class="hx lit"><div class="glow"></div></div>
+            <div class="hx dark">📿</div><div class="hx wood">🌙</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURES ═══ -->
+<section class="section features-section" aria-labelledby="feat-h">
+  <div class="s-wrap">
+    <div class="fade" style="text-align:center; max-width:600px; margin:0 auto;">
+      <span class="label">The Solution</span>
+      <h2 class="h2" id="feat-h">Three pillars,<br><em>one serenity.</em></h2>
+    </div>
+    <div class="feat-grid">
+      <div class="feat fade">
+        <span class="feat-num">01</span>
+        <h3 class="h3 feat-title">Structure</h3>
+        <p class="feat-desc">Organize archives, documents, digital access and wishes in a clear space — without legal jargon, without a notary, without time pressure.</p>
+      </div>
+      <div class="feat fade d1">
+        <span class="feat-num">02</span>
+        <h3 class="h3 feat-title">Transmission</h3>
+        <p class="feat-desc">Decide who accesses what, and when. Every memory, every document is transmitted exactly according to your wishes — with full control.</p>
+      </div>
+      <div class="feat fade d2">
+        <span class="feat-num">03</span>
+        <h3 class="h3 feat-title">Continuity</h3>
+        <p class="feat-desc">Your story does not end. It continues — for your children, your grandchildren, for those who never knew you but will search.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LIBRARY DARK ═══ -->
+<section class="section library-section" id="library" aria-labelledby="lib-h">
+  <div class="lib-bg" aria-hidden="true"></div>
+  <div class="ghosts" aria-hidden="true">
+    <div class="gs" style="width:42px;height:120px;background:radial-gradient(ellipse,rgba(180,210,230,.55) 0%,transparent 70%);left:50px;top:60px;animation-delay:0s;animation-duration:7s;"></div>
+    <div class="gs" style="width:32px;height:95px;background:radial-gradient(ellipse,rgba(180,210,230,.45) 0%,transparent 70%);left:140px;top:120px;animation-delay:1.8s;animation-duration:8s;"></div>
+    <div class="gs" style="width:48px;height:135px;background:radial-gradient(ellipse,rgba(180,210,230,.65) 0%,transparent 70%);left:210px;top:30px;animation-delay:3.2s;animation-duration:6.5s;"></div>
+    <div class="gs" style="width:28px;height:85px;background:radial-gradient(ellipse,rgba(180,210,230,.4) 0%,transparent 70%);left:290px;top:90px;animation-delay:2.5s;animation-duration:9s;"></div>
+    <div class="gs" style="width:52px;height:145px;background:radial-gradient(ellipse,rgba(180,210,230,.5) 0%,transparent 70%);left:90px;top:220px;animation-delay:4.5s;animation-duration:7.5s;"></div>
+    <div class="gs" style="width:36px;height:105px;background:radial-gradient(ellipse,rgba(180,210,230,.42) 0%,transparent 70%);left:260px;top:270px;animation-delay:1s;animation-duration:8.5s;"></div>
+  </div>
+  <div class="s-wrap">
+    <div class="lib-grid">
+      <div class="fade">
+        <span class="label">The Reality</span>
+        <h2 class="h2" id="lib-h">Millions of lives<br><em>without a plan.</em></h2>
+        <span class="rule" style="background:rgba(221,208,179,0.3);" aria-hidden="true"></span>
+        <p class="lead">Every year, families search in vain for passwords, documents, wishes. What you do not organize today, someone else will have to find — in grief.</p>
+        <p class="body" style="margin-top:18px;">Solexi.ai exists so this does not happen to yours.</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;">
+          <div style="padding:24px;border:1px solid rgba(255,255,255,0.06);border-radius:2px;background:rgba(255,255,255,0.03);" class="fade d1">
+            <span style="font-family:var(--serif);font-size:38px;font-weight:300;color:var(--slate);display:block;margin-bottom:6px;">72h</span>
+            <span style="font-size:12px;font-weight:300;color:rgba(196,187,168,0.45);">average time before the first administrative panic</span>
+          </div>
+          <div style="padding:24px;border:1px solid rgba(255,255,255,0.06);border-radius:2px;background:rgba(255,255,255,0.03);" class="fade d2">
+            <span style="font-family:var(--serif);font-size:38px;font-weight:300;color:var(--slate);display:block;margin-bottom:6px;">80%</span>
+            <span style="font-size:12px;font-weight:300;color:rgba(196,187,168,0.45);">of families have no access to the deceased's digital accounts</span>
+          </div>
+          <div style="padding:24px;border:1px solid rgba(255,255,255,0.06);border-radius:2px;background:rgba(255,255,255,0.03);" class="fade d3">
+            <span style="font-family:var(--serif);font-size:38px;font-weight:300;color:var(--slate);display:block;margin-bottom:6px;">3 yrs</span>
+            <span style="font-size:12px;font-weight:300;color:rgba(196,187,168,0.45);">average duration to settle an estate without preparation</span>
+          </div>
+          <div style="padding:24px;border:1px solid rgba(255,255,255,0.06);border-radius:2px;background:rgba(255,255,255,0.03);" class="fade d4">
+            <span style="font-family:var(--serif);font-size:38px;font-weight:300;color:var(--slate);display:block;margin-bottom:6px;">0</span>
+            <span style="font-size:12px;font-weight:300;color:rgba(196,187,168,0.45);">excuses for leaving your loved ones without answers</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade d1">
+        <div class="lib-img-wrap">
+          <img src="https://www.genspark.ai/api/files/s/3XrMEfcV"
+               alt="Luminous Scandinavian library with ethereal presences — heritage and memory"
+               loading="lazy" width="700" height="700" />
+          <div class="lib-img-caption">"Those who leave, leave their books behind."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ QUOTE ═══ -->
+<section class="quote-section" aria-label="Quote">
+  <div class="fade">
+    <p class="big-quote">
+      "Organizing what you leave behind is the last act of love you can offer."
+    </p>
+    <span class="hero-rule" aria-hidden="true"></span>
+    <p class="big-quote-author">Solexi.ai</p>
+  </div>
+</section>
+
+<!-- ═══ PROCESS ═══ -->
+<section class="section process-section" id="process" aria-labelledby="proc-h">
+  <div class="s-wrap-md">
+    <div class="fade">
+      <span class="label">How It Works</span>
+      <h2 class="h2" id="proc-h">Four steps toward<br><em>clarity.</em></h2>
+    </div>
+    <div class="proc-list">
+      <div class="proc-item fade">
+        <div class="proc-n" aria-hidden="true">1</div>
+        <div class="proc-body">
+          <h3 class="proc-title">Create your space in 5 minutes</h3>
+          <p class="proc-desc">First name, email — that is all. Your private, secure space is ready. No credit card, no commitment, no contract.</p>
+        </div>
+      </div>
+      <div class="proc-item fade d1">
+        <div class="proc-n" aria-hidden="true">2</div>
+        <div class="proc-body">
+          <h3 class="proc-title">Organize your archives and documents</h3>
+          <p class="proc-desc">Guided by simple questions, you build your personal library: photos, videos, important documents, messages for each person you love.</p>
+        </div>
+      </div>
+      <div class="proc-item fade d2">
+        <div class="proc-n" aria-hidden="true">3</div>
+        <div class="proc-body">
+          <h3 class="proc-title">Define your access and transmission</h3>
+          <p class="proc-desc">Who sees what, and when? You fully control transmission — immediate, deferred, conditional. It is your legacy, your rules.</p>
+        </div>
+      </div>
+      <div class="proc-item fade d3">
+        <div class="proc-n" aria-hidden="true">4</div>
+        <div class="proc-body">
+          <h3 class="proc-title">Live in peace. Your loved ones are protected.</h3>
+          <p class="proc-desc">Solexi keeps everything secure, encrypted, accessible according to your conditions. Update whenever you wish. You have done the most important thing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SPLIT IMAGE ═══ -->
+<section class="section split-section" aria-label="Memory and presence">
+  <div class="s-wrap">
+    <div class="split-grid fade">
+      <div class="split-img">
+        <img src="https://www.genspark.ai/api/files/s/Bf1h6OxQ"
+             alt="Aerial view of a circular library with translucent presences — living archives"
+             loading="lazy" width="700" height="520" />
+      </div>
+      <div class="split-text">
+        <span class="label">The Essence</span>
+        <h2 class="h2" style="font-size:clamp(26px,3.5vw,44px);">She is there,<br><em>somewhere.</em></h2>
+        <span class="rule" aria-hidden="true"></span>
+        <p class="body">Every life leaves traces — objects, words, moments. Most disappear into digital disorder.</p>
+        <p class="body" style="margin-top:16px;">Solexi.ai gathers them, structures them, preserves them. So that those who search <strong>can always find.</strong></p>
+        <a href="#form" class="btn-primary" style="margin-top:32px; display:inline-flex;">
+          Start Now
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FORM ═══ -->
+<section class="section form-section" id="form" aria-labelledby="form-h">
+  <div class="s-wrap">
+    <div class="form-card fade">
+      <span class="label" style="display:block; margin-bottom:16px;">Free Access</span>
+      <h2 class="form-h" id="form-h">Get started<br><em>today.</em></h2>
+      <p class="form-sub">No credit card. No commitment.<br>Just a first step toward serenity.</p>
+
+      <form id="solexi-form" novalidate aria-label="Solexi.ai registration form">
+        <div class="field">
+          <label for="f-name">First Name</label>
+          <input type="text" id="f-name" name="firstname"
+                 placeholder="Your first name"
+                 autocomplete="given-name" required
+                 aria-required="true" />
+        </div>
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input type="email" id="f-email" name="email"
+                 placeholder="your@email.com"
+                 autocomplete="email" required
+                 aria-required="true" />
+        </div>
+        <div class="field">
+          <label for="f-tel">
+            Phone
+            <span style="opacity:.45; text-transform:none; font-weight:300; letter-spacing:0; font-size:10px; margin-left:4px;">(optional)</span>
+          </label>
+          <input type="tel" id="f-tel" name="phone"
+                 placeholder="+1 514 000 0000"
+                 autocomplete="tel" />
+        </div>
+        <button type="submit" class="btn-submit" id="submit-btn">
+          Start My Digital Legacy →
+        </button>
+      </form>
+
+      <p class="form-note">
+        <svg width="11" height="13" viewBox="0 0 11 13" fill="none" aria-hidden="true"><rect x=".5" y="5" width="10" height="7.5" rx="1" stroke="currentColor" stroke-width="1"/><path d="M3 5V3.5a2.5 2.5 0 0 1 5 0V5" stroke="currentColor" stroke-width="1"/></svg>
+        Your information is encrypted and will never be shared.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="section faq-section" id="faq" aria-labelledby="faq-h">
+  <div class="s-wrap-md">
+    <div class="fade" style="text-align:center; max-width:560px; margin:0 auto;">
+      <span class="label">Frequently Asked Questions</span>
+      <h2 class="h2" id="faq-h">What you're<br><em>wondering.</em></h2>
+    </div>
+    <div class="faq-list" id="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" id="fq1" aria-expanded="false" aria-controls="fa1">
+          <span class="faq-q-text">What is Solexi.ai?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" id="fa1" role="region" aria-labelledby="fq1">
+          <div class="faq-a-inner">Solexi.ai is a digital legacy preservation platform that helps people organize their memories, important documents and final wishes for their loved ones — in case of incapacity or after death. Simple, human, accessible to all.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" id="fq2" aria-expanded="false" aria-controls="fa2">
+          <span class="faq-q-text">How long does it take to get started?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" id="fa2" role="region" aria-labelledby="fq2">
+          <div class="faq-a-inner">Only 5 minutes to create your space. You complete it at your own pace, without pressure, without legal jargon and without a notary. Resume whenever you wish.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" id="fq3" aria-expanded="false" aria-controls="fa3">
+          <span class="faq-q-text">Is it secure and private?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" id="fa3" role="region" aria-labelledby="fq3">
+          <div class="faq-a-inner">Yes. All data is encrypted. You fully control who can access what, and your information is never shared without your explicit authorization.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" id="fq4" aria-expanded="false" aria-controls="fa4">
+          <span class="faq-q-text">Is it only for elderly people?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" id="fa4" role="region" aria-labelledby="fq4">
+          <div class="faq-a-inner">No. Solexi.ai is designed for anyone who loves someone and wants to spare their loved ones the administrative and emotional chaos. The best time to start is now.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" id="fq5" aria-expanded="false" aria-controls="fa5">
+          <span class="faq-q-text">Do I need a notary or a lawyer?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" id="fa5" role="region" aria-labelledby="fq5">
+          <div class="faq-a-inner">No. Solexi.ai is a complementary tool, accessible without legal professionals. It does not replace a legal will, but organizes the essentials in a human and structured way.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="section testi-section" aria-labelledby="testi-h">
+  <div class="s-wrap">
+    <div class="fade" style="text-align:center;">
+      <span class="label">Testimonials</span>
+      <h2 class="h2" id="testi-h">What they <em>feel.</em></h2>
+    </div>
+    <div class="testi-grid" role="region" aria-label="User testimonials">
+      <article class="testi fade">
+        <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+        <p class="testi-text">"I finally did what I had been putting off for years. In ten minutes, it was done. A huge weight lifted — and an immense peace."</p>
+        <div class="testi-sep" aria-hidden="true"></div>
+        <div class="testi-name">Marie T.</div>
+        <div class="testi-loc">67 · Québec City, QC</div>
+      </article>
+      <article class="testi fade d1">
+        <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+        <p class="testi-text">"When my father fell ill, we knew exactly what to do. Everything was there, clear, organized. Solexi spared us unbearable chaos."</p>
+        <div class="testi-sep" aria-hidden="true"></div>
+        <div class="testi-name">Jean-François L.</div>
+        <div class="testi-loc">45 · Ottawa, ON</div>
+      </article>
+      <article class="testi fade d2">
+        <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+        <p class="testi-text">"Simpler than a tax form. And infinitely more important. I recommend it to anyone who loves someone."</p>
+        <div class="testi-sep" aria-hidden="true"></div>
+        <div class="testi-name">Sylvie M.</div>
+        <div class="testi-loc">58 · Montréal, QC</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOUNDER ═══ -->
+<section class="section founder-section" id="founder" aria-labelledby="found-h">
+  <div class="s-wrap">
+    <div class="founder-grid">
+      <div class="fade">
+        <div class="founder-img-wrap" role="img" aria-label="Daniel Tanguay, founder of Solexi.ai">
+          <div class="founder-ghost" aria-hidden="true"></div>
+          <span class="founder-initial" aria-hidden="true">DT</span>
+        </div>
+      </div>
+      <div class="fade d1">
+        <span class="label">The Founder</span>
+        <h2 class="founder-name" id="found-h">Daniel Tanguay</h2>
+        <p class="founder-role">Founder & CEO — Solexi.ai</p>
+        <blockquote class="founder-quote">
+          "I am not a lawyer. I am someone who has seen families suffer from something that could have been prevented."
+        </blockquote>
+        <p class="body">Solexi.ai was born from a simple conviction: <strong>every family deserves clarity.</strong> After witnessing the consequences of administrative chaos on grieving loved ones, Daniel decided to build a human, accessible tool free of jargon.</p>
+        <p class="body" style="margin-top:16px;">Because preparing what you leave behind is the last act of care.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <a href="/" class="logo foot-logo" aria-label="Solexi.ai — Home" style="color:rgba(247,244,239,0.85);">
+        <svg width="24" height="24" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <polygon points="13,1 25,7 25,19 13,25 1,19 1,7" fill="rgba(247,244,239,0.15)"/>
+          <polygon points="13,5 21,9.5 21,16.5 13,21 5,16.5 5,9.5" fill="none" stroke="#8fa3b1" stroke-width="0.8"/>
+          <circle cx="13" cy="13" r="1.8" fill="#8fa3b1"/>
+        </svg>
+        SOLEXI.AI
+      </a>
+      <p class="foot-desc">Preserving what remains of you — with structure, serenity and respect for those you love.</p>
+      <div class="foot-social" aria-label="Social media">
+        <a href="https://www.linkedin.com/company/solexi-ai" class="soc" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+        <a href="https://twitter.com/SolexiAI" class="soc" aria-label="Twitter / X" target="_blank" rel="noopener noreferrer">𝕏</a>
+        <a href="https://www.instagram.com/solexi.ai" class="soc" aria-label="Instagram" target="_blank" rel="noopener noreferrer">◯</a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h5 id="fn1">Navigation</h5>
+      <nav aria-labelledby="fn1">
+        <ul>
+          <li><a href="#about">Understand</a></li>
+          <li><a href="#memory">Memory</a></li>
+          <li><a href="#library">Data</a></li>
+          <li><a href="#process">How It Works</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-col">
+      <h5 id="fn2">Resources</h5>
+      <nav aria-labelledby="fn2">
+        <ul>
+          <li><a href="/trust/">Trust Center</a></li>
+          <li><a href="/trust/#privacy">Privacy Policy</a></li>
+          <li><a href="/trust/#security">Security</a></li>
+          <li><a href="/trust/#ai">AI Policy</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-col">
+      <h5 id="fn3">Legal</h5>
+      <nav aria-labelledby="fn3">
+        <ul>
+          <li><a href="/trust/#privacy">Privacy</a></li>
+          <li><a href="/trust/#security">Security</a></li>
+          <li><a href="/trust/#ai">AI Policy</a></li>
+
+          <li><a href="/#form">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p>&copy; 2025–2026 Solexi.ai Inc. All rights reserved.</p>
+    <nav class="foot-langs" aria-label="Language">
+      <a href="/" hreflang="en" class="on" aria-current="page">English</a>
+      <a href="/fr/" hreflang="fr">Français</a>
+      <a href="/es/" hreflang="es">Español</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- Toast -->
+<div class="toast" id="toast" role="alert" aria-live="polite" aria-atomic="true"></div>
+
+<!-- ═══ JAVASCRIPT ═══ -->
+<script>
+(function(){
+'use strict';
+
+/* DataLayer GTM helper */
+window.dataLayer = window.dataLayer || [];
+function pushEvent(event, data){
+  dataLayer.push(Object.assign({ event: event }, data || {}));
+}
+
+/* Hero carousel */
+(function(){
+  var slides = document.querySelectorAll('.hero-carousel-slide');
+  var dots   = document.querySelectorAll('.hero-dot');
+  var current = 0;
+  var interval = 5000; // 5 seconds per slide
+  var timer;
+
+  function goTo(index){
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = index % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function next(){ goTo(current + 1); }
+
+  function startTimer(){ timer = setInterval(next, interval); }
+  function resetTimer(){ clearInterval(timer); startTimer(); }
+
+  dots.forEach(function(dot, i){
+    dot.addEventListener('click', function(){ goTo(i); resetTimer(); });
+  });
+
+  startTimer();
+})();
+
+/* Particles */
+(function(){
+  var container = document.getElementById('particles');
+  if(!container) return;
+  for(var i=0; i<12; i++){
+    var p = document.createElement('div');
+    p.className = 'particle';
+    var size = Math.random()*4+2;
+    p.style.cssText = [
+      'width:'+size+'px','height:'+size+'px',
+      'left:'+(Math.random()*100)+'%',
+      'animation-duration:'+(Math.random()*14+10)+'s',
+      'animation-delay:'+(Math.random()*12)+'s'
+    ].join(';');
+    container.appendChild(p);
+  }
+})();
+
+/* Nav scroll + active link (single debounced handler) */
+var nav = document.getElementById('nav');
+var sections = document.querySelectorAll('section[id]');
+var navAs    = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+var scrollTick = false;
+window.addEventListener('scroll', function(){
+  if(!scrollTick){
+    scrollTick = true;
+    requestAnimationFrame(function(){
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+      var sy = window.scrollY + 100;
+      sections.forEach(function(s){
+        if(sy >= s.offsetTop && sy < s.offsetTop + s.offsetHeight){
+          navAs.forEach(function(a){ a.classList.remove('active'); });
+          var m = document.querySelector('.nav-links a[href="#'+s.id+'"]');
+          if(m) m.classList.add('active');
         }
-        step2?.classList.add('show');
-        if (btn1Wrap) btn1Wrap.style.display = 'none';
-        if (role) role.required = true;
-        if (useCase) useCase.required = true;
-        role?.focus();
       });
-
-     // Share links
-const shareText = 'When you die, who can access your digital life?';
-const shareUrl = 'https://solexi.ai/';
-const fb = document.getElementById('sxShareFb');
-const ms = document.getElementById('sxShareMsgr');
-const cp = document.getElementById('sxCopyShare');
-
-if (fb) fb.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl);
-
-// Messenger "Send Dialog" requires a real Facebook App ID.
-// With app_id=0 it won't work reliably. Fallback to FB share (works everywhere).
-if (ms) ms.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl);
-
-cp?.addEventListener('click', async () => {
-  const toCopy = shareText + ' ' + shareUrl;
-  try {
-    await navigator.clipboard.writeText(toCopy);
-    cp.textContent = 'Copied';
-    setTimeout(()=> cp.textContent = 'Copy text', 1200);
-  } catch(e){
-    const ta = document.createElement('textarea');
-    ta.value = toCopy;
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    ta.remove();
-    cp.textContent = 'Copied';
-    setTimeout(()=> cp.textContent = 'Copy text', 1200);
+      scrollTick = false;
+    });
   }
+}, { passive: true });
+
+/* Mobile menu */
+var burger  = document.getElementById('burger');
+var mob     = document.getElementById('mob-menu');
+var mobX    = document.getElementById('mob-close');
+function openMob(){
+  mob.classList.add('open');
+  burger.setAttribute('aria-expanded','true');
+  document.body.style.overflow='hidden';
+  pushEvent('menu_open');
+}
+function closeMob(){
+  mob.classList.remove('open');
+  burger.setAttribute('aria-expanded','false');
+  document.body.style.overflow='';
+}
+burger.addEventListener('click', openMob);
+mobX.addEventListener('click', closeMob);
+document.querySelectorAll('.mlink').forEach(function(l){ l.addEventListener('click', closeMob); });
+mob.addEventListener('keydown', function(e){ if(e.key==='Escape') closeMob(); });
+
+/* Smooth scroll */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var target = document.querySelector(this.getAttribute('href'));
+    if(target){
+      e.preventDefault();
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 72, behavior:'smooth' });
+      pushEvent('anchor_click', { section: this.getAttribute('href') });
+    }
+  });
 });
 
-// Redirect to thank-you page after Brevo confirms success
-(function redirectOnBrevoSuccess(){
-  const THANK_YOU_URL = '/thank-you.html';
-
-  const form = document.getElementById('sib-form');
-  const successEl = document.getElementById('success-message');
-  if (!successEl) return;
-
-  // Track submit attempt (GTM)
-  form?.addEventListener('submit', () => {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: 'waitlist_submit_attempt' });
+/* Scroll fade-in */
+var obs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }
   });
+}, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade').forEach(function(el){ obs.observe(el); });
 
-  const isVisible = (el) => {
-    const style = window.getComputedStyle(el);
-    return style && style.display !== 'none' && style.visibility !== 'hidden' && el.offsetHeight > 0;
-  };
-
-  // If already visible
-  if (isVisible(successEl)) {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: 'waitlist_submit_success' });
-    window.location.assign(THANK_YOU_URL);
-    return;
-  }
-
-  // Observe Brevo toggling success visibility
-  const obs = new MutationObserver(() => {
-    if (isVisible(successEl)) {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: 'waitlist_submit_success' });
-      obs.disconnect();
-      window.location.assign(THANK_YOU_URL);
+/* FAQ accordion */
+document.querySelectorAll('.faq-q').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var item    = this.closest('.faq-item');
+    var isOpen  = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(i){
+      i.classList.remove('open');
+      i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      this.setAttribute('aria-expanded','true');
+      pushEvent('faq_open', { question: this.querySelector('.faq-q-text').textContent });
     }
   });
+});
 
-  obs.observe(successEl, { attributes: true, attributeFilter: ['style', 'class'] });
-})();
-      // Popover menu
-      const btn = document.getElementById('menuBtn');
-      const pop = document.getElementById('sxPop');
-      const join = document.getElementById('sxPopJoin');
-      if(!btn || !pop) return;
+/* Form */
+var form = document.getElementById('solexi-form');
+var toast= document.getElementById('toast');
 
-      const backdrop = document.createElement('div');
-      backdrop.className = 'sx-pop-backdrop';
-      document.body.appendChild(backdrop);
+function showToast(msg, err){
+  toast.textContent = msg;
+  toast.style.borderLeftColor = err ? '#b05555' : 'var(--slate)';
+  toast.classList.add('show');
+  setTimeout(function(){ toast.classList.remove('show'); }, 5000);
+}
 
-      function openPop(){
-        pop.classList.add('open');
-        backdrop.classList.add('open');
-        pop.setAttribute('aria-hidden','false');
-        btn.setAttribute('aria-expanded','true');
-      }
-      function closePop(){
-        pop.classList.remove('open');
-        backdrop.classList.remove('open');
-        pop.setAttribute('aria-hidden','true');
-        btn.setAttribute('aria-expanded','false');
-      }
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  var name  = document.getElementById('f-name');
+  var email = document.getElementById('f-email');
+  var valid = true;
 
-      btn.addEventListener('click', (e)=>{ e.stopPropagation();
-        pop.classList.contains('open') ? closePop() : openPop();
-      });
-      backdrop.addEventListener('click', closePop);
-      join?.addEventListener('click', closePop);
-      document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closePop(); });
-    })();
-  </script>
+  [name, email].forEach(function(f){ f.classList.remove('err'); });
 
-<script>
-(function () {
-  const holder = document.getElementById('sx-particles');
-  if (!holder) return;
-
-  const canvas = document.createElement('canvas');
-  const ctx = canvas.getContext('2d');
-  holder.appendChild(canvas);
-
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const isMobile = window.innerWidth < 768;
-  const DPR = Math.min(window.devicePixelRatio || 1, 2);
-
-  let w = 0;
-  let h = 0;
-  let particles = [];
-  let mouse = { x: null, y: null };
-  let animationId = null;
-  let time = 0;
-
-  const CONFIG = {
-    count: prefersReducedMotion ? 8 : (isMobile ? 14 : 18),
-    speedMin: 0.025,
-    speedMax: 0.09,
-    sizeMin: 0.7,
-    sizeMax: 1.8,
-    linkDistance: isMobile ? 58 : 82,
-    mouseRadius: 80,
-    colors: [
-      "99, 210, 255",
-      "70, 170, 255",
-      "255, 210, 90",
-      "255, 185, 60"
-    ]
-  };
-
-  const holograms = [
-    {
-      type: "hourglass",
-      xRatio: isMobile ? 0.12 : 0.18,
-      yRatio: isMobile ? 0.22 : 0.34,
-      scale: isMobile ? 0.95 : 1.35,
-      color: "99, 210, 255",
-      accent: "255, 210, 90",
-      drift: 0.18
-    },
-    {
-      type: "album",
-      xRatio: isMobile ? 0.88 : 0.82,
-      yRatio: isMobile ? 0.22 : 0.34,
-      scale: isMobile ? 0.90 : 1.28,
-      color: "255, 210, 90",
-      accent: "99, 210, 255",
-      drift: 0.16
-    },
-    {
-      type: "family",
-      xRatio: isMobile ? 0.82 : 0.75,
-      yRatio: isMobile ? 0.58 : 0.70,
-      scale: isMobile ? 0.72 : 1.00,
-      color: "255, 210, 90",
-      accent: "99, 210, 255",
-      drift: 0.12
-    }
-  ];
-
-  function rand(min, max) {
-    return Math.random() * (max - min) + min;
+  if(!name.value.trim()){ name.classList.add('err'); valid = false; }
+  if(!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){
+    email.classList.add('err'); valid = false;
   }
-
-  function pick(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
-  }
-
-  function createParticle() {
-    const color = pick(CONFIG.colors);
-    return {
-      x: rand(0, w),
-      y: rand(0, h),
-      vx: rand(CONFIG.speedMin, CONFIG.speedMax) * (Math.random() < 0.5 ? -1 : 1),
-      vy: rand(CONFIG.speedMin, CONFIG.speedMax) * (Math.random() < 0.5 ? -1 : 1),
-      r: rand(CONFIG.sizeMin, CONFIG.sizeMax),
-      a: rand(0.14, 0.72),
-      twinkle: rand(0.0025, 0.009),
-      hue: color
-    };
-  }
-
-  function resize() {
-    w = window.innerWidth;
-    h = window.innerHeight;
-
-    canvas.width = Math.floor(w * DPR);
-    canvas.height = Math.floor(h * DPR);
-    canvas.style.width = w + 'px';
-    canvas.style.height = h + 'px';
-
-    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-
-    particles = [];
-    for (let i = 0; i < CONFIG.count; i++) {
-      particles.push(createParticle());
-    }
-  }
-
-  function drawParticle(p) {
-    const alpha = Math.max(0.05, Math.min(1, p.a));
-
-    ctx.beginPath();
-    ctx.fillStyle = `rgba(${p.hue}, ${alpha * 0.10})`;
-    ctx.arc(p.x, p.y, p.r * 4, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.fillStyle = `rgba(${p.hue}, ${alpha})`;
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fill();
-  }
-
-  function drawLinks() {
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const p1 = particles[i];
-        const p2 = particles[j];
-        const dx = p1.x - p2.x;
-        const dy = p1.y - p2.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < CONFIG.linkDistance) {
-          const alpha = (1 - dist / CONFIG.linkDistance) * 0.05;
-          const gradient = ctx.createLinearGradient(p1.x, p1.y, p2.x, p2.y);
-          gradient.addColorStop(0, `rgba(${p1.hue}, ${alpha})`);
-          gradient.addColorStop(1, `rgba(${p2.hue}, ${alpha})`);
-
-          ctx.beginPath();
-          ctx.strokeStyle = gradient;
-          ctx.lineWidth = 0.5;
-          ctx.moveTo(p1.x, p1.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.stroke();
-        }
-      }
-    }
-  }
-
-  function updateParticle(p) {
-    p.x += p.vx;
-    p.y += p.vy;
-
-    p.a += (Math.random() - 0.5) * p.twinkle;
-    p.a = Math.max(0.12, Math.min(0.82, p.a));
-
-    if (p.x < -20) p.x = w + 20;
-    if (p.x > w + 20) p.x = -20;
-    if (p.y < -20) p.y = h + 20;
-    if (p.y > h + 20) p.y = -20;
-
-    if (mouse.x !== null && mouse.y !== null) {
-      const dx = p.x - mouse.x;
-      const dy = p.y - mouse.y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-
-      if (dist < CONFIG.mouseRadius && dist > 0) {
-        const force = (CONFIG.mouseRadius - dist) / CONFIG.mouseRadius;
-        p.x += (dx / dist) * force * 0.22;
-        p.y += (dy / dist) * force * 0.22;
-      }
-    }
-  }
-
-  function drawBackgroundGlow() {
-    const g1 = ctx.createRadialGradient(w * 0.24, h * 0.18, 0, w * 0.24, h * 0.18, Math.min(w, h) * 0.26);
-    g1.addColorStop(0, 'rgba(80,160,255,0.045)');
-    g1.addColorStop(1, 'rgba(80,160,255,0)');
-
-    const g2 = ctx.createRadialGradient(w * 0.78, h * 0.30, 0, w * 0.78, h * 0.30, Math.min(w, h) * 0.20);
-    g2.addColorStop(0, 'rgba(255,210,90,0.035)');
-    g2.addColorStop(1, 'rgba(255,210,90,0)');
-
-    ctx.fillStyle = g1;
-    ctx.fillRect(0, 0, w, h);
-
-    ctx.fillStyle = g2;
-    ctx.fillRect(0, 0, w, h);
-  }
-
-  function beginStroke(color, alpha, width) {
-    ctx.strokeStyle = `rgba(${color}, ${alpha})`;
-    ctx.lineWidth = width;
-    ctx.shadowBlur = 26;
-    ctx.shadowColor = `rgba(${color}, ${Math.min(1, alpha * 1.15)})`;
-  }
-
-  function beginFill(color, alpha) {
-    ctx.fillStyle = `rgba(${color}, ${alpha})`;
-    ctx.shadowBlur = 28;
-    ctx.shadowColor = `rgba(${color}, ${Math.min(1, alpha * 1.2)})`;
-  }
-
-  function endGlow() {
-    ctx.shadowBlur = 0;
-    ctx.shadowColor = 'transparent';
-  }
-
-  function roundedRectPath(x, y, width, height, radius) {
-    if (ctx.roundRect) {
-      ctx.beginPath();
-      ctx.roundRect(x, y, width, height, radius);
-      return;
-    }
-
-    ctx.beginPath();
-    ctx.moveTo(x + radius, y);
-    ctx.lineTo(x + width - radius, y);
-    ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
-    ctx.lineTo(x + width, y + height - radius);
-    ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
-    ctx.lineTo(x + radius, y + height);
-    ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
-    ctx.lineTo(x, y + radius);
-    ctx.quadraticCurveTo(x, y, x + radius, y);
-  }
-
-  function drawHoloBase(cx, cy, width, color, alpha) {
-    beginStroke(color, alpha * 1.25, 1.1);
-    ctx.beginPath();
-    ctx.ellipse(cx, cy, width * 0.42, width * 0.08, 0, 0, Math.PI * 2);
-    ctx.stroke();
-
-    beginStroke(color, alpha * 0.55, 0.8);
-    ctx.beginPath();
-    ctx.ellipse(cx, cy, width * 0.28, width * 0.04, 0, 0, Math.PI * 2);
-    ctx.stroke();
-
-    endGlow();
-  }
-
-  function drawHourglass(cx, cy, s, color, accent, pulse) {
-    const W = 68 * s;
-    const H = 118 * s;
-    const sandPulse = (Math.sin(time * 3.2) + 1) * 0.5;
-
-    drawHoloBase(cx, cy + H * 0.58, W, accent, 0.14 + pulse);
-
-    beginStroke(color, 0.42 + pulse, 1.2);
-    ctx.beginPath();
-    ctx.moveTo(cx - W/2, cy - H/2);
-    ctx.lineTo(cx + W/2, cy - H/2);
-    ctx.moveTo(cx - W/2, cy + H/2);
-    ctx.lineTo(cx + W/2, cy + H/2);
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.moveTo(cx - W*0.32, cy - H*0.37);
-    ctx.lineTo(cx + W*0.32, cy - H*0.37);
-    ctx.lineTo(cx + W*0.08, cy - H*0.05);
-    ctx.lineTo(cx + W*0.03, cy);
-    ctx.lineTo(cx + W*0.08, cy + H*0.05);
-    ctx.lineTo(cx + W*0.32, cy + H*0.37);
-    ctx.lineTo(cx - W*0.32, cy + H*0.37);
-    ctx.lineTo(cx - W*0.08, cy + H*0.05);
-    ctx.lineTo(cx - W*0.03, cy);
-    ctx.lineTo(cx - W*0.08, cy - H*0.05);
-    ctx.closePath();
-    ctx.stroke();
-
-    beginFill(accent, 0.14 + pulse * 0.55);
-    ctx.beginPath();
-    ctx.moveTo(cx - W*0.14, cy - H*0.10);
-    ctx.lineTo(cx + W*0.14, cy - H*0.10);
-    ctx.lineTo(cx, cy - H*0.015);
-    ctx.closePath();
-    ctx.fill();
-
-    const bottomHeight = 0.10 + sandPulse * 0.08;
-    ctx.beginPath();
-    ctx.moveTo(cx - W*0.13, cy + H*0.24);
-    ctx.lineTo(cx + W*0.13, cy + H*0.24);
-    ctx.lineTo(cx + W*0.09, cy + H*(0.24 + bottomHeight));
-    ctx.lineTo(cx - W*0.09, cy + H*(0.24 + bottomHeight));
-    ctx.closePath();
-    ctx.fill();
-
-    beginStroke(accent, 0.26 + pulse * 0.5, 0.95);
-    ctx.beginPath();
-    ctx.moveTo(cx, cy - H*0.01);
-    ctx.lineTo(cx, cy + H*0.12);
-    ctx.stroke();
-
-    for (let i = 0; i < 4; i++) {
-      const dy = (i * 0.06 + (time * 0.25 % 0.06));
-      beginFill(accent, 0.18 + pulse * 0.45);
-      ctx.beginPath();
-      ctx.arc(cx, cy + H * dy, 1.2 * s, 0, Math.PI * 2);
-      ctx.fill();
-    }
-
-    endGlow();
-  }
-
-  function drawAlbum(cx, cy, s, color, accent, pulse) {
-    const W = 104 * s;
-    const H = 70 * s;
-    const open = 0.18 + ((Math.sin(time * 1.2) + 1) * 0.5) * 0.16;
-
-    drawHoloBase(cx, cy + H * 0.72, W, accent, 0.10 + pulse);
-
-    beginStroke(color, 0.42 + pulse, 1.15);
-
-    ctx.beginPath();
-    ctx.moveTo(cx - W*0.42, cy - H*0.42);
-    ctx.lineTo(cx - W*0.06, cy - H*(0.42 + open*0.4));
-    ctx.lineTo(cx - W*0.06, cy + H*(0.42 + open*0.3));
-    ctx.lineTo(cx - W*0.42, cy + H*0.42);
-    ctx.closePath();
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.moveTo(cx + W*0.06, cy - H*(0.42 + open*0.4));
-    ctx.lineTo(cx + W*0.42, cy - H*0.42);
-    ctx.lineTo(cx + W*0.42, cy + H*0.42);
-    ctx.lineTo(cx + W*0.06, cy + H*(0.42 + open*0.3));
-    ctx.closePath();
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.moveTo(cx - W*0.03, cy - H*0.48);
-    ctx.lineTo(cx - W*0.03, cy + H*0.48);
-    ctx.moveTo(cx + W*0.03, cy - H*0.48);
-    ctx.lineTo(cx + W*0.03, cy + H*0.48);
-    ctx.stroke();
-
-    beginStroke(accent, 0.28 + pulse * 0.45, 0.95);
-    roundedRectPath(cx + W*0.12, cy - H*0.14, W*0.18, H*0.16, 4 * s);
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.arc(cx + W*0.18, cy - H*0.08, 3.2 * s, 0, Math.PI * 2);
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.moveTo(cx + W*0.12, cy + H*0.02);
-    ctx.lineTo(cx + W*0.19, cy - H*0.02);
-    ctx.lineTo(cx + W*0.25, cy + H*0.03);
-    ctx.stroke();
-
-    endGlow();
-  }
-
-  function drawFamily(cx, cy, s, color, accent, pulse) {
-    drawHoloBase(cx, cy + 40 * s, 86 * s, accent, 0.12 + pulse);
-
-    beginStroke(color, 0.44 + pulse, 1.15);
-
-    ctx.beginPath();
-    ctx.arc(cx - 22 * s, cy - 14 * s, 9 * s, 0, Math.PI * 2);
-    ctx.arc(cx + 22 * s, cy - 14 * s, 9 * s, 0, Math.PI * 2);
-    ctx.arc(cx, cy - 4 * s, 7 * s, 0, Math.PI * 2);
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.moveTo(cx - 22 * s, cy - 5 * s);
-    ctx.lineTo(cx - 22 * s, cy + 20 * s);
-
-    ctx.moveTo(cx + 22 * s, cy - 5 * s);
-    ctx.lineTo(cx + 22 * s, cy + 20 * s);
-
-    ctx.moveTo(cx, cy + 2 * s);
-    ctx.lineTo(cx, cy + 24 * s);
-    ctx.stroke();
-
-    beginStroke(accent, 0.28 + pulse * 0.5, 1.0);
-    ctx.beginPath();
-    ctx.moveTo(cx - 34 * s, cy + 8 * s);
-    ctx.lineTo(cx - 10 * s, cy + 8 * s);
-    ctx.lineTo(cx + 10 * s, cy + 8 * s);
-    ctx.lineTo(cx + 34 * s, cy + 8 * s);
-    ctx.stroke();
-
-    endGlow();
-  }
-
-  function drawHologram(holo, index) {
-    const baseX = w * holo.xRatio;
-    const baseY = h * holo.yRatio;
-    const floatY = Math.sin(time * holo.drift + index * 1.6) * 10;
-    const floatX = Math.cos(time * holo.drift * 0.8 + index * 0.7) * 4.5;
-    const pulse = (Math.sin(time * 1.5 + index) + 1) * 0.06;
-
-    const x = baseX + floatX;
-    const y = baseY + floatY;
-    const s = holo.scale;
-
-    ctx.save();
-    ctx.globalCompositeOperation = "screen";
-
-    if (holo.type === "hourglass") drawHourglass(x, y, s, holo.color, holo.accent, pulse);
-    if (holo.type === "album") drawAlbum(x, y, s, holo.color, holo.accent, pulse);
-    if (holo.type === "family") drawFamily(x, y, s, holo.color, holo.accent, pulse);
-
-    ctx.restore();
-  }
-
-  function animate() {
-    time += 0.01;
-    ctx.clearRect(0, 0, w, h);
-
-    drawBackgroundGlow();
-    drawLinks();
-
-    for (const p of particles) {
-      updateParticle(p);
-      drawParticle(p);
-    }
-
-    for (let i = 0; i < holograms.length; i++) {
-      drawHologram(holograms[i], i);
-    }
-
-    animationId = requestAnimationFrame(animate);
-  }
-
-  function onMouseMove(e) {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  }
-
-  function onMouseLeave() {
-    mouse.x = null;
-    mouse.y = null;
-  }
-
-  resize();
-  animate();
-
-  window.addEventListener('resize', resize, { passive: true });
-  window.addEventListener('mousemove', onMouseMove, { passive: true });
-  window.addEventListener('mouseleave', onMouseLeave, { passive: true });
-
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden && animationId) {
-      cancelAnimationFrame(animationId);
-      animationId = null;
-    } else if (!document.hidden && !animationId) {
-      animate();
-    }
+  if(!valid){ showToast('Please fill in the required fields.', true); return; }
+
+  pushEvent('form_submit', {
+    form_name: 'solexi_signup',
+    user_name: name.value.trim()
   });
+
+  showToast('Thank you ' + name.value.trim() + ' — we will contact you very soon.', false);
+  form.reset();
+  [name, email].forEach(function(f){ f.classList.remove('err'); });
+});
+
+/* CTA clicks tracking */
+document.querySelectorAll('.btn-primary, .btn-outline, .nav-cta').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    pushEvent('cta_click', { cta_text: this.textContent.trim(), cta_href: this.getAttribute('href') });
+  });
+});
+
 })();
 </script>
 </body>
