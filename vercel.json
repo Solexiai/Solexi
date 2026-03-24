@@ -1,41 +1,4 @@
 {
-  "redirects": [
-    { "source": "/comprendre", "destination": "/understand/", "permanent": true },
-    { "source": "/comprendre/", "destination": "/understand/", "permanent": true },
-    { "source": "/comprendre.html", "destination": "/understand/", "permanent": true },
-
-    { "source": "/problem", "destination": "/problems/", "permanent": true },
-    { "source": "/problem/", "destination": "/problems/", "permanent": true },
-    { "source": "/problem.html", "destination": "/problems/", "permanent": true },
-
-    { "source": "/problemes", "destination": "/problems/", "permanent": true },
-    { "source": "/problemes/", "destination": "/problems/", "permanent": true },
-    { "source": "/problemes.html", "destination": "/problems/", "permanent": true },
-
-    { "source": "/solution", "destination": "/solutions/", "permanent": true },
-    { "source": "/solution/", "destination": "/solutions/", "permanent": true },
-    { "source": "/solution.html", "destination": "/solutions/", "permanent": true },
-
-    { "source": "/understand.html", "destination": "/understand/", "permanent": true },
-    { "source": "/problems.html", "destination": "/problems/", "permanent": true },
-    { "source": "/solutions.html", "destination": "/solutions/", "permanent": true },
-    { "source": "/use-cases.html", "destination": "/use-cases/", "permanent": true },
-    { "source": "/research.html", "destination": "/research/", "permanent": true },
-
-    { "source": "/how-it-works.html", "destination": "/how-it-works/", "permanent": true },
-
-    { "source": "/fr/vedette", "destination": "/vedette/", "permanent": true },
-    { "source": "/fr/vedette/", "destination": "/vedette/", "permanent": true },
-    { "source": "/fr/vedette.html", "destination": "/vedette/", "permanent": true },
-
-    { "source": "/celebrities", "destination": "/celebrities/", "permanent": true },
-    { "source": "/celebrities.html", "destination": "/celebrities/", "permanent": true },
-    { "source": "/celebrities/index.html", "destination": "/celebrities/", "permanent": true }
-  ]
-}
-
-
-{
   "cleanUrls": true,
   "trailingSlash": true,
   "headers": [
@@ -62,4 +25,3 @@
     }
   ]
 }
-

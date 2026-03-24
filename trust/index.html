@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══ PRIMARY SEO ═════════════════════════════════════ -->
+  <title>Trust Center — Privacy, Security & AI Policy | Solexi</title>
+  <meta name="description" content="Solexi Trust Center: complete privacy policy (PIPEDA, Loi 25), security architecture (TLS 1.3, AES-256, RBAC, MFA), and AI policy (consent-first, transparency, no vault training)." />
+  <meta name="keywords" content="Solexi privacy policy, Solexi security, AI policy, digital legacy security, PIPEDA, Loi 25, AES-256, TLS 1.3, data protection, trust center" />
+  <meta name="author" content="Solexi.ai Inc." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="theme-color" content="#f7f4ef" />
+
+  <!-- ═══ CANONICAL & HREFLANG ════════════════════════════ -->
+  <link rel="canonical" href="https://solexi.ai/trust/" />
+  <link rel="alternate" hreflang="en"        href="https://solexi.ai/trust/" />
+  <link rel="alternate" hreflang="fr"        href="https://solexi.ai/fr/trust/" />
+  <link rel="alternate" hreflang="es"        href="https://solexi.ai/es/trust/" />
+  <link rel="alternate" hreflang="x-default" href="https://solexi.ai/trust/" />
+
+  <!-- ═══ OPEN GRAPH ═════════════════════════════════════ -->
+  <meta property="og:type"             content="website" />
+  <meta property="og:site_name"        content="Solexi.ai" />
+  <meta property="og:locale"           content="en_US" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:url"              content="https://solexi.ai/trust/" />
+  <meta property="og:title"            content="Trust Center — Privacy, Security & AI Policy | Solexi" />
+  <meta property="og:description"      content="Full transparency: how Solexi protects your data, your privacy, and your trust." />
+  <meta property="og:image"            content="https://solexi.ai/images/og-trust.jpg" />
+  <meta property="og:image:width"      content="1200" />
+  <meta property="og:image:height"     content="630" />
+
+  <!-- ═══ TWITTER CARD ═══════════════════════════════════ -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@SolexiAI" />
+  <meta name="twitter:title"       content="Trust Center | Solexi" />
+  <meta name="twitter:description" content="Privacy, Security & AI Policy — full transparency." />
+  <meta name="twitter:image"       content="https://solexi.ai/images/og-trust.jpg" />
+
+  <!-- ═══ FAVICONS ═══════════════════════════════════════ -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png"     href="/favicon.png" />
+  <link rel="apple-touch-icon"          href="/apple-touch-icon.png" />
+
+  <!-- ═══ GTM ═════════════════════════════════════════════ -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5DZLVZS9');</script>
+
+  <!-- ═══ FONTS ═══════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- ═══ SCHEMA.ORG ═════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "@id":"https://solexi.ai/trust/#webpage",
+    "url":"https://solexi.ai/trust/",
+    "name":"Trust Center — Privacy, Security & AI Policy | Solexi",
+    "description":"Complete privacy policy, security architecture, and AI policy for the Solexi digital legacy platform.",
+    "inLanguage":"en",
+    "isPartOf":{"@type":"WebSite","@id":"https://solexi.ai/#website"},
+    "breadcrumb":{
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://solexi.ai/"},
+        {"@type":"ListItem","position":2,"name":"Trust Center","item":"https://solexi.ai/trust/"}
+      ]
+    },
+    "publisher":{
+      "@type":"Organization",
+      "@id":"https://solexi.ai/#organization",
+      "name":"Solexi.ai Inc.",
+      "url":"https://solexi.ai",
+      "address":{"@type":"PostalAddress","streetAddress":"527 rue Lacasse","addressLocality":"Terrebonne","addressRegion":"QC","postalCode":"J6W 4Y7","addressCountry":"CA"},
+      "contactPoint":[
+        {"@type":"ContactPoint","email":"Daniel@solexi.ai","contactType":"Privacy Officer"},
+        {"@type":"ContactPoint","email":"security@solexi.ai","contactType":"Security"}
+      ]
+    },
+    "dateModified":"2026-03-23"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Does Solexi sell personal data?","acceptedAnswer":{"@type":"Answer","text":"No. Solexi does not sell personal information and does not use vault content for advertising, profiling, or AI model training."}},
+      {"@type":"Question","name":"What encryption does Solexi use?","acceptedAnswer":{"@type":"Answer","text":"TLS 1.3 for data in transit and AES-256-GCM for data at rest. Keys are managed via cloud KMS with annual rotation."}},
+      {"@type":"Question","name":"Is Solexi compliant with Loi 25 (Québec)?","acceptedAnswer":{"@type":"Answer","text":"Yes. Privacy Impact Assessments are performed for new features, an incident register is maintained, and 72-hour notification is applied for serious incidents."}},
+      {"@type":"Question","name":"Does Solexi use AI on my vault content?","acceptedAnswer":{"@type":"Answer","text":"Only with your explicit opt-in consent. AI features are clearly identified in the interface. Your vault content is never used to train public AI models."}},
+      {"@type":"Question","name":"How can I delete my data?","acceptedAnswer":{"@type":"Answer","text":"Email Daniel@solexi.ai with subject 'Privacy Rights Request'. Data is purged from active storage immediately and from backups within 90 days."}}
+    ]
+  }
+  </script>
+
+  <style>
+  /* ═══════════════════════════════════════════════════════
+     TRUST CENTER — Design Solexi Scandinave
+  ═══════════════════════════════════════════════════════ */
+  :root {
+    --white:#fff; --off-white:#f7f4ef; --cream:#ede8df;
+    --linen:#ddd0b3; --stone:#c4bba8; --stone-text:#9a9080;
+    --slate:#8fa3b1; --slate-mid:#6e8fa0; --slate-deep:#4a7082;
+    --charcoal:#3a3530; --ink:#1e1c1a;
+    --ok:#4a9e6e; --warn:#c4960f; --info:#5a8aa0;
+    --serif:'Cormorant Garamond',Georgia,serif;
+    --sans:'Inter',system-ui,sans-serif;
+    --r:3px; --shadow:0 4px 20px rgba(30,28,26,0.08);
+    --t:0.25s cubic-bezier(0.4,0,0.2,1);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--off-white);color:var(--charcoal);-webkit-font-smoothing:antialiased}
+  a{color:var(--slate-deep);text-decoration:none}
+  a:hover{text-decoration:underline}
+  img{display:block;max-width:100%}
+  ::selection{background:var(--slate);color:var(--white)}
+
+  /* ── NAV ───────────────────────────────────────── */
+  .nav{
+    position:sticky;top:0;z-index:100;
+    background:rgba(247,244,239,0.94);
+    backdrop-filter:blur(16px) saturate(180%);
+    border-bottom:1px solid rgba(200,191,175,0.35);
+    box-shadow:0 1px 16px rgba(30,28,26,0.06);
+  }
+  .nav-in{
+    max-width:1160px;margin:0 auto;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 28px;height:60px;
+  }
+  .logo{
+    display:flex;align-items:center;gap:9px;
+    font-family:var(--serif);font-size:16px;font-weight:500;
+    letter-spacing:.08em;color:var(--ink);flex-shrink:0;
+  }
+  .logo svg{flex-shrink:0}
+  .nav-links{display:flex;align-items:center;gap:4px}
+  .nav-links a{
+    font-size:12px;font-weight:400;color:var(--stone-text);
+    padding:6px 12px;border-radius:16px;letter-spacing:.04em;
+    transition:color var(--t),background var(--t);white-space:nowrap;
+  }
+  .nav-links a:hover,.nav-links a.on{color:var(--ink);background:var(--cream);text-decoration:none}
+  .nav-cta{
+    background:var(--slate-deep)!important;color:var(--white)!important;
+    padding:8px 20px!important;border-radius:24px!important;
+    font-weight:500!important;box-shadow:0 2px 12px rgba(74,112,130,.3);
+    transition:background var(--t),transform var(--t)!important;margin-left:8px;
+  }
+  .nav-cta:hover{background:var(--slate-mid)!important;transform:translateY(-1px)}
+  .lang-nav{display:flex;align-items:center;gap:2px;font-size:11px;font-weight:500;margin-left:14px}
+  .lang-nav a{padding:3px 8px;border-radius:3px;color:var(--stone-text);transition:all var(--t)}
+  .lang-nav a.on{color:var(--ink);background:var(--cream)}
+  .lang-nav span{color:rgba(200,191,175,.5);font-size:9px}
+  .burger{display:none;flex-direction:column;gap:5px;background:0;border:0;cursor:pointer;padding:4px}
+  .burger span{display:block;height:1.5px;background:var(--ink);border-radius:2px}
+  .burger span:nth-child(1){width:20px} .burger span:nth-child(2){width:14px} .burger span:nth-child(3){width:17px}
+
+  /* ── HERO ───────────────────────────────────────── */
+  .trust-hero{
+    padding:80px 28px 40px;text-align:center;
+    background:var(--white);border-bottom:1px solid var(--cream);
+  }
+  .trust-hero .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:10px;font-weight:500;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--slate-mid);margin-bottom:20px;
+  }
+  .trust-hero .eyebrow::before,.trust-hero .eyebrow::after{
+    content:'';display:block;width:20px;height:1px;background:var(--slate);
+  }
+  .trust-hero h1{
+    font-family:var(--serif);font-size:clamp(36px,5vw,60px);
+    font-weight:300;line-height:1.1;color:var(--ink);margin-bottom:14px;
+  }
+  .trust-hero h1 em{font-style:italic;color:var(--slate-deep)}
+  .trust-hero .subtitle{
+    font-size:16px;font-weight:300;line-height:1.8;
+    color:var(--stone-text);max-width:560px;margin:0 auto 24px;
+  }
+  .meta-badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:20px}
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    border:1px solid var(--cream);background:var(--off-white);
+    padding:5px 12px;border-radius:20px;font-size:12px;color:var(--stone-text);
+    white-space:nowrap;
+  }
+  .badge strong{color:var(--charcoal);font-weight:600}
+  .dot{width:7px;height:7px;border-radius:50%;display:inline-block;flex-shrink:0}
+  .dot-ok{background:var(--ok)} .dot-warn{background:var(--warn)} .dot-info{background:var(--info)}
+
+  /* ── TABS ───────────────────────────────────────── */
+  .tabs-bar{
+    position:sticky;top:60px;z-index:50;
+    background:var(--off-white);border-bottom:1px solid var(--cream);
+    padding:0 28px;
+  }
+  .tabs-in{
+    max-width:1160px;margin:0 auto;
+    display:flex;gap:0;overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .tabs-in::-webkit-scrollbar{display:none}
+  .tab-btn{
+    flex-shrink:0;padding:14px 24px;
+    font-size:13px;font-weight:400;color:var(--stone-text);
+    border:none;background:none;cursor:pointer;
+    border-bottom:2px solid transparent;
+    transition:color var(--t),border-color var(--t);
+    font-family:var(--sans);letter-spacing:.04em;
+    white-space:nowrap;
+  }
+  .tab-btn:hover{color:var(--ink)}
+  .tab-btn.active{
+    color:var(--slate-deep);font-weight:500;
+    border-bottom-color:var(--slate-deep);
+  }
+  .tab-icon{margin-right:6px;font-size:14px}
+
+  /* ── TAB CONTENT ────────────────────────────────── */
+  .tab-panel{display:none;padding:48px 28px 80px}
+  .tab-panel.active{display:block}
+  .panel-in{max-width:920px;margin:0 auto}
+
+  /* ── CARDS / SECTIONS ──────────────────────────── */
+  .card{
+    background:var(--white);border:1px solid var(--cream);
+    border-radius:var(--r);padding:32px;margin-bottom:24px;
+    box-shadow:var(--shadow);
+  }
+  .card h2{
+    font-family:var(--serif);font-size:24px;font-weight:400;
+    color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:10px;
+  }
+  .card h2 .icon{font-size:20px}
+  .card h3{
+    font-size:14px;font-weight:600;color:var(--slate-deep);
+    margin:20px 0 8px;letter-spacing:.02em;
+  }
+  .card p{font-size:14px;line-height:1.8;color:var(--stone-text);margin:6px 0}
+  .card p strong{color:var(--charcoal)}
+  .card ul{margin:8px 0 8px 18px}
+  .card li{font-size:14px;line-height:1.75;color:var(--stone-text);margin:4px 0}
+  .card li strong{color:var(--charcoal)}
+
+  /* ── TABLE ──────────────────────────────────────── */
+  .tw{overflow-x:auto;margin:14px 0}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{border:1px solid var(--cream);padding:10px 12px;text-align:left;vertical-align:top}
+  th{background:var(--off-white);color:var(--slate-deep);font-weight:600;font-size:12px;letter-spacing:.04em}
+  td{color:var(--stone-text)}
+  td strong{color:var(--charcoal)}
+  tr:hover td{background:rgba(143,163,177,.04)}
+
+  /* ── HIGHLIGHT BOX ─────────────────────────────── */
+  .hl{
+    padding:14px 18px;border-radius:var(--r);
+    border-left:3px solid var(--slate);
+    background:rgba(143,163,177,.06);
+    color:var(--stone-text);font-size:13px;
+    margin:14px 0;line-height:1.7;
+  }
+  .hl strong{color:var(--charcoal)}
+  .hl-ok{border-left-color:var(--ok);background:rgba(74,158,110,.05)}
+  .hl-warn{border-left-color:var(--warn);background:rgba(196,150,15,.05)}
+
+  /* ── GRID ───────────────────────────────────────── */
+  .g2{display:grid;gap:16px;grid-template-columns:1fr}
+  @media(min-width:720px){.g2{grid-template-columns:1fr 1fr}}
+
+  /* ── CONTROL CARD (security) ───────────────────── */
+  .ctrl{
+    background:var(--off-white);border:1px solid var(--cream);
+    border-radius:var(--r);padding:20px;
+  }
+  .ctrl-head{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+  .ctrl-icon{font-size:18px;flex-shrink:0}
+  .ctrl-title{font-weight:600;font-size:13px;color:var(--ink)}
+  .ctrl-status{
+    font-size:10px;font-weight:600;padding:3px 10px;border-radius:20px;
+    margin-left:auto;white-space:nowrap;flex-shrink:0;
+  }
+  .s-ok{background:rgba(74,158,110,.1);color:var(--ok);border:1px solid rgba(74,158,110,.2)}
+  .s-warn{background:rgba(196,150,15,.08);color:var(--warn);border:1px solid rgba(196,150,15,.2)}
+  .s-info{background:rgba(90,138,160,.08);color:var(--info);border:1px solid rgba(90,138,160,.2)}
+  .ctrl p{font-size:12px;margin:3px 0;color:var(--stone-text)}
+
+  /* ── ROADMAP TIMELINE ──────────────────────────── */
+  .phase{display:flex;gap:16px;margin-bottom:20px;position:relative}
+  .ph-marker{
+    flex-shrink:0;width:36px;height:36px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;font-size:11px;margin-top:2px;
+  }
+  .ph1{background:rgba(74,158,110,.12);color:var(--ok);border:1px solid rgba(74,158,110,.25)}
+  .ph2{background:rgba(196,150,15,.1);color:var(--warn);border:1px solid rgba(196,150,15,.25)}
+  .ph3{background:rgba(90,138,160,.1);color:var(--info);border:1px solid rgba(90,138,160,.25)}
+  .ph-body{flex:1}
+  .ph-title{font-weight:600;font-size:14px;color:var(--ink);margin-bottom:3px}
+  .ph-meta{font-size:11px;color:var(--stone-text);margin-bottom:6px}
+  .ph-items{list-style:none;padding:0;margin:0}
+  .ph-items li{font-size:12px;color:var(--stone-text);padding:2px 0;display:flex;gap:6px}
+  .ph-items li::before{content:"›";color:var(--slate-deep);font-weight:700;flex-shrink:0}
+
+  /* ── TOC ────────────────────────────────────────── */
+  .toc{margin-bottom:24px}
+  .toc a{
+    display:block;padding:6px 0;font-size:13px;color:var(--stone-text);
+    border-bottom:1px solid rgba(200,191,175,.3);transition:color var(--t);
+  }
+  .toc a:hover{color:var(--ink);text-decoration:none}
+  .toc a:last-child{border-bottom:0}
+  .toc-label{font-size:10px;color:var(--stone);margin-left:6px;opacity:.7}
+
+  /* ── FOOTER ────────────────────────────────────── */
+  footer{
+    background:var(--ink);color:rgba(196,187,168,.55);padding:48px 28px 28px;
+  }
+  .foot-in{
+    max-width:1160px;margin:0 auto;
+    display:flex;justify-content:space-between;align-items:center;
+    flex-wrap:wrap;gap:16px;font-size:12px;
+  }
+  .foot-links{display:flex;gap:20px}
+  .foot-links a{color:rgba(196,187,168,.55);transition:color var(--t)}
+  .foot-links a:hover{color:rgba(247,244,239,.8);text-decoration:none}
+  .foot-langs{display:flex;gap:6px}
+  .foot-langs a{padding:3px 10px;border-radius:2px;color:rgba(196,187,168,.45);font-size:11px;transition:all var(--t)}
+  .foot-langs a.on{color:rgba(247,244,239,.8);background:rgba(255,255,255,.06)}
+
+  /* ── MOBILE ────────────────────────────────────── */
+  @media(max-width:900px){
+    .nav-links{display:none}
+    .burger{display:flex}
+    .tab-btn{padding:12px 18px;font-size:12px}
+    .card{padding:24px 20px}
+    .trust-hero{padding:72px 20px 32px}
+    .tab-panel{padding:32px 20px 64px}
+    .foot-in{flex-direction:column;align-items:flex-start}
+  }
+  @media(max-width:480px){
+    .meta-badges{justify-content:flex-start}
+    .g2{grid-template-columns:1fr}
+  }
+  </style>
+</head>
+
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DZLVZS9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- ════════════════════════════════════════════
+     NAV
+════════════════════════════════════════════ -->
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav-in">
+    <a href="/" class="logo" aria-label="Solexi.ai — Home">
+      <svg width="24" height="24" viewBox="0 0 26 26" fill="none" aria-hidden="true"><polygon points="13,1 25,7 25,19 13,25 1,19 1,7" fill="#1e1c1a"/><polygon points="13,5 21,9.5 21,16.5 13,21 5,16.5 5,9.5" fill="none" stroke="#8fa3b1" stroke-width="0.8"/><circle cx="13" cy="13" r="1.8" fill="#8fa3b1"/></svg>
+      SOLEXI.AI
+    </a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/solutions/">Solutions</a>
+      <a href="/trust/" class="on" aria-current="page">Trust</a>
+      <a href="/#form" class="nav-cta">Get Started</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <div class="lang-nav" aria-label="Language">
+        <a href="/trust/" class="on" aria-current="page">EN</a>
+        <span>·</span>
+        <a href="/fr/trust/">FR</a>
+        <span>·</span>
+        <a href="/es/trust/">ES</a>
+      </div>
+      <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════ -->
+<section class="trust-hero">
+  <span class="eyebrow">Solexi Trust Center</span>
+  <h1>Transparency.<br><em>By design.</em></h1>
+  <p class="subtitle">Your memories, your data, your rules. Here's exactly how we protect them — with honesty, precision, and no marketing fluff.</p>
+  <div class="meta-badges">
+    <span class="badge"><span class="dot dot-ok"></span> TLS 1.3 in transit</span>
+    <span class="badge"><span class="dot dot-ok"></span> AES-256 at rest</span>
+    <span class="badge"><span class="dot dot-warn"></span> MFA available</span>
+    <span class="badge"><span class="dot dot-info"></span> Last reviewed: <strong>2026-03-23</strong></span>
+    <span class="badge">Jurisdiction: <strong>Canada / Québec</strong></span>
+    <span class="badge">Entity: <strong>Solexi.ai Inc.</strong></span>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     TABS
+════════════════════════════════════════════ -->
+<div class="tabs-bar" role="tablist" aria-label="Trust Center sections">
+  <div class="tabs-in">
+    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-privacy" id="tab-privacy" data-tab="privacy">
+      <span class="tab-icon">🔒</span>Privacy Policy
+    </button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-security" id="tab-security" data-tab="security">
+      <span class="tab-icon">🛡️</span>Security & Trust
+    </button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-ai" id="tab-ai" data-tab="ai">
+      <span class="tab-icon">🤖</span>AI Policy
+    </button>
+  </div>
+</div>
+
+<main>
+
+<!-- ════════════════════════════════════════════
+     TAB 1 — PRIVACY POLICY
+════════════════════════════════════════════ -->
+<div class="tab-panel active" id="panel-privacy" role="tabpanel" aria-labelledby="tab-privacy">
+<div class="panel-in">
+
+  <!-- TOC -->
+  <div class="card toc">
+    <h2><span class="icon">📋</span> Contents</h2>
+    <a href="#p-summary">Plain-language summary <span class="toc-label">Quick overview</span></a>
+    <a href="#p-scope">Scope <span class="toc-label">Where this applies</span></a>
+    <a href="#p-collection">Personal information we collect</a>
+    <a href="#p-purposes">Why we use it</a>
+    <a href="#p-ai">AI: use, consent, and choices</a>
+    <a href="#p-legal">Legal basis by jurisdiction</a>
+    <a href="#p-retention">Retention and destruction</a>
+    <a href="#p-third">Sharing with third parties</a>
+    <a href="#p-rights">Your rights and choices</a>
+    <a href="#p-incidents">Privacy incidents / breaches</a>
+    <a href="#p-contact">Contact</a>
+  </div>
+
+  <!-- SUMMARY -->
+  <section id="p-summary" class="card">
+    <h2>Plain-language summary</h2>
+    <p>Solexi helps you organize and transmit your digital legacy. To provide the service, we process certain personal information (account details, content you upload, transmission settings). This policy explains what we collect, why, how long we keep it, who we share it with, and your rights.</p>
+    <div class="hl hl-ok">
+      <strong>Key commitment:</strong> We do not sell your personal information. We do not use your vault content to train public AI models. Your data is processed only to deliver the services you request.
+    </div>
+  </section>
+
+  <!-- SCOPE -->
+  <section id="p-scope" class="card">
+    <h2>Scope</h2>
+    <p>This policy applies to our website (<a href="https://solexi.ai">solexi.ai</a>), applications, and services (collectively, the "Services"), including all requests related to transmission to heirs and mandataries.</p>
+  </section>
+
+  <!-- COLLECTION -->
+  <section id="p-collection" class="card">
+    <h2>Personal information we collect</h2>
+    <div class="g2">
+      <div>
+        <h3>1) Information you provide</h3>
+        <ul>
+          <li><strong>Account:</strong> email, username, hashed password, preferences, SSO tokens.</li>
+          <li><strong>Content:</strong> files (photos, videos, documents, audio) and metadata (titles, tags, relationships, notes).</li>
+          <li><strong>Transmission settings:</strong> designation of heirs/mandataries, access rules, trigger conditions, scheduled messages.</li>
+          <li><strong>Support:</strong> messages, attachments, information you provide when contacting us.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>2) Information collected automatically</h3>
+        <ul>
+          <li><strong>Technical data:</strong> IP address, login timestamps, device type, browser, session IDs, pages viewed.</li>
+          <li><strong>Cookies:</strong> Essential cookies only (session, CSRF). No advertising or behavioural tracking.</li>
+          <li><strong>Analytics:</strong> Aggregate, anonymized metrics via privacy-focused tool. No personal identifiers stored.</li>
+        </ul>
+      </div>
+    </div>
+    <h3>3) Sensitive information</h3>
+    <p>Some content may be <strong>highly sensitive</strong> (financial, legal, personal messages). We apply enhanced safeguards: AES-256 encryption at rest and strict access controls.</p>
+  </section>
+
+  <!-- PURPOSES -->
+  <section id="p-purposes" class="card">
+    <h2>Why we use this information</h2>
+    <ul>
+      <li>Provide and secure the Services (account creation, authentication, access control)</li>
+      <li>Store and organize your content according to your explicit instructions</li>
+      <li>Execute your transmission rules to heirs and mandataries at the time you specify</li>
+      <li>Process your requests, complaints, and rights requests</li>
+      <li>Detect and prevent fraud, abuse, and security incidents</li>
+      <li>Comply with legal obligations under Canadian and Québec law</li>
+      <li>Improve reliability using aggregated, anonymized data</li>
+    </ul>
+    <div class="hl">
+      <strong>We never use vault content for advertising, profiling, or AI model training without your explicit, separate consent.</strong>
+    </div>
+  </section>
+
+  <!-- AI -->
+  <section id="p-ai" class="card">
+    <h2>AI: use, consent, and choices</h2>
+    <h3>AI-assisted features</h3>
+    <p>Optional features (content structuring, vault search) may use AI. They require <strong>explicit opt-in consent</strong>. Withdraw consent anytime from account settings.</p>
+    <h3>AI model training</h3>
+    <p><strong>Your vault content is not used to train public AI models.</strong> AI processing operates on your data exclusively, within your vault, subject to your permissions.</p>
+    <h3>Transparency</h3>
+    <p>Active AI features are clearly identified in the interface. You can see what data was processed and disable the feature. See the <a href="#" onclick="switchTab('ai');return false;">AI Policy tab</a> for full details.</p>
+  </section>
+
+  <!-- LEGAL BASIS -->
+  <section id="p-legal" class="card">
+    <h2>Legal basis by jurisdiction</h2>
+    <div class="g2">
+      <div>
+        <h3>Canada & Québec</h3>
+        <ul>
+          <li><strong>Consent:</strong> primary basis (PIPEDA; Loi 25)</li>
+          <li><strong>Necessity:</strong> processing required to fulfill your contract</li>
+          <li><strong>Legal obligation:</strong> retention/disclosure required by law</li>
+          <li><strong>Loi 25:</strong> PIAs for new features; incident register; 72h notification</li>
+        </ul>
+      </div>
+      <div>
+        <h3>European Union (if applicable)</h3>
+        <ul>
+          <li><strong>Consent</strong> (Art. 6(1)(a) GDPR) — optional features, cookies</li>
+          <li><strong>Contract performance</strong> (Art. 6(1)(b)) — core delivery</li>
+          <li><strong>Legal obligations</strong> (Art. 6(1)(c)) — mandatory retention</li>
+          <li><strong>Legitimate interests</strong> (Art. 6(1)(f)) — fraud, security</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- RETENTION -->
+  <section id="p-retention" class="card">
+    <h2>Retention and destruction</h2>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Category</th><th>Retention</th><th>Basis</th><th>Deletion</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Account credentials</strong></td><td>Until deletion + 30 days</td><td>Contract</td><td>Secure delete; backups purged 90 days</td></tr>
+          <tr><td><strong>Vault content</strong></td><td>Until user deletes</td><td>Consent</td><td>Immediate removal; backups 90 days</td></tr>
+          <tr><td><strong>Transmission settings</strong></td><td>Until revoked</td><td>Consent</td><td>Same as vault</td></tr>
+          <tr><td><strong>Security logs</strong></td><td>90 days rolling</td><td>Legitimate interest</td><td>Auto-rotation</td></tr>
+          <tr><td><strong>Support messages</strong></td><td>3 years</td><td>Legal obligation</td><td>Secure deletion</td></tr>
+          <tr><td><strong>Financial records</strong></td><td>7 years</td><td>CRA (tax law)</td><td>Encrypted archive</td></tr>
+          <tr><td><strong>Waitlist / leads</strong></td><td>Opt-out or 2 years</td><td>Consent</td><td>Auto-purge</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- THIRD PARTIES -->
+  <section id="p-third" class="card">
+    <h2>Sharing with third parties</h2>
+    <p>We share data only with vendors processing on our behalf. <strong>We do not sell personal information.</strong></p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Processor</th><th>Purpose</th><th>Location</th><th>Safeguards</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Cloud infrastructure</strong></td><td>Compute, encrypted storage, CDN</td><td>Canada / US</td><td>DPA; AES-256; SCCs</td></tr>
+          <tr><td><strong>Transactional email</strong></td><td>Verification, alerts</td><td>US (SCCs)</td><td>DPA; no marketing use</td></tr>
+          <tr><td><strong>Authentication (SSO)</strong></td><td>OAuth 2.0 token validation</td><td>US / Canada</td><td>Minimal data; SCCs</td></tr>
+          <tr><td><strong>Analytics</strong></td><td>Aggregate metrics</td><td>EU / Canada</td><td>No cookies; no PII</td></tr>
+          <tr><td><strong>Payment processor</strong></td><td>Billing (when live)</td><td>US / Canada</td><td>PCI-DSS compliant</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="hl">Sub-processor list available on request within 5 business days. New processors notified within 30 days.</div>
+  </section>
+
+  <!-- RIGHTS -->
+  <section id="p-rights" class="card">
+    <h2>Your rights and choices</h2>
+    <ul>
+      <li><strong>Access</strong> — receive a copy in structured format</li>
+      <li><strong>Correct</strong> — fix inaccurate or incomplete data</li>
+      <li><strong>Delete</strong> — subject to legal retention obligations</li>
+      <li><strong>Export</strong> — portable ZIP archive anytime</li>
+      <li><strong>Withdraw consent</strong> — without affecting past processing</li>
+      <li><strong>Object</strong> — to legitimate-interest processing</li>
+      <li><strong>Complain</strong> — to CAI (Québec) or applicable authority</li>
+    </ul>
+    <div class="hl">
+      <strong>To exercise a right:</strong> Email <strong>Daniel@solexi.ai</strong> — subject: "Privacy Rights Request" — response within <strong>30 calendar days</strong>.
+    </div>
+  </section>
+
+  <!-- INCIDENTS -->
+  <section id="p-incidents" class="card">
+    <h2>Privacy incidents / breaches</h2>
+    <ul>
+      <li>Notify CAI within <strong>72 hours</strong> of confirming a serious incident (Loi 25)</li>
+      <li>Notify affected individuals without undue delay</li>
+      <li>Maintain confidential incident register</li>
+      <li>Document root cause, corrective actions, outcome</li>
+    </ul>
+    <div class="hl hl-warn"><strong>Report a suspected incident:</strong> security@solexi.ai — triaged within 24 hours.</div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="p-contact" class="card">
+    <h2>Contact</h2>
+    <div class="g2">
+      <div>
+        <h3>Privacy Officer (RPRP)</h3>
+        <ul>
+          <li><strong>Name:</strong> Daniel Tanguay, CEO & Founder</li>
+          <li><strong>Email:</strong> Daniel@solexi.ai</li>
+          <li><strong>Phone:</strong> +1-514-570-3074</li>
+          <li><strong>Address:</strong> 527 rue Lacasse, Terrebonne, QC J6W 4Y7, Canada</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Other contacts</h3>
+        <ul>
+          <li><strong>Security:</strong> security@solexi.ai</li>
+          <li><strong>General:</strong> solexi.ai/contact/</li>
+          <li><strong>CAI (Québec):</strong> <a href="https://www.cai.gouv.qc.ca" target="_blank" rel="noopener">cai.gouv.qc.ca</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     TAB 2 — SECURITY & TRUST
+════════════════════════════════════════════ -->
+<div class="tab-panel" id="panel-security" role="tabpanel" aria-labelledby="tab-security">
+<div class="panel-in">
+
+  <div class="card toc">
+    <h2><span class="icon">📋</span> Contents</h2>
+    <a href="#s-principle">Security principle</a>
+    <a href="#s-controls">Security controls <span class="toc-label">Active / In progress / Planned</span></a>
+    <a href="#s-threats">Threat model</a>
+    <a href="#s-roadmap">24-month roadmap</a>
+    <a href="#s-compliance">Compliance & frameworks</a>
+    <a href="#s-contact">Security contact</a>
+  </div>
+
+  <section id="s-principle" class="card">
+    <h2><span class="icon">🔒</span> Security Principle</h2>
+    <p><strong>Trust is earned through precision, not hype.</strong> This page documents Solexi's security posture honestly — what is active, what is in progress, what is planned. We do not claim certifications we have not obtained.</p>
+    <div class="hl hl-ok"><strong>Founding Cohort (2026):</strong> Solexi is in pre-launch. Security foundations established in parallel with product development. Waitlist data protected by controls below. Vault content will be subject to full Phase 1 controls before general access opens.</div>
+  </section>
+
+  <section id="s-controls" class="card">
+    <h2><span class="icon">🛡️</span> Security Controls</h2>
+    <p style="margin-bottom:16px">
+      <span style="color:var(--ok)">● Active</span> &nbsp;
+      <span style="color:var(--warn)">● In progress</span> &nbsp;
+      <span style="color:var(--info)">● Roadmap</span>
+    </p>
+    <div class="g2">
+      <div class="ctrl">
+        <div class="ctrl-head"><span class="ctrl-icon">🔐</span><span class="ctrl-title">Encryption in Transit</span><span class="ctrl-status s-ok">● Active</span></div>
+        <p><strong>TLS 1.3</strong> preferred on all endpoints. HSTS enforced (1-year max-age). Modern ciphers only (ECDHE, AES-GCM, CHACHA20).</p>
+      </div>
+      <div class="ctrl">
+        <div class="ctrl-head"><span class="ctrl-icon">💾</span><span class="ctrl-title">Encryption at Rest</span><span class="ctrl-status s-ok">● Active</span></div>
+        <p><strong>AES-256-GCM</strong> for vault content and account data. Cloud KMS envelope encryption. Annual key rotation.</p>
+      </div>
+      <div class="ctrl">
+        <div class="ctrl-head"><span class="ctrl-icon">🔑</span><span class="ctrl-title">Authentication</span><span class="ctrl-status s-info">● Partial</span></div>
+        <p>Bcrypt hashing (cost ≥ 12). Min 10 chars. TOTP MFA available. Rate-limited login. <em>Coming:</em> Passkey/WebAuthn (Phase 2).</p>
+      </div>
+      <div class="ctrl">
+        <div class="ctrl-head"><span class="ctrl-icon">👥</span><span class="ctrl-title">Access Control (RBAC)</span><span class="ctrl-status s-ok">● Active</span></div>
+        <p>Role-Based. Heir access read-only by default. Least-privilege for support staff — no vault access without explicit request.</p>
+      </div>
+      <div class="ctrl">
+        <div class="ctrl-head"><span class="ctrl-icon">📋</span><span class="ctrl-title">Audit Logging</span><span class="ctrl-status s-ok">● Active</span></div>
+        <p>Login, file access, permission changes, delivery triggers, admin actions. 90-day rolling retention. Export on request.</p>
+      </div>
+      <div class="ctrl">
+        <div class="ctrl-head"><span class="ctrl-icon">🗄️</span><span class="ctrl-title">Backups & Recovery</span><span class="ctrl-status s-ok">● Active</span></div>
+        <p>Automated daily backups. 30-day rolling history. Quarterly restore tests. <em>Coming:</em> Multi-region (Phase 2).</p>
+      </div>
+      <div class="ctrl">
+        <div class="ctrl-head"><span class="ctrl-icon">🔍</span><span class="ctrl-title">Vulnerability Mgmt</span><span class="ctrl-status s-info">● Partial</span></div>
+        <p>Auto dependency scanning on every push. Critical patches ≤72h. <em>Coming:</em> Annual pentest (Phase 2, H2 2026).</p>
+      </div>
+      <div class="ctrl">
+        <div class="ctrl-head"><span class="ctrl-icon">🚨</span><span class="ctrl-title">Incident Response</span><span class="ctrl-status s-ok">● Active</span></div>
+        <p>security@solexi.ai — 24h triage. Severity-based: Critical=immediate, High=24h, Medium=72h. Loi 25 notification.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="s-threats" class="card">
+    <h2><span class="icon">⚠️</span> Threat Model</h2>
+    <p>Solexi is purpose-built for <strong>high-sensitivity personal data</strong>. We protect against:</p>
+    <ul>
+      <li><strong>Unauthorized access</strong> — MFA, RBAC, session management, rate limiting</li>
+      <li><strong>Data exfiltration</strong> — AES-256, TLS 1.3, audit logging, egress monitoring</li>
+      <li><strong>Insider threats</strong> — least privilege, no vault access without incident/request, audit trail</li>
+      <li><strong>Account takeover</strong> — bcrypt, TOTP MFA, login anomaly detection, recovery codes</li>
+      <li><strong>Supply chain</strong> — dependency scanning, vendor DPAs, sub-processor oversight</li>
+      <li><strong>Data loss</strong> — daily encrypted backups, 30-day retention, quarterly restore tests</li>
+    </ul>
+  </section>
+
+  <section id="s-roadmap" class="card">
+    <h2><span class="icon">🗺️</span> Security Roadmap (24 months)</h2>
+    <div class="phase">
+      <div class="ph-marker ph1">P1</div>
+      <div class="ph-body">
+        <div class="ph-title">Phase 1 — Foundation (Q1–Q2 2026)</div>
+        <div class="ph-meta">Status: In progress</div>
+        <ul class="ph-items">
+          <li>TLS 1.3 + AES-256 on all endpoints</li>
+          <li>RBAC with heir/mandatary permission scoping</li>
+          <li>TOTP MFA for all accounts</li>
+          <li>Daily encrypted backups with quarterly restore tests</li>
+          <li>Audit logging (90-day rolling)</li>
+          <li>Incident response process + Loi 25 register</li>
+        </ul>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="ph-marker ph2">P2</div>
+      <div class="ph-body">
+        <div class="ph-title">Phase 2 — Hardening (Q3–Q4 2026)</div>
+        <div class="ph-meta">Status: Planned</div>
+        <ul class="ph-items">
+          <li>Passkey / WebAuthn support</li>
+          <li>First annual penetration test</li>
+          <li>Multi-region backup redundancy</li>
+          <li>SOC 2 Type I preparation</li>
+          <li>Bug bounty program (private, curated)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="ph-marker ph3">P3</div>
+      <div class="ph-body">
+        <div class="ph-title">Phase 3 — Maturity (2027)</div>
+        <div class="ph-meta">Status: Planned</div>
+        <ul class="ph-items">
+          <li>SOC 2 Type II audit</li>
+          <li>Zero-knowledge encryption option</li>
+          <li>Real-time threat monitoring</li>
+          <li>Annual red team exercise</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="s-compliance" class="card">
+    <h2><span class="icon">📜</span> Compliance & Frameworks</h2>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Law / Standard</th><th>Status</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Loi 25 (Québec)</strong></td><td style="color:var(--ok)">✓ Active</td><td>PIAs, incident register, 72h notification, RPRP appointed</td></tr>
+          <tr><td><strong>PIPEDA (Canada)</strong></td><td style="color:var(--ok)">✓ Active</td><td>Consent-based collection; 10 fair information principles</td></tr>
+          <tr><td><strong>GDPR (EU)</strong></td><td style="color:var(--info)">○ Partial</td><td>SCCs in place; full compliance planned if EU users onboarded</td></tr>
+          <tr><td><strong>SOC 2</strong></td><td style="color:var(--warn)">◒ Planned</td><td>Type I preparation Phase 2; Type II in 2027</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="s-contact" class="card">
+    <h2><span class="icon">📬</span> Security Contact</h2>
+    <div class="g2">
+      <div>
+        <h3>Report a vulnerability</h3>
+        <p><strong>Email:</strong> security@solexi.ai</p>
+        <p><strong>Response:</strong> Triaged within 24 hours</p>
+        <p><strong>Responsible disclosure:</strong> We follow coordinated disclosure. We will not take legal action against good-faith security researchers.</p>
+      </div>
+      <div>
+        <h3>General security inquiries</h3>
+        <p><strong>CEO/Privacy Officer:</strong> Daniel Tanguay</p>
+        <p><strong>Email:</strong> Daniel@solexi.ai</p>
+        <p><strong>Phone:</strong> +1-514-570-3074</p>
+        <p><strong>Address:</strong> 527 rue Lacasse, Terrebonne, QC J6W 4Y7</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     TAB 3 — AI POLICY
+════════════════════════════════════════════ -->
+<div class="tab-panel" id="panel-ai" role="tabpanel" aria-labelledby="tab-ai">
+<div class="panel-in">
+
+  <div class="card">
+    <h2><span class="icon">🤖</span> AI Policy — Consent-First</h2>
+    <p>Solexi uses AI responsibly, with clear boundaries. This policy covers every AI-related feature in the platform — what it does, what data it touches, and how you stay in control.</p>
+    <div class="hl hl-ok">
+      <strong>Core principle:</strong> No AI feature is ever active without your explicit, informed consent. No vault content is used to train public AI models. Period.
+    </div>
+  </div>
+
+  <section class="card">
+    <h2>1. What AI features exist</h2>
+    <ul>
+      <li><strong>Content structuring assistance</strong> — suggests organization for uploaded materials (folders, tags, timelines). Processes your files locally within your vault context.</li>
+      <li><strong>Vault search</strong> — natural language search across your content. Indexes are scoped to your vault only.</li>
+      <li><strong>Memorial experience preparation</strong> — optional future feature to help create documentary foundation for AI-assisted memorial. Requires separate, explicit consent.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>2. Consent model</h2>
+    <div class="g2">
+      <div>
+        <h3>Opt-in only</h3>
+        <p>Every AI feature is <strong>off by default</strong>. You must explicitly enable each feature. You can disable any feature at any time from your account settings without affecting other services.</p>
+      </div>
+      <div>
+        <h3>Granular control</h3>
+        <p>Consent is per-feature, not blanket. Enabling vault search does not enable content structuring. Each feature has its own toggle and explanation.</p>
+      </div>
+    </div>
+    <div class="hl">
+      <strong>Withdrawal:</strong> You can withdraw AI consent at any time. Previously processed data is not retroactively affected, but no further processing occurs.
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>3. Data handling</h2>
+    <ul>
+      <li><strong>Processing scope:</strong> AI operates on your data exclusively, within your vault boundary. No cross-user data sharing.</li>
+      <li><strong>No model training:</strong> Vault content is never sent to third-party AI providers for training general models.</li>
+      <li><strong>Third-party AI:</strong> If a third-party AI service is used for processing (e.g., an LLM for search), data is sent via encrypted API, not stored by the provider, and covered by a data processing agreement.</li>
+      <li><strong>Logs:</strong> AI processing events are logged in your audit trail. You can view them anytime.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>4. Transparency</h2>
+    <ul>
+      <li>When an AI feature is active, it is <strong>clearly labelled</strong> in the interface (badge, icon, or indicator).</li>
+      <li>You can always see <strong>what data was processed</strong> by the AI and <strong>what output was generated</strong>.</li>
+      <li>AI-generated content is <strong>never presented as human-created</strong> without clear attribution.</li>
+      <li>We publish a changelog of AI features, models used, and data handling updates.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>5. Safety controls</h2>
+    <ul>
+      <li><strong>Output review:</strong> AI-generated suggestions are always presented as proposals — you approve, edit, or reject before anything is saved.</li>
+      <li><strong>No autonomous actions:</strong> AI cannot modify your vault, send messages, or trigger transmissions without your explicit confirmation.</li>
+      <li><strong>Bias awareness:</strong> We document known limitations of AI models and do not claim accuracy beyond what the model can deliver.</li>
+      <li><strong>Incident handling:</strong> AI-related incidents follow the same process as security incidents (see <a href="#" onclick="switchTab('security');return false;">Security tab</a>).</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>6. Your AI rights</h2>
+    <ul>
+      <li><strong>Right to know:</strong> Which AI features are active, what data they process, what models are used.</li>
+      <li><strong>Right to disable:</strong> Turn off any AI feature at any time, per-feature.</li>
+      <li><strong>Right to human alternative:</strong> Every AI-powered feature has a manual alternative. AI is never required.</li>
+      <li><strong>Right to explanation:</strong> Request a plain-language explanation of how an AI feature processed your data.</li>
+      <li><strong>Right to complain:</strong> Contact Daniel@solexi.ai or the CAI (Québec).</li>
+    </ul>
+    <div class="hl"><strong>Questions?</strong> Email Daniel@solexi.ai — subject: "AI Policy Question"</div>
+  </section>
+
+</div>
+</div>
+
+</main>
+
+<!-- ════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer>
+  <div class="foot-in">
+    <span>© 2025 Solexi.ai Inc. — Terrebonne, Québec, Canada</span>
+    <div class="foot-links">
+      <a href="/">Home</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/solutions/">Solutions</a>
+      <a href="/celebrities/">Celebrities</a>
+      <a href="/#form">Contact</a>
+    </div>
+    <div class="foot-langs" aria-label="Language">
+      <a href="/trust/" class="on" aria-current="page">English</a>
+      <a href="/fr/trust/">Français</a>
+      <a href="/es/trust/">Español</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════ -->
+<script>
+(function(){
+'use strict';
+
+/* ── Tab switching ─────────────────────────────── */
+var tabs   = document.querySelectorAll('.tab-btn');
+var panels = document.querySelectorAll('.tab-panel');
+
+function switchTab(id){
+  tabs.forEach(function(t){
+    var isTarget = t.dataset.tab === id;
+    t.classList.toggle('active', isTarget);
+    t.setAttribute('aria-selected', isTarget ? 'true' : 'false');
+  });
+  panels.forEach(function(p){
+    p.classList.toggle('active', p.id === 'panel-'+id);
+  });
+  // Push GTM event
+  if(window.dataLayer) window.dataLayer.push({ event:'trust_tab_switch', tab: id });
+  // Scroll to top of tabs
+  document.querySelector('.tabs-bar').scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+// Make switchTab global for inline links
+window.switchTab = switchTab;
+
+tabs.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    switchTab(this.dataset.tab);
+  });
+});
+
+// Handle URL hash (e.g., /trust/#security)
+var hash = window.location.hash.replace('#','');
+if(hash === 'privacy' || hash === 'security' || hash === 'ai'){
+  switchTab(hash);
+}
+
+/* ── Smooth scroll for in-panel anchors ─────── */
+document.querySelectorAll('.toc a, a[href^="#p-"], a[href^="#s-"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var href = this.getAttribute('href');
+    if(href && href.charAt(0)==='#'){
+      var target = document.querySelector(href);
+      if(target){
+        e.preventDefault();
+        window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 130, behavior:'smooth' });
+      }
+    }
+  });
+});
+
+/* ── Nav scroll ─────────────────────────────── */
+window.addEventListener('scroll', function(){
+  document.querySelector('.nav').style.boxShadow =
+    window.scrollY > 10 ? '0 2px 20px rgba(30,28,26,.08)' : 'none';
+}, { passive: true });
+
+})();
+</script>
+</body>
+</html>

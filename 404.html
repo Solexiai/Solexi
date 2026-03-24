@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══ GTM ═══ -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5DZLVZS9');</script>
+
+  <title>404 — Page not found | Solexi</title>
+  <meta name="robots" content="noindex, follow" />
+  <meta name="description" content="This page could not be found on Solexi.ai." />
+  <link rel="canonical" href="https://solexi.ai/404" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+  :root{
+    --off-white:#f7f4ef;--cream:#ede8df;--stone-text:#9a9080;
+    --slate:#8fa3b1;--slate-deep:#4a7082;--slate-mid:#6e8fa0;
+    --charcoal:#3a3530;--ink:#1e1c1a;
+    --serif:'Cormorant Garamond',Georgia,serif;
+    --sans:'Inter',system-ui,sans-serif;
+    --t:.25s cubic-bezier(.4,0,.2,1);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{height:100%}
+  body{
+    font-family:var(--sans);background:var(--off-white);color:var(--charcoal);
+    -webkit-font-smoothing:antialiased;min-height:100vh;
+    display:flex;flex-direction:column;
+  }
+  a{color:var(--slate-deep);text-decoration:none}
+  a:hover{text-decoration:underline}
+  ::selection{background:var(--slate);color:#fff}
+
+  /* ── NAV ── */
+  .nav{
+    background:rgba(247,244,239,.94);backdrop-filter:blur(16px) saturate(180%);
+    border-bottom:1px solid rgba(200,191,175,.35);
+  }
+  .nav-in{
+    max-width:1160px;margin:0 auto;display:flex;align-items:center;
+    justify-content:space-between;padding:0 28px;height:60px;
+  }
+  .logo{
+    display:flex;align-items:center;gap:9px;
+    font-family:var(--serif);font-size:16px;font-weight:500;
+    letter-spacing:.08em;color:var(--ink);
+  }
+  .logo svg{flex-shrink:0}
+  .nav-links{display:flex;align-items:center;gap:4px}
+  .nav-links a{
+    font-size:12px;color:var(--stone-text);padding:6px 12px;
+    border-radius:16px;transition:color var(--t),background var(--t);
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--cream);text-decoration:none}
+  .nav-cta{
+    background:var(--slate-deep)!important;color:#fff!important;
+    padding:8px 20px!important;border-radius:24px!important;font-weight:500!important;
+    box-shadow:0 2px 12px rgba(74,112,130,.3);margin-left:8px;
+    transition:background var(--t),transform var(--t)!important;
+  }
+  .nav-cta:hover{background:var(--slate-mid)!important;transform:translateY(-1px)}
+
+  /* ── MAIN ── */
+  .content{
+    flex:1;display:flex;align-items:center;justify-content:center;
+    padding:60px 28px;text-align:center;
+  }
+  .inner{max-width:560px}
+  .code{
+    font-family:var(--serif);font-size:clamp(80px,15vw,140px);
+    font-weight:300;line-height:1;color:var(--cream);
+    letter-spacing:-.04em;margin-bottom:8px;
+  }
+  h1{
+    font-family:var(--serif);font-size:clamp(28px,4vw,42px);
+    font-weight:300;color:var(--ink);line-height:1.15;margin-bottom:16px;
+  }
+  h1 em{font-style:italic;color:var(--slate-deep)}
+  .desc{
+    font-size:15px;line-height:1.8;color:var(--stone-text);margin-bottom:28px;
+  }
+  .links{list-style:none;margin:0 0 32px;padding:0;display:flex;flex-direction:column;gap:6px}
+  .links a{
+    display:inline-flex;align-items:center;gap:6px;font-size:14px;
+    color:var(--slate-deep);transition:color var(--t);
+  }
+  .links a:hover{color:var(--ink)}
+  .links a::before{content:"›";font-weight:700;opacity:.5}
+  .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;padding:12px 24px;
+    border-radius:24px;font-size:13px;font-weight:500;
+    border:1px solid var(--cream);background:#fff;color:var(--charcoal);
+    transition:all var(--t);cursor:pointer;
+  }
+  .btn:hover{border-color:var(--slate);background:var(--cream);text-decoration:none}
+  .btn-p{
+    background:var(--slate-deep);color:#fff;border-color:var(--slate-deep);
+    box-shadow:0 2px 12px rgba(74,112,130,.3);
+  }
+  .btn-p:hover{background:var(--slate-mid);border-color:var(--slate-mid)}
+
+  /* ── FOOTER ── */
+  footer{
+    background:var(--ink);color:rgba(196,187,168,.55);padding:24px 28px;
+    font-size:12px;text-align:center;
+  }
+
+  @media(max-width:600px){
+    .nav-links{display:none}
+    .content{padding:40px 20px}
+  }
+  </style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DZLVZS9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a href="/" class="logo" aria-label="Solexi.ai — Home">
+      <svg width="24" height="24" viewBox="0 0 26 26" fill="none" aria-hidden="true"><polygon points="13,1 25,7 25,19 13,25 1,19 1,7" fill="#1e1c1a"/><polygon points="13,5 21,9.5 21,16.5 13,21 5,16.5 5,9.5" fill="none" stroke="#8fa3b1" stroke-width="0.8"/><circle cx="13" cy="13" r="1.8" fill="#8fa3b1"/></svg>
+      SOLEXI.AI
+    </a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/trust/">Trust</a>
+      <a href="/#form" class="nav-cta">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<main class="content">
+  <div class="inner">
+    <div class="code" aria-hidden="true">404</div>
+    <h1>This page <em>doesn't exist.</em></h1>
+    <p class="desc">The page you are looking for may have been moved, renamed, or no longer exists. Here are some useful starting points.</p>
+    <ul class="links">
+      <li><a href="/">Homepage — Learn about Solexi</a></li>
+      <li><a href="/trust/">Trust Center — Privacy, Security & AI Policy</a></li>
+      <li><a href="/#faq">Frequently Asked Questions</a></li>
+      <li><a href="/#form">Join the founding cohort</a></li>
+    </ul>
+    <div class="btns">
+      <a href="/" class="btn btn-p">Go home</a>
+      <a href="/#form" class="btn">Join early access</a>
+    </div>
+  </div>
+</main>
+
+<footer>© 2025 Solexi.ai Inc. — Terrebonne, Québec, Canada</footer>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({ event:'404_page_view', page_path: window.location.pathname });
+</script>
+</body>
+</html>
