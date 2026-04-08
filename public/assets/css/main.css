@@ -1328,3 +1328,511 @@ section {
   height: 1px;
   overflow: hidden;
 }
+
+/* Base fluide */
+html {
+    font-size: clamp(16px, 0.35vw + 15px, 18px);
+}
+
+body {
+    font-family: var(--font-sans);
+    font-size: clamp(16px, 0.25vw + 15px, 18px);
+    line-height: 1.75;
+    color: var(--color-dark-gray);
+    background: var(--color-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Titres globaux */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+/* Hero principal */
+.hero-home,
+.hero-personne,
+.hero-musee,
+.hero-vedette {
+    padding-top: clamp(6.5rem, 8vw, 8rem);
+    padding-right: clamp(1rem, 3vw, 2rem);
+    padding-left: clamp(1rem, 3vw, 2rem);
+    padding-bottom: clamp(3rem, 5vw, 4rem);
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 4.25rem);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    color: var(--color-black);
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+    text-wrap: balance;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 1.2vw + 0.8rem, 1.35rem);
+    line-height: 1.7;
+    font-weight: 400;
+    color: var(--color-dark-gray);
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: clamp(1.5rem, 4vw, 3rem);
+    text-wrap: pretty;
+}
+
+/* Hero simple */
+.hero-title-simple {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+}
+
+.hero-subtitle-simple {
+    font-size: clamp(1rem, 1vw + 0.85rem, 1.3rem);
+    line-height: 1.7;
+    max-width: 42rem;
+    margin: 0 auto;
+    text-wrap: pretty;
+}
+
+/* Sections */
+section {
+    padding-top: clamp(3.5rem, 7vw, 6rem);
+    padding-right: clamp(1rem, 3vw, 2rem);
+    padding-left: clamp(1rem, 3vw, 2rem);
+    padding-bottom: clamp(3.5rem, 7vw, 6rem);
+}
+
+.section-header {
+    max-width: 800px;
+    margin: 0 auto clamp(2rem, 5vw, 4rem);
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 500;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: var(--color-black);
+    margin-bottom: 0.75rem;
+    text-wrap: balance;
+}
+
+.section-description {
+    font-size: clamp(1rem, 0.9vw + 0.9rem, 1.15rem);
+    line-height: 1.75;
+    font-weight: 400;
+    color: var(--color-dark-gray);
+    text-wrap: pretty;
+}
+
+/* Texte courant */
+p,
+.path-description,
+.mission-text p,
+.humanitarian-text,
+.footer-section p,
+.term-definition,
+.intro-text {
+    font-size: clamp(1rem, 0.35vw + 0.95rem, 1.08rem);
+    line-height: 1.8;
+}
+
+/* Navigation */
+.main-nav {
+    padding: 0.85rem 0;
+}
+
+.nav-container {
+    padding: 0 clamp(1rem, 3vw, 2rem);
+}
+
+.logo {
+    font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+}
+
+.nav-link,
+.nav-btn {
+    font-size: clamp(0.92rem, 0.3vw + 0.88rem, 1rem);
+}
+
+/* Boutons */
+.hero-buttons,
+.cta-buttons {
+    gap: 0.9rem;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-primary-musee,
+.humanitarian-btn,
+.cta-btn,
+.nav-btn {
+    font-size: clamp(0.95rem, 0.35vw + 0.9rem, 1rem);
+    font-weight: 600;
+    line-height: 1.2;
+    padding: 0.95rem 1.4rem;
+    min-height: 48px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+}
+
+/* Stats */
+.hero-stats {
+    gap: clamp(1.5rem, 5vw, 4rem);
+    margin-top: clamp(2rem, 6vw, 4rem);
+}
+
+.stat-number {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: clamp(0.78rem, 0.25vw + 0.75rem, 0.9rem);
+    line-height: 1.4;
+}
+
+/* Cards */
+.path-card,
+.term-card,
+.mission-quote {
+    border-radius: 16px;
+}
+
+.path-card {
+    padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.path-title {
+    font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+    line-height: 1.2;
+}
+
+.path-features li {
+    font-size: clamp(0.95rem, 0.3vw + 0.9rem, 1rem);
+    line-height: 1.7;
+}
+
+/* Mission */
+.mission-text h2,
+.humanitarian-section h2,
+.final-cta h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+}
+
+.mission-lead,
+.final-cta p {
+    font-size: clamp(1rem, 0.8vw + 0.9rem, 1.2rem);
+    line-height: 1.75;
+}
+
+/* Footer */
+.footer-content {
+    gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.footer-section h4 {
+    font-size: clamp(1rem, 0.4vw + 0.95rem, 1.1rem);
+}
+
+.footer-bottom {
+    font-size: clamp(0.85rem, 0.2vw + 0.82rem, 0.92rem);
+    line-height: 1.7;
+}
+
+/* Images / blocs visuels */
+.silhouette-circle {
+    width: min(400px, 82vw);
+    height: min(400px, 82vw);
+}
+
+.portrait-frame {
+    width: min(350px, 82vw);
+    height: min(450px, 105vw);
+}
+
+/* Grilles plus robustes */
+.paths-container,
+.footer-content,
+.mission-values {
+    width: 100%;
+}
+
+/* ===================================
+   TABLETTE
+   =================================== */
+@media (max-width: 1024px) {
+    .hero-personne,
+    .hero-vedette,
+    .mission-content {
+        gap: 2.5rem;
+    }
+
+    .paths-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ===================================
+   MOBILE
+   =================================== */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-container {
+        min-height: 56px;
+    }
+
+    .hero-home,
+    .hero-personne,
+    .hero-musee,
+    .hero-vedette,
+    .hero-simple {
+        min-height: auto;
+    }
+
+    .hero-home {
+        padding-top: 7rem;
+        padding-bottom: 3.5rem;
+    }
+
+    .hero-personne,
+    .hero-vedette,
+    .mission-content,
+    .section-content-split {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-personne,
+    .hero-vedette {
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: clamp(2.05rem, 8vw, 2.8rem);
+        line-height: 1.08;
+        margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1rem, 4.2vw, 1.12rem);
+        line-height: 1.75;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-title-simple {
+        font-size: clamp(2rem, 7vw, 2.7rem);
+    }
+
+    .hero-subtitle-simple {
+        font-size: clamp(1rem, 4vw, 1.08rem);
+    }
+
+    .hero-buttons,
+    .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-primary-musee,
+    .humanitarian-btn,
+    .cta-btn {
+        width: 100%;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .paths-container,
+    .vault-cards,
+    .heirs-grid,
+    .recipes-grid,
+    .pricing-grid,
+    .mission-values {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: clamp(1.7rem, 6vw, 2.2rem);
+    }
+
+    .section-description,
+    p,
+    .path-description,
+    .mission-text p,
+    .humanitarian-text,
+    .footer-section p,
+    .term-definition,
+    .intro-text {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .term-name {
+        font-size: 1.35rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .term-card,
+    .mission-quote,
+    .path-card {
+        padding: 1.25rem;
+    }
+
+    .alphabet-nav {
+        gap: 0.4rem;
+        padding: 1rem;
+        border-radius: 18px;
+    }
+
+    .alphabet-nav a {
+        padding: 0.45rem 0.7rem;
+        font-size: 0.95rem;
+    }
+
+    .section-letter {
+        font-size: clamp(2.2rem, 10vw, 3rem);
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===================================
+   PETITS TÉLÉPHONES
+   =================================== */
+@media (max-width: 480px) {
+    html {
+        font-size: 16px;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    .main-nav {
+        padding: 0.7rem 0;
+    }
+
+    .nav-container {
+        padding: 0 0.9rem;
+    }
+
+    .logo {
+        font-size: 1rem;
+        gap: 0.5rem;
+    }
+
+    .hero-home,
+    .hero-personne,
+    .hero-musee,
+    .hero-vedette,
+    .hero-simple,
+    section {
+        padding-left: 0.9rem;
+        padding-right: 0.9rem;
+    }
+
+    .hero-title {
+        font-size: clamp(1.9rem, 8.8vw, 2.35rem);
+        line-height: 1.06;
+    }
+
+    .hero-subtitle,
+    .hero-subtitle-simple {
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+
+    .section-title,
+    .mission-text h2,
+    .humanitarian-section h2,
+    .final-cta h2 {
+        font-size: clamp(1.6rem, 7vw, 2rem);
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-primary-musee,
+    .humanitarian-btn,
+    .cta-btn,
+    .nav-btn {
+        font-size: 0.95rem;
+        padding: 0.9rem 1.1rem;
+        min-height: 46px;
+    }
+
+    .silhouette-circle {
+        width: min(250px, 78vw);
+        height: min(250px, 78vw);
+    }
+
+    .portrait-frame {
+        width: min(290px, 82vw);
+        height: min(370px, 100vw);
+    }
+
+    .final-cta {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+}
+
+/* ===================================
+   ACCESSIBILITÉ / CONFORT
+   =================================== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+:focus-visible {
+    outline: 3px solid rgba(0, 0, 0, 0.25);
+    outline-offset: 3px;
+}
