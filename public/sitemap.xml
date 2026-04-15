@@ -144,4 +144,37 @@
     <priority>0.5</priority>
   </url>
 
+
+  <!-- ============================================================ -->
+  <!-- NEW SEO PAGES — USA + LATAM                                  -->
+  <!-- ============================================================ -->
+
+  <url>
+    <loc>https://solexi.ai/digital-legacy-planning/</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://solexi.ai/secure-family-records/</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://solexi.ai/es/planificacion-legado-digital/</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://solexi.ai/es/archivo-familiar-seguro/</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

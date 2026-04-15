@@ -1,0 +1,34 @@
+{
+  "redirects": [
+    { "source": "/comprendre", "destination": "/understand/", "permanent": true },
+    { "source": "/comprendre/", "destination": "/understand/", "permanent": true },
+
+    { "source": "/problem", "destination": "/problems/", "permanent": true },
+    { "source": "/problem/", "destination": "/problems/", "permanent": true },
+
+    { "source": "/solution", "destination": "/solutions/", "permanent": true },
+    { "source": "/solution/", "destination": "/solutions/", "permanent": true },
+
+    { "source": "/privacy-policy", "destination": "/privacy/", "permanent": true },
+    { "source": "/privacy-policy/", "destination": "/privacy/", "permanent": true },
+
+    { "source": "/terms-of-use-2", "destination": "/terms/", "permanent": true },
+    { "source": "/terms-of-use-2/", "destination": "/terms/", "permanent": true },
+
+    { "source": "/contact", "destination": "/contact/", "permanent": true },
+
+    { "source": "/fr/solutions", "destination": "/solutions/", "permanent": true },
+    { "source": "/fr/solutions/", "destination": "/solutions/", "permanent": true },
+    { "source": "/fr/celebrities", "destination": "/celebrities/", "permanent": true },
+    { "source": "/fr/celebrities/", "destination": "/celebrities/", "permanent": true },
+
+    { "source": "/es/solutions", "destination": "/solutions/", "permanent": true },
+    { "source": "/es/solutions/", "destination": "/solutions/", "permanent": true },
+    { "source": "/es/celebrities", "destination": "/celebrities/", "permanent": true },
+    { "source": "/es/celebrities/", "destination": "/celebrities/", "permanent": true },
+
+    { "source": "/favicon.ico", "destination": "/favicon.svg", "permanent": true },
+    { "source": "/favicon.png", "destination": "/favicon.svg", "permanent": true },
+    { "source": "/apple-touch-icon.png", "destination": "/favicon.svg", "permanent": true }
+  ]
+}
